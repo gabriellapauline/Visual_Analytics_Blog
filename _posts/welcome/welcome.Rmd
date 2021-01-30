@@ -4,7 +4,7 @@ description: |
   Welcome to our new blog, Visual Analytics. We hope you enjoy 
   reading what we have to say!
 author:
-  - name: Gabriella Pauline Djojosaputro
+  - name: 
     url: https://example.com/norajones
     affiliation: School of Information Systems, Singapore Management University
     affiliation_url: https://smu.edu.sg https://example.com/spacelysprokets
