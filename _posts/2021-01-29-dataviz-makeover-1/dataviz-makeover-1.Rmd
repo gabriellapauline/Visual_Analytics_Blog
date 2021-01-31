@@ -17,27 +17,40 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # 1. Introduction
-We are living in a world that is constantly producing a vast amount of data, and data visualization helps us to understand the data better. However, a poor visualization can be of little value, or even misleading. Visual analytics is not just about creating a pretty chart, but it is the marriage of data analytics and visualizations that aims to detect the expected and discover the unexpected. 
+We are living in a world that is constantly producing a vast amount of data, and data visualisation helps us to understand the data better. However, a poor visualisation can be of little value, or even misleading. Visual analytics is not just about creating a pretty chart, but it is the marriage of data analytics and visualizations that aims to detect the expected and discover the unexpected. 
 
 This post will makeover Chart 6: Resident Labour Force by age group from page 22 of [Labour Force in Singapore 2019 Report](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx). 
 
 # 2. Original Visualization
-To start, we examine the original visualization from the data (Figure 1) to learn what we can improve. The critique is given in terms of **clarity** and **aesthetics**.
+To start, we examine the original visualisation from the data (Figure 1) to learn what we can improve. The critique is given in terms of **clarity** and **aesthetics**.
 
 ![Figure 1. Original chart from Labour Force in Singapore 2019 Report](./images/Original_chart.png)
 
 
 ## Clarity:
+   1. **Poor choice of chart gives the impression that they are comparing the distribution of age in two categories**, for example the age distribution in male and female residents. To represent how values change over time, line chart is a better choice than histogram.
    1. It is **difficult to see the values of the data points** in the chart. The graph does not have axis and thus we need to depend on the labels to see the actual value of each data point. However, these labels are put below the chart as a table, and not on the chart itself.
    1. There is an inconsistency between the statement and the chart. While the statement mentions a decline in 25 - 54 age group as well as an increase in 55 & over age group, the readers are not able to find the values on the chart itself. These are a summation of multiple categories from the chart and the **readers must manually sum the numbers together to get the the values mentioned in the statement**.
-   1. The statement mentioned rise of Labour Force Participation Rate (LFPR), but **the chart also does not have any reference to LFPR**.
+   1. The statement mentioned rise of Labour Force Participation Rate (LFPR) and population size per age group, but **the chart also does not have any reference to LFPR or population size per age group**.
 
 ## Aesthetics:
    1. The chart is not exported in good quality. It is **quite pixelated**, even in the original report.
    1. Using a **very short subtitle 'Per Cent' creates an awkward empty space above the chart**. It would be better to add it to the title, or omit the subtitle altogether.
    1. Although the report uses a white background, the chart has a **grey background** colour. Background colour is an unnecessary non data-ink which does not add value in helping to understand the data better.
 
-Distill is a publication format for scientific and technical writing, native to the web.
+# 3. Proposed Alternative Graphical Representation
+
+Figure 2 shows the alternative graphical representation proposed for the makeover.
+
+![Figure 2. Alternative Graphical Representation](./images/alternative_graphical_representation.jpg)
+
+The issues that the alternative design tries to overcome are:
+
+   1. To **clearly show the difference of workforce distribution over time** by the use of line chart instead of histogram.
+   1. To **further categorise the age groups** together to the same level as the point of interest in the statement, so that the readers can see the value directly without having to calculate the total from different subgroups. 
+   1. To **show the LFPR and population size per age group**. This alternative representation will directly show the difference between 2019 and 2009 values instead of showing another line charts because they are just additional information.
+   1. **To remove unnecessary non-data-ink** by using a white background (Note: The colour on the proposed design is from the paper, which is not going to be used in the final chart).
+
 
 Learn more about using Distill at <https://rstudio.github.io/distill>.
 
