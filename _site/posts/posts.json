@@ -1,22 +1,5 @@
 [
   {
-    "path": "posts/2021-01-29-dataviz-makeover-1/",
-    "title": "DataViz Makeover 1",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Gabriella Pauline Djojosaputro",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2021-01-29",
-    "categories": [],
-    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2021-01-29T22:42:45+08:00",
-    "input_file": "dataviz-makeover-1.utf8.md"
-  },
-  {
     "path": "posts/welcome/",
     "title": "Welcome to Visual Analytics",
     "description": "Welcome to my new blog, Visual Analytics. I hope you enjoy \nreading!",
@@ -32,5 +15,22 @@
     "preview": {},
     "last_modified": "2021-01-31T11:12:13+08:00",
     "input_file": "welcome.utf8.md"
+  },
+  {
+    "path": "posts/2021-01-29-dataviz-makeover-1/",
+    "title": "DataViz Makeover 1",
+    "description": "A data visualization makeover",
+    "author": [
+      {
+        "name": "Gabriella Pauline Djojosaputro",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-01-29",
+    "categories": [],
+    "contents": "\r\n1. Introduction\r\nWe are living in a world that is constantly producing a vast amount of data, and data visualization helps us to understand the data better. However, a poor visualization can be of little value, or even misleading. Visual analytics is not just about creating a pretty chart, but it is the marriage of data analytics and visualizations that aims to detect the expected and discover the unexpected.\r\nThis post will makeover Chart 6: Resident Labour Force by age group from page 22 of Labour Force in Singapore 2019 Report.\r\n2. Original Visualization\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-01-31T11:43:17+08:00",
+    "input_file": "dataviz-makeover-1.utf8.md"
   }
 ]
