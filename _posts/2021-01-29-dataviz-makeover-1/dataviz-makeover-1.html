@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/Original_chart.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1481,6 +1481,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>We are living in a world that is constantly producing a vast amount of data, and data visualization helps us to understand the data better. However, a poor visualization can be of little value, or even misleading. Visual analytics is not just about creating a pretty chart, but it is the marriage of data analytics and visualizations that aims to detect the expected and discover the unexpected.</p>
 <p>This post will makeover Chart 6: Resident Labour Force by age group from page 22 of <a href="https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx">Labour Force in Singapore 2019 Report</a>.</p>
 <h1 id="original-visualization">2. Original Visualization</h1>
+<p>To start, we examine the original visualization from the data (Figure 1) to learn what we can improve. The critique is given in terms of <strong>clarity</strong> and <strong>aesthetics</strong>.</p>
+<figure>
+<img src="images/Original_chart.png" alt="" /><figcaption>Figure 1. Original chart from Labour Force in Singapore 2019 Report</figcaption>
+</figure>
+<h2 id="clarity">Clarity:</h2>
+<ol type="1">
+<li>It is <strong>difficult to see the values of the data points</strong> in the chart. The graph does not have axis and thus we need to depend on the labels to see the actual value of each data point. However, these labels are put below the chart as a table, and not on the chart itself.</li>
+<li>There is an inconsistency between the statement and the chart. While the statement mentions a decline in 25 - 54 age group as well as an increase in 55 &amp; over age group, the readers are not able to find the values on the chart itself. These are a summation of multiple categories from the chart and the <strong>readers must manually sum the numbers together to get the the values mentioned in the statement</strong>.</li>
+<li>The statement mentioned rise of Labour Force Participation Rate (LFPR), but <strong>the chart also does not have any reference to LFPR</strong>.</li>
+</ol>
+<h2 id="aesthetics">Aesthetics:</h2>
+<ol type="1">
+<li>The chart is not exported in good quality. It is <strong>quite pixelated</strong>, even in the original report.</li>
+<li>Using a <strong>very short subtitle ‘Per Cent’ creates an awkward empty space above the chart</strong>. It would be better to add it to the title, or omit the subtitle altogether.</li>
+<li>Although the report uses a white background, the chart has a <strong>grey background</strong> colour. Background colour is an unnecessary non data-ink which does not add value in helping to understand the data better.</li>
+</ol>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
