@@ -1,8 +1,8 @@
 ---
 title: "Welcome to Visual Analytics"
 description: |
-  Welcome to our new blog, Visual Analytics. We hope you enjoy 
-  reading what we have to say!
+  Welcome to my new blog, Visual Analytics. I hope you enjoy 
+  reading!
 author:
   - name: Gabriella Pauline Djojosaputro
     url: https://github.com/gabriellapauline
