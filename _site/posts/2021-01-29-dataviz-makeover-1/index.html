@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/alternative_graphical_representation.jpg","images/Original_chart.png"]}
+  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/4.2. Add Filters.png","images/4.2. Age Groups.png","images/4.2. Change to Date.png","images/4.2. Connect to Data.png","images/4.2. Create Group.png","images/4.2. Drag Table.png","images/4.2. Hide Column.png","images/4.2. Pivot.png","images/4.2. Rename Column.png","images/4.2. Select Age.png","images/alternative_graphical_representation.jpg","images/Final_makeover.png","images/Original_chart.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2107,20 +2107,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <figure>
 <img src="images/Original_chart.png" alt="" /><figcaption>Figure 1. Original chart from Labour Force in Singapore 2019 Report</figcaption>
 </figure>
-<h2 id="clarity">Clarity:</h2>
+<h2 id="clarity">2.1 Clarity:</h2>
 <ol type="1">
 <li><strong>Poor choice of chart gives the impression that they are comparing the distribution of age in two categories</strong>, for example the age distribution in male and female residents. To represent how values change over time, line chart is a better choice than histogram.</li>
 <li>It is <strong>difficult to see the values of the data points</strong> in the chart. The graph does not have axis and thus we need to depend on the labels to see the actual value of each data point. However, these labels are put below the chart as a table, and not on the chart itself.</li>
 <li>There is an inconsistency between the statement and the chart. While the statement mentions a decline in 25 - 54 age group as well as an increase in 55 &amp; over age group, the readers are not able to find the values on the chart itself. These are a summation of multiple categories from the chart and the <strong>readers must manually sum the numbers together to get the the values mentioned in the statement</strong>.</li>
 <li>The statement mentioned rise of Labour Force Participation Rate (LFPR) and population size per age group, but <strong>the chart also does not have any reference to LFPR or population size per age group</strong>.</li>
 </ol>
-<h2 id="aesthetics">Aesthetics:</h2>
+<h2 id="aesthetics">2.2 Aesthetics:</h2>
 <ol type="1">
 <li>The chart is not exported in good quality. It is <strong>quite pixelated</strong>, even in the original report.</li>
 <li>Using a <strong>very short subtitle ‘Per Cent’ creates an awkward empty space above the chart</strong>. It would be better to add it to the title, or omit the subtitle altogether.</li>
 <li>Although the report uses a white background, the chart has a <strong>grey background</strong> colour. Background colour is an unnecessary non data-ink which does not add value in helping to understand the data better.</li>
 </ol>
-<h1 id="proposed-alternative-graphical-representation">3. Proposed Alternative Graphical Representation</h1>
+<h1 id="alternative-graphical-representation">3. Alternative Graphical Representation</h1>
 <p>Figure 2 shows the alternative graphical representation proposed for the makeover.</p>
 <figure>
 <img src="images/alternative_graphical_representation.jpg" alt="" /><figcaption>Figure 2. Alternative Graphical Representation</figcaption>
@@ -2132,7 +2132,137 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>To <strong>show the LFPR and population size per age group</strong>. This alternative representation will directly show the difference between 2019 and 2009 values instead of showing another line charts because they are just additional information.</li>
 <li><strong>To remove unnecessary non-data-ink</strong> by using a white background (Note: The colour on the proposed design is from the paper, which is not going to be used in the final chart).</li>
 </ol>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
+<h1 id="step-by-step-description">4. Step-by-Step Description</h1>
+<h2 id="data-source">4.1 Data Source</h2>
+<p>There is no visualisation and analytics if there is no data. The data that will be used are:</p>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 38%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>No</th>
+<th>Data</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.</td>
+<td>Resident Labour Force by Age</td>
+<td><a href="https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T7.xlsx">Labour Force 2019 Report, Table 7</a></td>
+</tr>
+<tr class="even">
+<td>2.</td>
+<td>Labour Force Participation Rate by Age</td>
+<td><a href="https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T5.xlsx">Labour Force 2019 Report, Table 5</a></td>
+</tr>
+<tr class="odd">
+<td>3.</td>
+<td>Population Size by Age</td>
+<td><a href="https://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=14911">Singapore Department of Statistics</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="resident-labour-force-line-chart">4.2 Resident Labour Force Line Chart</h2>
+<p>This chart will show how percentage of each age groups of interest in the Resident Labour Force changes through the course of 2009 to 2019. Steps to create the visualisation is shown below.</p>
+<h3 id="data-preparation">Data Preparation</h3>
+<figure>
+<img src="images/4.2.%20Connect%20to%20Data.png" alt="" /><figcaption>Figure 3. Connect to Data</figcaption>
+</figure>
+<ul>
+<li>Create a new workbook and click <strong>Connect to Data</strong>.</li>
+<li>Choose the data source (In this case, it would be Table 7 from Labour Force Report 2019).</li>
+</ul>
+<p>! <a href="./images/4.2.%20Drag%20Table.png">Figure 4. Add Table</a></p>
+<ul>
+<li><p><strong>Drag the table that we want</strong> to the workspace. We are interested in the total number, not in the distribution of gender. Therefore, we can use T7_T that contains the total number of males and females.</p></li>
+<li><p>Check the <strong>Use Data Interpreter</strong> checkbox to allow Tableau to do automatic cleaning. Tableau is able to intelligently detect valuable columns and rows, and drop the empty ones.</p></li>
+</ul>
+<figure>
+<img src="images/4.2.%20Hide%20Column.png" alt="" /><figcaption>Figure 5. Hide Column</figcaption>
+</figure>
+<p>After the cleaning, we still have a column that we are not interested in. There are some values in the column, but it is just an annotation.</p>
+<ul>
+<li><strong>Hover to the column header</strong> that we want to hide.</li>
+<li>Click the <strong>grey inverted triangle</strong> &gt; <strong>Hide</strong></li>
+</ul>
+<p>The first row in the table has null in the Age column. This value is the total from all Age groups, which we can obtain with the SUM function later. We can filter out this row.</p>
+<figure>
+<img src="images/4.2.%20Add%20Filters.png" alt="" /><figcaption>Figure 6. Add Filters</figcaption>
+</figure>
+<ul>
+<li>In the top right-hand corner, under Filters, click <strong>Add</strong>.</li>
+<li>Click <strong>Add</strong> again in the Edit Data Source Filters window</li>
+<li>Select the <strong>Age</strong> field &gt; <strong>OK</strong></li>
+</ul>
+<figure>
+<img src="images/4.2.%20Select%20Age.png" alt="" /><figcaption>Figure 7. Select Age</figcaption>
+</figure>
+<p>We can either select None and manually check the data items we want one-by-one, or check all boxes first and unselect the one we do not want. Since we only want to remove one age group, we will do the latter.</p>
+<ul>
+<li>Select <strong>All</strong>.</li>
+<li><strong>Uncheck the Null box</strong> &gt; <strong>OK</strong></li>
+</ul>
+<p>The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. We can use the pivot function from Tableau.</p>
+<figure>
+<img src="images/4.2.%20Pivot.png" alt="" /><figcaption>Figure 8. Pivot</figcaption>
+</figure>
+<ul>
+<li><strong>Select all the columns</strong> with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.</li>
+<li><strong>Right-click</strong> on any of the column header &gt; <strong>Pivot</strong></li>
+</ul>
+<figure>
+<img src="images/4.2.%20Rename%20Column.png" alt="" /><figcaption>Figure 9. Rename Columns</figcaption>
+</figure>
+<p>The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.</p>
+<ul>
+<li><strong>Right-click</strong> on the column header &gt; <strong>Rename</strong></li>
+</ul>
+<p>The original and new column names are shown below.</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Original Column Name</strong></th>
+<th><strong>New Column Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pivot Field Names</td>
+<td>Year</td>
+</tr>
+<tr class="even">
+<td>Pivot Field Values</td>
+<td>Resident Labour Force</td>
+</tr>
+<tr class="odd">
+<td>Age (Years) 2</td>
+<td>Age</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="images/4.2.%20Change%20to%20Date.png" alt="" /><figcaption>Figure 10. Change to Date</figcaption>
+</figure>
+<p>Notice that there is an ‘Abc’ symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. * Click the <strong>‘Abc’</strong> symbol in Year column header &gt; <strong>Date</strong></p>
+<figure>
+<img src="images/4.2.%20Create%20Group.png" alt="" /><figcaption>Figure 11. Create Group</figcaption>
+</figure>
+<p>Next, one of the improvement we want to make on the original visualisation is to group the age variable so it will be the same as the age groups that are mentioned in the statement. Therefore, we need to group into 25 - 54 and 55 &amp; over. Age group 15 - 24 will be created even though it is not mentioned in the statement to show that the numbers sum to 100%.</p>
+<ul>
+<li><strong>Right-click</strong> on Age column header &gt; <strong>Create group…</strong></li>
+</ul>
+<figure>
+<img src="images/4.2.%20Age%20Groups.png" alt="" /><figcaption>Figure 12. Age Groups</figcaption>
+</figure>
+<ul>
+<li><strong>Select</strong> the <strong>ages</strong> that we want to group together (e.g. 15 - 19 and 20 - 24), then press <strong>Group</strong></li>
+<li><strong>Enter</strong> the appropriate <strong>group name</strong></li>
+<li><strong>Repeat</strong> to get three age groups as shown in Figure 12 &gt; <strong>OK</strong></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

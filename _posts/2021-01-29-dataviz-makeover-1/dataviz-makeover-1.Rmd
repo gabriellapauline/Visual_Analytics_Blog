@@ -64,6 +64,7 @@ No | Data          | Source
 2. |Labour Force Participation Rate by Age | [Labour Force 2019 Report, Table 5](https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T5.xlsx)
 3. |Population Size by Age | [Singapore Department of Statistics](https://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=14911)
 
+
 ## 4.2 Resident Labour Force Line Chart
 
 This chart will show how percentage of each age groups of interest in the Resident Labour Force changes through the course of 2009 to 2019. Steps to create the visualisation is shown below.
@@ -100,7 +101,42 @@ The first row in the table has null in the Age column. This value is the total f
 We can either select None and manually check the data items we want one-by-one, or check all boxes first and unselect the one we do not want. Since we only want to remove one age group, we will do the latter. 
 
 * Select **All**.
-* Uncheck the **Null** box > **OK**
-The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. To do so 
+* **Uncheck the Null box** > **OK**
 
+The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. We can use the pivot function from Tableau.
 
+![Figure 8. Pivot](./images/4.2. Pivot.png)
+
+* **Select all the columns** with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.
+* **Right-click** on any of the column header > **Pivot**
+
+![Figure 9. Rename Columns](./images/4.2. Rename Column.png)
+
+The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.
+
+* **Right-click** on the column header > **Rename**
+
+The original and new column names are shown below.
+
+**Original Column Name** | **New Column Name**
+-------------------------|---------------------
+Pivot Field Names | Year
+Pivot Field Values | Resident Labour Force
+Age (Years) 2 | Age
+
+![Figure 10. Change to Date](./images/4.2. Change to Date.png)
+
+Notice that there is an 'Abc' symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. 
+* Click the **'Abc'** symbol in Year column header > **Date**
+
+![Figure 11. Create Group](images/4.2. Create Group.png)
+
+Next, one of the improvement we want to make on the original visualisation is to group the age variable so it will be the same as the age groups that are mentioned in the statement. Therefore, we need to group into 25 - 54 and 55 & over. Age group 15 - 24 will be created even though it is not mentioned in the statement to show that the numbers sum to 100%.
+
+* **Right-click** on Age column header > **Create group...**
+
+![Figure 12. Age Groups](./images/4.2. Age Groups.png)
+
+* **Select** the **ages** that we want to group together (e.g. 15 - 19 and 20 - 24), then press **Group**
+* **Enter** the appropriate **group name**
+* **Repeat** to get three age groups as shown in Figure 12 > **OK**
