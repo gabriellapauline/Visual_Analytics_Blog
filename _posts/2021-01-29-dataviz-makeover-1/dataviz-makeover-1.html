@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/alternative_graphical_representation.jpg","images/Original_chart.png"]}
+  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/alternative_graphical_representation.jpg","images/Final_makeover.png","images/Original_chart.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1498,7 +1498,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Using a <strong>very short subtitle ‘Per Cent’ creates an awkward empty space above the chart</strong>. It would be better to add it to the title, or omit the subtitle altogether.</li>
 <li>Although the report uses a white background, the chart has a <strong>grey background</strong> colour. Background colour is an unnecessary non data-ink which does not add value in helping to understand the data better.</li>
 </ol>
-<h1 id="proposed-alternative-graphical-representation">3. Proposed Alternative Graphical Representation</h1>
+<h1 id="alternative-graphical-representation">3. Alternative Graphical Representation</h1>
 <p>Figure 2 shows the alternative graphical representation proposed for the makeover.</p>
 <figure>
 <img src="images/alternative_graphical_representation.jpg" alt="" /><figcaption>Figure 2. Alternative Graphical Representation</figcaption>
@@ -1510,6 +1510,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>To <strong>show the LFPR and population size per age group</strong>. This alternative representation will directly show the difference between 2019 and 2009 values instead of showing another line charts because they are just additional information.</li>
 <li><strong>To remove unnecessary non-data-ink</strong> by using a white background (Note: The colour on the proposed design is from the paper, which is not going to be used in the final chart).</li>
 </ol>
+<h1 id="step-by-step-description">4. Step-by-Step Description</h1>
+<h3 id="data-source">Data Source</h3>
+<p>To prepare the visualisation, we need to get the data. The data source that will be used are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Resident Labour Force by Age</td>
+<td><a href="https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T7.xlsx">Labour Force 2019 Report, Table 7</a></td>
+</tr>
+<tr class="even">
+<td>Labour Force Participation Rate by Age</td>
+<td><a href="https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T5.xlsx">Labour Force 2019 Report, Table 5</a></td>
+</tr>
+<tr class="odd">
+<td>Population Size by Age</td>
+<td><a href="https://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=14911">Singapore Department of Statistics</a></td>
+</tr>
+</tbody>
+</table>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
