@@ -73,7 +73,7 @@ This chart will show how percentage of each age groups of interest in the Reside
 ![Figure 3. Connect to Data](./images/4.2. Connect to Data.png)
 
 * Create a new workbook and click **Connect to Data**.
-* Choose the data source (In this case, it would be Table 7 from Labour Force Report 2019).
+* Choose the **file type** > **file name** (In this case, it would be Table 7 from Labour Force Report 2019).
 
 ! [Figure 4. Add Table](./images/4.2. Drag Table.png)
 
@@ -86,35 +86,35 @@ This chart will show how percentage of each age groups of interest in the Reside
 After the cleaning, we still have a column that we are not interested in. There are some values in the column, but it is just an annotation. 
 
 * **Hover to the column header** that we want to hide.
-* Click the **grey inverted triangle** > **Hide**
+* Click the **grey inverted triangle** > **Hide**.
 
 The first row in the table has null in the Age column. This value is the total from all Age groups, which we can obtain with the SUM function later. We can filter out this row.
 
 ![Figure 6. Add Filters](./images/4.2. Add Filters.png)
 
 * In the top right-hand corner, under Filters, click **Add**.
-* Click **Add** again in the Edit Data Source Filters window
-* Select the **Age** field > **OK**
+* Click **Add** again in the Edit Data Source Filters window.
+* Select the **Age** field > **OK**.
 
 ![Figure 7. Select Age](./images/4.2. Select Age.png)
 
 We can either select None and manually check the data items we want one-by-one, or check all boxes first and unselect the one we do not want. Since we only want to remove one age group, we will do the latter. 
 
 * Select **All**.
-* **Uncheck the Null box** > **OK**
+* **Uncheck the Null box** > **OK**.
 
 The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. We can use the pivot function from Tableau.
 
 ![Figure 8. Pivot](./images/4.2. Pivot.png)
 
 * **Select all the columns** with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.
-* **Right-click** on any of the column header > **Pivot**
+* **Right-click** on any of the column header > **Pivot**.
 
 ![Figure 9. Rename Columns](./images/4.2. Rename Column.png)
 
 The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.
 
-* **Right-click** on the column header > **Rename**
+* **Right-click** on the column header > **Rename**.
 
 The original and new column names are shown below.
 
@@ -127,7 +127,7 @@ Age (Years) 2 | Age
 ![Figure 10. Change to Date](./images/4.2. Change to Date.png)
 
 Notice that there is an 'Abc' symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. 
-* Click the **'Abc'** symbol in Year column header > **Date**
+* Click the **'Abc'** symbol in Year column header > **Date**.
 
 ![Figure 11. Create Group](images/4.2. Create Group.png)
 
@@ -137,9 +137,9 @@ Next, one of the improvement we want to make on the original visualisation is to
 
 ![Figure 12. Age Groups](./images/4.2. Age Groups.png)
 
-* **Select** the **ages** that we want to group together (e.g. 15 - 19 and 20 - 24), then press **Group**
-* **Enter** the appropriate **group name**
-* **Repeat** to get three age groups as shown in Figure 12 > **OK**
+* **Select** the **ages** that we want to group together (e.g. 15 - 19 and 20 - 24), then press **Group**.
+* **Enter** the appropriate **group name**.
+* **Repeat** to get three age groups as shown in Figure 12 > **OK**.
 
 ![Figure 13. Create Calculated Field](./images/4.2. Create Calculated Field.png)
 
@@ -170,5 +170,118 @@ We can build visualisation by dragging the fields from the data pane directly to
 
 ![Figure 17. Rows and Columns for Line Chart](./images4.2. Rows and Columns Line Chart.png)
 
-* **Drag Year** to **Columns** shelf
-* **Drag % of Total Resident Labour Force** to **Rows** shelf
+* **Drag Year** to **Columns** shelf.
+* **Drag % of Total Resident Labour Force** to **Rows** shelf.
+
+Notice that Tableau automatically recommends a line chart to visualise our data. Don't be alarmed that it is only displaying a straight line. Right now it computes the total percentage of all group, that is why it is always 100%. Next, we need to separate the age groups.
+
+![Figure 18. Add Age Group](./images/4.2. Add Age Group.png)
+
+* **Drag Age (group)** to the **Color Marks Card**.
+
+### Customisation
+
+We can further customise the chart appearance to enhance the usefulness and readability of the chart. There are several customisations on the line chart that we are going to perform.
+
+#### Label
+
+![Figure 19. Add Label](./images/4.2. Add Label.png)
+
+* **Drag % of Total Resident Labour Force** to the **Text Marks Card**.
+* **Double-click** on **Text Marks Card** to open the settings.
+* Select **Line Ends** to make the labels only appear on the line end. Otherwise, the chart will be too cluttered.
+
+![Figure 20. Format Label](./images/4.2. Format Label.png)
+
+* **Right-click** on one of the labels > **Format...** to open the Format Pane.
+* Click on **Fields** on the top right-hand corner of the Format Pane and click **SUM(% of Total Resident Labour Force)** that we used for the label.
+* Click **Numbers** > **Percentage** to display the number in percentage form instead of decimal points.
+
+#### Axis / Header
+
+As we have already labeled the data points of interest, the y-axis is no longer necessary. We can remove the axis to increase our data-ink ratio. 
+
+![Figure 21. Remove Axis](./images/4.2. Remove Header.png)
+
+* **Right-click** on the y-axis > **Uncheck Show Header**.
+
+![Figure 22. Hide Field Labels for Columns](./images/4.2. Hide Field Labels for Columns.png)
+
+* Likewise, **right-click** on **Year** header on the top of the chart > **Hide Field Labels for columns because the year is already quite self-explanatory.
+
+#### Line Markers
+
+![Figure 23. Add Markers](./images/4.2. Add Markers.png)
+
+* Click on **Color Marks Card** and select **All** markers which is the middle option. This will make it easier to see the individual data points.
+
+
+#### Title
+
+Our current default title is the sheet name, which is Sheet 1. We can change the sheet name, and further tailor the title to make it more informative. 
+
+![Figure 24. Rename Sheet Name](./images/4.2. Rename Sheet Name.png) 
+
+* Pretty self-explanatory. **Double-click** on the **Sheet 1 Tab** below, then we can type in the desired name. I put 'Singapore Resident Labour Force by Age Group'.
+
+![Figure 25. Change Sheet Title](./images/4.2. Sheet Title.png)
+
+* **Double-click** on the sheet title.
+* Write the desired title. We can also adjust the font size and formatting. 
+
+'<Sheet Name>' means the value is dynamic. Whenever the sheet name changes, the title will follow accordingly. We can also add other variables by clicking **Insert**. However, we are not adding other variables now.
+
+#### Annotations
+
+We can also annotate on the chart itself to highlight interesting findings. 
+
+![Figure 26. Annotate Mark](./images/4.2. Annotate Mark.png)
+
+* **Right-click** on one of the data point > **Annotate** > **Mark...**.
+
+![Figure 27. Annotation](./images/4.2. Annotation.png)
+
+* Add findings that we want to highlight.
+
+Just like the sheet title, we can customise the annotation and make use of the variables using the **Insert** button. And now, we are done for this line chart! 
+
+## 4.3. Labour Force Participation Rate Bar Chart
+
+Next, the statement mentions that the increase in older residents in Singapore Labour Force is due to the rise in Labour Force Participation Rate for older residents. We are going to visualise this data to support the statement. Some steps are the same as what was explained in the previous section.
+
+### Data Preparation
+
+![Figure 28. Add New Data Source](./images/4.3. New Data Source.png)
+
+* Go back to the **Data Source** tab.
+* Click the **database icon** (cylinder) next to the data source name > **New Data Source** .
+* Choose the **file type** > select the **file** (Table 5 from Labour Force Report 2019).
+* **Drag** the **T5_T** table.
+* Check **Use Data Interpreter**.
+* **Hide** the first column (F1).
+
+![Figure 29. Add Filters](./images/4.3. Add Filters.png)
+
+If we scroll down and see the bottom of the data table, we can see that they have already grouped the age. Therefore, we can filter out the 5-year age bins on the top. 
+
+* Click **Add** below the word Filters on the top right-hand corner of the screen > Add.
+* Select the **Age** field (shown as Age(Years) 1 in my Tableau) > **OK**.
+* Only keep 15 - 24, 24 - 54, 55 - 64, and 65 & Over age groups.
+* Group the 55 - 64 and 65 & Over groups together and give 55 & Over as the group name.
+
+![Figure 30. Live Connection](./images/4.3. Live Connection.png)
+
+The spacing seem to be very wide for the age groups. Since we are using a live connection, any update on the data source will be reflected in Tableau. I opened the Excel file to manually fix the spacing. 
+
+![Figure 31. Labour Force Participation Rate Percentage Change Formula](./images/4.3. LFPR % Change Formula.png)
+
+Although this data is also in a wide format, we only need the difference between 2019 and 2009 data. We do not need to pivot the table, but we need to create a calculated field for the difference. 
+
+* **Right0click** on **2019** column > **Create Calculated Field...**
+* Enter the formula shown in Figure 31.
+
+![Figure 32. Add New Worksheet](./images/4.3. New Worksheet.png) 
+
+We are done preparing the data. Now we can create the second chart on a new worksheet.
+
+* Click on the **New Worksheet** icon. It is the tab directly next to our line chart tab.
