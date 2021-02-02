@@ -161,3 +161,14 @@ The formula shown above calculates the total number of people in the Resident La
 
 We are done! We can go to the **Sheet1** Tab in the bottom left-hand corner.
 
+### Creating Visualisation
+Sheet is where we can build visualisation. The general layout in Tableau interface is shown in Figure 16. 
+
+![Figure 16. Tableau Layout](./images/4.2. Tableau Interface-marked.png)
+
+We can build visualisation by dragging the fields from the data pane directly to the canvast or to the shelves. Depending on where we drop the fields, they will take on different roles in the visualisation. To create the line chart for the Resident Labour Force by age group, we will drag the following fields to the column.
+
+![Figure 17. Rows and Columns for Line Chart](./images4.2. Rows and Columns Line Chart.png)
+
+* **Drag Year** to **Columns** shelf
+* **Drag % of Total Resident Labour Force** to **Rows** shelf

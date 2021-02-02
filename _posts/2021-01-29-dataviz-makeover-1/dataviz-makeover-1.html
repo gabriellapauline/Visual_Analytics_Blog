@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/4.2. Add Filters.png","images/4.2. Age Groups.png","images/4.2. Change to Date.png","images/4.2. Connect to Data.png","images/4.2. Create Calculated Field.png","images/4.2. Create Group.png","images/4.2. Drag Table.png","images/4.2. Go to Sheet.png","images/4.2. Hide Column.png","images/4.2. Pivot.png","images/4.2. Rename Column.png","images/4.2. Select Age.png","images/4.2. Total Resident Labour Force Formula.png","images/alternative_graphical_representation.jpg","images/Final_makeover.png","images/Original_chart.png"]}
+  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/4.2. Add Age Group.png","images/4.2. Add Filters.png","images/4.2. Add Label.png","images/4.2. Add Markers.png","images/4.2. Age Groups.png","images/4.2. Annotate Mark.png","images/4.2. Annotation.png","images/4.2. Change to Date.png","images/4.2. Connect to Data.png","images/4.2. Create Calculated Field.png","images/4.2. Create Group.png","images/4.2. Drag Table.png","images/4.2. Format Label.png","images/4.2. Go to Sheet.png","images/4.2. Hide Column.png","images/4.2. Hide Field Labels for Columns.png","images/4.2. Pivot.png","images/4.2. Remove Header.png","images/4.2. Rename Column.png","images/4.2. Rename Sheet Name.png","images/4.2. Rows and Columns Line Chart.png","images/4.2. Select Age.png","images/4.2. Sheet Title.png","images/4.2. Tableau Interface-marked.png","images/4.2. Tableau Interface.png","images/4.2. Total Resident Labour Force Formula.png","images/alternative_graphical_representation.jpg","images/Final_makeover.png","images/Original_chart.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1565,7 +1565,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>After the cleaning, we still have a column that we are not interested in. There are some values in the column, but it is just an annotation.</p>
 <ul>
 <li><strong>Hover to the column header</strong> that we want to hide.</li>
-<li>Click the <strong>grey inverted triangle</strong> &gt; <strong>Hide</strong></li>
+<li>Click the <strong>grey inverted triangle</strong> &gt; <strong>Hide</strong>.</li>
 </ul>
 <p>The first row in the table has null in the Age column. This value is the total from all Age groups, which we can obtain with the SUM function later. We can filter out this row.</p>
 <figure>
@@ -1573,8 +1573,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </figure>
 <ul>
 <li>In the top right-hand corner, under Filters, click <strong>Add</strong>.</li>
-<li>Click <strong>Add</strong> again in the Edit Data Source Filters window</li>
-<li>Select the <strong>Age</strong> field &gt; <strong>OK</strong></li>
+<li>Click <strong>Add</strong> again in the Edit Data Source Filters window.</li>
+<li>Select the <strong>Age</strong> field &gt; <strong>OK</strong>.</li>
 </ul>
 <figure>
 <img src="images/4.2.%20Select%20Age.png" alt="" /><figcaption>Figure 7. Select Age</figcaption>
@@ -1582,7 +1582,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>We can either select None and manually check the data items we want one-by-one, or check all boxes first and unselect the one we do not want. Since we only want to remove one age group, we will do the latter.</p>
 <ul>
 <li>Select <strong>All</strong>.</li>
-<li><strong>Uncheck the Null box</strong> &gt; <strong>OK</strong></li>
+<li><strong>Uncheck the Null box</strong> &gt; <strong>OK</strong>.</li>
 </ul>
 <p>The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. We can use the pivot function from Tableau.</p>
 <figure>
@@ -1590,14 +1590,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </figure>
 <ul>
 <li><strong>Select all the columns</strong> with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.</li>
-<li><strong>Right-click</strong> on any of the column header &gt; <strong>Pivot</strong></li>
+<li><strong>Right-click</strong> on any of the column header &gt; <strong>Pivot</strong>.</li>
 </ul>
 <figure>
 <img src="images/4.2.%20Rename%20Column.png" alt="" /><figcaption>Figure 9. Rename Columns</figcaption>
 </figure>
 <p>The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.</p>
 <ul>
-<li><strong>Right-click</strong> on the column header &gt; <strong>Rename</strong></li>
+<li><strong>Right-click</strong> on the column header &gt; <strong>Rename</strong>.</li>
 </ul>
 <p>The original and new column names are shown below.</p>
 <table>
@@ -1625,7 +1625,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <figure>
 <img src="images/4.2.%20Change%20to%20Date.png" alt="" /><figcaption>Figure 10. Change to Date</figcaption>
 </figure>
-<p>Notice that there is an ‘Abc’ symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. * Click the <strong>‘Abc’</strong> symbol in Year column header &gt; <strong>Date</strong></p>
+<p>Notice that there is an ‘Abc’ symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. * Click the <strong>‘Abc’</strong> symbol in Year column header &gt; <strong>Date</strong>.</p>
 <figure>
 <img src="images/4.2.%20Create%20Group.png" alt="" /><figcaption>Figure 11. Create Group</figcaption>
 </figure>
@@ -1637,9 +1637,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <img src="images/4.2.%20Age%20Groups.png" alt="" /><figcaption>Figure 12. Age Groups</figcaption>
 </figure>
 <ul>
-<li><strong>Select</strong> the <strong>ages</strong> that we want to group together (e.g. 15 - 19 and 20 - 24), then press <strong>Group</strong></li>
-<li><strong>Enter</strong> the appropriate <strong>group name</strong></li>
-<li><strong>Repeat</strong> to get three age groups as shown in Figure 12 &gt; <strong>OK</strong></li>
+<li><strong>Select</strong> the <strong>ages</strong> that we want to group together (e.g. 15 - 19 and 20 - 24), then press <strong>Group</strong>.</li>
+<li><strong>Enter</strong> the appropriate <strong>group name</strong>.</li>
+<li><strong>Repeat</strong> to get three age groups as shown in Figure 12 &gt; <strong>OK</strong>.</li>
 </ul>
 <figure>
 <img src="images/4.2.%20Create%20Calculated%20Field.png" alt="" /><figcaption>Figure 13. Create Calculated Field</figcaption>
@@ -1664,6 +1664,97 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <img src="images/4.2.%20Go%20to%20Sheet.png" alt="" /><figcaption>Figure 15. Go to Sheet</figcaption>
 </figure>
 <p>We are done! We can go to the <strong>Sheet1</strong> Tab in the bottom left-hand corner.</p>
+<h3 id="creating-visualisation">Creating Visualisation</h3>
+<p>Sheet is where we can build visualisation. The general layout in Tableau interface is shown in Figure 16.</p>
+<figure>
+<img src="images/4.2.%20Tableau%20Interface-marked.png" alt="" /><figcaption>Figure 16. Tableau Layout</figcaption>
+</figure>
+<p>We can build visualisation by dragging the fields from the data pane directly to the canvast or to the shelves. Depending on where we drop the fields, they will take on different roles in the visualisation. To create the line chart for the Resident Labour Force by age group, we will drag the following fields to the column.</p>
+<figure>
+<img src="./images4.2.%20Rows%20and%20Columns%20Line%20Chart.png" alt="" /><figcaption>Figure 17. Rows and Columns for Line Chart</figcaption>
+</figure>
+<ul>
+<li><strong>Drag Year</strong> to <strong>Columns</strong> shelf.</li>
+<li><strong>Drag % of Total Resident Labour Force</strong> to <strong>Rows</strong> shelf.</li>
+</ul>
+<p>Notice that Tableau automatically recommends a line chart to visualise our data. Don’t be alarmed that it is only displaying a straight line. Right now it computes the total percentage of all group, that is why it is always 100%. Next, we need to separate the age groups.</p>
+<figure>
+<img src="images/4.2.%20Add%20Age%20Group.png" alt="" /><figcaption>Figure 18. Add Age Group</figcaption>
+</figure>
+<ul>
+<li><strong>Drag Age (group)</strong> to the <strong>Color Marks Card</strong>.</li>
+</ul>
+<h3 id="customisation">Customisation</h3>
+<p>We can further customise the chart appearance to enhance the usefulness and readability of the chart. There are several customisations on the line chart that we are going to perform.</p>
+<h4 id="label">Label</h4>
+<figure>
+<img src="images/4.2.%20Add%20Label.png" alt="" /><figcaption>Figure 19. Add Label</figcaption>
+</figure>
+<ul>
+<li><strong>Drag % of Total Resident Labour Force</strong> to the <strong>Text Marks Card</strong>.</li>
+<li><strong>Double-click</strong> on <strong>Text Marks Card</strong> to open the settings.</li>
+<li>Select <strong>Line Ends</strong> to make the labels only appear on the line end. Otherwise, the chart will be too cluttered.</li>
+</ul>
+<figure>
+<img src="images/4.2.%20Format%20Label.png" alt="" /><figcaption>Figure 20. Format Label</figcaption>
+</figure>
+<ul>
+<li><strong>Right-click</strong> on one of the labels &gt; <strong>Format…</strong> to open the Format Pane.</li>
+<li>Click on <strong>Fields</strong> on the top right-hand corner of the Format Pane and click <strong>SUM(% of Total Resident Labour Force)</strong> that we used for the label.</li>
+<li>Click <strong>Numbers</strong> &gt; <strong>Percentage</strong> to display the number in percentage form instead of decimal points.</li>
+</ul>
+<h4 id="axis-header">Axis / Header</h4>
+<p>As we have already labeled the data points of interest, the y-axis is no longer necessary. We can remove the axis to increase our data-ink ratio.</p>
+<figure>
+<img src="images/4.2.%20Remove%20Header.png" alt="" /><figcaption>Figure 21. Remove Axis</figcaption>
+</figure>
+<ul>
+<li><strong>Right-click</strong> on the y-axis &gt; <strong>Uncheck Show Header</strong>.</li>
+</ul>
+<figure>
+<img src="images/4.2.%20Hide%20Field%20Labels%20for%20Columns.png" alt="" /><figcaption>Figure 22. Hide Field Labels for Columns</figcaption>
+</figure>
+<ul>
+<li>Likewise, <strong>right-click</strong> on <strong>Year</strong> header on the top of the chart &gt; **Hide Field Labels for columns because the year is already quite self-explanatory.</li>
+</ul>
+<h4 id="line-markers">Line Markers</h4>
+<figure>
+<img src="images/4.2.%20Add%20Markers.png" alt="" /><figcaption>Figure 23. Add Markers</figcaption>
+</figure>
+<ul>
+<li>Click on <strong>Color Marks Card</strong> and select <strong>All</strong> markers which is the middle option. This will make it easier to see the individual data points.</li>
+</ul>
+<h4 id="title">Title</h4>
+<p>Our current default title is the sheet name, which is Sheet 1. We can change the sheet name, and further tailor the title to make it more informative.</p>
+<figure>
+<img src="images/4.2.%20Rename%20Sheet%20Name.png" alt="" /><figcaption>Figure 24. Rename Sheet Name</figcaption>
+</figure>
+<ul>
+<li>Pretty self-explanatory. <strong>Double-click</strong> on the <strong>Sheet 1 Tab</strong> below, then we can type in the desired name. I put ‘Singapore Resident Labour Force by Age Group’.</li>
+</ul>
+<figure>
+<img src="images/4.2.%20Sheet%20Title.png" alt="" /><figcaption>Figure 25. Change Sheet Title</figcaption>
+</figure>
+<ul>
+<li><strong>Double-click</strong> on the sheet title.</li>
+<li>Write the desired title. We can also adjust the font size and formatting.</li>
+</ul>
+<p>‘<Sheet Name>’ means the value is dynamic. Whenever the sheet name changes, the title will follow accordingly. We can also add other variables by clicking <strong>Insert</strong>. However, we are not adding other variables now.</p>
+<h4 id="annotations">Annotations</h4>
+<p>We can also annotate on the chart itself to highlight interesting findings.</p>
+<figure>
+<img src="images/4.2.%20Annotate%20Mark.png" alt="" /><figcaption>Figure 26. Annotate Mark</figcaption>
+</figure>
+<ul>
+<li><strong>Right-click</strong> on one of the data point &gt; <strong>Annotate</strong> &gt; <strong>Mark…</strong>.</li>
+</ul>
+<figure>
+<img src="images/4.2.%20Annotation.png" alt="" /><figcaption>Figure 27. Annotation</figcaption>
+</figure>
+<ul>
+<li>Add findings that we want to highlight.</li>
+</ul>
+<p>Just like the sheet title, we can customise the annotation and make use of the variables using the <strong>Insert</strong> button. And now, we are done for this line chart!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
