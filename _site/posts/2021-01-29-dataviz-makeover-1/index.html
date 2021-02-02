@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/4.2. Add Filters.png","images/4.2. Age Groups.png","images/4.2. Change to Date.png","images/4.2. Connect to Data.png","images/4.2. Create Group.png","images/4.2. Drag Table.png","images/4.2. Hide Column.png","images/4.2. Pivot.png","images/4.2. Rename Column.png","images/4.2. Select Age.png","images/alternative_graphical_representation.jpg","images/Final_makeover.png","images/Original_chart.png"]}
+  {"type":"character","attributes":{},"value":["data/wine_quality.csv","dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/4.2. Add Filters.png","images/4.2. Age Groups.png","images/4.2. Change to Date.png","images/4.2. Connect to Data.png","images/4.2. Create Calculated Field.png","images/4.2. Create Group.png","images/4.2. Drag Table.png","images/4.2. Go to Sheet.png","images/4.2. Hide Column.png","images/4.2. Pivot.png","images/4.2. Rename Column.png","images/4.2. Select Age.png","images/4.2. Total Resident Labour Force Formula.png","images/alternative_graphical_representation.jpg","images/Final_makeover.png","images/Original_chart.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2253,7 +2253,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </figure>
 <p>Next, one of the improvement we want to make on the original visualisation is to group the age variable so it will be the same as the age groups that are mentioned in the statement. Therefore, we need to group into 25 - 54 and 55 &amp; over. Age group 15 - 24 will be created even though it is not mentioned in the statement to show that the numbers sum to 100%.</p>
 <ul>
-<li><strong>Right-click</strong> on Age column header &gt; <strong>Create group…</strong></li>
+<li><strong>Right-click</strong> on Age column header &gt; <strong>Create Group…</strong></li>
 </ul>
 <figure>
 <img src="images/4.2.%20Age%20Groups.png" alt="" /><figcaption>Figure 12. Age Groups</figcaption>
@@ -2263,6 +2263,29 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Enter</strong> the appropriate <strong>group name</strong></li>
 <li><strong>Repeat</strong> to get three age groups as shown in Figure 12 &gt; <strong>OK</strong></li>
 </ul>
+<figure>
+<img src="images/4.2.%20Create%20Calculated%20Field.png" alt="" /><figcaption>Figure 13. Create Calculated Field</figcaption>
+</figure>
+<p>The current value that we have for Resident Labour Force is absolute value, but we are interested in the distribution of age in the workforce. We can get this value by doing a quick table calculation or creating calculated field. This post will use the latter method.We need to create two calculated fields: Total Resident Labour Force and Percentage of Total Resident Labour Force.</p>
+<ul>
+<li><strong>Right-click</strong> on the <strong>Resident Labour Force</strong> column header &gt; <strong>Create Calculated Field…</strong></li>
+</ul>
+<figure>
+<img src="images/4.2.%20Total%20Resident%20Labour%20Force%20Formula.png" alt="" /><figcaption>Figure 14. Total Resident Labour Force Formula</figcaption>
+</figure>
+<p>The formula shown above calculates the total number of people in the Resident Labour Force per year.</p>
+<ul>
+<li><strong>Enter formula shown in Figure 14</strong>.</li>
+<li><strong>Enter calculated field name name</strong> (I used ’Total Resident Labour Force).</li>
+<li><strong>Repeat</strong> for <strong>Percentage of Total Resident Labour Force</strong> field using the following formula:</li>
+</ul>
+<blockquote>
+<p>[Resident Labour Force]/[Total Resident Labour Force]</p>
+</blockquote>
+<figure>
+<img src="images/4.2.%20Go%20to%20Sheet.png" alt="" /><figcaption>Figure 15. Go to Sheet</figcaption>
+</figure>
+<p>We are done! We can go to the <strong>Sheet1</strong> Tab in the bottom left-hand corner.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

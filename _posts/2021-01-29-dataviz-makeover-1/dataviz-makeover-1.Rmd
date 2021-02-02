@@ -133,10 +133,31 @@ Notice that there is an 'Abc' symbol above the column Age and Year. This means t
 
 Next, one of the improvement we want to make on the original visualisation is to group the age variable so it will be the same as the age groups that are mentioned in the statement. Therefore, we need to group into 25 - 54 and 55 & over. Age group 15 - 24 will be created even though it is not mentioned in the statement to show that the numbers sum to 100%.
 
-* **Right-click** on Age column header > **Create group...**
+* **Right-click** on Age column header > **Create Group...**
 
 ![Figure 12. Age Groups](./images/4.2. Age Groups.png)
 
 * **Select** the **ages** that we want to group together (e.g. 15 - 19 and 20 - 24), then press **Group**
 * **Enter** the appropriate **group name**
 * **Repeat** to get three age groups as shown in Figure 12 > **OK**
+
+![Figure 13. Create Calculated Field](./images/4.2. Create Calculated Field.png)
+
+The current value that we have for Resident Labour Force is absolute value, but we are interested in the distribution of age in the workforce. We can get this value by doing a quick table calculation or creating calculated field. This post will use the latter method.We need to create two calculated fields: Total Resident Labour Force and Percentage of Total Resident Labour Force.
+
+* **Right-click** on the **Resident Labour Force** column header > **Create Calculated Field...**
+
+![Figure 14. Total Resident Labour Force Formula](./images/4.2. Total Resident Labour Force Formula.png)
+
+The formula shown above calculates the total number of people in the Resident Labour Force per year.
+
+* **Enter formula shown in Figure 14**.
+* **Enter calculated field name name** (I used 'Total Resident Labour Force).
+* **Repeat** for **Percentage of Total Resident Labour Force** field using the following formula:
+
+> [Resident Labour Force]/[Total Resident Labour Force]
+
+![Figure 15. Go to Sheet](./images/4.2. Go to Sheet.png)
+
+We are done! We can go to the **Sheet1** Tab in the bottom left-hand corner.
+
