@@ -2,18 +2,17 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "title": "About Me",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-03T21:43:57+08:00"
+      "contents": "\r\n\r\nHi!\r\nI’m Gabriella, a data analyst and a data scientist in training based in Singapore. I am currently pursuing Master of IT in Business degree from Singapore Management University while doing internship in UOB Asset Management. Coding aside, I enjoy eating and baking. For me, data is a treasure chest that gives you a hope of making the world a little bit better, one insight at a time.\r\nI hope you have a good day, God bless you!\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-02-03T23:20:31+08:00"
     },
     {
       "path": "index.html",
       "title": "Gabriella Pauline",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-03T21:44:23+08:00"
+      "last_modified": "2021-02-03T23:03:32+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
