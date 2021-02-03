@@ -22,12 +22,12 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 This will be quite a long post, so feel free to jump to the section that you are interested in. 
 
-# 1. Introduction {#section1}
+# 1. Introduction
 We are living in a world that is constantly producing a vast amount of data, and data visualisation helps us to understand the data better. However, a poor visualisation can be of little value, or even misleading. Visual analytics is not just about creating a pretty chart, but it is the marriage of data analytics and visualizations that aims to detect the expected and discover the unexpected. 
 
 This post will makeover Chart 6: Resident Labour Force by age group from page 22 of [Labour Force in Singapore 2019 Report](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx). 
 
-# 2. Original Visualisation Evaluation {#section2}
+# 2. Original Visualisation Evaluation
 To start, we examine the original visualisation from the data (Figure 1) to learn what we can improve. The critique is given in terms of **clarity** and **aesthetics**.
 
 ![Figure 1. Original chart from Labour Force in Singapore 2019 Report](./images/Original_chart.png)
@@ -57,7 +57,7 @@ To start, we examine the original visualisation from the data (Figure 1) to lear
    1. Using a **very short subtitle 'Per Cent' creates an awkward empty space above the chart**. It would be better to add it to the title, or omit the subtitle altogether.
    1. Although the report uses a white background, the chart has a **grey background** colour. Background colour is an unnecessary non data-ink which does not add value in helping to understand the data better.
 
-# 3. Alternative Graphical Representation {#section3}
+# 3. Alternative Graphical Representation
 Figure 2 shows the alternative graphical representation proposed for the makeover.
 
 ![Figure 2. Alternative Graphical Representation](./images/alternative_graphical_representation.jpg)
@@ -86,7 +86,7 @@ The final look of the data visualisation makeover is shown in Figure 4. It is al
 
 ![Figure 4. Data Visualisation Makeover 1 Final Look](./images/Final Dashboard.png)
 
-# 4. Step-by-Step Description {#section4}
+# 4. Step-by-Step Description
 In this section, we are going through the steps to recreate the Data Visualisation Makeover shown in Figure 4 using Tableau. Tableau Desktop has a 14-day trial that can be downloaded [here](https://www.tableau.com/products/desktop/download). The steps might be too detailed, but they are designed so that beginners with no Tableau experience can follow the tutorial easily.
 
 ## 4.1 Data Source
@@ -408,7 +408,7 @@ The final dashboard that I created is shown in Figure 46, marked with colour-cod
 
 **Congratulations, we have completed our dashboard!** 
 
-# 5. Major Observations {#section5}
+# 5. Major Observations
 ![Figure 48. Singapore Resident Labour Force Alternative Graphical Representation](./images/Final Dashboard.png)
 
 1. **Due to the rapidly rising population size of older residents, having more older residents in the workforce is natural, or even preferable**. As the distribution of population is getting more and more skewed, Singapore's [**old-age support ratio**](https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio) will continue to decrease. Old-age support ratio is the number of people who are financially productive compared to the number of older people who may be dependent on others' support ([Singapore Department of Statistics](https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio)). The increase of Labour Force Participation Rate in older residents helps to reduce the number of older residents that depend on others' support. 
