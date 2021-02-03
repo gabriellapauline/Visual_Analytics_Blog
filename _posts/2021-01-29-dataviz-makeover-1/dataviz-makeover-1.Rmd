@@ -1,7 +1,7 @@
 ---
 title: "DataViz Makeover 1"
 description: |
-  A data visualization makeover
+  A data visualization makeover and a Tableau tutorial for beginners.
 author:
   - name: Gabriella Pauline Djojosaputro
     url: https://example.com/norajones
