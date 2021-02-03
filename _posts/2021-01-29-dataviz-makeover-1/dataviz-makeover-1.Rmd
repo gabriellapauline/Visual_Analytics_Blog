@@ -168,7 +168,7 @@ Sheet is where we can build visualisation. The general layout in Tableau interfa
 
 We can build visualisation by dragging the fields from the data pane directly to the canvast or to the shelves. Depending on where we drop the fields, they will take on different roles in the visualisation. To create the line chart for the Resident Labour Force by age group, we will drag the following fields to the column.
 
-![Figure 17. Rows and Columns for Line Chart](./images4.2. Rows and Columns Line Chart.png)
+![Figure 17. Rows and Columns for Line Chart](./images/4.2. Rows and Columns Line Chart.png)
 
 * **Drag Year** to **Columns** shelf.
 * **Drag % of Total Resident Labour Force** to **Rows** shelf.
@@ -243,7 +243,9 @@ We can also annotate on the chart itself to highlight interesting findings.
 
 * Add findings that we want to highlight.
 
-Just like the sheet title, we can customise the annotation and make use of the variables using the **Insert** button. And now, we are done for this line chart! 
+Just like the sheet title, we can customise the annotation and make use of the variables using the **Insert** button. And now, we are done for this line chart! We can adjust the width and height of the chart by hovering to the right side or below the chart until our cursor turns into a double-sided arrow and drag accordingly.
+
+![Figure 28. Final Look for Singapore Resident Labour Force Line Chart](./images/4.2. Final Look for Singapore Resident Labour Force Line Chart.png)
 
 ## 4.3. Labour Force Participation Rate Bar Chart
 
@@ -251,7 +253,7 @@ Next, the statement mentions that the increase in older residents in Singapore L
 
 ### Data Preparation
 
-![Figure 28. Add New Data Source](./images/4.3. New Data Source.png)
+![Figure 29. Add New Data Source](./images/4.3. New Data Source.png)
 
 * Go back to the **Data Source** tab.
 * Click the **database icon** (cylinder) next to the data source name > **New Data Source** .
@@ -260,7 +262,7 @@ Next, the statement mentions that the increase in older residents in Singapore L
 * Check **Use Data Interpreter**.
 * **Hide** the first column (F1).
 
-![Figure 29. Add Filters](./images/4.3. Add Filters.png)
+![Figure 30. Add Filters](./images/4.3. Add Filters.png)
 
 If we scroll down and see the bottom of the data table, we can see that they have already grouped the age. Therefore, we can filter out the 5-year age bins on the top. 
 
@@ -269,19 +271,70 @@ If we scroll down and see the bottom of the data table, we can see that they hav
 * Only keep 15 - 24, 24 - 54, 55 - 64, and 65 & Over age groups.
 * Group the 55 - 64 and 65 & Over groups together and give 55 & Over as the group name.
 
-![Figure 30. Live Connection](./images/4.3. Live Connection.png)
+![Figure 31. Live Connection](./images/4.3. Live Connection.png)
 
 The spacing seem to be very wide for the age groups. Since we are using a live connection, any update on the data source will be reflected in Tableau. I opened the Excel file to manually fix the spacing. 
 
-![Figure 31. Labour Force Participation Rate Percentage Change Formula](./images/4.3. LFPR % Change Formula.png)
+![Figure 32. Labour Force Participation Rate Percentage Change Formula](./images/4.3. LFPR % Change Formula.png)
 
 Although this data is also in a wide format, we only need the difference between 2019 and 2009 data. We do not need to pivot the table, but we need to create a calculated field for the difference. 
 
 * **Right0click** on **2019** column > **Create Calculated Field...**
 * Enter the formula shown in Figure 31.
 
-![Figure 32. Add New Worksheet](./images/4.3. New Worksheet.png) 
+![Figure 33. Add New Worksheet](./images/4.3. New Worksheet.png) 
 
 We are done preparing the data. Now we can create the second chart on a new worksheet.
 
 * Click on the **New Worksheet** icon. It is the tab directly next to our line chart tab.
+
+### Create Visualisation 
+
+![Figure 34. Rows and Columns for Labour Force Participation Rate Bar Chart](./images/4.3. Rows and Columns for Labour Force Participation Rate Bar Chart.png)
+
+For the bar chart, we want to have 3 bars that show the change of Labour Force Participation Rate between 2009 and 2019. 
+
+* **Drag Age group** field to the **Columns** shelf.
+* **Drag Labour Force Participation Rate % Change** field to the **Rows** shelf.
+
+### Customisation
+
+First, we are going to add the colour and label to make the bar chart easier to see.
+
+![Figure 35. Add Colour and Label](./images/4.3. Add Color and Label.png)
+
+* **Drag Labour Force Participation Rate % Change** field to **Color** and **Label Marks Card**
+
+#### Colour
+
+If we see the color legend on the right, we can see that the range does not start from 0, it only uses the smallest and the biggest value. The purpose of changing the colour to to quickly highlight the positive and negative values as well as showing the significance of the change. Colour is a pre-attentive attribute, so we can quickly notice the difference in colour.
+
+![Figure 36. Change Colour](./images/4.3. Change Colour.png)
+
+* **Double-click** on the colour legend.
+* Choose **Orange-Blue Diverging** palette.
+* Select **Use Full Color Range**.
+* Click **Advanced**.
+* Set the color so it will diverge from the **Center** at **0**.
+
+The colour of the bars may not change now because all the values are positive. It is okay.
+
+#### Label
+
+Even though the Labour Force Participation Rate % Change is a percentage, the number is not between 0 and 1. Therefore, we will use a slightly different method to display the '%' sign.
+
+![Figure 37. Customise Label](./images/4.3. Customise Label.png)
+
+* Open the format pane like how we did it for the line chart.
+* Change the **Fields** to **SUM(Labour Force Participation Rate % Change)**
+* Choose **Numbers** > **Numbers (Custom)**
+* Reduce the **Decimal places** to **1**
+* Add **%** in the **Suffix**
+
+Now that the bar is labeled, we can take away the unnecessary axis and headers using the same steps as in the previous section. Remember to rename the sheet name and put a proper title.
+
+![Figure 38. Final Look for Labour Force Participation Rate Change](./images/4.3. Final Look for Labour Force Participation Rate Change.png)
+
+
+
+
