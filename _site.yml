@@ -11,4 +11,9 @@ navbar:
       href: posts/2021-01-29-dataviz-makeover-1/index.html
     - text: "About"
       href: about.html
+base_url: https://https-gabriellapauline-netlify-app.disqus.com/
 output: distill::distill_article
+collections:
+   posts:
+      disqus: Visual_Analytics_Blog
+      share: [twitter, linkedin]
