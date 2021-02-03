@@ -66,14 +66,23 @@ The issues that the alternative design tries to overcome are:
    
 Additionally, the visualisation will include **title and lead-in** that highlight the important observations, as well as maintaining the good points from the original charts, such as the **choice of fonts and colours**.
    
-### Update
-The final visualisation deviates slightly from the original plan. The changes are as the following:
+### Update:
 
-   1. I could not find a way to remove the gridlines and rotate the y-axis labels if I create a trellis chart. Therefore, I decided to create 2 separate bar charts instead, but I will maintain the order of the age groups. 
-   1. Annotations added to the line chart to reduce awkward empty spaces.
-   1. The two supporting charts are placed directly next to the line chart so it will look more coherent.
+![Figure 3. Alternative Graphical Representation Update](./images/alternative_graphical_representation2.jpeg)
+
+As the visualisation is being created, there are some slight deviations from the original plan. The changes are as the following:
+
+   1. I could not find a way to remove the gridlines and rotate the y-axis labels if I create a trellis chart. Therefore, I decided to create **2 separate bar charts** instead, but I will maintain the order of the age groups. 
+   1. **Annotations added** to the line chart to reduce awkward empty spaces.
+   1. The two **supporting charts are placed directly next to the line chart** so it will look more coherent.
+   
+The final look of the data visualisation makeover is shown in Figure 4. It is also available in [Tableau Public](https://public.tableau.com/profile/gabriella.pauline.djojosaputro#!/vizhome/ResidentLabourForceinSingapore2009-2019/MoreolderresidentsareinSingaporeworkforcein2019comparedto2009).
+
+![Figure 4. Data Visualisation Makeover 1 Final Look](./images/Final Dashboard.png)
 
 # 4. Step-by-Step Description
+In this section, we are going through the steps to recreate the Data Visualisation Makeover shown in Figure 4 using Tableau. Tableau Desktop has a 14-day trial that can be downloaded [here](https://www.tableau.com/products/desktop/download). The steps might be too detailed, but they are designed so that beginners with no Tableau experience can follow the tutorial easily.
+
 ## 4.1 Data Source
 There is no visualisation and analytics if there is no data.
 The data that will be used are:
@@ -89,18 +98,18 @@ No | Data          | Source
 This chart will show how percentage of each age groups of interest in the Resident Labour Force changes through the course of 2009 to 2019. Steps to create the visualisation is shown below.
 
 ### Data Preparation
-![Figure 3. Connect to Data](./images/4.2. Connect to Data.png)
+![Figure 5. Connect to Data](./images/4.2. Connect to Data.png)
 
 * Create a new workbook and click **Connect to Data**.
 * Choose the **file type** > **file name** (In this case, it would be Table 7 from Labour Force Report 2019).
 
-! [Figure 4. Add Table](./images/4.2. Drag Table.png)
+! [Figure 6. Add Table](./images/4.2. Drag Table.png)
 
 * **Drag the table that we want** to the workspace. We are interested in the total number, not in the distribution of gender. Therefore, we can use T7_T that contains the total number of males and females.
 
 * Check the **Use Data Interpreter** checkbox to allow Tableau to do automatic cleaning. Tableau is able to intelligently detect valuable columns and rows, and drop the empty ones.
 
-![Figure 5. Hide Column](./images/4.2. Hide Column.png)
+![Figure 7. Hide Column](./images/4.2. Hide Column.png)
 
 After the cleaning, we still have a column that we are not interested in. There are some values in the column, but it is just an annotation. 
 
@@ -109,13 +118,13 @@ After the cleaning, we still have a column that we are not interested in. There 
 
 The first row in the table has null in the Age column. This value is the total from all Age groups, which we can obtain with the SUM function later. We can filter out this row.
 
-![Figure 6. Add Filters](./images/4.2. Add Filters.png)
+![Figure 8. Add Filters](./images/4.2. Add Filters.png)
 
 * In the top right-hand corner, under Filters, click **Add**.
 * Click **Add** again in the Edit Data Source Filters window.
 * Select the **Age** field > **OK**.
 
-![Figure 7. Select Age](./images/4.2. Select Age.png)
+![Figure 9. Select Age](./images/4.2. Select Age.png){width=50%}
 
 We can either select None and manually check the data items we want one-by-one, or check all boxes first and unselect the one we do not want. Since we only want to remove one age group, we will do the latter. 
 
@@ -124,12 +133,12 @@ We can either select None and manually check the data items we want one-by-one, 
 
 The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. We can use the pivot function from Tableau.
 
-![Figure 8. Pivot](./images/4.2. Pivot.png)
+![Figure 10. Pivot](./images/4.2. Pivot.png)
 
 * **Select all the columns** with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.
 * **Right-click** on any of the column header > **Pivot**.
 
-![Figure 9. Rename Columns](./images/4.2. Rename Column.png)
+![Figure 11. Rename Columns](./images/4.2. Rename Column.png){width=65%}
 
 The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.
 
@@ -143,30 +152,30 @@ Pivot Field Names | Year
 Pivot Field Values | Resident Labour Force
 Age (Years) 2 | Age
 
-![Figure 10. Change to Date](./images/4.2. Change to Date.png)
+![Figure 12. Change to Date](./images/4.2. Change to Date.png){width=60%}
 
 Notice that there is an 'Abc' symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. 
 * Click the **'Abc'** symbol in Year column header > **Date**.
 
-![Figure 11. Create Group](images/4.2. Create Group.png)
+![Figure 13. Create Group](images/4.2. Create Group.png){width=60%}
 
 Next, one of the improvement we want to make on the original visualisation is to group the age variable so it will be the same as the age groups that are mentioned in the statement. Therefore, we need to group into 25 - 54 and 55 & over. Age group 15 - 24 will be created even though it is not mentioned in the statement to show that the numbers sum to 100%.
 
 * **Right-click** on Age column header > **Create Group...**
 
-![Figure 12. Age Groups](./images/4.2. Age Groups.png)
+![Figure 14. Age Groups](./images/4.2. Age Groups.png)
 
 * **Select** the **ages** that we want to group together (e.g. 15 - 19 and 20 - 24), then press **Group**.
 * **Enter** the appropriate **group name**.
 * **Repeat** to get three age groups as shown in Figure 12 > **OK**.
 
-![Figure 13. Create Calculated Field](./images/4.2. Create Calculated Field.png)
+![Figure 15. Create Calculated Field](./images/4.2. Create Calculated Field.png){width=60%}
 
 The current value that we have for Resident Labour Force is absolute value, but we are interested in the distribution of age in the workforce. We can get this value by doing a quick table calculation or creating calculated field. This post will use the latter method.We need to create two calculated fields: Total Resident Labour Force and Percentage of Total Resident Labour Force.
 
 * **Right-click** on the **Resident Labour Force** column header > **Create Calculated Field...**
 
-![Figure 14. Total Resident Labour Force Formula](./images/4.2. Total Resident Labour Force Formula.png)
+![Figure 16. Total Resident Labour Force Formula](./images/4.2. Total Resident Labour Force Formula.png)
 
 The formula shown above calculates the total number of people in the Resident Labour Force per year.
 
@@ -176,25 +185,25 @@ The formula shown above calculates the total number of people in the Resident La
 
 > [Resident Labour Force]/[Total Resident Labour Force]
 
-![Figure 15. Go to Sheet](./images/4.2. Go to Sheet.png)
+![Figure 17. Go to Sheet](./images/4.2. Go to Sheet.png){width=60%}
 
 We are done! We can go to the **Sheet1** Tab in the bottom left-hand corner.
 
 ### Creating Visualisation
 Sheet is where we can build visualisation. The general layout in Tableau interface is shown in Figure 16. 
 
-![Figure 16. Tableau Layout](./images/4.2. Tableau Interface-marked.png)
+![Figure 18. Tableau Layout](./images/4.2. Tableau Interface-marked.png)
 
 We can build visualisation by dragging the fields from the data pane directly to the canvast or to the shelves. Depending on where we drop the fields, they will take on different roles in the visualisation. To create the line chart for the Resident Labour Force by age group, we will drag the following fields to the column.
 
-![Figure 17. Rows and Columns for Line Chart](./images/4.2. Rows and Columns Line Chart.png)
+![Figure 19. Rows and Columns for Line Chart](./images/4.2. Rows and Columns Line Chart.png)
 
 * **Drag Year** to **Columns** shelf.
 * **Drag % of Total Resident Labour Force** to **Rows** shelf.
 
 Notice that Tableau automatically recommends a line chart to visualise our data. Don't be alarmed that it is only displaying a straight line. Right now it computes the total percentage of all group, that is why it is always 100%. Next, we need to separate the age groups.
 
-![Figure 18. Add Age Group](./images/4.2. Add Age Group.png)
+![Figure 20. Add Age Group](./images/4.2. Add Age Group.png)
 
 * **Drag Age (group)** to the **Color Marks Card**.
 
@@ -202,13 +211,13 @@ Notice that Tableau automatically recommends a line chart to visualise our data.
 We can further customise the chart appearance to enhance the usefulness and readability of the chart. There are several customisations on the line chart that we are going to perform.
 
 #### Label
-![Figure 19. Add Label](./images/4.2. Add Label.png)
+![Figure 21. Add Label](./images/4.2. Add Label.png)
 
 * **Drag % of Total Resident Labour Force** to the **Text Marks Card**.
 * **Double-click** on **Text Marks Card** to open the settings.
 * Select **Line Ends** to make the labels only appear on the line end. Otherwise, the chart will be too cluttered.
 
-![Figure 20. Format Label](./images/4.2. Format Label.png)
+![Figure 22. Format Label](./images/4.2. Format Label.png)
 
 * **Right-click** on one of the labels > **Format...** to open the Format Pane.
 * Click on **Fields** on the top right-hand corner of the Format Pane and click **SUM(% of Total Resident Labour Force)** that we used for the label.
@@ -217,16 +226,16 @@ We can further customise the chart appearance to enhance the usefulness and read
 #### Axis / Header
 As we have already labeled the data points of interest, the y-axis is no longer necessary. We can remove the axis to increase our data-ink ratio. 
 
-![Figure 21. Remove Axis](./images/4.2. Remove Header.png)
+![Figure 23. Remove Axis](./images/4.2. Remove Header.png)
 
 * **Right-click** on the y-axis > **Uncheck Show Header**.
 
-![Figure 22. Hide Field Labels for Columns](./images/4.2. Hide Field Labels for Columns.png)
+![Figure 24. Hide Field Labels for Columns](./images/4.2. Hide Field Labels for Columns.png){width=60%}
 
 * Likewise, **right-click** on **Year** header on the top of the chart > **Hide Field Labels for columns because the year is already quite self-explanatory.
 
 #### Line Markers
-![Figure 23. Add Markers](./images/4.2. Add Markers.png)
+![Figure 25. Add Markers](./images/4.2. Add Markers.png)
 
 * Click on **Color Marks Card** and select **All** markers which is the middle option. This will make it easier to see the individual data points.
 
@@ -234,11 +243,11 @@ As we have already labeled the data points of interest, the y-axis is no longer 
 #### Title
 Our current default title is the sheet name, which is Sheet 1. We can change the sheet name, and further tailor the title to make it more informative. 
 
-![Figure 24. Rename Sheet Name](./images/4.2. Rename Sheet Name.png) 
+![Figure 26. Rename Sheet Name](./images/4.2. Rename Sheet Name.png)
 
 * Pretty self-explanatory. **Double-click** on the **Sheet 1 Tab** below, then we can type in the desired name. I put 'Singapore Resident Labour Force by Age Group'.
 
-![Figure 25. Change Sheet Title](./images/4.2. Sheet Title.png)
+![Figure 27. Change Sheet Title](./images/4.2. Sheet Title.png)
 
 * **Double-click** on the sheet title.
 * Write the desired title. We can also adjust the font size and formatting. 
@@ -248,17 +257,17 @@ Our current default title is the sheet name, which is Sheet 1. We can change the
 #### Annotations
 We can also annotate on the chart itself to highlight interesting findings. 
 
-![Figure 26. Annotate Mark](./images/4.2. Annotate Mark.png)
+![Figure 28. Annotate Mark](./images/4.2. Annotate Mark.png)
 
 * **Right-click** on one of the data point > **Annotate** > **Mark...**.
 
-![Figure 27. Annotation](./images/4.2. Annotation.png)
+![Figure 29. Annotation](./images/4.2. Annotation.png){width=80%}
 
 * Add findings that we want to highlight.
 
 Just like the sheet title, we can customise the annotation and make use of the variables using the **Insert** button. And now, we are done for this line chart! We can adjust the width and height of the chart by hovering to the right side or below the chart until our cursor turns into a double-sided arrow and drag accordingly.
 
-![Figure 28. Final Look for Singapore Resident Labour Force Line Chart](./images/4.2. Final Look for Singapore Resident Labour Force Line Chart.png)
+![Figure 30. Final Look for Singapore Resident Labour Force Line Chart](./images/4.2. Final Look for Singapore Resident Labour Force Line Chart.png)
 
 ## 4.3. Labour Force Participation Rate Bar Chart
 Next, the statement mentions that the increase in older residents in Singapore Labour Force is due to the rise in Labour Force Participation Rate for older residents. We are going to visualise this data to support the statement. Some steps are the same as what was explained in the previous section.
@@ -273,7 +282,7 @@ Next, the statement mentions that the increase in older residents in Singapore L
 * Check **Use Data Interpreter**.
 * **Hide** the first column (F1).
 
-![Figure 30. Add Filters](./images/4.3. Add Filters.png)
+![Figure 31. Add Filters](./images/4.3. Add Filters.png)
 
 If we scroll down and see the bottom of the data table, we can see that they have already grouped the age. Therefore, we can filter out the 5-year age bins on the top. 
 
@@ -282,25 +291,25 @@ If we scroll down and see the bottom of the data table, we can see that they hav
 * Only keep 15 - 24, 24 - 54, 55 - 64, and 65 & Over age groups.
 * Group the 55 - 64 and 65 & Over groups together and give 55 & Over as the group name.
 
-![Figure 31. Live Connection](./images/4.3. Live Connection.png)
+![Figure 32. Live Connection](./images/4.3. Live Connection.png)
 
 The spacing seem to be very wide for the age groups. Since we are using a live connection, any update on the data source will be reflected in Tableau. I opened the Excel file to manually fix the spacing. 
 
-![Figure 32. Labour Force Participation Rate Percentage Change Formula](./images/4.3. LFPR Percentage Change Formula.png)
+![Figure 33. Labour Force Participation Rate Percentage Change Formula](./images/4.3. LFPR Percentage Change Formula.png)
 
 Although this data is also in a wide format, we only need the difference between 2019 and 2009 data. We do not need to pivot the table, but we need to create a calculated field for the difference. 
 
 * **Right0click** on **2019** column > **Create Calculated Field...**
 * Enter the formula shown in Figure 31.
 
-![Figure 33. Add New Worksheet](./images/4.3. New Worksheet.png) 
+![Figure 34. Add New Worksheet](./images/4.3. New Worksheet.png) 
 
 We are done preparing the data. Now we can create the second chart on a new worksheet.
 
 * Click on the **New Worksheet** icon. It is the tab directly next to our line chart tab.
 
 ### Create Visualisation 
-![Figure 34. Rows and Columns for Labour Force Participation Rate Bar Chart](./images/4.3. Rows and Columns for Labour Force Participation Rate Bar Chart.png)
+![Figure 35. Rows and Columns for Labour Force Participation Rate Bar Chart](./images/4.3. Rows and Columns for Labour Force Participation Rate Bar Chart.png)
 
 For the bar chart, we want to have 3 bars that show the change of Labour Force Participation Rate between 2009 and 2019. 
 
@@ -310,14 +319,14 @@ For the bar chart, we want to have 3 bars that show the change of Labour Force P
 ### Customisation
 First, we are going to add the colour and label to make the bar chart easier to see.
 
-![Figure 35. Add Colour and Label](./images/4.3. Add Color and Label.png)
+![Figure 36. Add Colour and Label](./images/4.3. Add Color and Label.png)
 
 * **Drag Labour Force Participation Rate % Change** field to **Color** and **Label Marks Card**
 
 #### Colour
 If we see the color legend on the right, we can see that the range does not start from 0, it only uses the smallest and the biggest value. The purpose of changing the colour to to quickly highlight the positive and negative values as well as showing the significance of the change. Colour is a pre-attentive attribute, so we can quickly notice the difference in colour.
 
-![Figure 36. Change Colour](./images/4.3. Change Colour.png)
+![Figure 37. Change Colour](./images/4.3. Change Colour.png)
 
 * **Double-click** on the colour legend.
 * Choose **Orange-Blue Diverging** palette.
@@ -330,7 +339,7 @@ The colour of the bars may not change now because all the values are positive. I
 #### Label
 Even though the Labour Force Participation Rate % Change is a percentage, the number is not between 0 and 1. Therefore, we will use a slightly different method to display the '%' sign.
 
-![Figure 37. Customise Label](./images/4.3. Customise Label.png)
+![Figure 38. Customise Label](./images/4.3. Customise Label.png)
 
 * Open the format pane like how we did it for the line chart.
 * Change the **Fields** to **SUM(Labour Force Participation Rate % Change)**
@@ -340,32 +349,32 @@ Even though the Labour Force Participation Rate % Change is a percentage, the nu
 
 Now that the bar is labeled, we can take away the unnecessary axis and headers using the same steps as in the previous section. Remember to rename the sheet name and put a proper title.
 
-![Figure 38. Final Look for Labour Force Participation Rate Change](./images/4.3. Final Look for Labour Force Participation Rate Change.png)
+![Figure 39. Final Look for Labour Force Participation Rate Change](./images/4.3. Final Look for Labour Force Participation Rate Change.png)
 
 ## 4.4. Population Size Change Bar Chart
 The steps to create the Population Size Change Bar Chart is exactly the same as the Labour Force, except we are using a different dataset and we are not displaying '%' sign in the suffix. 
 
-![Figure 39. Final Look for Population Size Change Bar Chart](./images/4.4. Final Look for Population Size Change.png)
+![Figure 40. Final Look for Population Size Change Bar Chart](./images/4.4. Final Look for Population Size Change.png)
 
 ## 4.5. Dashboard
 Now, it is time to combine the various charts that we have created.
 
-![Figure 40. New Dashboard](./images/4.5. New Dashboard.png)
+![Figure 41. New Dashboard](./images/4.5. New Dashboard.png)
 
 * To create new dashboard, click the **New Dashboard Tab**, which is the second tab to the right of our last worksheet.
 
-![Figure 41. Dashboard Size](./images/4.5. Dashboard Size.png)
+![Figure 42. Dashboard Size](./images/4.5. Dashboard Size.png)
 
 * Adjust the **Size** to your preference. Automatic means the size will adjust according to the device, but I found that using Automatic can cause problems in the alignment. I chose **Desktop Browser(1000x800)**
 
-![Figure 42. Insert Sheet to Dashboard](./images/4.5. Insert Sheet to Dashboard.png)
+![Figure 43. Insert Sheet to Dashboard](./images/4.5. Insert Sheet to Dashboard.png)
 
 * To add sheet to the dashboard **drag the sheet name to the canvas**.
 * **Hold** and **hover** around the dashboard to see a highlighted box, that will be the space that the sheet take up if we release our mouse. 
 
 By default, Tableau uses a Tiled layout. To better arrange our sheet, we can make use of the objects. 
 
-![Figure 43. Vertical Object](./images/4.5. Vertical Object.png)
+![Figure 44. Vertical Object](./images/4.5. Vertical Object.png)
 
 Vertical object allows us to have a vertical grid that we an fill in with sheets or another objects. 
 
@@ -376,25 +385,25 @@ Vertical object allows us to have a vertical grid that we an fill in with sheets
 
 Similarly, we can use blank to add paddings around the objects (such as to align the sheets), add horizontal grid, text, etc.
 
-![Figure 44. Remove Legend](./images/4.5. Remove Legends.png)
+![Figure 45. Remove Legend](./images/4.5. Remove Legends.png)
 
 Since we have annotated the line chart and the colour in the bar charts are to highlight positive and negative values, the legends are not necessary.
 
 * Click on the **legend**.
 * Click on the **cross** to remove from the dashboard.
 
-![Figure 45. Show Dashboard Title](./images/4.5. Show Dashboard Title.png)
+![Figure 46. Show Dashboard Title](./images/4.5. Show Dashboard Title.png){width=25%}
 
-To create a title and lead-in for the dashboard, we can either use a Text object or use the dashboard title itself. The checkbox highlighted in Figure 45 will make the dashboard title appear.
+To create a title and lead-in for the dashboard, we can either use a Text object or use the dashboard title itself. The **Show dashboard title** checkbox highlighted in Figure 45 will make the dashboard title appear.
 
-![Figure 46. Final Dashboard Layout](./images/4.5. Dashboard Layout - marked.png)
+![Figure 47. Final Dashboard Layout](./images/4.5. Dashboard Layout - marked.png)
 
 The final dashboard that I created is shown in Figure 46, marked with colour-coded rectangles to show what object I used to arrange them. 
 
 **Congratulations, we have completed our dashboard!** 
 
 # 5. Major Observations
-![Figure 47. Singapore Resident Labour Force Alternative Graphical Representation](./images/Final Dashboard.png)
+![Figure 48. Singapore Resident Labour Force Alternative Graphical Representation](./images/Final Dashboard.png)
 
 1. **Due to the rapidly rising population size of older residents, having more older residents in the workforce is natural, or even preferable**. As the distribution of population is getting more and more skewed, Singapore's [**old-age support ratio**](https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio) will continue to decrease. Old-age support ratio is the number of people who are financially productive compared to the number of older people who may be dependent on others' support ([Singapore Department of Statistics](https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio)). The increase of Labour Force Participation Rate in older residents helps to reduce the number of older residents that depend on others' support. 
 1. The increase in population size in 55 & Over age group is incomparable to the decrease in population size of 25 - 54 age group. This means that **the majority of people in the 55 & Over age group in 2009 are still alive in 2019**, which can be attributed to Singapore's excellent healthcare system. We will **continue to see rising number of older residents in the workforce** before the ratio will **reach an equilibrium as long as the population size of younger residents does not continue to decline**.

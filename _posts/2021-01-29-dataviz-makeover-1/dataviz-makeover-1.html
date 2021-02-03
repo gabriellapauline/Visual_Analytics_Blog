@@ -1527,14 +1527,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><strong>To remove unnecessary non-data-ink</strong> by using a white background (Note: The colour on the proposed design is from the paper, which is not going to be used in the final chart).</li>
 </ol>
 <p>Additionally, the visualisation will include <strong>title and lead-in</strong> that highlight the important observations, as well as maintaining the good points from the original charts, such as the <strong>choice of fonts and colours</strong>.</p>
-<h3 id="update">Update</h3>
-<p>The final visualisation deviates slightly from the original plan. The changes are as the following:</p>
+<h3 id="update">Update:</h3>
+<figure>
+<img src="images/alternative_graphical_representation2.jpeg" alt="" /><figcaption>Figure 3. Alternative Graphical Representation Update</figcaption>
+</figure>
+<p>As the visualisation is being created, there are some slight deviations from the original plan. The changes are as the following:</p>
 <ol type="1">
-<li>I could not find a way to remove the gridlines and rotate the y-axis labels if I create a trellis chart. Therefore, I decided to create 2 separate bar charts instead, but I will maintain the order of the age groups.</li>
-<li>Annotations added to the line chart to reduce awkward empty spaces.</li>
-<li>The two supporting charts are placed directly next to the line chart so it will look more coherent.</li>
+<li>I could not find a way to remove the gridlines and rotate the y-axis labels if I create a trellis chart. Therefore, I decided to create <strong>2 separate bar charts</strong> instead, but I will maintain the order of the age groups.</li>
+<li><strong>Annotations added</strong> to the line chart to reduce awkward empty spaces.</li>
+<li>The two <strong>supporting charts are placed directly next to the line chart</strong> so it will look more coherent.</li>
 </ol>
+<p>The final look of the data visualisation makeover is shown in Figure 4. It is also available in <a href="https://public.tableau.com/profile/gabriella.pauline.djojosaputro#!/vizhome/ResidentLabourForceinSingapore2009-2019/MoreolderresidentsareinSingaporeworkforcein2019comparedto2009">Tableau Public</a>.</p>
+<figure>
+<img src="images/Final%20Dashboard.png" alt="" /><figcaption>Figure 4. Data Visualisation Makeover 1 Final Look</figcaption>
+</figure>
 <h1 id="step-by-step-description">4. Step-by-Step Description</h1>
+<p>In this section, we are going through the steps to recreate the Data Visualisation Makeover shown in Figure 4 using Tableau. Tableau Desktop has a 14-day trial that can be downloaded <a href="https://www.tableau.com/products/desktop/download">here</a>. The steps might be too detailed, but they are designed so that beginners with no Tableau experience can follow the tutorial easily.</p>
 <h2 id="data-source">4.1 Data Source</h2>
 <p>There is no visualisation and analytics if there is no data. The data that will be used are:</p>
 <table>
@@ -1572,19 +1580,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>This chart will show how percentage of each age groups of interest in the Resident Labour Force changes through the course of 2009 to 2019. Steps to create the visualisation is shown below.</p>
 <h3 id="data-preparation">Data Preparation</h3>
 <figure>
-<img src="images/4.2.%20Connect%20to%20Data.png" alt="" /><figcaption>Figure 3. Connect to Data</figcaption>
+<img src="images/4.2.%20Connect%20to%20Data.png" alt="" /><figcaption>Figure 5. Connect to Data</figcaption>
 </figure>
 <ul>
 <li>Create a new workbook and click <strong>Connect to Data</strong>.</li>
 <li>Choose the <strong>file type</strong> &gt; <strong>file name</strong> (In this case, it would be Table 7 from Labour Force Report 2019).</li>
 </ul>
-<p>! <a href="./images/4.2.%20Drag%20Table.png">Figure 4. Add Table</a></p>
+<p>! <a href="./images/4.2.%20Drag%20Table.png">Figure 6. Add Table</a></p>
 <ul>
 <li><p><strong>Drag the table that we want</strong> to the workspace. We are interested in the total number, not in the distribution of gender. Therefore, we can use T7_T that contains the total number of males and females.</p></li>
 <li><p>Check the <strong>Use Data Interpreter</strong> checkbox to allow Tableau to do automatic cleaning. Tableau is able to intelligently detect valuable columns and rows, and drop the empty ones.</p></li>
 </ul>
 <figure>
-<img src="images/4.2.%20Hide%20Column.png" alt="" /><figcaption>Figure 5. Hide Column</figcaption>
+<img src="images/4.2.%20Hide%20Column.png" alt="" /><figcaption>Figure 7. Hide Column</figcaption>
 </figure>
 <p>After the cleaning, we still have a column that we are not interested in. There are some values in the column, but it is just an annotation.</p>
 <ul>
@@ -1593,7 +1601,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>The first row in the table has null in the Age column. This value is the total from all Age groups, which we can obtain with the SUM function later. We can filter out this row.</p>
 <figure>
-<img src="images/4.2.%20Add%20Filters.png" alt="" /><figcaption>Figure 6. Add Filters</figcaption>
+<img src="images/4.2.%20Add%20Filters.png" alt="" /><figcaption>Figure 8. Add Filters</figcaption>
 </figure>
 <ul>
 <li>In the top right-hand corner, under Filters, click <strong>Add</strong>.</li>
@@ -1601,7 +1609,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Select the <strong>Age</strong> field &gt; <strong>OK</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Select%20Age.png" alt="" /><figcaption>Figure 7. Select Age</figcaption>
+<img src="images/4.2.%20Select%20Age.png" style="width:50.0%" alt="" /><figcaption>Figure 9. Select Age</figcaption>
 </figure>
 <p>We can either select None and manually check the data items we want one-by-one, or check all boxes first and unselect the one we do not want. Since we only want to remove one age group, we will do the latter.</p>
 <ul>
@@ -1610,14 +1618,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. We can use the pivot function from Tableau.</p>
 <figure>
-<img src="images/4.2.%20Pivot.png" alt="" /><figcaption>Figure 8. Pivot</figcaption>
+<img src="images/4.2.%20Pivot.png" alt="" /><figcaption>Figure 10. Pivot</figcaption>
 </figure>
 <ul>
 <li><strong>Select all the columns</strong> with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.</li>
 <li><strong>Right-click</strong> on any of the column header &gt; <strong>Pivot</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Rename%20Column.png" alt="" /><figcaption>Figure 9. Rename Columns</figcaption>
+<img src="images/4.2.%20Rename%20Column.png" style="width:65.0%" alt="" /><figcaption>Figure 11. Rename Columns</figcaption>
 </figure>
 <p>The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.</p>
 <ul>
@@ -1647,18 +1655,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tbody>
 </table>
 <figure>
-<img src="images/4.2.%20Change%20to%20Date.png" alt="" /><figcaption>Figure 10. Change to Date</figcaption>
+<img src="images/4.2.%20Change%20to%20Date.png" style="width:60.0%" alt="" /><figcaption>Figure 12. Change to Date</figcaption>
 </figure>
 <p>Notice that there is an ‘Abc’ symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. * Click the <strong>‘Abc’</strong> symbol in Year column header &gt; <strong>Date</strong>.</p>
 <figure>
-<img src="images/4.2.%20Create%20Group.png" alt="" /><figcaption>Figure 11. Create Group</figcaption>
+<img src="images/4.2.%20Create%20Group.png" style="width:60.0%" alt="" /><figcaption>Figure 13. Create Group</figcaption>
 </figure>
 <p>Next, one of the improvement we want to make on the original visualisation is to group the age variable so it will be the same as the age groups that are mentioned in the statement. Therefore, we need to group into 25 - 54 and 55 &amp; over. Age group 15 - 24 will be created even though it is not mentioned in the statement to show that the numbers sum to 100%.</p>
 <ul>
 <li><strong>Right-click</strong> on Age column header &gt; <strong>Create Group…</strong></li>
 </ul>
 <figure>
-<img src="images/4.2.%20Age%20Groups.png" alt="" /><figcaption>Figure 12. Age Groups</figcaption>
+<img src="images/4.2.%20Age%20Groups.png" alt="" /><figcaption>Figure 14. Age Groups</figcaption>
 </figure>
 <ul>
 <li><strong>Select</strong> the <strong>ages</strong> that we want to group together (e.g. 15 - 19 and 20 - 24), then press <strong>Group</strong>.</li>
@@ -1666,14 +1674,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><strong>Repeat</strong> to get three age groups as shown in Figure 12 &gt; <strong>OK</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Create%20Calculated%20Field.png" alt="" /><figcaption>Figure 13. Create Calculated Field</figcaption>
+<img src="images/4.2.%20Create%20Calculated%20Field.png" style="width:60.0%" alt="" /><figcaption>Figure 15. Create Calculated Field</figcaption>
 </figure>
 <p>The current value that we have for Resident Labour Force is absolute value, but we are interested in the distribution of age in the workforce. We can get this value by doing a quick table calculation or creating calculated field. This post will use the latter method.We need to create two calculated fields: Total Resident Labour Force and Percentage of Total Resident Labour Force.</p>
 <ul>
 <li><strong>Right-click</strong> on the <strong>Resident Labour Force</strong> column header &gt; <strong>Create Calculated Field…</strong></li>
 </ul>
 <figure>
-<img src="images/4.2.%20Total%20Resident%20Labour%20Force%20Formula.png" alt="" /><figcaption>Figure 14. Total Resident Labour Force Formula</figcaption>
+<img src="images/4.2.%20Total%20Resident%20Labour%20Force%20Formula.png" alt="" /><figcaption>Figure 16. Total Resident Labour Force Formula</figcaption>
 </figure>
 <p>The formula shown above calculates the total number of people in the Resident Labour Force per year.</p>
 <ul>
@@ -1685,17 +1693,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>[Resident Labour Force]/[Total Resident Labour Force]</p>
 </blockquote>
 <figure>
-<img src="images/4.2.%20Go%20to%20Sheet.png" alt="" /><figcaption>Figure 15. Go to Sheet</figcaption>
+<img src="images/4.2.%20Go%20to%20Sheet.png" style="width:60.0%" alt="" /><figcaption>Figure 17. Go to Sheet</figcaption>
 </figure>
 <p>We are done! We can go to the <strong>Sheet1</strong> Tab in the bottom left-hand corner.</p>
 <h3 id="creating-visualisation">Creating Visualisation</h3>
 <p>Sheet is where we can build visualisation. The general layout in Tableau interface is shown in Figure 16.</p>
 <figure>
-<img src="images/4.2.%20Tableau%20Interface-marked.png" alt="" /><figcaption>Figure 16. Tableau Layout</figcaption>
+<img src="images/4.2.%20Tableau%20Interface-marked.png" alt="" /><figcaption>Figure 18. Tableau Layout</figcaption>
 </figure>
 <p>We can build visualisation by dragging the fields from the data pane directly to the canvast or to the shelves. Depending on where we drop the fields, they will take on different roles in the visualisation. To create the line chart for the Resident Labour Force by age group, we will drag the following fields to the column.</p>
 <figure>
-<img src="images/4.2.%20Rows%20and%20Columns%20Line%20Chart.png" alt="" /><figcaption>Figure 17. Rows and Columns for Line Chart</figcaption>
+<img src="images/4.2.%20Rows%20and%20Columns%20Line%20Chart.png" alt="" /><figcaption>Figure 19. Rows and Columns for Line Chart</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Year</strong> to <strong>Columns</strong> shelf.</li>
@@ -1703,7 +1711,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>Notice that Tableau automatically recommends a line chart to visualise our data. Don’t be alarmed that it is only displaying a straight line. Right now it computes the total percentage of all group, that is why it is always 100%. Next, we need to separate the age groups.</p>
 <figure>
-<img src="images/4.2.%20Add%20Age%20Group.png" alt="" /><figcaption>Figure 18. Add Age Group</figcaption>
+<img src="images/4.2.%20Add%20Age%20Group.png" alt="" /><figcaption>Figure 20. Add Age Group</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Age (group)</strong> to the <strong>Color Marks Card</strong>.</li>
@@ -1712,7 +1720,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>We can further customise the chart appearance to enhance the usefulness and readability of the chart. There are several customisations on the line chart that we are going to perform.</p>
 <h4 id="label">Label</h4>
 <figure>
-<img src="images/4.2.%20Add%20Label.png" alt="" /><figcaption>Figure 19. Add Label</figcaption>
+<img src="images/4.2.%20Add%20Label.png" alt="" /><figcaption>Figure 21. Add Label</figcaption>
 </figure>
 <ul>
 <li><strong>Drag % of Total Resident Labour Force</strong> to the <strong>Text Marks Card</strong>.</li>
@@ -1720,7 +1728,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Select <strong>Line Ends</strong> to make the labels only appear on the line end. Otherwise, the chart will be too cluttered.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Format%20Label.png" alt="" /><figcaption>Figure 20. Format Label</figcaption>
+<img src="images/4.2.%20Format%20Label.png" alt="" /><figcaption>Figure 22. Format Label</figcaption>
 </figure>
 <ul>
 <li><strong>Right-click</strong> on one of the labels &gt; <strong>Format…</strong> to open the Format Pane.</li>
@@ -1730,20 +1738,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h4 id="axis-header">Axis / Header</h4>
 <p>As we have already labeled the data points of interest, the y-axis is no longer necessary. We can remove the axis to increase our data-ink ratio.</p>
 <figure>
-<img src="images/4.2.%20Remove%20Header.png" alt="" /><figcaption>Figure 21. Remove Axis</figcaption>
+<img src="images/4.2.%20Remove%20Header.png" alt="" /><figcaption>Figure 23. Remove Axis</figcaption>
 </figure>
 <ul>
 <li><strong>Right-click</strong> on the y-axis &gt; <strong>Uncheck Show Header</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Hide%20Field%20Labels%20for%20Columns.png" alt="" /><figcaption>Figure 22. Hide Field Labels for Columns</figcaption>
+<img src="images/4.2.%20Hide%20Field%20Labels%20for%20Columns.png" style="width:60.0%" alt="" /><figcaption>Figure 24. Hide Field Labels for Columns</figcaption>
 </figure>
 <ul>
 <li>Likewise, <strong>right-click</strong> on <strong>Year</strong> header on the top of the chart &gt; **Hide Field Labels for columns because the year is already quite self-explanatory.</li>
 </ul>
 <h4 id="line-markers">Line Markers</h4>
 <figure>
-<img src="images/4.2.%20Add%20Markers.png" alt="" /><figcaption>Figure 23. Add Markers</figcaption>
+<img src="images/4.2.%20Add%20Markers.png" alt="" /><figcaption>Figure 25. Add Markers</figcaption>
 </figure>
 <ul>
 <li>Click on <strong>Color Marks Card</strong> and select <strong>All</strong> markers which is the middle option. This will make it easier to see the individual data points.</li>
@@ -1751,13 +1759,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h4 id="title">Title</h4>
 <p>Our current default title is the sheet name, which is Sheet 1. We can change the sheet name, and further tailor the title to make it more informative.</p>
 <figure>
-<img src="images/4.2.%20Rename%20Sheet%20Name.png" alt="" /><figcaption>Figure 24. Rename Sheet Name</figcaption>
+<img src="images/4.2.%20Rename%20Sheet%20Name.png" alt="" /><figcaption>Figure 26. Rename Sheet Name</figcaption>
 </figure>
 <ul>
 <li>Pretty self-explanatory. <strong>Double-click</strong> on the <strong>Sheet 1 Tab</strong> below, then we can type in the desired name. I put ‘Singapore Resident Labour Force by Age Group’.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Sheet%20Title.png" alt="" /><figcaption>Figure 25. Change Sheet Title</figcaption>
+<img src="images/4.2.%20Sheet%20Title.png" alt="" /><figcaption>Figure 27. Change Sheet Title</figcaption>
 </figure>
 <ul>
 <li><strong>Double-click</strong> on the sheet title.</li>
@@ -1767,20 +1775,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h4 id="annotations">Annotations</h4>
 <p>We can also annotate on the chart itself to highlight interesting findings.</p>
 <figure>
-<img src="images/4.2.%20Annotate%20Mark.png" alt="" /><figcaption>Figure 26. Annotate Mark</figcaption>
+<img src="images/4.2.%20Annotate%20Mark.png" alt="" /><figcaption>Figure 28. Annotate Mark</figcaption>
 </figure>
 <ul>
 <li><strong>Right-click</strong> on one of the data point &gt; <strong>Annotate</strong> &gt; <strong>Mark…</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Annotation.png" alt="" /><figcaption>Figure 27. Annotation</figcaption>
+<img src="images/4.2.%20Annotation.png" style="width:80.0%" alt="" /><figcaption>Figure 29. Annotation</figcaption>
 </figure>
 <ul>
 <li>Add findings that we want to highlight.</li>
 </ul>
 <p>Just like the sheet title, we can customise the annotation and make use of the variables using the <strong>Insert</strong> button. And now, we are done for this line chart! We can adjust the width and height of the chart by hovering to the right side or below the chart until our cursor turns into a double-sided arrow and drag accordingly.</p>
 <figure>
-<img src="images/4.2.%20Final%20Look%20for%20Singapore%20Resident%20Labour%20Force%20Line%20Chart.png" alt="" /><figcaption>Figure 28. Final Look for Singapore Resident Labour Force Line Chart</figcaption>
+<img src="images/4.2.%20Final%20Look%20for%20Singapore%20Resident%20Labour%20Force%20Line%20Chart.png" alt="" /><figcaption>Figure 30. Final Look for Singapore Resident Labour Force Line Chart</figcaption>
 </figure>
 <h2 id="labour-force-participation-rate-bar-chart">4.3. Labour Force Participation Rate Bar Chart</h2>
 <p>Next, the statement mentions that the increase in older residents in Singapore Labour Force is due to the rise in Labour Force Participation Rate for older residents. We are going to visualise this data to support the statement. Some steps are the same as what was explained in the previous section.</p>
@@ -1797,7 +1805,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><strong>Hide</strong> the first column (F1).</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Add%20Filters.png" alt="" /><figcaption>Figure 30. Add Filters</figcaption>
+<img src="images/4.3.%20Add%20Filters.png" alt="" /><figcaption>Figure 31. Add Filters</figcaption>
 </figure>
 <p>If we scroll down and see the bottom of the data table, we can see that they have already grouped the age. Therefore, we can filter out the 5-year age bins on the top.</p>
 <ul>
@@ -1807,11 +1815,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Group the 55 - 64 and 65 &amp; Over groups together and give 55 &amp; Over as the group name.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Live%20Connection.png" alt="" /><figcaption>Figure 31. Live Connection</figcaption>
+<img src="images/4.3.%20Live%20Connection.png" alt="" /><figcaption>Figure 32. Live Connection</figcaption>
 </figure>
 <p>The spacing seem to be very wide for the age groups. Since we are using a live connection, any update on the data source will be reflected in Tableau. I opened the Excel file to manually fix the spacing.</p>
 <figure>
-<img src="images/4.3.%20LFPR%20Percentage%20Change%20Formula.png" alt="" /><figcaption>Figure 32. Labour Force Participation Rate Percentage Change Formula</figcaption>
+<img src="images/4.3.%20LFPR%20Percentage%20Change%20Formula.png" alt="" /><figcaption>Figure 33. Labour Force Participation Rate Percentage Change Formula</figcaption>
 </figure>
 <p>Although this data is also in a wide format, we only need the difference between 2019 and 2009 data. We do not need to pivot the table, but we need to create a calculated field for the difference.</p>
 <ul>
@@ -1819,7 +1827,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Enter the formula shown in Figure 31.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20New%20Worksheet.png" alt="" /><figcaption>Figure 33. Add New Worksheet</figcaption>
+<img src="images/4.3.%20New%20Worksheet.png" alt="" /><figcaption>Figure 34. Add New Worksheet</figcaption>
 </figure>
 <p>We are done preparing the data. Now we can create the second chart on a new worksheet.</p>
 <ul>
@@ -1827,7 +1835,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <h3 id="create-visualisation">Create Visualisation</h3>
 <figure>
-<img src="images/4.3.%20Rows%20and%20Columns%20for%20Labour%20Force%20Participation%20Rate%20Bar%20Chart.png" alt="" /><figcaption>Figure 34. Rows and Columns for Labour Force Participation Rate Bar Chart</figcaption>
+<img src="images/4.3.%20Rows%20and%20Columns%20for%20Labour%20Force%20Participation%20Rate%20Bar%20Chart.png" alt="" /><figcaption>Figure 35. Rows and Columns for Labour Force Participation Rate Bar Chart</figcaption>
 </figure>
 <p>For the bar chart, we want to have 3 bars that show the change of Labour Force Participation Rate between 2009 and 2019.</p>
 <ul>
@@ -1837,7 +1845,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="customisation-1">Customisation</h3>
 <p>First, we are going to add the colour and label to make the bar chart easier to see.</p>
 <figure>
-<img src="images/4.3.%20Add%20Color%20and%20Label.png" alt="" /><figcaption>Figure 35. Add Colour and Label</figcaption>
+<img src="images/4.3.%20Add%20Color%20and%20Label.png" alt="" /><figcaption>Figure 36. Add Colour and Label</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Labour Force Participation Rate % Change</strong> field to <strong>Color</strong> and <strong>Label Marks Card</strong></li>
@@ -1845,7 +1853,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h4 id="colour">Colour</h4>
 <p>If we see the color legend on the right, we can see that the range does not start from 0, it only uses the smallest and the biggest value. The purpose of changing the colour to to quickly highlight the positive and negative values as well as showing the significance of the change. Colour is a pre-attentive attribute, so we can quickly notice the difference in colour.</p>
 <figure>
-<img src="images/4.3.%20Change%20Colour.png" alt="" /><figcaption>Figure 36. Change Colour</figcaption>
+<img src="images/4.3.%20Change%20Colour.png" alt="" /><figcaption>Figure 37. Change Colour</figcaption>
 </figure>
 <ul>
 <li><strong>Double-click</strong> on the colour legend.</li>
@@ -1858,7 +1866,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h4 id="label-1">Label</h4>
 <p>Even though the Labour Force Participation Rate % Change is a percentage, the number is not between 0 and 1. Therefore, we will use a slightly different method to display the ‘%’ sign.</p>
 <figure>
-<img src="images/4.3.%20Customise%20Label.png" alt="" /><figcaption>Figure 37. Customise Label</figcaption>
+<img src="images/4.3.%20Customise%20Label.png" alt="" /><figcaption>Figure 38. Customise Label</figcaption>
 </figure>
 <ul>
 <li>Open the format pane like how we did it for the line chart.</li>
@@ -1869,29 +1877,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>Now that the bar is labeled, we can take away the unnecessary axis and headers using the same steps as in the previous section. Remember to rename the sheet name and put a proper title.</p>
 <figure>
-<img src="images/4.3.%20Final%20Look%20for%20Labour%20Force%20Participation%20Rate%20Change.png" alt="" /><figcaption>Figure 38. Final Look for Labour Force Participation Rate Change</figcaption>
+<img src="images/4.3.%20Final%20Look%20for%20Labour%20Force%20Participation%20Rate%20Change.png" alt="" /><figcaption>Figure 39. Final Look for Labour Force Participation Rate Change</figcaption>
 </figure>
 <h2 id="population-size-change-bar-chart">4.4. Population Size Change Bar Chart</h2>
 <p>The steps to create the Population Size Change Bar Chart is exactly the same as the Labour Force, except we are using a different dataset and we are not displaying ‘%’ sign in the suffix.</p>
 <figure>
-<img src="images/4.4.%20Final%20Look%20for%20Population%20Size%20Change.png" alt="" /><figcaption>Figure 39. Final Look for Population Size Change Bar Chart</figcaption>
+<img src="images/4.4.%20Final%20Look%20for%20Population%20Size%20Change.png" alt="" /><figcaption>Figure 40. Final Look for Population Size Change Bar Chart</figcaption>
 </figure>
 <h2 id="dashboard">4.5. Dashboard</h2>
 <p>Now, it is time to combine the various charts that we have created.</p>
 <figure>
-<img src="images/4.5.%20New%20Dashboard.png" alt="" /><figcaption>Figure 40. New Dashboard</figcaption>
+<img src="images/4.5.%20New%20Dashboard.png" alt="" /><figcaption>Figure 41. New Dashboard</figcaption>
 </figure>
 <ul>
 <li>To create new dashboard, click the <strong>New Dashboard Tab</strong>, which is the second tab to the right of our last worksheet.</li>
 </ul>
 <figure>
-<img src="images/4.5.%20Dashboard%20Size.png" alt="" /><figcaption>Figure 41. Dashboard Size</figcaption>
+<img src="images/4.5.%20Dashboard%20Size.png" alt="" /><figcaption>Figure 42. Dashboard Size</figcaption>
 </figure>
 <ul>
 <li>Adjust the <strong>Size</strong> to your preference. Automatic means the size will adjust according to the device, but I found that using Automatic can cause problems in the alignment. I chose <strong>Desktop Browser(1000x800)</strong></li>
 </ul>
 <figure>
-<img src="images/4.5.%20Insert%20Sheet%20to%20Dashboard.png" alt="" /><figcaption>Figure 42. Insert Sheet to Dashboard</figcaption>
+<img src="images/4.5.%20Insert%20Sheet%20to%20Dashboard.png" alt="" /><figcaption>Figure 43. Insert Sheet to Dashboard</figcaption>
 </figure>
 <ul>
 <li>To add sheet to the dashboard <strong>drag the sheet name to the canvas</strong>.</li>
@@ -1899,7 +1907,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>By default, Tableau uses a Tiled layout. To better arrange our sheet, we can make use of the objects.</p>
 <figure>
-<img src="images/4.5.%20Vertical%20Object.png" alt="" /><figcaption>Figure 43. Vertical Object</figcaption>
+<img src="images/4.5.%20Vertical%20Object.png" alt="" /><figcaption>Figure 44. Vertical Object</figcaption>
 </figure>
 <p>Vertical object allows us to have a vertical grid that we an fill in with sheets or another objects.</p>
 <ul>
@@ -1910,7 +1918,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>Similarly, we can use blank to add paddings around the objects (such as to align the sheets), add horizontal grid, text, etc.</p>
 <figure>
-<img src="images/4.5.%20Remove%20Legends.png" alt="" /><figcaption>Figure 44. Remove Legend</figcaption>
+<img src="images/4.5.%20Remove%20Legends.png" alt="" /><figcaption>Figure 45. Remove Legend</figcaption>
 </figure>
 <p>Since we have annotated the line chart and the colour in the bar charts are to highlight positive and negative values, the legends are not necessary.</p>
 <ul>
@@ -1918,17 +1926,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Click on the <strong>cross</strong> to remove from the dashboard.</li>
 </ul>
 <figure>
-<img src="images/4.5.%20Show%20Dashboard%20Title.png" alt="" /><figcaption>Figure 45. Show Dashboard Title</figcaption>
+<img src="images/4.5.%20Show%20Dashboard%20Title.png" style="width:25.0%" alt="" /><figcaption>Figure 46. Show Dashboard Title</figcaption>
 </figure>
-<p>To create a title and lead-in for the dashboard, we can either use a Text object or use the dashboard title itself. The checkbox highlighted in Figure 45 will make the dashboard title appear.</p>
+<p>To create a title and lead-in for the dashboard, we can either use a Text object or use the dashboard title itself. The <strong>Show dashboard title</strong> checkbox highlighted in Figure 45 will make the dashboard title appear.</p>
 <figure>
-<img src="images/4.5.%20Dashboard%20Layout%20-%20marked.png" alt="" /><figcaption>Figure 46. Final Dashboard Layout</figcaption>
+<img src="images/4.5.%20Dashboard%20Layout%20-%20marked.png" alt="" /><figcaption>Figure 47. Final Dashboard Layout</figcaption>
 </figure>
 <p>The final dashboard that I created is shown in Figure 46, marked with colour-coded rectangles to show what object I used to arrange them.</p>
 <p><strong>Congratulations, we have completed our dashboard!</strong></p>
 <h1 id="major-observations">5. Major Observations</h1>
 <figure>
-<img src="images/Final%20Dashboard.png" alt="" /><figcaption>Figure 47. Singapore Resident Labour Force Alternative Graphical Representation</figcaption>
+<img src="images/Final%20Dashboard.png" alt="" /><figcaption>Figure 48. Singapore Resident Labour Force Alternative Graphical Representation</figcaption>
 </figure>
 <ol type="1">
 <li><strong>Due to the rapidly rising population size of older residents, having more older residents in the workforce is natural, or even preferable</strong>. As the distribution of population is getting more and more skewed, Singapore’s <a href="https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio"><strong>old-age support ratio</strong></a> will continue to decrease. Old-age support ratio is the number of people who are financially productive compared to the number of older people who may be dependent on others’ support (<a href="https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio">Singapore Department of Statistics</a>). The increase of Labour Force Participation Rate in older residents helps to reduce the number of older residents that depend on others’ support.</li>
