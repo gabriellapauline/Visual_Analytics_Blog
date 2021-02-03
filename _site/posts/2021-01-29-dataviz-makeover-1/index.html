@@ -102,14 +102,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="A data visualization makeover and a Tableau tutorial for beginners."/>
 <meta property="og:url" content="https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/"/>
+<meta property="og:image" content="https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/./images/Final Dashboard.png"/>
+<meta property="og:image:width" content="1000"/>
+<meta property="og:image:height" content="795"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Gabriella Pauline"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary"/>
+<meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Gabriella Pauline: DataViz Makeover 1"/>
 <meta property="twitter:description" content="A data visualization makeover and a Tableau tutorial for beginners."/>
 <meta property="twitter:url" content="https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/"/>
+<meta property="twitter:image" content="https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/./images/Final Dashboard.png"/>
+<meta property="twitter:image:width" content="1000"/>
+<meta property="twitter:image:height" content="795"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
 <meta name="citation_title" content="Gabriella Pauline: DataViz Makeover 1"/>
@@ -122,7 +128,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 1"]},{"type":"character","attributes":{},"value":["A data visualization makeover and a Tableau tutorial for beginners."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Gabriella Pauline Djojosaputro"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/gabriellapauline/"]},{"type":"character","attributes":{},"value":["School of Information Systems, Singapore Management University"]},{"type":"character","attributes":{},"value":["https://smu.edu.sg"]}]}]},{"type":"character","attributes":{},"value":["01-30-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 1"]},{"type":"character","attributes":{},"value":["A data visualization makeover and a Tableau tutorial for beginners."]},{"type":"character","attributes":{},"value":["./images/Final Dashboard.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Gabriella Pauline Djojosaputro"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/gabriellapauline/"]},{"type":"character","attributes":{},"value":["School of Information Systems, Singapore Management University"]},{"type":"character","attributes":{},"value":["https://smu.edu.sg"]}]}]},{"type":"character","attributes":{},"value":["01-30-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2114,8 +2120,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a><ul>
-<li><a href="#clarity">2.1 Clarity:</a></li>
-<li><a href="#aesthetics">2.2 Aesthetics:</a></li>
+<li><a href="#clarity">2.1 Clarity</a></li>
+<li><a href="#aesthetics">2.2 Aesthetics</a></li>
 </ul></li>
 <li><a href="#alternative-graphical-representation">3. Alternative Graphical Representation</a></li>
 <li><a href="#step-by-step-description">4. Step-by-Step Description</a><ul>
@@ -2134,11 +2140,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>We are living in a world that is constantly producing a vast amount of data, and data visualisation helps us to understand the data better. However, a poor visualisation can be of little value, or even misleading. Visual analytics is not just about creating a pretty chart, but it is the marriage of data analytics and visualizations that aims to detect the expected and discover the unexpected.</p>
 <p>This post will makeover Chart 6: Resident Labour Force by age group from page 22 of <a href="https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx">Labour Force in Singapore 2019 Report</a>.</p>
 <h1 id="original-visualisation-evaluation">2. Original Visualisation Evaluation</h1>
-<p>To start, we examine the original visualisation from the data (Figure 1) to learn what we can improve. The critique is given in terms of <strong>clarity</strong> and <strong>aesthetics</strong>.</p>
+<p>To start, we examine the original visualisation from the data (Figure 1) to learn what we can improve. The critiques are given in terms of <strong>clarity</strong> and <strong>aesthetics</strong>.</p>
 <figure>
 <img src="images/Original_chart.png" alt="" /><figcaption>Figure 1. Original chart from Labour Force in Singapore 2019 Report</figcaption>
 </figure>
-<h2 id="clarity">2.1 Clarity:</h2>
+<h2 id="clarity">2.1 Clarity</h2>
 <h3 id="to-keep">To keep:</h3>
 <ol type="1">
 <li><strong>Usage of colours</strong> are consistent. All 2009 data uses grey colour, while 2019 data uses blue.</li>
@@ -2153,7 +2159,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>There is an inconsistency between the statement and the chart. While the statement mentions a decline in 25 - 54 age group as well as an increase in 55 &amp; over age group, the readers are not able to find the values on the chart itself. These are a summation of multiple categories from the chart and the <strong>readers must manually sum the numbers together to get the the values mentioned in the statement</strong>.</li>
 <li>The statement mentioned rise of Labour Force Participation Rate (LFPR) and population size per age group, but <strong>the chart also does not have any reference to LFPR or population size per age group</strong>.</li>
 </ol>
-<h2 id="aesthetics">2.2 Aesthetics:</h2>
+<h2 id="aesthetics">2.2 Aesthetics</h2>
 <h3 id="to-keep-1">To keep:</h3>
 <ol type="1">
 <li>The <strong>choice of colours</strong> are easy on the eye and looks elegant.</li>
