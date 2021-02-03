@@ -5,10 +5,12 @@ description: |
 author:
   - name: Gabriella Pauline Djojosaputro
     url: https://example.com/norajones
-date: 01-29-2021
+date: 01-30-2021
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 2
 ---
 
 
@@ -16,16 +18,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 This will be quite a long post, so feel free to jump to the section that you are interested in. 
-
-[**1. Introduction**](#section1)
-
-[**2. Original Visualisation**](#section2)
-
-[**3. Alternative Graphical Representation**](#section3)
-
-[**4. Step-by-Step Description**](#section4)
-
-[**5. Major Observations**](#section5)
 
 # 1. Introduction {#section1}
 We are living in a world that is constantly producing a vast amount of data, and data visualisation helps us to understand the data better. However, a poor visualisation can be of little value, or even misleading. Visual analytics is not just about creating a pretty chart, but it is the marriage of data analytics and visualizations that aims to detect the expected and discover the unexpected. 
