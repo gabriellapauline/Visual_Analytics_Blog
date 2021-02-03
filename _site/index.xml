@@ -2,8 +2,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Visual Analytics</title>
-    <link>https://gabriellapauline.disqus.com/embed.js</link>
-    <atom:link href="https://gabriellapauline.disqus.com/embed.js/index.xml" rel="self" type="application/rss+xml"/>
+    <link>https://gabriellapauline.netlify.app/</link>
+    <atom:link href="https://gabriellapauline.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
     <description>Visual Analytics
 </description>
     <generator>Distill</generator>
@@ -11,18 +11,18 @@
     <item>
       <title>DataViz Makeover 1</title>
       <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
-      <link>https://gabriellapauline.disqus.com/embed.js/posts/2021-01-29-dataviz-makeover-1</link>
+      <link>https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1</link>
       <description>A data visualization makeover and a Tableau tutorial for beginners.</description>
-      <guid>https://gabriellapauline.disqus.com/embed.js/posts/2021-01-29-dataviz-makeover-1</guid>
+      <guid>https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1</guid>
       <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Welcome to Visual Analytics</title>
       <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
-      <link>https://gabriellapauline.disqus.com/embed.js/posts/welcome</link>
+      <link>https://gabriellapauline.netlify.app/posts/welcome</link>
       <description>Welcome to my new blog, Visual Analytics. I hope you enjoy 
 reading!</description>
-      <guid>https://gabriellapauline.disqus.com/embed.js/posts/welcome</guid>
+      <guid>https://gabriellapauline.netlify.app/posts/welcome</guid>
       <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>
