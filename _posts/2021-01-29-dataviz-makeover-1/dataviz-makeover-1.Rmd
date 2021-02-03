@@ -388,4 +388,11 @@ The final dashboard that I created is shown in Figure 46, marked with colour-cod
 
 Congratulations, we have completed our dashboard! 
 
+# 5. Major Observations
+
+![Figure 47. Singapore Resident Labour Force Alternative Graphical Representation](./images/Final Dashboard.png)
+
+1. **Due to the rapidly rising population size of older residents, having more older residents in the workforce is natural, or even preferable**. As the distribution of population is getting more and more skewed, Singapore's [**old-age support ratio**](https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio) will continue to decrease. Old-age support ratio is the number of people who are financially productive compared to the number of older people who may be dependent on others' support ([Singapore Department of Statistics](https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio)). The increase of Labour Force Participation Rate in older residents helps to reduce the number of older residents that depend on others' support. 
+1. The increase in population size in 55 & Over age group is incomparable to the decrease in population size of 25 - 54 age group. This means that **the majority of people in the 55 & Over age group in 2009 are still alive in 2019**, which can be attributed to Singapore's excellent healthcare system. We will **continue to see rising number of older residents in the workforce** before the ratio will **reach an equilibrium as long as the population size of younger residents does not continue to decline**.
+1. As the increase in Labour Force Participation Rate is not as high in 15 - 24 and 25 - 54 age groups compared to the 55 & Over age group, another way to sustain the old-age support ratio is to **increase the Labour Force Participation Rate in the younger residents**. Non-working residents in the younger age groups are most likely students or stay-at-home mother. **Finding out the reason they choose not to participate in the labour force** is a necessary step if we want to encourage them to enter the workforce.
 
