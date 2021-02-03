@@ -275,7 +275,7 @@ If we scroll down and see the bottom of the data table, we can see that they hav
 
 The spacing seem to be very wide for the age groups. Since we are using a live connection, any update on the data source will be reflected in Tableau. I opened the Excel file to manually fix the spacing. 
 
-![Figure 32. Labour Force Participation Rate Percentage Change Formula](./images/4.3. LFPR % Change Formula.png)
+![Figure 32. Labour Force Participation Rate Percentage Change Formula](./images/4.3. LFPR Percentage Change Formula.png)
 
 Although this data is also in a wide format, we only need the difference between 2019 and 2009 data. We do not need to pivot the table, but we need to create a calculated field for the difference. 
 
@@ -335,6 +335,10 @@ Now that the bar is labeled, we can take away the unnecessary axis and headers u
 
 ![Figure 38. Final Look for Labour Force Participation Rate Change](./images/4.3. Final Look for Labour Force Participation Rate Change.png)
 
+## 4.4. Population Size Change Bar Chart
 
+The steps to create the Population Size Change Bar Chart is exactly the same as the Labour Force, except we are using a different dataset and we are not displaying '%' sign in the suffix. 
 
+![Figure 39. Final Look for Population Size Change Bar Chart](./images/4.4. Final Look for Population Size Change.png)
 
+## 4.5. Dashboard
