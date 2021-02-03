@@ -2,7 +2,7 @@ name: "Visual_Analytics_Blog"
 title: "Gabriella Pauline"
 description: |
   Analytics Blog
-theme: theme.css
+theme: theme2.css
 output_dir: "_site"
 navbar:
   right:
