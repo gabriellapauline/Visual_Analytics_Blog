@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
-    <loc>https://https-gabriellapauline-netlify-app.disqus.com/about.html</loc>
+    <loc>https://gabriellapauline.disqus.com/embed.js/about.html</loc>
     <lastmod>2021-01-29T22:18:46+08:00</lastmod>
   </url>
   <url>
-    <loc>https://https-gabriellapauline-netlify-app.disqus.com/</loc>
+    <loc>https://gabriellapauline.disqus.com/embed.js/</loc>
     <lastmod>2021-01-29T22:18:46+08:00</lastmod>
   </url>
   <url>
-    <loc>https://https-gabriellapauline-netlify-app.disqus.com/posts/2021-01-29-dataviz-makeover-1/</loc>
-    <lastmod>2021-02-03T21:22:17+08:00</lastmod>
+    <loc>https://gabriellapauline.disqus.com/embed.js/posts/2021-01-29-dataviz-makeover-1/</loc>
+    <lastmod>2021-02-03T21:35:29+08:00</lastmod>
   </url>
   <url>
-    <loc>https://https-gabriellapauline-netlify-app.disqus.com/posts/welcome/</loc>
+    <loc>https://gabriellapauline.disqus.com/embed.js/posts/welcome/</loc>
     <lastmod>2021-02-03T21:09:01+08:00</lastmod>
   </url>
 </urlset>
