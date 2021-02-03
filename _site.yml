@@ -1,7 +1,7 @@
 name: "Visual_Analytics_Blog"
-title: "Visual Analytics"
+title: "Gabriella Pauline"
 description: |
-  Visual Analytics
+  Analytics Blog
 output_dir: "_site"
 navbar:
   right:
@@ -15,5 +15,6 @@ base_url: https://gabriellapauline.netlify.app/
 output: distill::distill_article
 collections:
    posts:
-      disqus: gabriellapauline
+      disqus: 
+        shortname: gabriellapauline
       share: [twitter, linkedin]

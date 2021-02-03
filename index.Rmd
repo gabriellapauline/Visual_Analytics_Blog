@@ -1,5 +1,5 @@
 ---
-title: "Visual Analytics"
+title: "Gabriella Pauline"
 site: distill::distill_website
 listing: posts
 ---
