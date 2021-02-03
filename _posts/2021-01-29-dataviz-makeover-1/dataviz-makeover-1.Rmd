@@ -109,7 +109,7 @@ This chart will show how percentage of each age groups of interest in the Reside
 
 * Check the **Use Data Interpreter** checkbox to allow Tableau to do automatic cleaning. Tableau is able to intelligently detect valuable columns and rows, and drop the empty ones.
 
-![Figure 7. Hide Column](./images/4.2. Hide Column.png)
+![Figure 7. Hide Column](./images/4.2. Hide Column.png){width=75%}
 
 After the cleaning, we still have a column that we are not interested in. There are some values in the column, but it is just an annotation. 
 
@@ -138,7 +138,7 @@ The table is currently in a wide format, but we want it to be long and thin so w
 * **Select all the columns** with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.
 * **Right-click** on any of the column header > **Pivot**.
 
-![Figure 11. Rename Columns](./images/4.2. Rename Column.png){width=65%}
+![Figure 11. Rename Columns](./images/4.2. Rename Column.png){width=60%}
 
 The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.
 
@@ -163,7 +163,7 @@ Next, one of the improvement we want to make on the original visualisation is to
 
 * **Right-click** on Age column header > **Create Group...**
 
-![Figure 14. Age Groups](./images/4.2. Age Groups.png)
+![Figure 14. Age Groups](./images/4.2. Age Groups.png){width=55%}
 
 * **Select** the **ages** that we want to group together (e.g. 15 - 19 and 20 - 24), then press **Group**.
 * **Enter** the appropriate **group name**.
@@ -226,7 +226,7 @@ We can further customise the chart appearance to enhance the usefulness and read
 #### Axis / Header
 As we have already labeled the data points of interest, the y-axis is no longer necessary. We can remove the axis to increase our data-ink ratio. 
 
-![Figure 23. Remove Axis](./images/4.2. Remove Header.png)
+![Figure 23. Remove Axis](./images/4.2. Remove Header.png){width=50%}
 
 * **Right-click** on the y-axis > **Uncheck Show Header**.
 
@@ -243,7 +243,7 @@ As we have already labeled the data points of interest, the y-axis is no longer 
 #### Title
 Our current default title is the sheet name, which is Sheet 1. We can change the sheet name, and further tailor the title to make it more informative. 
 
-![Figure 26. Rename Sheet Name](./images/4.2. Rename Sheet Name.png)
+![Figure 26. Rename Sheet Name](./images/4.2. Rename Sheet Name.png){width=75%}
 
 * Pretty self-explanatory. **Double-click** on the **Sheet 1 Tab** below, then we can type in the desired name. I put 'Singapore Resident Labour Force by Age Group'.
 
@@ -257,7 +257,7 @@ Our current default title is the sheet name, which is Sheet 1. We can change the
 #### Annotations
 We can also annotate on the chart itself to highlight interesting findings. 
 
-![Figure 28. Annotate Mark](./images/4.2. Annotate Mark.png)
+![Figure 28. Annotate Mark](./images/4.2. Annotate Mark.png){width=55%}
 
 * **Right-click** on one of the data point > **Annotate** > **Mark...**.
 
@@ -302,7 +302,7 @@ Although this data is also in a wide format, we only need the difference between
 * **Right0click** on **2019** column > **Create Calculated Field...**
 * Enter the formula shown in Figure 31.
 
-![Figure 34. Add New Worksheet](./images/4.3. New Worksheet.png) 
+![Figure 34. Add New Worksheet](./images/4.3. New Worksheet.png){width=75%}
 
 We are done preparing the data. Now we can create the second chart on a new worksheet.
 
