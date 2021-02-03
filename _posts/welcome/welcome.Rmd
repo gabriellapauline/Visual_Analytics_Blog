@@ -1,11 +1,11 @@
 ---
-title: "Welcome to Visual Analytics"
+title: "Welcome to my blog"
 description: |
-  Welcome to my new blog, Visual Analytics. I hope you enjoy 
+  Welcome to my new blog. I hope you enjoy 
   reading!
 author:
   - name: Gabriella Pauline Djojosaputro
-    url: https://github.com/gabriellapauline
+    url: https://www.linkedin.com/in/gabriellapauline/
     affiliation: School of Information Systems, Singapore Management University
     affiliation_url: https://smu.edu.sg
 date: 01-29-2021
