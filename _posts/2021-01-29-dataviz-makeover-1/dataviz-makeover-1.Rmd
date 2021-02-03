@@ -342,3 +342,50 @@ The steps to create the Population Size Change Bar Chart is exactly the same as 
 ![Figure 39. Final Look for Population Size Change Bar Chart](./images/4.4. Final Look for Population Size Change.png)
 
 ## 4.5. Dashboard
+
+Now, it is time to combine the various charts that we have created.
+
+![Figure 40. New Dashboard](./images/4.5. New Dashboard.png)
+
+* To create new dashboard, click the **New Dashboard Tab**, which is the second tab to the right of our last worksheet.
+
+![Figure 41. Dashboard Size](./images/4.5. Dashboard Size.png)
+
+* Adjust the **Size** to your preference. Automatic means the size will adjust according to the device, but I found that using Automatic can cause problems in the alignment. I chose **Desktop Browser(1000x800)**
+
+![Figure 42. Insert Sheet to Dashboard](./images/4.5. Insert Sheet to Dashboard.png)
+
+* To add sheet to the dashboard **drag the sheet name to the canvas**.
+* **Hold** and **hover** around the dashboard to see a highlighted box, that will be the space that the sheet take up if we release our mouse. 
+
+By default, Tableau uses a Tiled layout. To better arrange our sheet, we can make use of the objects. 
+
+![Figure 43. Vertical Object](./images/4.5. Vertical Object.png)
+
+Vertical object allows us to have a vertical grid that we an fill in with sheets or another objects. 
+
+* **Drag Vertical Object** to the canvas.
+* Click on the **sheet** that we already put to the dashboard.
+* **Hover** to the **grey rectangle** above the sheet until it turns to a four-sided arrow
+* **Drag** the sheet into the vertical object
+
+Similarly, we can use blank to add paddings around the objects (such as to align the sheets), add horizontal grid, text, etc.
+
+![Figure 44. Remove Legend](./images/4.5. Remove Legends.png)
+
+Since we have annotated the line chart and the colour in the bar charts are to highlight positive and negative values, the legends are not necessary.
+
+* Click on the **legend**.
+* Click on the **cross** to remove from the dashboard.
+
+![Figure 45. Show Dashboard Title](./images/4.5. Show Dashboard Title.png)
+
+To create a title and lead-in for the dashboard, we can either use a Text object or use the dashboard title itself. The checkbox highlighted in Figure 45 will make the dashboard title appear.
+
+![Figure 46. Final Dashboard Layout](./images/4.5. Dashboard Layout - marked.png)
+
+The final dashboard that I created is shown in Figure 46, marked with colour-coded rectangles to show what object I used to arrange them. 
+
+Congratulations, we have completed our dashboard! 
+
+
