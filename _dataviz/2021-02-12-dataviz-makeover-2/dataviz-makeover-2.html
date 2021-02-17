@@ -111,6 +111,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   <meta name="citation_reference" content="citation_title=When will the covid-19 pandemic end?;citation_publication_date=2021;citation_publisher=McKinsey &amp;amp; Company;citation_author=Sarun Charumilind;citation_author=Matt Craven;citation_author=Jessica Lamb;citation_author=Adam Sabow;citation_author=Matt Wilson"/>
   <meta name="citation_reference" content="citation_title=Imperial college london yougov covid data hub;citation_publication_date=2020;citation_publisher=Imperial College London Big Data Analytical Unit and YouGov Plc. 2020;citation_author= Jones;citation_author=P Sarah"/>
+  <meta name="citation_reference" content="citation_title=How to choose the colors for your data visualizations;citation_publication_date=2019;citation_author=Michael Yi"/>
+  <meta name="citation_reference" content="citation_title=Why itâ€™s so hard for us to visualize uncertainty;citation_publication_date=2016;citation_author=Nicole Torres"/>
+  <meta name="citation_reference" content="citation_title=Choosing colors for data visualization;citation_publication_date=2006;citation_author=M. Stone"/>
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
@@ -119,7 +122,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bibtex","biblio.yaml","dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js","images/4.1. Add New Union.png","images/4.1. Check Included Data.png","images/4.1. Connect to Data.png","images/4.1. Connect to Filtered Data.png","images/4.1. Create Parameter.png","images/4.1. Custom Split.png","images/4.1. Describe Field.png","images/4.1. Edit Aliases.png","images/4.1. Export Data.png","images/4.1. Export Full Data.png","images/4.1. Filter Countries with All Nulls.png","images/4.1. Go to Worksheet.png","images/4.1. Include all csv files.png","images/4.1. Remove table.png","images/4.1. Rename columns.png","images/4.1. Select vac_1 column.png","images/4.2. Compute Using Selected_Survey_Item.png","images/4.2. Convert to Dimension.png","images/4.2. Count Negative Formula.png","images/4.2. Edit Colors.png","images/4.2. Edit Legend Alias.png","images/4.2. Edit Title.png","images/4.2. Exclude Nulls.png","images/4.2. Gantt Percent Formula.png","images/4.2. Gantt Start Formula.png","images/4.2. Number of Records Formula.png","images/4.2. Percentage Formula.png","images/4.2. Rows and Columns.png","images/4.2. Selected Survey Item Formula.png","images/4.2. Show Parameter.png","images/4.2. Sort Selected Survey Item in Descending Order.png","images/4.2. Total Count Formula.png","images/4.2. Total Count Negative Formula.png"]}
+  {"type":"character","attributes":{},"value":["biblio.bibtex","biblio.yaml","dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js","images/2. Original Visualisation.png","images/4.1. Add New Union.png","images/4.1. Check Included Data.png","images/4.1. Connect to Data.png","images/4.1. Connect to Filtered Data.png","images/4.1. Create Parameter.png","images/4.1. Custom Split.png","images/4.1. Describe Field.png","images/4.1. Edit Aliases.png","images/4.1. Export Data.png","images/4.1. Export Full Data.png","images/4.1. Filter Countries with All Nulls.png","images/4.1. Go to Worksheet.png","images/4.1. Include all csv files.png","images/4.1. Remove table.png","images/4.1. Rename columns.png","images/4.1. Select vac_1 column.png","images/4.2. Compute Using Selected_Survey_Item.png","images/4.2. Convert to Dimension.png","images/4.2. Count Negative Formula.png","images/4.2. Edit Colors.png","images/4.2. Edit Legend Alias.png","images/4.2. Edit Title.png","images/4.2. Exclude Nulls.png","images/4.2. Gantt Percent Formula.png","images/4.2. Gantt Start Formula.png","images/4.2. Number of Records Formula.png","images/4.2. Percentage Formula.png","images/4.2. Rows and Columns.png","images/4.2. Selected Survey Item Formula.png","images/4.2. Show Parameter.png","images/4.2. Sort Selected Survey Item in Descending Order.png","images/4.2. Total Count Formula.png","images/4.2. Total Count Negative Formula.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1485,12 +1488,51 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a><ul>
+<li><a href="#clarity">2.1 Clarity</a></li>
+<li><a href="#aesthetics">2.2 Aesthetics</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
 <h1 id="introduction">1. Introduction</h1>
 <p>COVID pandemic has impacted the world in unimaginable ways: work from home and zoom meetings are becoming norms; overseas travel almost comes to a complete halt; we might even start to forget that COVID confirmed cases and death are human beings, and not just numbers in a statistics. For the pandemic to be over, we need to achieve herd immunity either through recovery from infection or vaccine <span class="citation" data-cites="charumilind_craven_lamb_sabow_wilson_2021">(Charumilind et al. <a href="#ref-charumilind_craven_lamb_sabow_wilson_2021" role="doc-biblioref">2021</a>)</span>. However, despite being eager of seeing the end to this calamity, people might also have worries and beliefs that make them hesitant to take the vaccine.</p>
-<p>Imperial College London Big Data Analytical Unit and YouGov <span class="citation" data-cites="jones_sarah_2020">(Jones and Sarah <a href="#ref-jones_sarah_2020" role="doc-biblioref">2020</a>)</span> conducted a survey that measures the willingness of people in various countries to take COVID vaccine.</p>
+<p>Imperial College London Big Data Analytical Unit and YouGov <span class="citation" data-cites="jones_sarah_2020">(Jones and Sarah <a href="#ref-jones_sarah_2020" role="doc-biblioref">2020</a>)</span> conducted a survey that measures the people’s behaviours in response to COVID-19. This data visualisation makeover will focus on the willingness of people in various countries to take the COVID vaccine.</p>
+<h1 id="original-visualisation-evaluation">2. Original Visualisation Evaluation</h1>
+<p>To start, we examine the original visualisation from the data (Figure 1) to learn what we can improve. The critiques are given in terms of <strong>clarity</strong> and <strong>aesthetics</strong>.</p>
+<figure>
+<img src="images/2.%20Original%20Visualisation.png" alt="" /><figcaption>Figure 1. Original Visualisation</figcaption>
+</figure>
+<h2 id="clarity">2.1 Clarity</h2>
+<h3 id="to-keep">To keep:</h3>
+<ol type="1">
+<li>The countries graphs are shown in a <strong>sorted order</strong>. The left graph is shown in alphabetical order, while the right graph is shown in a descending order.</li>
+<li>The <strong>usage of colour is consistent</strong> between the two graphs. Both uses blue colour for strongly agree.</li>
+<li>The <strong>axes and gridlines help the users to compare the values</strong>.</li>
+</ol>
+<h3 id="to-be-improved">To be improved:</h3>
+<ol type="1">
+<li>Although the Likert Scale data is ordinal, the <strong>choice of colour does not show an inherent order</strong>. It would be better if a diverging colour scale is used, because the data has a meaningful central value, which is the neutral opinion <span class="citation" data-cites="yi_2019">(Yi <a href="#ref-yi_2019" role="doc-biblioref">2019</a>)</span>.</li>
+<li>Because the survey is conducted on a sample of the population, the actual proportion in the population might not be exactly the same. <strong>Not visualising the uncertainty</strong> can mislead the users, and thus we need to show the range of possible values <span class="citation" data-cites="torres_2016">(Torres <a href="#ref-torres_2016" role="doc-biblioref">2016</a>)</span>.</li>
+<li>It is <strong>hard to compare the actual proportion of people who picked 2, 3, or 4 in the Likert Scale</strong> because they do not have a common baseline.</li>
+<li>The <strong>order of the countries are inconsistent</strong> between the two graphs.</li>
+<li>The <strong>title of the legend is not informative</strong>.</li>
+</ol>
+<h2 id="aesthetics">2.2 Aesthetics</h2>
+<h3 id="to-keep-1">To keep:</h3>
+<ol type="1">
+<li>The chart has a nice <strong>font selection</strong> that is easy to read and not unnecessarily embellished.</li>
+<li>The <strong>number of tick marks is just nice</strong> to allow comparison but not overly clutter the visualisation.</li>
+<li>The two <strong>graphs are properly aligned</strong>.</li>
+<li><strong>Labels have less colour intensity</strong> so they do not distract the users.</li>
+</ol>
+<h3 id="to-be-improved-1">To be improved:</h3>
+<ol type="1">
+<li>The <strong>choice of colours is too reliant on hue variation</strong> instead of value or chroma, hence increasing the visual clutter <span class="citation" data-cites="Stone2006ChoosingCF">(Stone <a href="#ref-Stone2006ChoosingCF" role="doc-biblioref">2006</a>)</span>. It is better to limit the colour palette to 2 or 3 hues and use variation of colour intensity to make the visualisation more aesthetically pleasing and functional.</li>
+<li><strong>Country names are not formatted properly</strong>. There is no capitalisation and there are dashes in the names.</li>
+<li><strong>Decimal points are inconsistent in the axes</strong>. The left graph has no decimal points but the right one has 1 decimal points.</li>
+<li><strong>Labels of the colour legend are inconsistent</strong>. Value 1 and 5 have a text explanation, while 2, 3, and 4 are just numbers.</li>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references" role="doc-bibliography">
 <div id="ref-charumilind_craven_lamb_sabow_wilson_2021">
@@ -1498,6 +1540,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div id="ref-jones_sarah_2020">
 <p>Jones, and P Sarah. 2020. “Imperial College London Yougov Covid Data Hub.” <em>GitHub</em>. Imperial College London Big Data Analytical Unit and YouGov Plc. 2020. <a href="https://github.com/YouGov-Data/covid-19-tracker">https://github.com/YouGov-Data/covid-19-tracker</a>.</p>
+</div>
+<div id="ref-Stone2006ChoosingCF">
+<p>Stone, M. 2006. “Choosing Colors for Data Visualization.” <em>Perceptual Edge</em>. <a href="http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf">http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf</a>.</p>
+</div>
+<div id="ref-torres_2016">
+<p>Torres, Nicole. 2016. “Why It’s so Hard for Us to Visualize Uncertainty.” <em>Harvard Business Review</em>. <a href="https://hbr.org/2016/11/why-its-so-hard-for-us-to-visualize-uncertainty">https://hbr.org/2016/11/why-its-so-hard-for-us-to-visualize-uncertainty</a>.</p>
+</div>
+<div id="ref-yi_2019">
+<p>Yi, Michael. 2019. “How to Choose the Colors for Your Data Visualizations.” <em>Medium</em>. <a href="https://medium.com/nightingale/how-to-choose-the-colors-for-your-data-visualizations-50b2557fa335">https://medium.com/nightingale/how-to-choose-the-colors-for-your-data-visualizations-50b2557fa335</a>.</p>
 </div>
 </div>
 <!--radix_placeholder_article_footer-->
