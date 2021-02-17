@@ -8,12 +8,19 @@
       "last_modified": "2021-02-03T23:39:24+08:00"
     },
     {
+      "path": "dataviz.html",
+      "title": "DataViz Makeover",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-02-17T09:17:39+08:00"
+    },
+    {
       "path": "index.html",
       "title": "Gabriella Pauline",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-03T23:40:54+08:00"
+      "last_modified": "2021-02-17T09:18:32+08:00"
     }
   ],
-  "collections": ["posts/posts.json"]
+  "collections": ["posts/posts.json", "dataviz/dataviz.json"]
 }

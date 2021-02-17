@@ -8,7 +8,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "DataViz Makeover"
-      href: posts/2021-01-29-dataviz-makeover-1/index.html
+      href: dataviz.html
     - text: "About"
       href: about.html
 base_url: https://gabriellapauline.netlify.app/
