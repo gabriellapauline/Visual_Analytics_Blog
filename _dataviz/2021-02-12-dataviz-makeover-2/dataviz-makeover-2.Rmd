@@ -58,3 +58,27 @@ To start, we examine the original visualisation from the data (Figure 1) to lear
    1. **Country names are not formatted properly**. There is no capitalisation and there are dashes in the names.
    1. **Decimal points are inconsistent in the axes**. The left graph has no decimal points but the right one has 1 decimal points.
    1. **Labels of the colour legend are inconsistent**. Value 1 and 5 have a text explanation, while 2, 3, and 4 are just numbers.
+
+# 3. Alternative Graphical Representation
+Figure 2 shows the alternative graphical representation proposed for the makeover.
+
+![Figure 2. Alternative Graphical Representation](./images/3. Alternative Visualisation Design.jpeg)
+
+The issues that the alternative design tries to overcome is colour-coded, with orange numbers corresponding to critiques for clarity and blue numbers for critiques with regards to aesthetics.
+
+### Clarity:
+   1. To show an order in the survey response using a **diverging colour scale**.
+   1. To show the uncertainty using an **error bar** in the breakdown chart.
+   1. To **allow the users to toggle between different response of interest**. The users may choose to view individual percentage and error bars for 'Strongly Agree', 'Agree', 'Neutral', 'Disagree', and 'Strongly Disagree'.
+   1. To **sort the order of countries in both graphs consistently** in descending manner according to the selected response of interest in the right graph.
+   
+### Aesthetics:
+   1. To **limit the colour palette** and utilise a variation of colour intensity on top of differing hue.
+   1. To use **proper capitalisation and formatting for the country name** labels.
+   1. To **standardise the axes labels to show no decimal points**.
+   1. To **label the colour legends consistently using a textual explanation**.
+   
+### Additional Features:
+   1. To **allow the users to visualise different survey items**. The users can see the response for questions such as whether the respondents are afraid of COVID vaccine side effects, not just restricted to whether or not they are willing to take the vaccine.
+   1. To **use animation to show the transitions** between different selected parameters, so the users can easily notice if the ranks of the countries change.
+   
