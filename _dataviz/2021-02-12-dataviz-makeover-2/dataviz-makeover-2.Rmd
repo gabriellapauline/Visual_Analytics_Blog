@@ -1,14 +1,19 @@
 ---
-title: "dataviz-makeover-2"
+title: "DataViz Makeover 2 - COVID Vaccine Survey"
 description: |
-  A short description of the post.
+  Visualisation makeover for Likert Scale data and uncertainty.
 author:
   - name: Gabriella Pauline Djojosaputro
     url: https://www.linkedin.com/in/gabriellapauline/
+    affiliation: School of Information Systems, Singapore Management University
+    affiliation_url: https://smu.edu.sg
 date: 02-12-2021
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 2
+bibliography: biblio.bibtex
 draft: true
 ---
 
@@ -17,8 +22,14 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+# 1. Introduction
+COVID pandemic has impacted the world in unimaginable ways: work from home and zoom meetings are becoming norms; overseas travel almost comes to a complete halt; we might even start to forget that COVID confirmed cases and death are human beings, and not just numbers in a statistics. For the pandemic to be over, we need to achieve herd immunity either through recovery from infection or vaccine [@charumilind_craven_lamb_sabow_wilson_2021]. However, despite being eager of seeing the end to this calamity, people might also have worries and beliefs that make them hesitant to take the vaccine. 
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Imperial College London Big Data Analytical Unit and YouGov [@jones_sarah_2020] conducted a survey that measures the people's behaviours in response to COVID-19. This data visualisation makeover will focus on the willingness of people in various countries to take the COVID vaccine.
+
+#2. Original Visualisation Evaluation
+![Figure 1. Original Visualisation](./images/2. Original Visualisation.png)
+
+The original visualisation 
 
 

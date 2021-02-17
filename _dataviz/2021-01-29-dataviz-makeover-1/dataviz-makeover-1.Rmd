@@ -1,5 +1,5 @@
 ---
-title: "DataViz Makeover 1"
+title: "DataViz Makeover 1 - Singapore Labour Force"
 description: |
   A data visualization makeover and a Tableau tutorial for beginners.
 preview: ./images/Final Dashboard.png
