@@ -110,7 +110,7 @@ This chart will show how percentage of each age groups of interest in the Reside
 * Create a new workbook and click **Connect to Data**.
 * Choose the **file type** > **file name** (In this case, it would be Table 7 from Labour Force Report 2019).
 
-! [Figure 6. Add Table](./images/4.2. Drag Table.png)
+![Figure 6. Add Table](./images/4.2. Drag Table.png)
 
 * **Drag the table that we want** to the workspace. We are interested in the total number, not in the distribution of gender. Therefore, we can use T7_T that contains the total number of males and females.
 
