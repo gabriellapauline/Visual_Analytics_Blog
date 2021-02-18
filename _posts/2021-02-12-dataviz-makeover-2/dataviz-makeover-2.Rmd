@@ -118,6 +118,7 @@ We can either drag all the tables listed in the Files column on the left or use 
 
 * Select **Wildcard (automatic)**.
 * Enter the wildcard in **Include** field: **'\*.csv'**. This will include any files as long as they have '.csv' at the end of the file name. 
+* Click **OK**.
 
 ![Figure 8. Hide Unused Columns](./images/4.1. Hide Unused Columns.png)
 
@@ -129,5 +130,64 @@ To reduce the dataset, we need to hide away all columns we are not using and exp
 * **Right-click** > **Hide**.
 
 We are interested in vac_1, vac2_1, vac2_2, vac2_3, vac2_6, and vac_3 survey items, as well as gender, age, household_size, household_children and employment_status contextual data.
+
+![Figure 9. Go To Worksheet](./images/4.1. Go to Worksheet.png)
+
+When we combine the files in a union, Tableau will add a column called Path or Table, depending on whether we used Wildcard or Specific method to add the files. We can rename and format this field, but it would be easier to do it later after we export the data subset.
+
+* Go to Worksheet by clicking **Sheet 1**.
+
+![Figure 10. View Data](./images/4.1. View Data.png)
+
+* Click on **Analysis** menu at the top of the screen > **View Data...**
+
+![Figure 11. Export Full Data](./images/4.1. Export Full Data.png)
+
+* Click on **Full Data**.
+* By default, we only get the first 10,000 rows. Since we want to get all rows, enter a large number in the **number of rows**. I entered 1,000,000 and it automatically gets all the rows available, which is 486,743 rows.
+* **Export all**.
+* **Save the data**.
+
+Now, we have a smaller dataset containing only the columns that we are interested in. Let's process the file in a new workbook. 
+
+* **Ctrl + N**
+* Repeat steps to **connect to the exported data**.
+
+![Figure 12. Edit Aliases](./images/4.1. Edit Aliases.png)
+
+To improve the country name appearance, we are going to recode it.
+
+* **Right-click** on **Path** column header > **Aliases...**
+* Enter the appropriate **country name** in **Value(Alias)** column > **OK**.
+* **Double-click** on 'Path' column name to **rename** the column to 'Country'.
+
+The legend in the original visualisation is inconsistent because the survey item responses are stored in string, and only the value 1 and 5 have a descriptor for it. We are going to standardize the value as integer, so we need to get rid of the textual description by using a custom split. 
+
+![Figure 13. Custom Split](./images/4.1. Custom Split.png)
+
+The value for 1 is '1 - Strongly Agree'. Notice that the numerical value is the first part of the string before a space bar. Therefore, we will split the first column using the space bar as a separator.
+
+* **Right-click** on one of the survey items' column header (e.g. vac 1) > **Custom Split...**
+* Enter a **space bar** in the **separator**
+* Ensure we split off the **First 1 ** column > **OK**
+
+![Figure 14. Describe Field](./images/4.1. Describe Field.png)
+
+We can use describe field to check whether the split was done correctly.
+
+* **Right-click** on the newly created column from the split > **Describe Field...**
+
+We have the values from 1 to 5 now in the column, so we can convert the data type to number.
+
+![Figure 15. Change Data Type](./images/4.1. Change Data Type.png)
+
+On each column there are 'Abc' or '#' symbol. 'Abc' means the column is a string, while '#' means it is numerical. If the symbol starts with an equal sign, such as '=Abc' or '=#', it means the column is a calculated field.
+
+* Click on the **data type symbol** > **Number (whole)**
+
+We can also rename the column and hide the original column to make it cleaner. I renamed all original columns with an added suffix '-ori' and used the original column names in the new columns. 
+
+**Repeat** the steps from Figure 13 for all survey items, and we are ready to create the visualisation.
+
 
 
