@@ -14,7 +14,6 @@ output:
     toc: true
     toc_depth: 2
 bibliography: biblio.bibtex
-draft: true
 ---
 
 
@@ -370,13 +369,23 @@ The dot plot will visualise the selected response (e.g. Strongly Agree) for the 
 
 * Use **integer data type** because the survey response values will be in the range of 1 to 5. We will match the value chosen from the parameter with the Selected_Survey_Item value.
 * Enter number 1 to 5 for value and the textual descriptions in 'Display As' column.
+* Additionally, we can add a total for agree and strongly agree as well as disagree and strongly disagree. Use 0 for 'Agree and Strongly Agree', and 6 for 'Disagree and Strongly Disagree'.
 
 The formulas we need to add for the dot plot are:
 
 (@) **Count Selected Response**:
 
-    If [Selected_Survey_Item]=[Select Response]
-Then 1
+    If [Selected_Survey_Item]=[Select Response] Then 1
+elseif [Select Response] = 6 Then
+   if [Selected_Survey_Item] = 4 or [Selected_Survey_Item] = 5
+   then 1 
+   else 0
+   end
+elseif [Select Response] = 0 then 
+   if [Selected_Survey_Item] = 1 or [Selected_Survey_Item] = 2
+   then 1 
+   else 0
+   end
 else 0
 End
 
@@ -568,6 +577,7 @@ We just need to do a few more minor touch ups.
 * Add a **text object** to the top of the legend to create a **legend title**. I used a bolded Tableau Medium 9 pt.
 * Click on the **inverted triangle** > **Floating**
 * Try to align with the filter titles.
+* Also add another text object to the bottom of the dashboard to include the **data source**. 
 
 In the round of final check, I just realised that age filter was not shown all this while. It is fine, we are human. We make mistakes. If you also forgot some filters, it is not too late to add them in.
 
@@ -579,7 +589,63 @@ In the round of final check, I just realised that age filter was not shown all t
 * Don't forget to apply the filter to all worksheets.
 * Reorganise the order of the filters.
 
+![Figure 51. Add Animations](./images/4.4. Add Animations.png)
+
+For a final touch, since this visualisation is interactive, we can add animation so the users can see the changes of rank between countries when they change a parameter or a filter.
+
+* Click on **Format** menu > **Animations**.
+* Turn animations **On** and set the **Duration**. I used a **Custom** value of 0.75. 
+
 ![Figure 51. Final Dashboard](./images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png)
 
 **Congratulations, we are done!**
+
+# 5. Major Observations
+Some major insights were obtained from the alternative design of the COVID Vaccine Survey.
+
+### a. People are more willing to be vaccinated a year from now than this week due to worries for COVID vaccine potential side effects
+We can clearly see the **dominance of positive sentiment in the the willingness to be vaccinated a year from now** (Figure 52), but the same thing does not apply to the willingness to be vaccinated this week (Figure 53). 
+
+![Figure 52. Proportion of People Willing To Be Vaccinated a Year from Now](./images/5. A year from now - Agree and Strongly Agree.png)
+
+![Figure 53. Proportion of People Willing To Be Vaccinated This Week](./images/5. This Week - Agree and Strongly Agree.png)
+
+
+This can be due to the worries of potential side effects for the COVID vaccine. Naturally, giving more time would allow the researchers to examine the side effects for COVID vaccine more carefully. The **top 3 countries with the highest total proportion that agree to be vaccinated this week** (Figure 54) is the **same as the top 3 countries that are not worried about COVID vaccine side-effects** (Figure 55).
+
+![Figure 54. Top 3 countries with Highest Proportion That Agrees to be Vaccinated This Week](./images/5. This Week - Top 3 Agree and Strongly Agree.png)
+
+![Figure 55. Top 3 Countries with Highest Proportion That Are Not Worried About COVID Vaccine Potential Side Effects](./images/5. Potential Side Effect - Disagree and Strongly Disagree.png)
+
+### b. Older people are more worried about getting COVID-19 and more willing to be vaccinated this week
+
+Similarly, by observing the division of sentiment regarding **willingness to be vaccinated this week** in the older people and the younger generation, we can see that the **dominance for positive sentiment is higher in the older people** (Figure 56) **compared to the younger ones** (Figure 57). 
+
+![Figure 56. Proportion of Older People Willing to be Vaccinated This Week](./images/5. This Week - Old.png)
+
+![Figure 57. Proportion of Younger People Willing to be Vaccinated This Week](./images/5. This Week - Young.png)
+
+Although not as prominent, the **proportion of people who are not worried about getting COVID-19 is also higher in the younger generation** (Figure 58) **than the older ones** (Figure 59).
+
+
+![Figure 58. Proportion of Younger People Not Worried About Getting COVID-19](./images/5. Not Worried - Young.png)
+
+![Figure 59. Proportion of Older People Not Worried About Getting COVID-19](./images/5. Not Worried - Old.png)
+
+### c. Countries with Highest Proportion that Worries about Getting COVID-19 Are Also Worried about the Side Effect of Vaccine
+
+![Figure 60. Top 3 Countries with Highest Proportion That Worries about Getting COVID-19](./images/5. Worried getting COVID - Top 3.png)
+
+The **significant difference between Japan, Spain, and South Korea to the other countries** in terms of proportion that agrees to being **worried of getting COVID-19** is interesting to observe. There is a very large gap to the next ranking country, Singapore, and even the **99% confidence interval do not overlap** with any of the other countries.
+
+Another survey item is phrased in a similar way, and the same 3 countries are in the group that shows a significantly higher worry than the other countries. 
+![Figure 61. Top 5 Countries with Highest Proportion That Worries about the Potential Side Effects of COVID-19 Vaccine](./images/5. Worried Side Effect - Top 5.png)
+
+The top 5 countries with highest proportion that worries about the potential side effect of COVID-19 virus are Japan, Singapore, France, Spain, and South Korea. Again, there is no overlap in the confidence interval for the proportions. 
+
+It is possible that this observation is due to a higher anxiety level in the countries in general. Therefore, the people may be worried about everything, whether it is getting COVID-19, the side effect of COVID-19 vaccine, or whether they can get promotion, get married, remembered to feed their fish, and whether they have locked the door and turn off the stove. 
+
+This must be further investigated, so the common factor between these countries can be determined.
+
+
 
