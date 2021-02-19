@@ -2,6 +2,7 @@
 title: "DataViz Makeover 2 - COVID Vaccine Survey"
 description: |
   Visualisation makeover for Likert Scale data and uncertainty.
+preview: ./images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png
 author:
   - name: Gabriella Pauline Djojosaputro
     url: https://www.linkedin.com/in/gabriellapauline/
@@ -200,7 +201,7 @@ We can also rename the column and hide the original column to make it cleaner. I
 ### Creating Visualisation
 We will need make use of parameters to allow the users to dynamically change the survey items being displayed. 
 
-![Figure 16. Create Parameter for Survey Item](./images/4.2. Create Parameter.png)
+![Figure 16. Create Parameter for Survey Item](./images/4.2. Create Parameter.png){width=50%}
 
 * Go to worksheet.
 * **Right-click** on an empty space in the data pane > **Create Parameter...**. Tableau can be a bit picky about this, the 'Create Parameter' option does not show if you accidentally click on a field name. I found that the best place to click is just below the *Measure Values*.
@@ -271,7 +272,7 @@ To get to this stage, the steps are:
 * Drag **Selected_Survey_Items** to **Color Marks Card**.
 * Drag **Selected_Survey_Items** to **Filters Card** and select **All**, then **uncheck Null** to remove all null responses.
 
-![Figure 19. Edit Colour Legend](./images/4.2. Edit Colour Legend.png)
+![Figure 19. Edit Colour Legend](./images/4.2. Edit Colour Legend.png){width=35%}
 
 The visualisation is not completed yet, but I found it confusing to look at when the colour seem randomly chosen and the legend are not informative. We are going to stop a while to fix the legend before continuing.
 
@@ -313,7 +314,7 @@ We can do some final touch up to customise how our visualisation looks like. For
 
 #### Axis
 
-![Figure 24. Edit Axis Title](./images/4.2. Edit Axis Title.png)
+![Figure 24. Edit Axis Title](./images/4.2. Edit Axis Title.png){width=45%}
 
 For the axis, we are going edit the title and format the numbers.
 
@@ -365,7 +366,7 @@ One down, one more to go!
 ### Creating Visualisation
 The dot plot will visualise the selected response (e.g. Strongly Agree) for the selected survey item in the diverging stacked bar chart. We also need to repeat the steps to create parameters and calculated fields, but with some adjustments.
 
-![Figure 29. Create Parameter for Response](./images/4.3. Create Paramenter - Response.png)
+![Figure 29. Create Parameter for Response](./images/4.3. Create Paramenter - Response.png){width=45%}
 
 * Use **integer data type** because the survey response values will be in the range of 1 to 5. We will match the value chosen from the parameter with the Selected_Survey_Item value.
 * Enter number 1 to 5 for value and the textual descriptions in 'Display As' column.
@@ -482,7 +483,7 @@ Tableau does not allow sorting using a blended measure, so we need to use a work
 * **Right-click** on the **Prop header** > **Sort Descending**.
 * **Uncheck Show Header** for **Prop**.
 
-![Figure 38. Remove Gridlines](./images/4.3. Remove Gridline.png)
+![Figure 38. Remove Gridlines](./images/4.3. Remove Gridline.png){width=35%}
 
 If your visualisation becomes cluttered with gridlines when you added Prop, you can remove them.
 

@@ -122,7 +122,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 2 - COVID Vaccine Survey"]},{"type":"character","attributes":{},"value":["Visualisation makeover for Likert Scale data and uncertainty.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Gabriella Pauline Djojosaputro"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/gabriellapauline/"]},{"type":"character","attributes":{},"value":["School of Information Systems, Singapore Management University"]},{"type":"character","attributes":{},"value":["https://smu.edu.sg"]}]}]},{"type":"character","attributes":{},"value":["02-12-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["biblio.bibtex"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 2 - COVID Vaccine Survey"]},{"type":"character","attributes":{},"value":["Visualisation makeover for Likert Scale data and uncertainty.\n"]},{"type":"character","attributes":{},"value":["./images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Gabriella Pauline Djojosaputro"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/gabriellapauline/"]},{"type":"character","attributes":{},"value":["School of Information Systems, Singapore Management University"]},{"type":"character","attributes":{},"value":["https://smu.edu.sg"]}]}]},{"type":"character","attributes":{},"value":["02-12-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["biblio.bibtex"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1692,7 +1692,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="creating-visualisation">Creating Visualisation</h3>
 <p>We will need make use of parameters to allow the users to dynamically change the survey items being displayed.</p>
 <figure>
-<img src="images/4.2.%20Create%20Parameter.png" alt="" /><figcaption>Figure 16. Create Parameter for Survey Item</figcaption>
+<img src="images/4.2.%20Create%20Parameter.png" style="width:50.0%" alt="" /><figcaption>Figure 16. Create Parameter for Survey Item</figcaption>
 </figure>
 <ul>
 <li>Go to worksheet.</li>
@@ -1730,7 +1730,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>To get to this stage, the steps are:</p>
 <p>** Drag <strong>Negative Percentage</strong> and <strong>Positive Percentage</strong> to Columns. ** Drag <strong>Country</strong> to Rows. * We are not interested in the average or sum of the survey response, but we are going to treat is a category that describes the responses. Therefore, we need to convert it to a dimension by doing <strong>right-click</strong> on the <strong>Selected_Survey_Item</strong> field in the data pane &gt; <strong>Convert to Dimension</strong>. * Drag ** Drag <strong>Negative Percentage</strong> and <strong>Positive Percentage</strong> to Columns. * Drag <strong>Selected_Survey_Items</strong> to <strong>Color Marks Card</strong>. * Drag <strong>Selected_Survey_Items</strong> to <strong>Filters Card</strong> and select <strong>All</strong>, then <strong>uncheck Null</strong> to remove all null responses.</p>
 <figure>
-<img src="images/4.2.%20Edit%20Colour%20Legend.png" alt="" /><figcaption>Figure 19. Edit Colour Legend</figcaption>
+<img src="images/4.2.%20Edit%20Colour%20Legend.png" style="width:35.0%" alt="" /><figcaption>Figure 19. Edit Colour Legend</figcaption>
 </figure>
 <p>The visualisation is not completed yet, but I found it confusing to look at when the colour seem randomly chosen and the legend are not informative. We are going to stop a while to fix the legend before continuing.</p>
 <ul>
@@ -1774,7 +1774,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>We can do some final touch up to customise how our visualisation looks like. For a more detailed steps to change each of the elements, take a look at my <a href="https://gabriellapauline.netlify.app/dataviz/2021-01-29-dataviz-makeover-1/#step-by-step-description">first dataviz makeover post</a>.</p>
 <h4 id="axis">Axis</h4>
 <figure>
-<img src="images/4.2.%20Edit%20Axis%20Title.png" alt="" /><figcaption>Figure 24. Edit Axis Title</figcaption>
+<img src="images/4.2.%20Edit%20Axis%20Title.png" style="width:45.0%" alt="" /><figcaption>Figure 24. Edit Axis Title</figcaption>
 </figure>
 <p>For the axis, we are going edit the title and format the numbers.</p>
 <ul>
@@ -1833,7 +1833,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="creating-visualisation-1">Creating Visualisation</h3>
 <p>The dot plot will visualise the selected response (e.g. Strongly Agree) for the selected survey item in the diverging stacked bar chart. We also need to repeat the steps to create parameters and calculated fields, but with some adjustments.</p>
 <figure>
-<img src="images/4.3.%20Create%20Paramenter%20-%20Response.png" alt="" /><figcaption>Figure 29. Create Parameter for Response</figcaption>
+<img src="images/4.3.%20Create%20Paramenter%20-%20Response.png" style="width:45.0%" alt="" /><figcaption>Figure 29. Create Parameter for Response</figcaption>
 </figure>
 <ul>
 <li>Use <strong>integer data type</strong> because the survey response values will be in the range of 1 to 5. We will match the value chosen from the parameter with the Selected_Survey_Item value.</li>
@@ -1937,7 +1937,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><strong>Uncheck Show Header</strong> for <strong>Prop</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Remove%20Gridline.png" alt="" /><figcaption>Figure 38. Remove Gridlines</figcaption>
+<img src="images/4.3.%20Remove%20Gridline.png" style="width:35.0%" alt="" /><figcaption>Figure 38. Remove Gridlines</figcaption>
 </figure>
 <p>If your visualisation becomes cluttered with gridlines when you added Prop, you can remove them.</p>
 <ul>
