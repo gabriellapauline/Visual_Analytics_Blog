@@ -64,11 +64,17 @@ Figure 2 shows the alternative graphical representation proposed for the makeove
 
 ![Figure 2. Alternative Graphical Representation](./images/3. Alternative Visualisation Design.jpeg)
 
-The issues that the alternative design tries to overcome is colour-coded, with orange numbers corresponding to critiques for clarity and blue numbers for critiques with regards to aesthetics.
+The survey data uses a 5-point Likert scale for the respondents to rate the statements. There are multiple ways to visualise Likert scale data, such as a 100% stacked bar chart as in the original visualisation, multiple pie charts, diverging stacked bar chart, and so on [@pirrone_2020].
+
+Diverging stacked bar chart will help to compare the positive and negative sentiment more clearly, but there are multiple views of how to categorise neutral opinion. Having the middle of the neutral proportion as the center line makes it hard to compare the values because there is no common baseline [@wexler_2020]. Therefore, the first part of the alternative design is a diverging stacked bar chart, in which we will split the neutral opinion and put it at the outermost part of the stacked bar.
+
+The second part of the alternative design is a dot plot with error bar that indicates the confidence interval of the proportion. This will show the underlying variation in the data and prevent misleading the users. 
+
+The issues from the original visualisation that the alternative design tries to overcome is colour-coded in Figure 2, with orange numbers corresponding to critiques for clarity and blue numbers for critiques with regards to aesthetics.
 
 ### Clarity:
    1. To show an order in the survey response using a **diverging colour scale**.
-   1. To show the uncertainty using an **error bar** in the breakdown chart.
+   1. To show the uncertainty using an **error bar** in the dot plot.
    1. To **allow the users to toggle between different response of interest**. The users may choose to view individual percentage and error bars for 'Strongly Agree', 'Agree', 'Neutral', 'Disagree', and 'Strongly Disagree'.
    1. To **sort the order of countries in both graphs consistently** in descending manner according to the selected response of interest in the right graph.
    
@@ -165,6 +171,8 @@ The legend in the original visualisation is inconsistent because the survey item
 
 ![Figure 13. Custom Split](./images/4.1. Custom Split.png)
 
+On each column there are 'Abc' or '#' symbol. 'Abc' means the column is a string, while '#' means it is numerical. If the symbol starts with an equal sign, such as '=Abc' or '=#', it means the column is a calculated field. Ensure that the survey items are in a string format before doing the split. If they are not, click on the data type and change it to String.
+
 The value for 1 is '1 - Strongly Agree'. Notice that the numerical value is the first part of the string before a space bar. Therefore, we will split the first column using the space bar as a separator.
 
 * **Right-click** on one of the survey items' column header (e.g. vac 1) > **Custom Split...**
@@ -181,13 +189,179 @@ We have the values from 1 to 5 now in the column, so we can convert the data typ
 
 ![Figure 15. Change Data Type](./images/4.1. Change Data Type.png)
 
-On each column there are 'Abc' or '#' symbol. 'Abc' means the column is a string, while '#' means it is numerical. If the symbol starts with an equal sign, such as '=Abc' or '=#', it means the column is a calculated field.
+
 
 * Click on the **data type symbol** > **Number (whole)**
 
-We can also rename the column and hide the original column to make it cleaner. I renamed all original columns with an added suffix '-ori' and used the original column names in the new columns. 
+We can also rename the column and hide the original column to make it cleaner. I added a suffix '- ori' the original columns and used the original column names in the calculated columns.
 
 **Repeat** the steps from Figure 13 for all survey items, and we are ready to create the visualisation.
+
+## 4.2. Diverging Stacked Bar Chart
+### Creating Visualisation
+We will need make use of parameters to allow the users to dynamically change the survey items being displayed. 
+
+![Figure 16. Create Parameter for Survey Item](./images/4.2. Create Parameter.png)
+
+* Go to worksheet.
+* **Right-click** on an empty space in the data pane > **Create Parameter...**. Tableau can be a bit picky about this, the 'Create Parameter' option does not show if you accidentally click on a field name. I found that the best place to click is just below the *Measure Values*.
+* Enter **'Select Survey Item'** as **name** for the parameter.
+* Change **data type** to **String**.
+* Select **List** for allowable values.
+* **Enter the list of values**. I used the column names (vac_1, vac2_1, vac2_2, vac2_3, vac2_6, and vac_3) for the value and the survey questions for the display as. Refer to [/covid-19-tracker/codebook.xlsx](https://github.com/YouGov-Data/covid-19-tracker/blob/master/codebook.xlsx) to get the survey questions.
+* click **OK**.
+
+![Figure 17. Create Calculated Fields](./images/4.2. Number of Records Formula.png)
+
+We will need several calculated fields to enable the visualisation. The steps to create a calculated fields are:
+* **Right-click** on an empty space in the data pane > **Create Calculated Field...**.
+* Enter the **field name** and the **formula**.
+
+The formulas that we need for the diverging stacked bar chart are:
+
+(@) **Number of Records**:
+
+    1
+
+(@) **Selected Survey Item**:
+
+    CASE [Select Survey Item] 
+when 'vac1' then [Vac 1]
+when 'vac2_1' then [Vac2 1]
+when 'vac2_2' then [Vac2 2]
+when 'vac2_3' then [Vac2 3]
+when 'vac2_6' then [Vac2 6]
+when 'vac3' then [Vac 3]
+end
+
+(@) **Count Positive**:
+
+    If [Selected_Survey_Item] < 3 then 1
+elseif [Selected_Survey_Item] = 3 then 0.5
+else 0
+END
+
+(@) **Count Negative**:
+
+    If [Selected_Survey_Item] > 3 then -1
+elseif [Selected_Survey_Item] = 3 then -0.5
+else 0
+END
+
+(@) **Positive Percentage**:
+
+    SUM([Count Positive]) /
+TOTAL(SUM([Number of Records]))
+
+(@) **Negative Percentage**:
+
+    SUM([Count Negative]) /
+TOTAL(SUM([Number of Records]))
+
+We create the visualisation by adding fields to the rows and columns shelves, as well as the filters and marks cards. Figure 18 shows the first cut of the visualisation.
+
+![Figure 18. Specify Rows and Columns Fields](./images/4.2. Rows and Columns Negative Positive.png)
+
+To get to this stage, the steps are:
+
+** Drag **Negative Percentage** and **Positive Percentage** to Columns.
+** Drag **Country** to Rows.
+* We are not interested in the average or sum of the survey response, but we are going to treat is a category that describes the responses. Therefore, we need to convert it to a dimension by doing **right-click** on the **Selected_Survey_Item** field in the data pane > **Convert to Dimension**.
+* Drag ** Drag **Negative Percentage** and **Positive Percentage** to Columns.
+* Drag **Selected_Survey_Items** to **Color Marks Card**.
+* Drag **Selected_Survey_Items** to **Filters Card** and select **All**, then **uncheck Null** to remove all null responses.
+
+![Figure 19. Edit Colour Legend](./images/4.2. Edit Colour Legend.png)
+
+The visualisation is not completed yet, but I found it confusing to look at when the colour seem randomly chosen and the legend are not informative. We are going to stop a while to fix the legend before continuing.
+
+* **Right-click** on the legend label > **Edit Alias...**. We know that 1 signifies 'Strongly Agree' while 5 stands for 'Strongly Disagree'. So we enter the descriptions accordingly for 2, 3, and 4 as well. 
+
+![Figure 20. Select Colour for Each Response](./images/4.2. Select Colour for Selected Survey Item.png)
+
+* **Double-click** on the colour legend to open the edit color window. 
+* **Select the colours**. I used the **Color Blind** palette to ensure that the visualisation can be understood clearly, as ten percent of men has red-green colour-blindness [@shaffer]. **Shades of blue** colour are used to represent **positive** responses while **shades of red** are used to represent the **negative** sentiment. 
+
+![Figure 21. Compute Using Selected_Survey_Item](./images/4.2. Compute Using Selected_Survey_Item.png)
+
+Notice that in Figure 18, the negative and positive percentage for each country do not add up to 100% and Israel has the smallest bar compared to other countries. To rectify this issue, ensure the percentages are computed based on the selected survey item.
+
+* **Right-click** on **Negative Percentage** pill on the columns shelf > **Compute Using** > **Selected_Survey_Item**.
+* **Repeat** for **Positive Percentage**.
+
+![Figure 22. Use Dual Axis](./images/4.2. Dual Axis.png)
+
+Although the percentages add up to 100% now, but they are actually plotting the positive and negative percentages side by side with a different axis scale. We will use dual axis to standardise the two axis. 
+
+* **Right-click** on **Positive Percentage** pill on the column shelf > **Dual Axis**. 
+* Don't panic if your visualisation suddenly goes haywire. Click **All Marks Card** then change the visualisation type from Automatic to **Bar**.
+* **Right-click** on the **Positive Percentage Axis** > **Synchronize Axis**.
+* We can get back the original colour we have chosen by removing the Measure Names from the colour marks card. We can **drag** the **Measure Names** field **off from the Marks Card**. Ensure we are still selecting the All Marks Card while doing so.
+
+![Figure 23. Reorder Colours](./images/4.2. Reorder Colours.png)
+
+Previously, neutral bars are drawn first for the Positive Percentage. We can rearrange the bars by manually reordering the colour in the colour legend.
+
+* **Drag Neutral** colour to the top.
+* **Swap** the order between **Strongly Agree** and Agree.
+
+This creates an unintuitive order for the colour legend, but it is fine. We will not use this legend in the final dashboard. 
+
+### Customisation
+
+We can do some final touch up to customise how our visualisation looks like. For a more detailed steps to change each of the elements, take a look at my [first dataviz makeover post](https://gabriellapauline.netlify.app/dataviz/2021-01-29-dataviz-makeover-1/#step-by-step-description). 
+
+#### Axis
+
+![Figure 24. Edit Axis Title](./images/4.2. Edit Axis Title.png)
+
+For the axis, we are going edit the title and format the numbers.
+
+* **Right-click** on the **Negative Percentage axis** > **Edit Axis...**
+* Change the **Title** to **Proportion**.
+* Remove the top axis by doing **right-click** on the **Positive Percentage axis** > **uncheck Show Header**
+
+![Figure 25. Edit Axis Number Format](./images/4.2. Edit Axis Number Format.png)
+
+* * **Right-click** on the **axis** > **Format...**
+* Click **Axis** > **Numbers** > **Percentage**.
+* Use **0 decimal points**.
+* Repeat for the top axis. I chose to leave it inside instead of removing it because it might be easier to see since we have numerous countries. 
+
+#### Title
+Remember the parameter we created earlier? We are going to use the questions as the title. 
+
+![Figure 26. Edit Title](./images/4.2. Edit Title.png) 
+
+* **Double-click** on the **title**.
+* **Insert** > **Parameters.SelectSurveyItem** > **OK**.
+* We can show the parameter to check. Go to the data pane, **right-click** on the **Select Survey Item** > **Show Parameter**. We can toggle the different survey items we want to see and the visualisation will change accordingly.
+
+#### Filters
+Having filters allow the users to interact with the visualisation and tailor it according to their needs. We will use Employment Status, Gender, Household Children and Household Size fields as the filters.
+
+![Figure 27. Add String Filters](./images/4.2. Add String Filter.png)
+
+* **Drag Employment Status** to the **Filters**.
+* Click **All** > **OK**.
+* **Right-click** on the **Employment Status** pill in the filter card > **Show Filter**.
+* **Repeat** for **Gender**.
+
+![Figure 28. Add Numeric Filters](./images/4.2. Add Numeric Filter.png)
+
+For the numeric filter, the interface is slightly different because we can pick a range of values.
+
+* **Drag Household Size** to the **Filters**.
+* **All values** > **Next**.
+* Check **include null values** > **OK**. This might dilute the information because the nulls will still be included when we want to examine by a certain household size, but filtering out the nulls can cause us to lose a significant subset of data. For this trade-off, I chose to include the nulls.
+* **Right-click** on the **Household Size** pill in the filter card > **Show Filter**.
+* **Repeat** for **Household Children**.
+
+![Figure 29. Diverging Stacked Bar Chart](./images/4.2. Diverging Stacked Bar Chart.png)
+
+One down, one more to go!
+
+
 
 
 
