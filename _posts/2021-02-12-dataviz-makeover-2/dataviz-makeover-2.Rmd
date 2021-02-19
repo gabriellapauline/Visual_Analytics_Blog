@@ -95,7 +95,7 @@ The final look of the data visualisation makeover is shown in Figure 3. It is al
 # 4. Step-by-Step Description
 In this section, we are going through the steps to recreate the Data Visualisation Makeover shown in Figure 3 using Tableau. Tableau Desktop has a 14-day trial that can be downloaded [here](https://www.tableau.com/products/desktop/download). 
 
-## 4.1 Data Preparation
+## 4.1. Data Preparation
 ### Data Source
 The visualisation is based on the publicly available [Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub](https://github.com/YouGov-Data/covid-19-tracker), which aims to get insights or how people respond to COVID-19. They also publish a [dashboard](https://ichpanalytics.imperialcollegehealthpartners.com/t/BDAU/views/YouGovICLCOVID-19BehaviourTracker/Homepage) to visualise the data.
 
@@ -248,15 +248,16 @@ elseif [Selected_Survey_Item] = 3 then -0.5
 else 0
 END
 
+(@) **Total Count**:
+    TOTAL(SUM([Number of Records]))
+
 (@) **Positive Percentage**:
 
-    SUM([Count Positive]) /
-TOTAL(SUM([Number of Records]))
+    SUM([Count Positive]) / [Total Count]
 
 (@) **Negative Percentage**:
 
-    SUM([Count Negative]) /
-TOTAL(SUM([Number of Records]))
+    SUM([Count Negative]) / [Total Count]
 
 We create the visualisation by adding fields to the rows and columns shelves, as well as the filters and marks cards. Figure 18 shows the first cut of the visualisation.
 
@@ -338,7 +339,7 @@ Remember the parameter we created earlier? We are going to use the questions as 
 * We can show the parameter to check. Go to the data pane, **right-click** on the **Select Survey Item** > **Show Parameter**. We can toggle the different survey items we want to see and the visualisation will change accordingly.
 
 #### Filters
-Having filters allow the users to interact with the visualisation and tailor it according to their needs. We will use Employment Status, Gender, Household Children and Household Size fields as the filters.
+Having filters allow the users to interact with the visualisation and tailor it according to their needs. We will use Employment Status, Gender, Age, Household Children and Household Size fields as the filters.
 
 ![Figure 27. Add String Filters](./images/4.2. Add String Filter.png)
 
@@ -355,13 +356,134 @@ For the numeric filter, the interface is slightly different because we can pick 
 * **All values** > **Next**.
 * Check **include null values** > **OK**. This might dilute the information because the nulls will still be included when we want to examine by a certain household size, but filtering out the nulls can cause us to lose a significant subset of data. For this trade-off, I chose to include the nulls.
 * **Right-click** on the **Household Size** pill in the filter card > **Show Filter**.
-* **Repeat** for **Household Children**.
+* **Repeat** for **Household Children** and **Age**.
 
 ![Figure 29. Diverging Stacked Bar Chart](./images/4.2. Diverging Stacked Bar Chart.png)
 
 One down, one more to go!
 
+## 4.3. Dot Plot with Error Bars
+### Creating Visualisation
+The dot plot will visualise the selected response (e.g. Strongly Agree) for the selected survey item in the diverging stacked bar chart. We also need to repeat the steps to create parameters and calculated fields, but with some adjustments.
 
+![Figure 29. Create Parameter for Response](./images/4.3. Create Paramenter - Response.png)
 
+* Use **integer data type** because the survey response values will be in the range of 1 to 5. We will match the value chosen from the parameter with the Selected_Survey_Item value.
+* Enter number 1 to 5 for value and the textual descriptions in 'Display As' column.
 
+The formulas we need to add for the dot plot are:
+
+(@) **Count Selected Response**:
+
+    If [Selected_Survey_Item]=[Select Response]
+Then 1
+else 0
+End
+
+(@) **Prop**:
+
+    TOTAL(SUM([Count Selected Response]))/ [Total Count]
+    
+(@) **Prop 95% Lower Limit%**:
+
+    [Prop] - 1.959964 * sqrt([Prop]*(1-[Prop])/[Total Count])
+    
+(@) **Prop 95% Upper Limit%**:
+
+    [Prop] + 1.959964 * sqrt([Prop]*(1-[Prop])/[Total Count])
+        
+(@) **Prop 99% Lower Limit%**:
+
+    [Prop] - 2.575829 * sqrt([Prop]*(1-[Prop])/[Total Count])
+        
+(@) **Prop 99% Upper Limit%**:
+
+    [Prop] + 2.575829 * sqrt([Prop]*(1-[Prop])/[Total Count])
+    
+#### Dot Plot
+We are going to start by creating the dots for the proportion from the sample.
+        
+![Figure 30. First Cut of the Dot Plot](./images/4.3. First Cut.png)
+
+* Put **Prop** in the **Columns.
+* Put **Country** for the **Rows**.
+* **Filter out** all **null** values in the **Selected Survey Item**.
+* Change mark from Automatic to **Circle**.
+* Adjust the **size** of the dots to your liking.
+* **Show Parameter** so we can toggle and check if it is working properly.
+
+If the dots are in the same value for all countries, make sure that **Prop** is **computed using cell**.
+
+I found a neat trick that we can select **Fit Height** above the column shelf to automatically adjust the height of the chart.
+
+![Figure 31. Edit Colour](./images/4.3. Select Colours.png)
+
+* **Drag Select Response** to the **Color Marks Card**.
+* **Double-click** on the colour legend
+* Use **Orange-Blue Diverging** palette
+* Create a **5 steps reversed** palette. We need to reverse the colours because 1 indicates a positive opinion and we want it to be represented with blue colour. By default it will use red shades for the lower value because usually the lower values are negative and we want them to be red.
+* As we only select one response at a time, we need to create the range of values manually. Click **Advanced** > specify **Start** and **End**.
+ 
+You can play around and see how the colour of the dots changes according to the selected response.
+
+![Figure 32. Add Labels](./images/4.3. Add Label.png)
+
+* Add a label value for each of the dots by **dragging Prop** to the **Label Marks Card**.
+* **Double-click** on the **Label Marks Card** > Adjust **Font** and **Alignment**. The reason why Font appears blank is because it shows the preview of the text, and I chose white colour so we cannot see it. I used Tableau Bold 8pt. 
+* Format the number appearance by doing **right click on the labels** > **Format...**
+* Change the number format for both **Axis** and **Pane** to **Percentage** with **0 decimal places**.
+
+We can adjust the circle size again if we need to, but try not to make it very big, otherwise the circles will get cropped.
+
+#### Error Bars
+![Figure 33. Add Measure Values](./images/4.3. Add Measure Values.png)
+
+* Add **Measure Values** to the **Columns**.
+* Remove away all fields from the **Measure Values** shelf, only retain **Prop 95% Lower Limit**, **Prop 95% Upper Limit**,**Prop 99% Lower Limit**, **Prop 99% Upper Limit**.
+* Click the **Measure Values Marks Card** and **remove all fields**. 
+* Change the **Marks Type** to **Line**.
+
+Why is the line going zig-zag like a drunk driver? Because we have not specified the path for the lines. 
+
+![Figure 34. Add Colour and Path](./images/4.3. Add Colour and Path.png)
+
+* **Drag Measure Names** to **Colour** and **Path**.
+* Tableau draw the line one on top of the other with respect to the order in the Measure Values. We need to reorder it so the 95% confidence interval (CI) will be drawn on top of 99% CI, otherwise we will not be able to see it. **Reorder the fields in Measure Values** so that 99% is above 95%. 
+* **Change the colour** by **double-clicking** on the legend. Use a lighter shade for 99% CI and a darker shade for 95% CI.
+
+![Figure 35. Dual Axis](./images/4.3. Dual Axis.png)
+
+Combine the circle and the confidence interval by using a dual axis.
+
+* **Right-click** on the **Prop** pill on the Columns shelf > **Dual Axis**.
+* **Right-click** on one of the axis scale > **Synchronize Axis**.
+* Ensure Measure Values comes before Prop so the circle will be on top. If it is not, swap the order.
+* To tidy up the visualisation, **edit the format** of the axis scale to show **percentage** and **hide the scale on the top**.
+
+#### Sort
+Tableau does not allow sorting using a blended measure, so we need to use a workaround [@tableaukb]. We want to sort according to the order of Prop, so we will use it in the Rows shelf and hide it away.
+
+![Figure 36. Add Prop to Columns and Convert to Discrete](./images/4.3. Add Prop and Convert to Discrete.png)
+
+* **Drag Prop** to **Rows** shelf > **right-click** > **Discrete**
+
+![Figure 37. Sort by Prop](./images/4.3. Sort Prop Descending.png)
+
+* **Move Prop** pill to before **Country**. Now it will automatically sort the values based on Prop.
+* **Right-click** on the **Prop header** > **Sort Descending**.
+* **Uncheck Show Header** for **Prop**.
+
+![Figure 38. Remove Gridlines](./images/4.3. Remove Gridline.png)
+
+If your visualisation becomes cluttered with gridlines when you added Prop, you can remove them.
+
+* **Right-click** anywhere on the chart > **Format**.
+* Choose the **grid icon** > **Rows** > Change **Row Divider** to **None**.
+* Repeat for **Column**.
+
+![Figure 39. Edit Title for Dot Plot with Error Bar](./images/4.3. Edit Title.png)
+
+* Last but not least, **edit the title** so it will change dynamically according to the parameter selected by the users.
+
+![Figure 40. Dot Plot with Error Bars](./images/4.3. Dot Plot with Error Bars.png)
 
