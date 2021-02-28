@@ -88,7 +88,7 @@ The issues from the original visualisation that the alternative design tries to 
    1. To **allow the users to visualise different survey items**. The users can see the response for questions such as whether the respondents are afraid of COVID vaccine side effects, not just restricted to whether or not they are willing to take the vaccine.
    1. To **use animation to show the transitions** between different selected parameters, so the users can easily notice if the ranks of the countries change.
    
-The final look of the data visualisation makeover is shown in Figure 3. It is also available in **!!!!**
+The final look of the data visualisation makeover is shown in Figure 3. It is also available in [Tableau Public](https://public.tableau.com/profile/gabriella.pauline.djojosaputro#!/vizhome/DataViz2-COVIDVaccineFilteredDatav3/COVIDSurveyDashboard)
 
 ![Figure 3. Data Visualisation Makeover 2 Final Look](./images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png)
 
