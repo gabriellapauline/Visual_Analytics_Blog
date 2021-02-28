@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +52,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -2056,7 +2056,331 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Amiri');
+@import url('https://fonts.googleapis.com/css2?family=Bitter');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Roboto:wght@300&display=swap');
+
+/*
+--dark-blue-gray: #68668fff;
+--maximum-blue-green: #6cc3bdff;
+--light-coral: #f67e7dff;
+--melon: #ffc1a8ff;
+--bisque: #ffe5c4ff;
+*/
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    "Lora", serif;
+  --mono-font:       "DM Mono", monospace;
+  --body-font:       "Roboto", sans-serif;
+  --navbar-font:     "Lora", serif; /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --body-justify-content: center
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        16px;
+  --hover-color:      white;
+  --bkgd-color:       #68668f;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.6/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2120,12 +2444,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3>Contents</h3>
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a><ul>
+<li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a>
+<ul>
 <li><a href="#clarity">2.1 Clarity</a></li>
 <li><a href="#aesthetics">2.2 Aesthetics</a></li>
 </ul></li>
 <li><a href="#alternative-graphical-representation">3. Alternative Graphical Representation</a></li>
-<li><a href="#step-by-step-description">4. Step-by-Step Description</a><ul>
+<li><a href="#step-by-step-description">4. Step-by-Step Description</a>
+<ul>
 <li><a href="#data-source">4.1 Data Source</a></li>
 <li><a href="#resident-labour-force-line-chart">4.2 Resident Labour Force Line Chart</a></li>
 <li><a href="#labour-force-participation-rate-bar-chart">4.3. Labour Force Participation Rate Bar Chart</a></li>
@@ -2143,7 +2469,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1 id="original-visualisation-evaluation">2. Original Visualisation Evaluation</h1>
 <p>To start, we examine the original visualisation from the data (Figure 1) to learn what we can improve. The critiques are given in terms of <strong>clarity</strong> and <strong>aesthetics</strong>.</p>
 <figure>
-<img src="images/Original_chart.png" alt="" /><figcaption>Figure 1. Original chart from Labour Force in Singapore 2019 Report</figcaption>
+<img src="images/Original_chart.png" alt="Figure 1. Original chart from Labour Force in Singapore 2019 Report" /><figcaption aria-hidden="true">Figure 1. Original chart from Labour Force in Singapore 2019 Report</figcaption>
 </figure>
 <h2 id="clarity">2.1 Clarity</h2>
 <h3 id="to-keep">To keep:</h3>
@@ -2176,7 +2502,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1 id="alternative-graphical-representation">3. Alternative Graphical Representation</h1>
 <p>Figure 2 shows the alternative graphical representation proposed for the makeover.</p>
 <figure>
-<img src="images/alternative_graphical_representation.jpg" alt="" /><figcaption>Figure 2. Alternative Graphical Representation</figcaption>
+<img src="images/alternative_graphical_representation.jpg" alt="Figure 2. Alternative Graphical Representation" /><figcaption aria-hidden="true">Figure 2. Alternative Graphical Representation</figcaption>
 </figure>
 <p>The issues that the alternative design tries to overcome are:</p>
 <ol type="1">
@@ -2189,7 +2515,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>Additionally, the visualisation will include <strong>title and lead-in</strong> that highlight the important observations, as well as maintaining the good points from the original charts, such as the <strong>choice of fonts and colours</strong>.</p>
 <h3 id="update">Update:</h3>
 <figure>
-<img src="images/alternative_graphical_representation2.jpeg" alt="" /><figcaption>Figure 3. Alternative Graphical Representation Update</figcaption>
+<img src="images/alternative_graphical_representation2.jpeg" alt="Figure 3. Alternative Graphical Representation Update" /><figcaption aria-hidden="true">Figure 3. Alternative Graphical Representation Update</figcaption>
 </figure>
 <p>As the visualisation is being created, there are some slight deviations from the original plan. The changes are as the following:</p>
 <ol type="1">
@@ -2199,7 +2525,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <p>The final look of the data visualisation makeover is shown in Figure 4. It is also available in <a href="https://public.tableau.com/profile/gabriella.pauline.djojosaputro#!/vizhome/ResidentLabourForceinSingapore2009-2019/MoreolderresidentsareinSingaporeworkforcein2019comparedto2009">Tableau Public</a>.</p>
 <figure>
-<img src="images/Final%20Dashboard.png" alt="" /><figcaption>Figure 4. Data Visualisation Makeover 1 Final Look</figcaption>
+<img src="images/Final%20Dashboard.png" alt="Figure 4. Data Visualisation Makeover 1 Final Look" /><figcaption aria-hidden="true">Figure 4. Data Visualisation Makeover 1 Final Look</figcaption>
 </figure>
 <h1 id="step-by-step-description">4. Step-by-Step Description</h1>
 <p>In this section, we are going through the steps to recreate the Data Visualisation Makeover shown in Figure 4 using Tableau. Tableau Desktop has a 14-day trial that can be downloaded <a href="https://www.tableau.com/products/desktop/download">here</a>. The steps might be too detailed, but they are designed so that beginners with no Tableau experience can follow the tutorial easily.</p>
@@ -2240,21 +2566,21 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>This chart will show how percentage of each age groups of interest in the Resident Labour Force changes through the course of 2009 to 2019. Steps to create the visualisation is shown below.</p>
 <h3 id="data-preparation">Data Preparation</h3>
 <figure>
-<img src="images/4.2.%20Connect%20to%20Data.png" alt="" /><figcaption>Figure 5. Connect to Data</figcaption>
+<img src="images/4.2.%20Connect%20to%20Data.png" alt="Figure 5. Connect to Data" /><figcaption aria-hidden="true">Figure 5. Connect to Data</figcaption>
 </figure>
 <ul>
 <li>Create a new workbook and click <strong>Connect to Data</strong>.</li>
 <li>Choose the <strong>file type</strong> &gt; <strong>file name</strong> (In this case, it would be Table 7 from Labour Force Report 2019).</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Drag%20Table.png" alt="" /><figcaption>Figure 6. Add Table</figcaption>
+<img src="images/4.2.%20Drag%20Table.png" alt="Figure 6. Add Table" /><figcaption aria-hidden="true">Figure 6. Add Table</figcaption>
 </figure>
 <ul>
 <li><p><strong>Drag the table that we want</strong> to the workspace. We are interested in the total number, not in the distribution of gender. Therefore, we can use T7_T that contains the total number of males and females.</p></li>
 <li><p>Check the <strong>Use Data Interpreter</strong> checkbox to allow Tableau to do automatic cleaning. Tableau is able to intelligently detect valuable columns and rows, and drop the empty ones.</p></li>
 </ul>
 <figure>
-<img src="images/4.2.%20Hide%20Column.png" style="width:75.0%" alt="" /><figcaption>Figure 7. Hide Column</figcaption>
+<img src="images/4.2.%20Hide%20Column.png" style="width:75.0%" alt="Figure 7. Hide Column" /><figcaption aria-hidden="true">Figure 7. Hide Column</figcaption>
 </figure>
 <p>After the cleaning, we still have a column that we are not interested in. There are some values in the column, but it is just an annotation.</p>
 <ul>
@@ -2263,7 +2589,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>The first row in the table has null in the Age column. This value is the total from all Age groups, which we can obtain with the SUM function later. We can filter out this row.</p>
 <figure>
-<img src="images/4.2.%20Add%20Filters.png" alt="" /><figcaption>Figure 8. Add Filters</figcaption>
+<img src="images/4.2.%20Add%20Filters.png" alt="Figure 8. Add Filters" /><figcaption aria-hidden="true">Figure 8. Add Filters</figcaption>
 </figure>
 <ul>
 <li>In the top right-hand corner, under Filters, click <strong>Add</strong>.</li>
@@ -2271,7 +2597,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Select the <strong>Age</strong> field &gt; <strong>OK</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Select%20Age.png" style="width:50.0%" alt="" /><figcaption>Figure 9. Select Age</figcaption>
+<img src="images/4.2.%20Select%20Age.png" style="width:50.0%" alt="Figure 9. Select Age" /><figcaption aria-hidden="true">Figure 9. Select Age</figcaption>
 </figure>
 <p>We can either select None and manually check the data items we want one-by-one, or check all boxes first and unselect the one we do not want. Since we only want to remove one age group, we will do the latter.</p>
 <ul>
@@ -2280,14 +2606,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>The table is currently in a wide format, but we want it to be long and thin so we can assign the years as a Date variable. We can use the pivot function from Tableau.</p>
 <figure>
-<img src="images/4.2.%20Pivot.png" alt="" /><figcaption>Figure 10. Pivot</figcaption>
+<img src="images/4.2.%20Pivot.png" alt="Figure 10. Pivot" /><figcaption aria-hidden="true">Figure 10. Pivot</figcaption>
 </figure>
 <ul>
 <li><strong>Select all the columns</strong> with the year as the header column. We can do this by holding Ctrl button while selecting the columns or holding Shift button and select the first (2009) and last (2019) column that we want.</li>
 <li><strong>Right-click</strong> on any of the column header &gt; <strong>Pivot</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Rename%20Column.png" style="width:60.0%" alt="" /><figcaption>Figure 11. Rename Columns</figcaption>
+<img src="images/4.2.%20Rename%20Column.png" style="width:60.0%" alt="Figure 11. Rename Columns" /><figcaption aria-hidden="true">Figure 11. Rename Columns</figcaption>
 </figure>
 <p>The data is now transformed to a thin table with three columns. The original column headers are stored in Pivot Field Names, while the values are stored in Pivot Field Values. Rename the columns to make it easier to understand.</p>
 <ul>
@@ -2317,18 +2643,18 @@ document.addEventListener('DOMContentLoaded', function() {
 </tbody>
 </table>
 <figure>
-<img src="images/4.2.%20Change%20to%20Date.png" style="width:60.0%" alt="" /><figcaption>Figure 12. Change to Date</figcaption>
+<img src="images/4.2.%20Change%20to%20Date.png" style="width:60.0%" alt="Figure 12. Change to Date" /><figcaption aria-hidden="true">Figure 12. Change to Date</figcaption>
 </figure>
 <p>Notice that there is an ‘Abc’ symbol above the column Age and Year. This means the two variables are considered String Variables. However, we want the Year to have a Date data type. * Click the <strong>‘Abc’</strong> symbol in Year column header &gt; <strong>Date</strong>.</p>
 <figure>
-<img src="images/4.2.%20Create%20Group.png" style="width:60.0%" alt="" /><figcaption>Figure 13. Create Group</figcaption>
+<img src="images/4.2.%20Create%20Group.png" style="width:60.0%" alt="Figure 13. Create Group" /><figcaption aria-hidden="true">Figure 13. Create Group</figcaption>
 </figure>
 <p>Next, one of the improvement we want to make on the original visualisation is to group the age variable so it will be the same as the age groups that are mentioned in the statement. Therefore, we need to group into 25 - 54 and 55 &amp; over. Age group 15 - 24 will be created even though it is not mentioned in the statement to show that the numbers sum to 100%.</p>
 <ul>
 <li><strong>Right-click</strong> on Age column header &gt; <strong>Create Group…</strong></li>
 </ul>
 <figure>
-<img src="images/4.2.%20Age%20Groups.png" style="width:55.0%" alt="" /><figcaption>Figure 14. Age Groups</figcaption>
+<img src="images/4.2.%20Age%20Groups.png" style="width:55.0%" alt="Figure 14. Age Groups" /><figcaption aria-hidden="true">Figure 14. Age Groups</figcaption>
 </figure>
 <ul>
 <li><strong>Select</strong> the <strong>ages</strong> that we want to group together (e.g. 15 - 19 and 20 - 24), then press <strong>Group</strong>.</li>
@@ -2336,14 +2662,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Repeat</strong> to get three age groups as shown in Figure 12 &gt; <strong>OK</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Create%20Calculated%20Field.png" style="width:60.0%" alt="" /><figcaption>Figure 15. Create Calculated Field</figcaption>
+<img src="images/4.2.%20Create%20Calculated%20Field.png" style="width:60.0%" alt="Figure 15. Create Calculated Field" /><figcaption aria-hidden="true">Figure 15. Create Calculated Field</figcaption>
 </figure>
 <p>The current value that we have for Resident Labour Force is absolute value, but we are interested in the distribution of age in the workforce. We can get this value by doing a quick table calculation or creating calculated field. This post will use the latter method.We need to create two calculated fields: Total Resident Labour Force and Percentage of Total Resident Labour Force.</p>
 <ul>
 <li><strong>Right-click</strong> on the <strong>Resident Labour Force</strong> column header &gt; <strong>Create Calculated Field…</strong></li>
 </ul>
 <figure>
-<img src="images/4.2.%20Total%20Resident%20Labour%20Force%20Formula.png" alt="" /><figcaption>Figure 16. Total Resident Labour Force Formula</figcaption>
+<img src="images/4.2.%20Total%20Resident%20Labour%20Force%20Formula.png" alt="Figure 16. Total Resident Labour Force Formula" /><figcaption aria-hidden="true">Figure 16. Total Resident Labour Force Formula</figcaption>
 </figure>
 <p>The formula shown above calculates the total number of people in the Resident Labour Force per year.</p>
 <ul>
@@ -2355,17 +2681,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>[Resident Labour Force]/[Total Resident Labour Force]</p>
 </blockquote>
 <figure>
-<img src="images/4.2.%20Go%20to%20Sheet.png" style="width:60.0%" alt="" /><figcaption>Figure 17. Go to Sheet</figcaption>
+<img src="images/4.2.%20Go%20to%20Sheet.png" style="width:60.0%" alt="Figure 17. Go to Sheet" /><figcaption aria-hidden="true">Figure 17. Go to Sheet</figcaption>
 </figure>
 <p>We are done! We can go to the <strong>Sheet1</strong> Tab in the bottom left-hand corner.</p>
 <h3 id="creating-visualisation">Creating Visualisation</h3>
 <p>Sheet is where we can build visualisation. The general layout in Tableau interface is shown in Figure 16.</p>
 <figure>
-<img src="images/4.2.%20Tableau%20Interface-marked.png" alt="" /><figcaption>Figure 18. Tableau Layout</figcaption>
+<img src="images/4.2.%20Tableau%20Interface-marked.png" alt="Figure 18. Tableau Layout" /><figcaption aria-hidden="true">Figure 18. Tableau Layout</figcaption>
 </figure>
 <p>We can build visualisation by dragging the fields from the data pane directly to the canvast or to the shelves. Depending on where we drop the fields, they will take on different roles in the visualisation. To create the line chart for the Resident Labour Force by age group, we will drag the following fields to the column.</p>
 <figure>
-<img src="images/4.2.%20Rows%20and%20Columns%20Line%20Chart.png" alt="" /><figcaption>Figure 19. Rows and Columns for Line Chart</figcaption>
+<img src="images/4.2.%20Rows%20and%20Columns%20Line%20Chart.png" alt="Figure 19. Rows and Columns for Line Chart" /><figcaption aria-hidden="true">Figure 19. Rows and Columns for Line Chart</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Year</strong> to <strong>Columns</strong> shelf.</li>
@@ -2373,7 +2699,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>Notice that Tableau automatically recommends a line chart to visualise our data. Don’t be alarmed that it is only displaying a straight line. Right now it computes the total percentage of all group, that is why it is always 100%. Next, we need to separate the age groups.</p>
 <figure>
-<img src="images/4.2.%20Add%20Age%20Group.png" alt="" /><figcaption>Figure 20. Add Age Group</figcaption>
+<img src="images/4.2.%20Add%20Age%20Group.png" alt="Figure 20. Add Age Group" /><figcaption aria-hidden="true">Figure 20. Add Age Group</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Age (group)</strong> to the <strong>Color Marks Card</strong>.</li>
@@ -2382,7 +2708,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>We can further customise the chart appearance to enhance the usefulness and readability of the chart. There are several customisations on the line chart that we are going to perform.</p>
 <h4 id="label">Label</h4>
 <figure>
-<img src="images/4.2.%20Add%20Label.png" alt="" /><figcaption>Figure 21. Add Label</figcaption>
+<img src="images/4.2.%20Add%20Label.png" alt="Figure 21. Add Label" /><figcaption aria-hidden="true">Figure 21. Add Label</figcaption>
 </figure>
 <ul>
 <li><strong>Drag % of Total Resident Labour Force</strong> to the <strong>Text Marks Card</strong>.</li>
@@ -2390,7 +2716,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Select <strong>Line Ends</strong> to make the labels only appear on the line end. Otherwise, the chart will be too cluttered.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Format%20Label.png" alt="" /><figcaption>Figure 22. Format Label</figcaption>
+<img src="images/4.2.%20Format%20Label.png" alt="Figure 22. Format Label" /><figcaption aria-hidden="true">Figure 22. Format Label</figcaption>
 </figure>
 <ul>
 <li><strong>Right-click</strong> on one of the labels &gt; <strong>Format…</strong> to open the Format Pane.</li>
@@ -2400,20 +2726,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="axis-header">Axis / Header</h4>
 <p>As we have already labeled the data points of interest, the y-axis is no longer necessary. We can remove the axis to increase our data-ink ratio.</p>
 <figure>
-<img src="images/4.2.%20Remove%20Header.png" style="width:50.0%" alt="" /><figcaption>Figure 23. Remove Axis</figcaption>
+<img src="images/4.2.%20Remove%20Header.png" style="width:50.0%" alt="Figure 23. Remove Axis" /><figcaption aria-hidden="true">Figure 23. Remove Axis</figcaption>
 </figure>
 <ul>
 <li><strong>Right-click</strong> on the y-axis &gt; <strong>Uncheck Show Header</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Hide%20Field%20Labels%20for%20Columns.png" style="width:60.0%" alt="" /><figcaption>Figure 24. Hide Field Labels for Columns</figcaption>
+<img src="images/4.2.%20Hide%20Field%20Labels%20for%20Columns.png" style="width:60.0%" alt="Figure 24. Hide Field Labels for Columns" /><figcaption aria-hidden="true">Figure 24. Hide Field Labels for Columns</figcaption>
 </figure>
 <ul>
 <li>Likewise, <strong>right-click</strong> on <strong>Year</strong> header on the top of the chart &gt; <strong>Hide Field Labels</strong> for columns because the year is already quite self-explanatory.</li>
 </ul>
 <h4 id="line-markers">Line Markers</h4>
 <figure>
-<img src="images/4.2.%20Add%20Markers.png" alt="" /><figcaption>Figure 25. Add Markers</figcaption>
+<img src="images/4.2.%20Add%20Markers.png" alt="Figure 25. Add Markers" /><figcaption aria-hidden="true">Figure 25. Add Markers</figcaption>
 </figure>
 <ul>
 <li>Click on <strong>Color Marks Card</strong> and select <strong>All</strong> markers which is the middle option. This will make it easier to see the individual data points.</li>
@@ -2421,13 +2747,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="title">Title</h4>
 <p>Our current default title is the sheet name, which is Sheet 1. We can change the sheet name, and further tailor the title to make it more informative.</p>
 <figure>
-<img src="images/4.2.%20Rename%20Sheet%20Name.png" style="width:75.0%" alt="" /><figcaption>Figure 26. Rename Sheet Name</figcaption>
+<img src="images/4.2.%20Rename%20Sheet%20Name.png" style="width:75.0%" alt="Figure 26. Rename Sheet Name" /><figcaption aria-hidden="true">Figure 26. Rename Sheet Name</figcaption>
 </figure>
 <ul>
 <li>Pretty self-explanatory. <strong>Double-click</strong> on the <strong>Sheet 1 Tab</strong> below, then we can type in the desired name. I put ‘Singapore Resident Labour Force by Age Group’.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Sheet%20Title.png" alt="" /><figcaption>Figure 27. Change Sheet Title</figcaption>
+<img src="images/4.2.%20Sheet%20Title.png" alt="Figure 27. Change Sheet Title" /><figcaption aria-hidden="true">Figure 27. Change Sheet Title</figcaption>
 </figure>
 <ul>
 <li><strong>Double-click</strong> on the sheet title.</li>
@@ -2437,26 +2763,26 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="annotations">Annotations</h4>
 <p>We can also annotate on the chart itself to highlight interesting findings.</p>
 <figure>
-<img src="images/4.2.%20Annotate%20Mark.png" style="width:70.0%" alt="" /><figcaption>Figure 28. Annotate Mark</figcaption>
+<img src="images/4.2.%20Annotate%20Mark.png" style="width:70.0%" alt="Figure 28. Annotate Mark" /><figcaption aria-hidden="true">Figure 28. Annotate Mark</figcaption>
 </figure>
 <ul>
 <li><strong>Right-click</strong> on one of the data point &gt; <strong>Annotate</strong> &gt; <strong>Mark…</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Annotation.png" style="width:80.0%" alt="" /><figcaption>Figure 29. Annotation</figcaption>
+<img src="images/4.2.%20Annotation.png" style="width:80.0%" alt="Figure 29. Annotation" /><figcaption aria-hidden="true">Figure 29. Annotation</figcaption>
 </figure>
 <ul>
 <li>Add findings that we want to highlight.</li>
 </ul>
 <p>Just like the sheet title, we can customise the annotation and make use of the variables using the <strong>Insert</strong> button. And now, we are done for this line chart! We can adjust the width and height of the chart by hovering to the right side or below the chart until our cursor turns into a double-sided arrow and drag accordingly.</p>
 <figure>
-<img src="images/4.2.%20Final%20Look%20for%20Singapore%20Resident%20Labour%20Force%20Line%20Chart.png" alt="" /><figcaption>Figure 30. Final Look for Singapore Resident Labour Force Line Chart</figcaption>
+<img src="images/4.2.%20Final%20Look%20for%20Singapore%20Resident%20Labour%20Force%20Line%20Chart.png" alt="Figure 30. Final Look for Singapore Resident Labour Force Line Chart" /><figcaption aria-hidden="true">Figure 30. Final Look for Singapore Resident Labour Force Line Chart</figcaption>
 </figure>
 <h2 id="labour-force-participation-rate-bar-chart">4.3. Labour Force Participation Rate Bar Chart</h2>
 <p>Next, the statement mentions that the increase in older residents in Singapore Labour Force is due to the rise in Labour Force Participation Rate for older residents. We are going to visualise this data to support the statement. Some steps are the same as what was explained in the previous section.</p>
 <h3 id="data-preparation-1">Data Preparation</h3>
 <figure>
-<img src="images/4.3.%20New%20Data%20Source.png" alt="" /><figcaption>Figure 29. Add New Data Source</figcaption>
+<img src="images/4.3.%20New%20Data%20Source.png" alt="Figure 29. Add New Data Source" /><figcaption aria-hidden="true">Figure 29. Add New Data Source</figcaption>
 </figure>
 <ul>
 <li>Go back to the <strong>Data Source</strong> tab.</li>
@@ -2467,7 +2793,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Hide</strong> the first column (F1).</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Add%20Filters.png" alt="" /><figcaption>Figure 31. Add Filters</figcaption>
+<img src="images/4.3.%20Add%20Filters.png" alt="Figure 31. Add Filters" /><figcaption aria-hidden="true">Figure 31. Add Filters</figcaption>
 </figure>
 <p>If we scroll down and see the bottom of the data table, we can see that they have already grouped the age. Therefore, we can filter out the 5-year age bins on the top.</p>
 <ul>
@@ -2477,11 +2803,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Group the 55 - 64 and 65 &amp; Over groups together and give 55 &amp; Over as the group name.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Live%20Connection.png" alt="" /><figcaption>Figure 32. Live Connection</figcaption>
+<img src="images/4.3.%20Live%20Connection.png" alt="Figure 32. Live Connection" /><figcaption aria-hidden="true">Figure 32. Live Connection</figcaption>
 </figure>
 <p>The spacing seem to be very wide for the age groups. Since we are using a live connection, any update on the data source will be reflected in Tableau. I opened the Excel file to manually fix the spacing.</p>
 <figure>
-<img src="images/4.3.%20LFPR%20Percentage%20Change%20Formula.png" alt="" /><figcaption>Figure 33. Labour Force Participation Rate Percentage Change Formula</figcaption>
+<img src="images/4.3.%20LFPR%20Percentage%20Change%20Formula.png" alt="Figure 33. Labour Force Participation Rate Percentage Change Formula" /><figcaption aria-hidden="true">Figure 33. Labour Force Participation Rate Percentage Change Formula</figcaption>
 </figure>
 <p>Although this data is also in a wide format, we only need the difference between 2019 and 2009 data. We do not need to pivot the table, but we need to create a calculated field for the difference.</p>
 <ul>
@@ -2489,7 +2815,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Enter the formula shown in Figure 31.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20New%20Worksheet.png" style="width:75.0%" alt="" /><figcaption>Figure 34. Add New Worksheet</figcaption>
+<img src="images/4.3.%20New%20Worksheet.png" style="width:75.0%" alt="Figure 34. Add New Worksheet" /><figcaption aria-hidden="true">Figure 34. Add New Worksheet</figcaption>
 </figure>
 <p>We are done preparing the data. Now we can create the second chart on a new worksheet.</p>
 <ul>
@@ -2497,7 +2823,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <h3 id="create-visualisation">Create Visualisation</h3>
 <figure>
-<img src="images/4.3.%20Rows%20and%20Columns%20for%20Labour%20Force%20Participation%20Rate%20Bar%20Chart.png" alt="" /><figcaption>Figure 35. Rows and Columns for Labour Force Participation Rate Bar Chart</figcaption>
+<img src="images/4.3.%20Rows%20and%20Columns%20for%20Labour%20Force%20Participation%20Rate%20Bar%20Chart.png" alt="Figure 35. Rows and Columns for Labour Force Participation Rate Bar Chart" /><figcaption aria-hidden="true">Figure 35. Rows and Columns for Labour Force Participation Rate Bar Chart</figcaption>
 </figure>
 <p>For the bar chart, we want to have 3 bars that show the change of Labour Force Participation Rate between 2009 and 2019.</p>
 <ul>
@@ -2507,7 +2833,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="customisation-1">Customisation</h3>
 <p>First, we are going to add the colour and label to make the bar chart easier to see.</p>
 <figure>
-<img src="images/4.3.%20Add%20Color%20and%20Label.png" alt="" /><figcaption>Figure 36. Add Colour and Label</figcaption>
+<img src="images/4.3.%20Add%20Color%20and%20Label.png" alt="Figure 36. Add Colour and Label" /><figcaption aria-hidden="true">Figure 36. Add Colour and Label</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Labour Force Participation Rate % Change</strong> field to <strong>Color</strong> and <strong>Label Marks Card</strong></li>
@@ -2515,7 +2841,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="colour">Colour</h4>
 <p>If we see the color legend on the right, we can see that the range does not start from 0, it only uses the smallest and the biggest value. The purpose of changing the colour to to quickly highlight the positive and negative values as well as showing the significance of the change. Colour is a pre-attentive attribute, so we can quickly notice the difference in colour.</p>
 <figure>
-<img src="images/4.3.%20Change%20Colour.png" alt="" /><figcaption>Figure 37. Change Colour</figcaption>
+<img src="images/4.3.%20Change%20Colour.png" alt="Figure 37. Change Colour" /><figcaption aria-hidden="true">Figure 37. Change Colour</figcaption>
 </figure>
 <ul>
 <li><strong>Double-click</strong> on the colour legend.</li>
@@ -2528,7 +2854,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="label-1">Label</h4>
 <p>Even though the Labour Force Participation Rate % Change is a percentage, the number is not between 0 and 1. Therefore, we will use a slightly different method to display the ‘%’ sign.</p>
 <figure>
-<img src="images/4.3.%20Customise%20Label.png" alt="" /><figcaption>Figure 38. Customise Label</figcaption>
+<img src="images/4.3.%20Customise%20Label.png" alt="Figure 38. Customise Label" /><figcaption aria-hidden="true">Figure 38. Customise Label</figcaption>
 </figure>
 <ul>
 <li>Open the format pane like how we did it for the line chart.</li>
@@ -2539,29 +2865,29 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>Now that the bar is labeled, we can take away the unnecessary axis and headers using the same steps as in the previous section. Remember to rename the sheet name and put a proper title.</p>
 <figure>
-<img src="images/4.3.%20Final%20Look%20for%20Labour%20Force%20Participation%20Rate%20Change.png" alt="" /><figcaption>Figure 39. Final Look for Labour Force Participation Rate Change</figcaption>
+<img src="images/4.3.%20Final%20Look%20for%20Labour%20Force%20Participation%20Rate%20Change.png" alt="Figure 39. Final Look for Labour Force Participation Rate Change" /><figcaption aria-hidden="true">Figure 39. Final Look for Labour Force Participation Rate Change</figcaption>
 </figure>
 <h2 id="population-size-change-bar-chart">4.4. Population Size Change Bar Chart</h2>
 <p>The steps to create the Population Size Change Bar Chart is exactly the same as the Labour Force, except we are using a different dataset and we are not displaying ‘%’ sign in the suffix.</p>
 <figure>
-<img src="images/4.4.%20Final%20Look%20for%20Population%20Size%20Change.png" alt="" /><figcaption>Figure 40. Final Look for Population Size Change Bar Chart</figcaption>
+<img src="images/4.4.%20Final%20Look%20for%20Population%20Size%20Change.png" alt="Figure 40. Final Look for Population Size Change Bar Chart" /><figcaption aria-hidden="true">Figure 40. Final Look for Population Size Change Bar Chart</figcaption>
 </figure>
 <h2 id="dashboard">4.5. Dashboard</h2>
 <p>Now, it is time to combine the various charts that we have created.</p>
 <figure>
-<img src="images/4.5.%20New%20Dashboard.png" alt="" /><figcaption>Figure 41. New Dashboard</figcaption>
+<img src="images/4.5.%20New%20Dashboard.png" alt="Figure 41. New Dashboard" /><figcaption aria-hidden="true">Figure 41. New Dashboard</figcaption>
 </figure>
 <ul>
 <li>To create new dashboard, click the <strong>New Dashboard Tab</strong>, which is the second tab to the right of our last worksheet.</li>
 </ul>
 <figure>
-<img src="images/4.5.%20Dashboard%20Size.png" alt="" /><figcaption>Figure 42. Dashboard Size</figcaption>
+<img src="images/4.5.%20Dashboard%20Size.png" alt="Figure 42. Dashboard Size" /><figcaption aria-hidden="true">Figure 42. Dashboard Size</figcaption>
 </figure>
 <ul>
 <li>Adjust the <strong>Size</strong> to your preference. Automatic means the size will adjust according to the device, but I found that using Automatic can cause problems in the alignment. I chose <strong>Desktop Browser(1000x800)</strong></li>
 </ul>
 <figure>
-<img src="images/4.5.%20Insert%20Sheet%20to%20Dashboard.png" alt="" /><figcaption>Figure 43. Insert Sheet to Dashboard</figcaption>
+<img src="images/4.5.%20Insert%20Sheet%20to%20Dashboard.png" alt="Figure 43. Insert Sheet to Dashboard" /><figcaption aria-hidden="true">Figure 43. Insert Sheet to Dashboard</figcaption>
 </figure>
 <ul>
 <li>To add sheet to the dashboard <strong>drag the sheet name to the canvas</strong>.</li>
@@ -2569,7 +2895,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>By default, Tableau uses a Tiled layout. To better arrange our sheet, we can make use of the objects.</p>
 <figure>
-<img src="images/4.5.%20Vertical%20Object.png" alt="" /><figcaption>Figure 44. Vertical Object</figcaption>
+<img src="images/4.5.%20Vertical%20Object.png" alt="Figure 44. Vertical Object" /><figcaption aria-hidden="true">Figure 44. Vertical Object</figcaption>
 </figure>
 <p>Vertical object allows us to have a vertical grid that we an fill in with sheets or another objects.</p>
 <ul>
@@ -2580,7 +2906,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>Similarly, we can use blank to add paddings around the objects (such as to align the sheets), add horizontal grid, text, etc.</p>
 <figure>
-<img src="images/4.5.%20Remove%20Legends.png" alt="" /><figcaption>Figure 45. Remove Legend</figcaption>
+<img src="images/4.5.%20Remove%20Legends.png" alt="Figure 45. Remove Legend" /><figcaption aria-hidden="true">Figure 45. Remove Legend</figcaption>
 </figure>
 <p>Since we have annotated the line chart and the colour in the bar charts are to highlight positive and negative values, the legends are not necessary.</p>
 <ul>
@@ -2588,17 +2914,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Click on the <strong>cross</strong> to remove from the dashboard.</li>
 </ul>
 <figure>
-<img src="images/4.5.%20Show%20Dashboard%20Title.png" style="width:25.0%" alt="" /><figcaption>Figure 46. Show Dashboard Title</figcaption>
+<img src="images/4.5.%20Show%20Dashboard%20Title.png" style="width:25.0%" alt="Figure 46. Show Dashboard Title" /><figcaption aria-hidden="true">Figure 46. Show Dashboard Title</figcaption>
 </figure>
 <p>To create a title and lead-in for the dashboard, we can either use a Text object or use the dashboard title itself. The <strong>Show dashboard title</strong> checkbox highlighted in Figure 45 will make the dashboard title appear.</p>
 <figure>
-<img src="images/4.5.%20Dashboard%20Layout%20-%20marked.png" alt="" /><figcaption>Figure 47. Final Dashboard Layout</figcaption>
+<img src="images/4.5.%20Dashboard%20Layout%20-%20marked.png" alt="Figure 47. Final Dashboard Layout" /><figcaption aria-hidden="true">Figure 47. Final Dashboard Layout</figcaption>
 </figure>
 <p>The final dashboard that I created is shown in Figure 46, marked with colour-coded rectangles to show what object I used to arrange them.</p>
 <p><strong>Congratulations, we have completed our dashboard!</strong></p>
 <h1 id="major-observations">5. Major Observations</h1>
 <figure>
-<img src="images/Final%20Dashboard.png" alt="" /><figcaption>Figure 48. Singapore Resident Labour Force Alternative Graphical Representation</figcaption>
+<img src="images/Final%20Dashboard.png" alt="Figure 48. Singapore Resident Labour Force Alternative Graphical Representation" /><figcaption aria-hidden="true">Figure 48. Singapore Resident Labour Force Alternative Graphical Representation</figcaption>
 </figure>
 <ol type="1">
 <li><strong>Due to the rapidly rising population size of older residents, having more older residents in the workforce is natural, or even preferable</strong>. As the distribution of population is getting more and more skewed, Singapore’s <a href="https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio"><strong>old-age support ratio</strong></a> will continue to decrease. Old-age support ratio is the number of people who are financially productive compared to the number of older people who may be dependent on others’ support (<a href="https://www.singstat.gov.sg/modules/infographics/old-age-support-ratio">Singapore Department of Statistics</a>). The increase of Labour Force Participation Rate in older residents helps to reduce the number of older residents that depend on others’ support.</li>

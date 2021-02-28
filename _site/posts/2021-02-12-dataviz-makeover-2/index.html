@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +52,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -126,8 +126,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="citation_author_institution" content="School of Information Systems, Singapore Management University"/>
 <!--/radix_placeholder_meta_tags-->
   
-  <meta name="citation_reference" content="citation_title=When will the covid-19 pandemic end?;citation_publication_date=2021;citation_publisher=McKinsey &amp;amp; Company;citation_author=Sarun Charumilind;citation_author=Matt Craven;citation_author=Jessica Lamb;citation_author=Adam Sabow;citation_author=Matt Wilson"/>
-  <meta name="citation_reference" content="citation_title=Imperial college london yougov covid data hub;citation_publication_date=2020;citation_publisher=Imperial College London Big Data Analytical Unit and YouGov Plc. 2020;citation_author= Jones;citation_author=P Sarah"/>
+  <meta name="citation_reference" content="citation_title=When will the COVID-19 pandemic end?;citation_publication_date=2021;citation_publisher=McKinsey &amp;amp; Company;citation_author=Sarun Charumilind;citation_author=Matt Craven;citation_author=Jessica Lamb;citation_author=Adam Sabow;citation_author=Matt Wilson"/>
+  <meta name="citation_reference" content="citation_title=Imperial college london YouGov covid data hub;citation_publication_date=2020;citation_publisher=Imperial College London Big Data Analytical Unit; YouGov Plc. 2020;citation_author= Jones;citation_author=P Sarah"/>
   <meta name="citation_reference" content="citation_title=How to choose the colors for your data visualizations;citation_publication_date=2019;citation_author=Michael Yi"/>
   <meta name="citation_reference" content="citation_title=Why itâ€™s so hard for us to visualize uncertainty;citation_publication_date=2016;citation_author=Nicole Torres"/>
   <meta name="citation_reference" content="citation_title=Choosing colors for data visualization;citation_publication_date=2006;citation_author=M. Stone"/>
@@ -139,12 +139,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output","bibliography","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 2 - COVID Vaccine Survey"]},{"type":"character","attributes":{},"value":["Visualisation makeover for Likert Scale data and uncertainty."]},{"type":"character","attributes":{},"value":["./images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Gabriella Pauline Djojosaputro"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/gabriellapauline/"]},{"type":"character","attributes":{},"value":["School of Information Systems, Singapore Management University"]},{"type":"character","attributes":{},"value":["https://smu.edu.sg"]}]}]},{"type":"character","attributes":{},"value":["02-12-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["biblio.bibtex"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-02-12-dataviz-makeover-2/"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-02-12-dataviz-makeover-2/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output","bibliography","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 2 - COVID Vaccine Survey"]},{"type":"character","attributes":{},"value":["Visualisation makeover for Likert Scale data and uncertainty."]},{"type":"character","attributes":{},"value":["./images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Gabriella Pauline Djojosaputro"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/gabriellapauline/"]},{"type":"character","attributes":{},"value":["School of Information Systems, Singapore Management University"]},{"type":"character","attributes":{},"value":["https://smu.edu.sg"]}]}]},{"type":"character","attributes":{},"value":["02-12-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["biblio.bib"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-02-12-dataviz-makeover-2/"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-02-12-dataviz-makeover-2/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bibtex","biblio.yaml","dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js","images/2. Original Visualisation.png","images/3. Alternative Visualisation Design.jpeg","images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png","images/4.1. Add New Union.png","images/4.1. Change Data Type.png","images/4.1. Connect to Data.png","images/4.1. Custom Split.png","images/4.1. Describe Field.png","images/4.1. Edit Aliases.png","images/4.1. Export Full Data.png","images/4.1. Go to Worksheet.png","images/4.1. Hide Unused Columns.png","images/4.1. Include all csv files.png","images/4.1. Remove table.png","images/4.1. View Data.png","images/4.2. Add Numeric Filter.png","images/4.2. Add String Filter.png","images/4.2. Compute Using Selected_Survey_Item.png","images/4.2. Conver to Measure.png","images/4.2. Convert to Dimension.png","images/4.2. Convert to Measure.png","images/4.2. Count Negative Formula.png","images/4.2. Create Parameter.png","images/4.2. Diverging Stacked Bar Chart.png","images/4.2. Dual Axis.png","images/4.2. Edit Axis Number Format.png","images/4.2. Edit Axis Title.png","images/4.2. Edit Colors.png","images/4.2. Edit Colour Legend.png","images/4.2. Edit Legend Alias.png","images/4.2. Edit Title.png","images/4.2. Edit Tooltip.png","images/4.2. Exclude Nulls.png","images/4.2. Format Tick Mark Labels.png","images/4.2. Format Tooltip Percentage.png","images/4.2. Gantt Percent Formula.png","images/4.2. Gantt Start Formula.png","images/4.2. Number of Records Formula.png","images/4.2. Percentage Formula.png","images/4.2. Reorder Colours.png","images/4.2. Rows and Columns Negative Positive.png","images/4.2. Rows and Columns.png","images/4.2. Select Colour for Selected Survey Item.png","images/4.2. Selected Survey Item Formula.png","images/4.2. Show Parameter.png","images/4.2. Sort Selected Survey Item in Descending Order.png","images/4.2. Total Count Formula.png","images/4.2. Total Count Negative Formula.png","images/4.3. Add Colour and Path.png","images/4.3. Add Confidence Interval.png","images/4.3. Add Label.png","images/4.3. Add Measure Values.png","images/4.3. Add Path and Colour.png","images/4.3. Add Prop and Convert to Discrete.png","images/4.3. Add Title.png","images/4.3. Align Country Right.png","images/4.3. Convert Rank to Discrete.png","images/4.3. Convert to Dual Axis.png","images/4.3. Count Selected Response Formula.png","images/4.3. Create Paramenter - Response.png","images/4.3. Dot Plot with Error Bars.png","images/4.3. Dual Axis.png","images/4.3. Edit Title.png","images/4.3. Edit Tooltip.png","images/4.3. Filter Selected Survey Item.png","images/4.3. First Cut.png","images/4.3. Fix Axis.png","images/4.3. Format Axis Title.png","images/4.3. Prop 95% Lower Limit.png","images/4.3. Prop 95% Upper Limit.png","images/4.3. Prop 99% Lower Limit.png","images/4.3. Prop 99% Upper Limit.png","images/4.3. Prop Formula.png","images/4.3. Proportion Circle Marks.png","images/4.3. Rank Formula.png","images/4.3. Remove Column Divider.png","images/4.3. Remove Gridline.png","images/4.3. Remove Header.png","images/4.3. Select Colours.png","images/4.3. Show Error Bars.png","images/4.3. Sort by Measure Values.png","images/4.3. Sort Formula.png","images/4.3. Sort Prop Descending.png","images/4.3. Synchronize Axis.png","images/4.4. Add Age Filter.png","images/4.4. Add Animations.png","images/4.4. Add Blank.png","images/4.4. Add Colour to Legend.png","images/4.4. Add Label to Legend.png","images/4.4. Add Legend to Dashboard.png","images/4.4. Add Text Object.png","images/4.4. Apply Filter to All Sheets.png","images/4.4. Dashboard Initial Layout.png","images/4.4. Edit Axis.png","images/4.4. Remove Country Name.png","images/4.4. Reorder Parameter and Filter.png","images/4A690D00-8900-4C33-BB57-340125992E60.jpeg","images/5. A year from now - Agree and Strongly Agree.png","images/5. A year from now - Disagree and Strongly Disagree.png","images/5. Not Worried - Old.png","images/5. Not Worried - Young.png","images/5. Potential Side Effect - Disagree and Strongly Disagree.png","images/5. Side Effect Strongly Agree.png","images/5. This Week - Agree and Strongly Agree.png","images/5. This Week - Disagree and Strongly Disagree.png","images/5. This Week - Old.png","images/5. This Week - Top 3 Agree and Strongly Agree.png","images/5. This Week - Young.png","images/5. Vaccine This Week - Disagree and Strongly disagree.png","images/5. Vaccine This Week - Strongly disagree.png","images/5. Worried - Old.png","images/5. Worried - Young.png","images/5. Worried getting COVID - Top 3.png","images/5. Worried getting COVID - Top 4.png","images/5. Worried Side Effect - Top 5.png"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","biblio.bibtex","biblio.yaml","dataviz-makeover-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-2_files/distill-2.2.21/template.v2.js","dataviz-makeover-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-2_files/popper-2.6.0/popper.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.css","dataviz-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-2_files/webcomponents-2.0.0/webcomponents.js","images/2. Original Visualisation.png","images/3. Alternative Visualisation Design.jpeg","images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png","images/4.1. Add New Union.png","images/4.1. Change Data Type.png","images/4.1. Connect to Data.png","images/4.1. Custom Split.png","images/4.1. Describe Field.png","images/4.1. Edit Aliases.png","images/4.1. Export Full Data.png","images/4.1. Go to Worksheet.png","images/4.1. Hide Unused Columns.png","images/4.1. Include all csv files.png","images/4.1. Remove table.png","images/4.1. View Data.png","images/4.2. Add Numeric Filter.png","images/4.2. Add String Filter.png","images/4.2. Compute Using Selected_Survey_Item.png","images/4.2. Conver to Measure.png","images/4.2. Convert to Dimension.png","images/4.2. Convert to Measure.png","images/4.2. Count Negative Formula.png","images/4.2. Create Parameter.png","images/4.2. Diverging Stacked Bar Chart.png","images/4.2. Dual Axis.png","images/4.2. Edit Axis Number Format.png","images/4.2. Edit Axis Title.png","images/4.2. Edit Colors.png","images/4.2. Edit Colour Legend.png","images/4.2. Edit Legend Alias.png","images/4.2. Edit Title.png","images/4.2. Edit Tooltip.png","images/4.2. Exclude Nulls.png","images/4.2. Format Tick Mark Labels.png","images/4.2. Format Tooltip Percentage.png","images/4.2. Gantt Percent Formula.png","images/4.2. Gantt Start Formula.png","images/4.2. Number of Records Formula.png","images/4.2. Percentage Formula.png","images/4.2. Reorder Colours.png","images/4.2. Rows and Columns Negative Positive.png","images/4.2. Rows and Columns.png","images/4.2. Select Colour for Selected Survey Item.png","images/4.2. Selected Survey Item Formula.png","images/4.2. Show Parameter.png","images/4.2. Sort Selected Survey Item in Descending Order.png","images/4.2. Total Count Formula.png","images/4.2. Total Count Negative Formula.png","images/4.3. Add Colour and Path.png","images/4.3. Add Confidence Interval.png","images/4.3. Add Label.png","images/4.3. Add Measure Values.png","images/4.3. Add Path and Colour.png","images/4.3. Add Prop and Convert to Discrete.png","images/4.3. Add Title.png","images/4.3. Align Country Right.png","images/4.3. Convert Rank to Discrete.png","images/4.3. Convert to Dual Axis.png","images/4.3. Count Selected Response Formula.png","images/4.3. Create Paramenter - Response.png","images/4.3. Dot Plot with Error Bars.png","images/4.3. Dual Axis.png","images/4.3. Edit Title.png","images/4.3. Edit Tooltip.png","images/4.3. Filter Selected Survey Item.png","images/4.3. First Cut.png","images/4.3. Fix Axis.png","images/4.3. Format Axis Title.png","images/4.3. Prop 95% Lower Limit.png","images/4.3. Prop 95% Upper Limit.png","images/4.3. Prop 99% Lower Limit.png","images/4.3. Prop 99% Upper Limit.png","images/4.3. Prop Formula.png","images/4.3. Proportion Circle Marks.png","images/4.3. Rank Formula.png","images/4.3. Remove Column Divider.png","images/4.3. Remove Gridline.png","images/4.3. Remove Header.png","images/4.3. Select Colours.png","images/4.3. Show Error Bars.png","images/4.3. Sort by Measure Values.png","images/4.3. Sort Formula.png","images/4.3. Sort Prop Descending.png","images/4.3. Synchronize Axis.png","images/4.4. Add Age Filter.png","images/4.4. Add Animations.png","images/4.4. Add Blank.png","images/4.4. Add Colour to Legend.png","images/4.4. Add Label to Legend.png","images/4.4. Add Legend to Dashboard.png","images/4.4. Add Text Object.png","images/4.4. Apply Filter to All Sheets.png","images/4.4. Dashboard Initial Layout.png","images/4.4. Edit Axis.png","images/4.4. Remove Country Name.png","images/4.4. Reorder Parameter and Filter.png","images/4A690D00-8900-4C33-BB57-340125992E60.jpeg","images/5. A year from now - Agree and Strongly Agree.png","images/5. A year from now - Disagree and Strongly Disagree.png","images/5. Not Worried - Old.png","images/5. Not Worried - Young.png","images/5. Potential Side Effect - Disagree and Strongly Disagree.png","images/5. Side Effect Strongly Agree.png","images/5. This Week - Agree and Strongly Agree.png","images/5. This Week - Disagree and Strongly Disagree.png","images/5. This Week - Old.png","images/5. This Week - Top 3 Agree and Strongly Agree.png","images/5. This Week - Young.png","images/5. Vaccine This Week - Disagree and Strongly disagree.png","images/5. Vaccine This Week - Strongly disagree.png","images/5. Worried - Old.png","images/5. Worried - Young.png","images/5. Worried getting COVID - Top 3.png","images/5. Worried getting COVID - Top 4.png","images/5. Worried Side Effect - Top 5.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2067,7 +2067,331 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Amiri');
+@import url('https://fonts.googleapis.com/css2?family=Bitter');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Roboto:wght@300&display=swap');
+
+/*
+--dark-blue-gray: #68668fff;
+--maximum-blue-green: #6cc3bdff;
+--light-coral: #f67e7dff;
+--melon: #ffc1a8ff;
+--bisque: #ffe5c4ff;
+*/
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    "Lora", serif;
+  --mono-font:       "DM Mono", monospace;
+  --body-font:       "Roboto", sans-serif;
+  --navbar-font:     "Lora", serif; /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --body-justify-content: center
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        16px;
+  --hover-color:      white;
+  --bkgd-color:       #68668f;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.6/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2131,12 +2455,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3>Contents</h3>
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a><ul>
+<li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a>
+<ul>
 <li><a href="#clarity">2.1 Clarity</a></li>
 <li><a href="#aesthetics">2.2 Aesthetics</a></li>
 </ul></li>
 <li><a href="#alternative-graphical-representation">3. Alternative Graphical Representation</a></li>
-<li><a href="#step-by-step-description">4. Step-by-Step Description</a><ul>
+<li><a href="#step-by-step-description">4. Step-by-Step Description</a>
+<ul>
 <li><a href="#data-preparation">4.1. Data Preparation</a></li>
 <li><a href="#diverging-stacked-bar-chart">4.2. Diverging Stacked Bar Chart</a></li>
 <li><a href="#dot-plot-with-error-bars">4.3. Dot Plot with Error Bars</a></li>
@@ -2147,12 +2473,12 @@ document.addEventListener('DOMContentLoaded', function() {
 </nav>
 </div>
 <h1 id="introduction">1. Introduction</h1>
-<p>COVID pandemic has impacted the world in unimaginable ways: work from home and zoom meetings are becoming norms; overseas travel almost comes to a complete halt; we might even start to forget that COVID confirmed cases and death are human beings, and not just numbers in a statistics. For the pandemic to be over, we need to achieve herd immunity either through recovery from infection or vaccine <span class="citation" data-cites="charumilind_craven_lamb_sabow_wilson_2021">(Charumilind et al. <a href="#ref-charumilind_craven_lamb_sabow_wilson_2021" role="doc-biblioref">2021</a>)</span>. However, despite being eager of seeing the end to this calamity, people might also have worries and beliefs that make them hesitant to take the vaccine.</p>
-<p>Imperial College London Big Data Analytical Unit and YouGov <span class="citation" data-cites="jones_sarah_2020">(Jones and Sarah <a href="#ref-jones_sarah_2020" role="doc-biblioref">2020</a>)</span> conducted a survey that measures the people’s behaviours in response to COVID-19. This data visualisation makeover will focus on the willingness of people in various countries to take the COVID vaccine.</p>
+<p>COVID pandemic has impacted the world in unimaginable ways: work from home and zoom meetings are becoming norms; overseas travel almost comes to a complete halt; we might even start to forget that COVID confirmed cases and death are human beings, and not just numbers in a statistics. For the pandemic to be over, we need to achieve herd immunity either through recovery from infection or vaccine <span class="citation" data-cites="charumilind_craven_lamb_sabow_wilson_2021">(<a href="#ref-charumilind_craven_lamb_sabow_wilson_2021" role="doc-biblioref">Charumilind et al. 2021</a>)</span>. However, despite being eager of seeing the end to this calamity, people might also have worries and beliefs that make them hesitant to take the vaccine.</p>
+<p>Imperial College London Big Data Analytical Unit and YouGov <span class="citation" data-cites="jones_sarah_2020">(<a href="#ref-jones_sarah_2020" role="doc-biblioref">Jones and Sarah 2020</a>)</span> conducted a survey that measures the people’s behaviours in response to COVID-19. This data visualisation makeover will focus on the willingness of people in various countries to take the COVID vaccine.</p>
 <h1 id="original-visualisation-evaluation">2. Original Visualisation Evaluation</h1>
 <p>To start, we examine the original visualisation from the data (Figure 1) to learn what we can improve. The critiques are given in terms of <strong>clarity</strong> and <strong>aesthetics</strong>.</p>
 <figure>
-<img src="images/2.%20Original%20Visualisation.png" alt="" /><figcaption>Figure 1. Original Visualisation</figcaption>
+<img src="images/2.%20Original%20Visualisation.png" alt="Figure 1. Original Visualisation" /><figcaption aria-hidden="true">Figure 1. Original Visualisation</figcaption>
 </figure>
 <h2 id="clarity">2.1 Clarity</h2>
 <h3 id="to-keep">To keep:</h3>
@@ -2163,8 +2489,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <h3 id="to-be-improved">To be improved:</h3>
 <ol type="1">
-<li>Although the Likert Scale data is ordinal, the <strong>choice of colour does not show an inherent order</strong>. It would be better if a diverging colour scale is used, because the data has a meaningful central value, which is the neutral opinion <span class="citation" data-cites="yi_2019">(Yi <a href="#ref-yi_2019" role="doc-biblioref">2019</a>)</span>.</li>
-<li>Because the survey is conducted on a sample of the population, the actual proportion in the population might not be exactly the same. <strong>Not visualising the uncertainty</strong> can mislead the users, and thus we need to show the range of possible values <span class="citation" data-cites="torres_2016">(Torres <a href="#ref-torres_2016" role="doc-biblioref">2016</a>)</span>.</li>
+<li>Although the Likert Scale data is ordinal, the <strong>choice of colour does not show an inherent order</strong>. It would be better if a diverging colour scale is used, because the data has a meaningful central value, which is the neutral opinion <span class="citation" data-cites="yi_2019">(<a href="#ref-yi_2019" role="doc-biblioref">Yi 2019</a>)</span>.</li>
+<li>Because the survey is conducted on a sample of the population, the actual proportion in the population might not be exactly the same. <strong>Not visualising the uncertainty</strong> can mislead the users, and thus we need to show the range of possible values <span class="citation" data-cites="torres_2016">(<a href="#ref-torres_2016" role="doc-biblioref">Torres 2016</a>)</span>.</li>
 <li>It is <strong>hard to compare the actual proportion of people who picked 2, 3, or 4 in the Likert Scale</strong> because they do not have a common baseline.</li>
 <li>The <strong>order of the countries are inconsistent</strong> between the two graphs.</li>
 <li>The <strong>title of the legend is not informative</strong>.</li>
@@ -2179,7 +2505,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <h3 id="to-be-improved-1">To be improved:</h3>
 <ol type="1">
-<li>The <strong>choice of colours is too reliant on hue variation</strong> instead of value or chroma, hence increasing the visual clutter <span class="citation" data-cites="Stone2006ChoosingCF">(Stone <a href="#ref-Stone2006ChoosingCF" role="doc-biblioref">2006</a>)</span>. It is better to limit the colour palette to 2 or 3 hues and use variation of colour intensity to make the visualisation more aesthetically pleasing and functional.</li>
+<li>The <strong>choice of colours is too reliant on hue variation</strong> instead of value or chroma, hence increasing the visual clutter <span class="citation" data-cites="Stone2006ChoosingCF">(<a href="#ref-Stone2006ChoosingCF" role="doc-biblioref">Stone 2006</a>)</span>. It is better to limit the colour palette to 2 or 3 hues and use variation of colour intensity to make the visualisation more aesthetically pleasing and functional.</li>
 <li><strong>Country names are not formatted properly</strong>. There is no capitalisation and there are dashes in the names.</li>
 <li><strong>Decimal points are inconsistent in the axes</strong>. The left graph has no decimal points but the right one has 1 decimal points.</li>
 <li><strong>Labels of the colour legend are inconsistent</strong>. Value 1 and 5 have a text explanation, while 2, 3, and 4 are just numbers.</li>
@@ -2187,17 +2513,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1 id="alternative-graphical-representation">3. Alternative Graphical Representation</h1>
 <p>Figure 2 shows the alternative graphical representation proposed for the makeover.</p>
 <figure>
-<img src="images/3.%20Alternative%20Visualisation%20Design.jpeg" alt="" /><figcaption>Figure 2. Alternative Graphical Representation</figcaption>
+<img src="images/3.%20Alternative%20Visualisation%20Design.jpeg" alt="Figure 2. Alternative Graphical Representation" /><figcaption aria-hidden="true">Figure 2. Alternative Graphical Representation</figcaption>
 </figure>
-<p>The survey data uses a 5-point Likert scale for the respondents to rate the statements. There are multiple ways to visualise Likert scale data, such as a 100% stacked bar chart as in the original visualisation, multiple pie charts, diverging stacked bar chart, and so on <span class="citation" data-cites="pirrone_2020">(Pirrone <a href="#ref-pirrone_2020" role="doc-biblioref">2020</a>)</span>.</p>
-<p>Diverging stacked bar chart will help to compare the positive and negative sentiment more clearly, but there are multiple views of how to categorise neutral opinion. Having the middle of the neutral proportion as the center line makes it hard to compare the values because there is no common baseline <span class="citation" data-cites="wexler_2020">(Wexler <a href="#ref-wexler_2020" role="doc-biblioref">2020</a>)</span>. Therefore, the first part of the alternative design is a diverging stacked bar chart, in which we will split the neutral opinion and put it at the outermost part of the stacked bar.</p>
-<p>The second part of the alternative design is a dot plot with error bar that indicates the confidence interval of the proportion. This will show the underlying variation in the data and prevent misleading the users <span class="citation" data-cites="wexler_2018">(Wexler <a href="#ref-wexler_2018" role="doc-biblioref">2018</a>)</span>.</p>
+<p>The survey data uses a 5-point Likert scale for the respondents to rate the statements. There are multiple ways to visualise Likert scale data, such as a 100% stacked bar chart as in the original visualisation, multiple pie charts, diverging stacked bar chart, and so on <span class="citation" data-cites="pirrone_2020">(<a href="#ref-pirrone_2020" role="doc-biblioref">Pirrone 2020</a>)</span>.</p>
+<p>Diverging stacked bar chart will help to compare the positive and negative sentiment more clearly, but there are multiple views of how to categorise neutral opinion. Having the middle of the neutral proportion as the center line makes it hard to compare the values because there is no common baseline <span class="citation" data-cites="wexler_2020">(<a href="#ref-wexler_2020" role="doc-biblioref">Wexler 2020</a>)</span>. Therefore, the first part of the alternative design is a diverging stacked bar chart, in which we will split the neutral opinion and put it at the outermost part of the stacked bar.</p>
+<p>The second part of the alternative design is a dot plot with error bar that indicates the confidence interval of the proportion. This will show the underlying variation in the data and prevent misleading the users <span class="citation" data-cites="wexler_2018">(<a href="#ref-wexler_2018" role="doc-biblioref">Wexler 2018</a>)</span>.</p>
 <p>The issues from the original visualisation that the alternative design tries to overcome is colour-coded in Figure 2, with orange numbers corresponding to critiques for clarity and blue numbers for critiques with regards to aesthetics.</p>
 <h3 id="clarity-1">Clarity:</h3>
 <ol type="1">
 <li>To show an order in the survey response using a <strong>diverging colour scale</strong>.</li>
 <li>To show the uncertainty using an <strong>error bar</strong> in the dot plot.</li>
-<li>To <strong>allow the users to toggle between different response of interest</strong>. The users may choose to view individual percentage and error bars for ‘Strongly Agree’, ‘Agree’, ‘Neutral’, ‘Disagree’, and ‘Strongly Disagree’.</li>
+<li>To <strong>allow the users to toggle between different response of interest</strong>. The users may choose to view individual percentage and error bars for ‘Strongly Agree,’ ‘Agree,’ ‘Neutral,’ ‘Disagree,’ and ‘Strongly Disagree.’</li>
 <li>To <strong>sort the order of countries in both graphs consistently</strong> in descending manner according to the selected response of interest in the right graph.</li>
 </ol>
 <h3 id="aesthetics-1">Aesthetics:</h3>
@@ -2214,7 +2540,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <p>The final look of the data visualisation makeover is shown in Figure 3. It is also available in <strong>!!!!</strong></p>
 <figure>
-<img src="images/3.%20Final%20Look%20for%20COVID-19%20Vaccine%20Survey%20DataViz%20Makeover.png" alt="" /><figcaption>Figure 3. Data Visualisation Makeover 2 Final Look</figcaption>
+<img src="images/3.%20Final%20Look%20for%20COVID-19%20Vaccine%20Survey%20DataViz%20Makeover.png" alt="Figure 3. Data Visualisation Makeover 2 Final Look" /><figcaption aria-hidden="true">Figure 3. Data Visualisation Makeover 2 Final Look</figcaption>
 </figure>
 <h1 id="step-by-step-description">4. Step-by-Step Description</h1>
 <p>In this section, we are going through the steps to recreate the Data Visualisation Makeover shown in Figure 3 using Tableau. Tableau Desktop has a 14-day trial that can be downloaded <a href="https://www.tableau.com/products/desktop/download">here</a>.</p>
@@ -2224,7 +2550,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="data-cleaning">Data Cleaning</h3>
 <p>As the survey was done in a large scale and measures a wide variety of behavioural responses, there are a lot of columns that we do not need. Reducing the size of the dataset is necessary to speed up Tableau, and ensure we do not drown in the data ;)</p>
 <figure>
-<img src="images/4.1.%20Connect%20to%20Data.png" alt="" /><figcaption>Figure 4. Connect to Data Source</figcaption>
+<img src="images/4.1.%20Connect%20to%20Data.png" alt="Figure 4. Connect to Data Source" /><figcaption aria-hidden="true">Figure 4. Connect to Data Source</figcaption>
 </figure>
 <ul>
 <li>Create a <strong>New Workbook</strong>.</li>
@@ -2232,20 +2558,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Select the <strong>data type</strong> and browse to <strong>select any one of the csv</strong> (The data comes in multiple csv files, one for each country).</li>
 </ul>
 <figure>
-<img src="images/4.1.%20Remove%20table.png" alt="" /><figcaption>Figure 5. Remove Table</figcaption>
+<img src="images/4.1.%20Remove%20table.png" alt="Figure 5. Remove Table" /><figcaption aria-hidden="true">Figure 5. Remove Table</figcaption>
 </figure>
 <p>Next, we need to join all the files using the Union function from Tableau. Ensure the workspace has no tables to prevent errors when we join the csv files.</p>
 <ul>
 <li><strong>Right-click</strong> on the <strong>table</strong> &gt; <strong>Remove</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.1.%20Add%20New%20Union.png" alt="" /><figcaption>Figure 6. Add New Union</figcaption>
+<img src="images/4.1.%20Add%20New%20Union.png" alt="Figure 6. Add New Union" /><figcaption aria-hidden="true">Figure 6. Add New Union</figcaption>
 </figure>
 <ul>
 <li><strong>Drag New Union</strong> to the workspace.</li>
 </ul>
 <figure>
-<img src="images/4.1.%20Include%20all%20csv%20files.png" alt="" /><figcaption>Figure 7. Add All csv Files</figcaption>
+<img src="images/4.1.%20Include%20all%20csv%20files.png" alt="Figure 7. Add All csv Files" /><figcaption aria-hidden="true">Figure 7. Add All csv Files</figcaption>
 </figure>
 <p>We can either drag all the tables listed in the Files column on the left or use the Wildcard tab.</p>
 <ul>
@@ -2254,7 +2580,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Click <strong>OK</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.1.%20Hide%20Unused%20Columns.png" alt="" /><figcaption>Figure 8. Hide Unused Columns</figcaption>
+<img src="images/4.1.%20Hide%20Unused%20Columns.png" alt="Figure 8. Hide Unused Columns" /><figcaption aria-hidden="true">Figure 8. Hide Unused Columns</figcaption>
 </figure>
 <p>Brace yourself, depending on your machine, the data cleaning part can take a long time for Tableau to process. <strong>DO NOT CLICK UPDATE NOW or AUTOMATICALLY UPDATE</strong>. Unless you want to stare at your Tableau and wait.</p>
 <p>To reduce the dataset, we need to hide away all columns we are not using and export the smaller set. Do keep in mind that we can still remove away more even after exporting, but we need to go through this process again if we want to add more columns.</p>
@@ -2264,20 +2590,20 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>We are interested in vac_1, vac2_1, vac2_2, vac2_3, vac2_6, and vac_3 survey items, as well as gender, age, household_size, household_children and employment_status contextual data.</p>
 <figure>
-<img src="images/4.1.%20Go%20to%20Worksheet.png" alt="" /><figcaption>Figure 9. Go To Worksheet</figcaption>
+<img src="images/4.1.%20Go%20to%20Worksheet.png" alt="Figure 9. Go To Worksheet" /><figcaption aria-hidden="true">Figure 9. Go To Worksheet</figcaption>
 </figure>
 <p>When we combine the files in a union, Tableau will add a column called Path or Table, depending on whether we used Wildcard or Specific method to add the files. We can rename and format this field, but it would be easier to do it later after we export the data subset.</p>
 <ul>
 <li>Go to Worksheet by clicking <strong>Sheet 1</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.1.%20View%20Data.png" alt="" /><figcaption>Figure 10. View Data</figcaption>
+<img src="images/4.1.%20View%20Data.png" alt="Figure 10. View Data" /><figcaption aria-hidden="true">Figure 10. View Data</figcaption>
 </figure>
 <ul>
 <li>Click on <strong>Analysis</strong> menu at the top of the screen &gt; <strong>View Data…</strong></li>
 </ul>
 <figure>
-<img src="images/4.1.%20Export%20Full%20Data.png" alt="" /><figcaption>Figure 11. Export Full Data</figcaption>
+<img src="images/4.1.%20Export%20Full%20Data.png" alt="Figure 11. Export Full Data" /><figcaption aria-hidden="true">Figure 11. Export Full Data</figcaption>
 </figure>
 <ul>
 <li>Click on <strong>Full Data</strong>.</li>
@@ -2291,27 +2617,27 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Repeat steps to <strong>connect to the exported data</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.1.%20Edit%20Aliases.png" alt="" /><figcaption>Figure 12. Edit Aliases</figcaption>
+<img src="images/4.1.%20Edit%20Aliases.png" alt="Figure 12. Edit Aliases" /><figcaption aria-hidden="true">Figure 12. Edit Aliases</figcaption>
 </figure>
 <p>To improve the country name appearance, we are going to recode it.</p>
 <ul>
 <li><strong>Right-click</strong> on <strong>Path</strong> column header &gt; <strong>Aliases…</strong></li>
 <li>Enter the appropriate <strong>country name</strong> in <strong>Value(Alias)</strong> column &gt; <strong>OK</strong>.</li>
-<li><strong>Double-click</strong> on ‘Path’ column name to <strong>rename</strong> the column to ‘Country’.</li>
+<li><strong>Double-click</strong> on ‘Path’ column name to <strong>rename</strong> the column to ‘Country.’</li>
 </ul>
 <p>The legend in the original visualisation is inconsistent because the survey item responses are stored in string, and only the value 1 and 5 have a descriptor for it. We are going to standardize the value as integer, so we need to get rid of the textual description by using a custom split.</p>
 <figure>
-<img src="images/4.1.%20Custom%20Split.png" alt="" /><figcaption>Figure 13. Custom Split</figcaption>
+<img src="images/4.1.%20Custom%20Split.png" alt="Figure 13. Custom Split" /><figcaption aria-hidden="true">Figure 13. Custom Split</figcaption>
 </figure>
-<p>On each column there are ‘Abc’ or ‘#’ symbol. ‘Abc’ means the column is a string, while ‘#’ means it is numerical. If the symbol starts with an equal sign, such as ‘=Abc’ or ‘=#’, it means the column is a calculated field. Ensure that the survey items are in a string format before doing the split. If they are not, click on the data type and change it to String.</p>
-<p>The value for 1 is ‘1 - Strongly Agree’. Notice that the numerical value is the first part of the string before a space bar. Therefore, we will split the first column using the space bar as a separator.</p>
+<p>On each column there are ‘Abc’ or ‘#’ symbol. ‘Abc’ means the column is a string, while ‘#’ means it is numerical. If the symbol starts with an equal sign, such as ‘=Abc’ or ‘=#,’ it means the column is a calculated field. Ensure that the survey items are in a string format before doing the split. If they are not, click on the data type and change it to String.</p>
+<p>The value for 1 is ‘1 - Strongly Agree.’ Notice that the numerical value is the first part of the string before a space bar. Therefore, we will split the first column using the space bar as a separator.</p>
 <ul>
 <li><strong>Right-click</strong> on one of the survey items’ column header (e.g. vac 1) &gt; <strong>Custom Split…</strong></li>
 <li>Enter a <strong>space bar</strong> in the <strong>separator</strong></li>
 <li>Ensure we split off the <strong>First 1 </strong> column &gt; <strong>OK</strong></li>
 </ul>
 <figure>
-<img src="images/4.1.%20Describe%20Field.png" alt="" /><figcaption>Figure 14. Describe Field</figcaption>
+<img src="images/4.1.%20Describe%20Field.png" alt="Figure 14. Describe Field" /><figcaption aria-hidden="true">Figure 14. Describe Field</figcaption>
 </figure>
 <p>We can use describe field to check whether the split was done correctly.</p>
 <ul>
@@ -2319,7 +2645,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>We have the values from 1 to 5 now in the column, so we can convert the data type to number.</p>
 <figure>
-<img src="images/4.1.%20Change%20Data%20Type.png" alt="" /><figcaption>Figure 15. Change Data Type</figcaption>
+<img src="images/4.1.%20Change%20Data%20Type.png" alt="Figure 15. Change Data Type" /><figcaption aria-hidden="true">Figure 15. Change Data Type</figcaption>
 </figure>
 <ul>
 <li>Click on the <strong>data type symbol</strong> &gt; <strong>Number (whole)</strong></li>
@@ -2330,7 +2656,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="creating-visualisation">Creating Visualisation</h3>
 <p>We will need make use of parameters to allow the users to dynamically change the survey items being displayed.</p>
 <figure>
-<img src="images/4.2.%20Create%20Parameter.png" style="width:50.0%" alt="" /><figcaption>Figure 16. Create Parameter for Survey Item</figcaption>
+<img src="images/4.2.%20Create%20Parameter.png" style="width:50.0%" alt="Figure 16. Create Parameter for Survey Item" /><figcaption aria-hidden="true">Figure 16. Create Parameter for Survey Item</figcaption>
 </figure>
 <ul>
 <li>Go to worksheet.</li>
@@ -2342,7 +2668,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>click <strong>OK</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Number%20of%20Records%20Formula.png" alt="" /><figcaption>Figure 17. Create Calculated Fields</figcaption>
+<img src="images/4.2.%20Number%20of%20Records%20Formula.png" alt="Figure 17. Create Calculated Fields" /><figcaption aria-hidden="true">Figure 17. Create Calculated Fields</figcaption>
 </figure>
 <p>We will need several calculated fields to enable the visualisation. The steps to create a calculated fields are: * <strong>Right-click</strong> on an empty space in the data pane &gt; <strong>Create Calculated Field…</strong>. * Enter the <strong>field name</strong> and the <strong>formula</strong>.</p>
 <p>The formulas that we need for the diverging stacked bar chart are:</p>
@@ -2363,26 +2689,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <p>We create the visualisation by adding fields to the rows and columns shelves, as well as the filters and marks cards. Figure 18 shows the first cut of the visualisation.</p>
 <figure>
-<img src="images/4.2.%20Rows%20and%20Columns%20Negative%20Positive.png" alt="" /><figcaption>Figure 18. Specify Rows and Columns Fields</figcaption>
+<img src="images/4.2.%20Rows%20and%20Columns%20Negative%20Positive.png" alt="Figure 18. Specify Rows and Columns Fields" /><figcaption aria-hidden="true">Figure 18. Specify Rows and Columns Fields</figcaption>
 </figure>
 <p>To get to this stage, the steps are:</p>
 <p>** Drag <strong>Negative Percentage</strong> and <strong>Positive Percentage</strong> to Columns. ** Drag <strong>Country</strong> to Rows. * We are not interested in the average or sum of the survey response, but we are going to treat is a category that describes the responses. Therefore, we need to convert it to a dimension by doing <strong>right-click</strong> on the <strong>Selected_Survey_Item</strong> field in the data pane &gt; <strong>Convert to Dimension</strong>. * Drag ** Drag <strong>Negative Percentage</strong> and <strong>Positive Percentage</strong> to Columns. * Drag <strong>Selected_Survey_Items</strong> to <strong>Color Marks Card</strong>. * Drag <strong>Selected_Survey_Items</strong> to <strong>Filters Card</strong> and select <strong>All</strong>, then <strong>uncheck Null</strong> to remove all null responses.</p>
 <figure>
-<img src="images/4.2.%20Edit%20Colour%20Legend.png" style="width:35.0%" alt="" /><figcaption>Figure 19. Edit Colour Legend</figcaption>
+<img src="images/4.2.%20Edit%20Colour%20Legend.png" style="width:35.0%" alt="Figure 19. Edit Colour Legend" /><figcaption aria-hidden="true">Figure 19. Edit Colour Legend</figcaption>
 </figure>
 <p>The visualisation is not completed yet, but I found it confusing to look at when the colour seem randomly chosen and the legend are not informative. We are going to stop a while to fix the legend before continuing.</p>
 <ul>
-<li><strong>Right-click</strong> on the legend label &gt; <strong>Edit Alias…</strong>. We know that 1 signifies ‘Strongly Agree’ while 5 stands for ‘Strongly Disagree’. So we enter the descriptions accordingly for 2, 3, and 4 as well.</li>
+<li><strong>Right-click</strong> on the legend label &gt; <strong>Edit Alias…</strong>. We know that 1 signifies ‘Strongly Agree’ while 5 stands for ‘Strongly Disagree.’ So we enter the descriptions accordingly for 2, 3, and 4 as well.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Select%20Colour%20for%20Selected%20Survey%20Item.png" alt="" /><figcaption>Figure 20. Select Colour for Each Response</figcaption>
+<img src="images/4.2.%20Select%20Colour%20for%20Selected%20Survey%20Item.png" alt="Figure 20. Select Colour for Each Response" /><figcaption aria-hidden="true">Figure 20. Select Colour for Each Response</figcaption>
 </figure>
 <ul>
 <li><strong>Double-click</strong> on the colour legend to open the edit color window.</li>
-<li><strong>Select the colours</strong>. I used the <strong>Color Blind</strong> palette to ensure that the visualisation can be understood clearly, as ten percent of men has red-green colour-blindness <span class="citation" data-cites="shaffer">(Shaffer, <a href="#ref-shaffer" role="doc-biblioref">n.d.</a>)</span>. <strong>Shades of blue</strong> colour are used to represent <strong>positive</strong> responses while <strong>shades of red</strong> are used to represent the <strong>negative</strong> sentiment.</li>
+<li><strong>Select the colours</strong>. I used the <strong>Color Blind</strong> palette to ensure that the visualisation can be understood clearly, as ten percent of men has red-green colour-blindness <span class="citation" data-cites="shaffer">(<a href="#ref-shaffer" role="doc-biblioref">Shaffer, n.d.</a>)</span>. <strong>Shades of blue</strong> colour are used to represent <strong>positive</strong> responses while <strong>shades of red</strong> are used to represent the <strong>negative</strong> sentiment.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Compute%20Using%20Selected_Survey_Item.png" alt="" /><figcaption>Figure 21. Compute Using Selected_Survey_Item</figcaption>
+<img src="images/4.2.%20Compute%20Using%20Selected_Survey_Item.png" alt="Figure 21. Compute Using Selected_Survey_Item" /><figcaption aria-hidden="true">Figure 21. Compute Using Selected_Survey_Item</figcaption>
 </figure>
 <p>Notice that in Figure 18, the negative and positive percentage for each country do not add up to 100% and Israel has the smallest bar compared to other countries. To rectify this issue, ensure the percentages are computed based on the selected survey item.</p>
 <ul>
@@ -2390,7 +2716,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Repeat</strong> for <strong>Positive Percentage</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Dual%20Axis.png" alt="" /><figcaption>Figure 22. Use Dual Axis</figcaption>
+<img src="images/4.2.%20Dual%20Axis.png" alt="Figure 22. Use Dual Axis" /><figcaption aria-hidden="true">Figure 22. Use Dual Axis</figcaption>
 </figure>
 <p>Although the percentages add up to 100% now, but they are actually plotting the positive and negative percentages side by side with a different axis scale. We will use dual axis to standardise the two axis.</p>
 <ul>
@@ -2400,7 +2726,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>We can get back the original colour we have chosen by removing the Measure Names from the colour marks card. We can <strong>drag</strong> the <strong>Measure Names</strong> field <strong>off from the Marks Card</strong>. Ensure we are still selecting the All Marks Card while doing so.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Reorder%20Colours.png" alt="" /><figcaption>Figure 23. Reorder Colours</figcaption>
+<img src="images/4.2.%20Reorder%20Colours.png" alt="Figure 23. Reorder Colours" /><figcaption aria-hidden="true">Figure 23. Reorder Colours</figcaption>
 </figure>
 <p>Previously, neutral bars are drawn first for the Positive Percentage. We can rearrange the bars by manually reordering the colour in the colour legend.</p>
 <ul>
@@ -2412,7 +2738,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>We can do some final touch up to customise how our visualisation looks like. For a more detailed steps to change each of the elements, take a look at my <a href="https://gabriellapauline.netlify.app/dataviz/2021-01-29-dataviz-makeover-1/#step-by-step-description">first dataviz makeover post</a>.</p>
 <h4 id="axis">Axis</h4>
 <figure>
-<img src="images/4.2.%20Edit%20Axis%20Title.png" style="width:45.0%" alt="" /><figcaption>Figure 24. Edit Axis Title</figcaption>
+<img src="images/4.2.%20Edit%20Axis%20Title.png" style="width:45.0%" alt="Figure 24. Edit Axis Title" /><figcaption aria-hidden="true">Figure 24. Edit Axis Title</figcaption>
 </figure>
 <p>For the axis, we are going edit the title and format the numbers.</p>
 <ul>
@@ -2421,7 +2747,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Remove the top axis by doing <strong>right-click</strong> on the <strong>Positive Percentage axis</strong> &gt; <strong>uncheck Show Header</strong></li>
 </ul>
 <figure>
-<img src="images/4.2.%20Edit%20Axis%20Number%20Format.png" alt="" /><figcaption>Figure 25. Edit Axis Number Format</figcaption>
+<img src="images/4.2.%20Edit%20Axis%20Number%20Format.png" alt="Figure 25. Edit Axis Number Format" /><figcaption aria-hidden="true">Figure 25. Edit Axis Number Format</figcaption>
 </figure>
 <ul>
 <li><ul>
@@ -2434,7 +2760,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="title">Title</h4>
 <p>Remember the parameter we created earlier? We are going to use the questions as the title.</p>
 <figure>
-<img src="images/4.2.%20Edit%20Title.png" alt="" /><figcaption>Figure 26. Edit Title</figcaption>
+<img src="images/4.2.%20Edit%20Title.png" alt="Figure 26. Edit Title" /><figcaption aria-hidden="true">Figure 26. Edit Title</figcaption>
 </figure>
 <ul>
 <li><strong>Double-click</strong> on the <strong>title</strong>.</li>
@@ -2444,7 +2770,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="filters">Filters</h4>
 <p>Having filters allow the users to interact with the visualisation and tailor it according to their needs. We will use Employment Status, Gender, Age, Household Children and Household Size fields as the filters.</p>
 <figure>
-<img src="images/4.2.%20Add%20String%20Filter.png" alt="" /><figcaption>Figure 27. Add String Filters</figcaption>
+<img src="images/4.2.%20Add%20String%20Filter.png" alt="Figure 27. Add String Filters" /><figcaption aria-hidden="true">Figure 27. Add String Filters</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Employment Status</strong> to the <strong>Filters</strong>.</li>
@@ -2453,7 +2779,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Repeat</strong> for <strong>Gender</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Add%20Numeric%20Filter.png" alt="" /><figcaption>Figure 28. Add Numeric Filters</figcaption>
+<img src="images/4.2.%20Add%20Numeric%20Filter.png" alt="Figure 28. Add Numeric Filters" /><figcaption aria-hidden="true">Figure 28. Add Numeric Filters</figcaption>
 </figure>
 <p>For the numeric filter, the interface is slightly different because we can pick a range of values.</p>
 <ul>
@@ -2464,19 +2790,19 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Repeat</strong> for <strong>Household Children</strong> and <strong>Age</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.2.%20Diverging%20Stacked%20Bar%20Chart.png" alt="" /><figcaption>Figure 29. Diverging Stacked Bar Chart</figcaption>
+<img src="images/4.2.%20Diverging%20Stacked%20Bar%20Chart.png" alt="Figure 29. Diverging Stacked Bar Chart" /><figcaption aria-hidden="true">Figure 29. Diverging Stacked Bar Chart</figcaption>
 </figure>
 <p>One down, one more to go!</p>
 <h2 id="dot-plot-with-error-bars">4.3. Dot Plot with Error Bars</h2>
 <h3 id="creating-visualisation-1">Creating Visualisation</h3>
 <p>The dot plot will visualise the selected response (e.g. Strongly Agree) for the selected survey item in the diverging stacked bar chart. We also need to repeat the steps to create parameters and calculated fields, but with some adjustments.</p>
 <figure>
-<img src="images/4.3.%20Create%20Paramenter%20-%20Response.png" style="width:45.0%" alt="" /><figcaption>Figure 29. Create Parameter for Response</figcaption>
+<img src="images/4.3.%20Create%20Paramenter%20-%20Response.png" style="width:45.0%" alt="Figure 29. Create Parameter for Response" /><figcaption aria-hidden="true">Figure 29. Create Parameter for Response</figcaption>
 </figure>
 <ul>
 <li>Use <strong>integer data type</strong> because the survey response values will be in the range of 1 to 5. We will match the value chosen from the parameter with the Selected_Survey_Item value.</li>
 <li>Enter number 1 to 5 for value and the textual descriptions in ‘Display As’ column.</li>
-<li>Additionally, we can add a total for agree and strongly agree as well as disagree and strongly disagree. Use 0 for ‘Agree and Strongly Agree’, and 6 for ‘Disagree and Strongly Disagree’.</li>
+<li>Additionally, we can add a total for agree and strongly agree as well as disagree and strongly disagree. Use 0 for ‘Agree and Strongly Agree,’ and 6 for ‘Disagree and Strongly Disagree.’</li>
 </ul>
 <p>The formulas we need to add for the dot plot are:</p>
 <ol start="8" class="example" type="1">
@@ -2496,7 +2822,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="dot-plot">Dot Plot</h4>
 <p>We are going to start by creating the dots for the proportion from the sample.</p>
 <figure>
-<img src="images/4.3.%20First%20Cut.png" alt="" /><figcaption>Figure 30. First Cut of the Dot Plot</figcaption>
+<img src="images/4.3.%20First%20Cut.png" alt="Figure 30. First Cut of the Dot Plot" /><figcaption aria-hidden="true">Figure 30. First Cut of the Dot Plot</figcaption>
 </figure>
 <ul>
 <li>Put <strong>Prop</strong> in the **Columns.</li>
@@ -2509,7 +2835,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>If the dots are in the same value for all countries, make sure that <strong>Prop</strong> is <strong>computed using cell</strong>.</p>
 <p>I found a neat trick that we can select <strong>Fit Height</strong> above the column shelf to automatically adjust the height of the chart.</p>
 <figure>
-<img src="images/4.3.%20Select%20Colours.png" alt="" /><figcaption>Figure 31. Edit Colour</figcaption>
+<img src="images/4.3.%20Select%20Colours.png" alt="Figure 31. Edit Colour" /><figcaption aria-hidden="true">Figure 31. Edit Colour</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Select Response</strong> to the <strong>Color Marks Card</strong>.</li>
@@ -2520,7 +2846,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>You can play around and see how the colour of the dots changes according to the selected response.</p>
 <figure>
-<img src="images/4.3.%20Add%20Label.png" alt="" /><figcaption>Figure 32. Add Labels</figcaption>
+<img src="images/4.3.%20Add%20Label.png" alt="Figure 32. Add Labels" /><figcaption aria-hidden="true">Figure 32. Add Labels</figcaption>
 </figure>
 <ul>
 <li>Add a label value for each of the dots by <strong>dragging Prop</strong> to the <strong>Label Marks Card</strong>.</li>
@@ -2531,7 +2857,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>We can adjust the circle size again if we need to, but try not to make it very big, otherwise the circles will get cropped.</p>
 <h4 id="error-bars">Error Bars</h4>
 <figure>
-<img src="images/4.3.%20Add%20Measure%20Values.png" alt="" /><figcaption>Figure 33. Add Measure Values</figcaption>
+<img src="images/4.3.%20Add%20Measure%20Values.png" alt="Figure 33. Add Measure Values" /><figcaption aria-hidden="true">Figure 33. Add Measure Values</figcaption>
 </figure>
 <ul>
 <li>Add <strong>Measure Values</strong> to the <strong>Columns</strong>.</li>
@@ -2541,7 +2867,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>Why is the line going zig-zag like a drunk driver? Because we have not specified the path for the lines.</p>
 <figure>
-<img src="images/4.3.%20Add%20Colour%20and%20Path.png" alt="" /><figcaption>Figure 34. Add Colour and Path</figcaption>
+<img src="images/4.3.%20Add%20Colour%20and%20Path.png" alt="Figure 34. Add Colour and Path" /><figcaption aria-hidden="true">Figure 34. Add Colour and Path</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Measure Names</strong> to <strong>Colour</strong> and <strong>Path</strong>.</li>
@@ -2549,7 +2875,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Change the colour</strong> by <strong>double-clicking</strong> on the legend. Use a lighter shade for 99% CI and a darker shade for 95% CI.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Dual%20Axis.png" alt="" /><figcaption>Figure 35. Dual Axis</figcaption>
+<img src="images/4.3.%20Dual%20Axis.png" alt="Figure 35. Dual Axis" /><figcaption aria-hidden="true">Figure 35. Dual Axis</figcaption>
 </figure>
 <p>Combine the circle and the confidence interval by using a dual axis.</p>
 <ul>
@@ -2559,15 +2885,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>To tidy up the visualisation, <strong>edit the format</strong> of the axis scale to show <strong>percentage</strong> and <strong>hide the scale on the top</strong>.</li>
 </ul>
 <h4 id="sort">Sort</h4>
-<p>Tableau does not allow sorting using a blended measure, so we need to use a workaround <span class="citation" data-cites="tableaukb">(Tableau, <a href="#ref-tableaukb" role="doc-biblioref">n.d.</a>)</span>. We want to sort according to the order of Prop, so we will use it in the Rows shelf and hide it away.</p>
+<p>Tableau does not allow sorting using a blended measure, so we need to use a workaround <span class="citation" data-cites="tableaukb">(<a href="#ref-tableaukb" role="doc-biblioref">Tableau, n.d.</a>)</span>. We want to sort according to the order of Prop, so we will use it in the Rows shelf and hide it away.</p>
 <figure>
-<img src="images/4.3.%20Add%20Prop%20and%20Convert%20to%20Discrete.png" alt="" /><figcaption>Figure 36. Add Prop to Columns and Convert to Discrete</figcaption>
+<img src="images/4.3.%20Add%20Prop%20and%20Convert%20to%20Discrete.png" alt="Figure 36. Add Prop to Columns and Convert to Discrete" /><figcaption aria-hidden="true">Figure 36. Add Prop to Columns and Convert to Discrete</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Prop</strong> to <strong>Rows</strong> shelf &gt; <strong>right-click</strong> &gt; <strong>Discrete</strong></li>
 </ul>
 <figure>
-<img src="images/4.3.%20Sort%20Prop%20Descending.png" alt="" /><figcaption>Figure 37. Sort by Prop</figcaption>
+<img src="images/4.3.%20Sort%20Prop%20Descending.png" alt="Figure 37. Sort by Prop" /><figcaption aria-hidden="true">Figure 37. Sort by Prop</figcaption>
 </figure>
 <ul>
 <li><strong>Move Prop</strong> pill to before <strong>Country</strong>. Now it will automatically sort the values based on Prop.</li>
@@ -2575,7 +2901,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Uncheck Show Header</strong> for <strong>Prop</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Remove%20Gridline.png" style="width:35.0%" alt="" /><figcaption>Figure 38. Remove Gridlines</figcaption>
+<img src="images/4.3.%20Remove%20Gridline.png" style="width:35.0%" alt="Figure 38. Remove Gridlines" /><figcaption aria-hidden="true">Figure 38. Remove Gridlines</figcaption>
 </figure>
 <p>If your visualisation becomes cluttered with gridlines when you added Prop, you can remove them.</p>
 <ul>
@@ -2584,18 +2910,18 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Repeat for <strong>Column</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Edit%20Title.png" alt="" /><figcaption>Figure 39. Edit Title for Dot Plot with Error Bar</figcaption>
+<img src="images/4.3.%20Edit%20Title.png" alt="Figure 39. Edit Title for Dot Plot with Error Bar" /><figcaption aria-hidden="true">Figure 39. Edit Title for Dot Plot with Error Bar</figcaption>
 </figure>
 <ul>
 <li>Last but not least, <strong>edit the title</strong> so it will change dynamically according to the parameter selected by the users.</li>
 </ul>
 <figure>
-<img src="images/4.3.%20Dot%20Plot%20with%20Error%20Bars.png" alt="" /><figcaption>Figure 40. Dot Plot with Error Bars</figcaption>
+<img src="images/4.3.%20Dot%20Plot%20with%20Error%20Bars.png" alt="Figure 40. Dot Plot with Error Bars" /><figcaption aria-hidden="true">Figure 40. Dot Plot with Error Bars</figcaption>
 </figure>
 <h2 id="dashboard">4.4. Dashboard</h2>
 <p>Now we are going to combine the two charts together in a dashboard, but we might still need to go back and adjust a few things in the chart.</p>
 <figure>
-<img src="images/4.4.%20Dashboard%20Initial%20Layout.png" alt="" /><figcaption>Figure 41. Dashboard Initial Layout</figcaption>
+<img src="images/4.4.%20Dashboard%20Initial%20Layout.png" alt="Figure 41. Dashboard Initial Layout" /><figcaption aria-hidden="true">Figure 41. Dashboard Initial Layout</figcaption>
 </figure>
 <ul>
 <li>Choose the <strong>Power Point (1600 x 900)</strong> size.</li>
@@ -2605,7 +2931,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>Does something look weird? Yes, we have not sorted the bar chart according to the order of the countries on the dot plot. <strong>Go back to the Diverging Stacked Bar Chart Sheet</strong> and <strong>repeat the steps to sort the countries according to Prop</strong>. Don’t panic if it suddenly becomes an even grid, just ensure the Negative and Positive Percentage are still computed using Selected_Survey_Item.</p>
 <figure>
-<img src="images/4.4.%20Apply%20Filter%20to%20All%20Sheets.png" alt="" /><figcaption>Figure 42. Apply Filter to All Sheets</figcaption>
+<img src="images/4.4.%20Apply%20Filter%20to%20All%20Sheets.png" alt="Figure 42. Apply Filter to All Sheets" /><figcaption aria-hidden="true">Figure 42. Apply Filter to All Sheets</figcaption>
 </figure>
 <p>Before removing the country column for the dot plots, we need to make sure that the sorting works properly and the order of the countries in the two charts are identical. But they are not. This is because the diverging stacked bar chart has filters applied on it, but not the dot plot with error bars. So, we need to apply the filter to all sheets to standardise the sorting order.</p>
 <ul>
@@ -2615,7 +2941,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Notice that Figure 42 shows that we have the options to use single value or multiple values for the filter. I changed the type for <strong>Gender filter</strong> to be <strong>Single Value (list)</strong> because there already an option for all genders.</li>
 </ul>
 <figure>
-<img src="images/4.4.%20Reorder%20Parameter%20and%20Filter.png" alt="" /><figcaption>Figure 43. Reorder Parameters and Filters</figcaption>
+<img src="images/4.4.%20Reorder%20Parameter%20and%20Filter.png" alt="Figure 43. Reorder Parameters and Filters" /><figcaption aria-hidden="true">Figure 43. Reorder Parameters and Filters</figcaption>
 </figure>
 <ul>
 <li>Add another <strong>Horizontal</strong> object between the chart and the dashboard title.</li>
@@ -2623,7 +2949,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Remove</strong> the <strong>Measure Names</strong>, <strong>Select Response</strong>, and <strong>Selected_Survey_item</strong> legends by <strong>clicking the cross mark</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.4.%20Add%20Blank.png" alt="" /><figcaption>Figure 44. Add Blanks</figcaption>
+<img src="images/4.4.%20Add%20Blank.png" alt="Figure 44. Add Blanks" /><figcaption aria-hidden="true">Figure 44. Add Blanks</figcaption>
 </figure>
 <p>Tableau does not allow us to easy adjust the size of the objects on the dashboard. We can use the workaround to add blanks to add some paddings.</p>
 <ul>
@@ -2633,7 +2959,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h4 id="create-a-customised-legend">Create a Customised Legend</h4>
 <p>It looks almost complete, but the colour legend is still missing. Because we have to manually order the colour legends for the diverging stacked bar chart, now we need to create a customised legend in a new sheet.</p>
 <figure>
-<img src="images/4.4.%20Add%20Colour%20to%20Legend.png" alt="" /><figcaption>Figure 45. Add Colour to Legend</figcaption>
+<img src="images/4.4.%20Add%20Colour%20to%20Legend.png" alt="Figure 45. Add Colour to Legend" /><figcaption aria-hidden="true">Figure 45. Add Colour to Legend</figcaption>
 </figure>
 <ul>
 <li>Create a <strong>New Sheet</strong></li>
@@ -2647,14 +2973,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>CASE [Selected_Survey_Item] WHEN 1 then ‘Strongly Agree’ WHEN 2 then ‘Agree’ WHEN 3 then ‘Neutral’ WHEN 4 then ‘Disagree’ WHEN 5 then ‘Strongly Disagree’ END</p></li>
 </ol>
 <figure>
-<img src="images/4.4.%20Add%20Label%20to%20Legend.png" alt="" /><figcaption>Figure 46. Add Label to Legend</figcaption>
+<img src="images/4.4.%20Add%20Label%20to%20Legend.png" alt="Figure 46. Add Label to Legend" /><figcaption aria-hidden="true">Figure 46. Add Label to Legend</figcaption>
 </figure>
 <ul>
 <li><strong>Drag Label</strong> to the <strong>Label Marks Card</strong>.</li>
 <li><strong>Double-click</strong> on the <strong>Columns shelf</strong> &gt; <strong>type ‘max(.1)’</strong>. This will create a formula that results in a constant of 1. The value is automatically labeled for us.</li>
 </ul>
 <figure>
-<img src="images/4.4.%20Edit%20Axis.png" alt="" /><figcaption>Figure 47. Edit Axis</figcaption>
+<img src="images/4.4.%20Edit%20Axis.png" alt="Figure 47. Edit Axis" /><figcaption aria-hidden="true">Figure 47. Edit Axis</figcaption>
 </figure>
 <p>We just need to do a few more minor touch ups.</p>
 <ul>
@@ -2663,7 +2989,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Uncheck Show Header</strong> for <strong>AGG(max(.1))</strong>.</li>
 </ul>
 <figure>
-<img src="images/4.4.%20Add%20Legend%20to%20Dashboard.png" alt="" /><figcaption>Figure 48. Add Legend to Dashboard</figcaption>
+<img src="images/4.4.%20Add%20Legend%20to%20Dashboard.png" alt="Figure 48. Add Legend to Dashboard" /><figcaption aria-hidden="true">Figure 48. Add Legend to Dashboard</figcaption>
 </figure>
 <ul>
 <li><strong>Drag</strong> the <strong>Legend sheet</strong> to the top of filters in the right-most column.</li>
@@ -2672,7 +2998,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><strong>Remove the default colour legend</strong> that comes with the legend sheet.</li>
 </ul>
 <figure>
-<img src="images/4.4.%20Add%20Text%20Object.png" alt="" /><figcaption>Figure 49. Add Text Object</figcaption>
+<img src="images/4.4.%20Add%20Text%20Object.png" alt="Figure 49. Add Text Object" /><figcaption aria-hidden="true">Figure 49. Add Text Object</figcaption>
 </figure>
 <ul>
 <li>Add a <strong>text object</strong> to the top of the legend to create a <strong>legend title</strong>. I used a bolded Tableau Medium 9 pt.</li>
@@ -2682,7 +3008,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>In the round of final check, I just realised that age filter was not shown all this while. It is fine, we are human. We make mistakes. If you also forgot some filters, it is not too late to add them in.</p>
 <figure>
-<img src="images/4.4.%20Add%20Age%20Filter.png" alt="" /><figcaption>Figure 50. Add Age Filter</figcaption>
+<img src="images/4.4.%20Add%20Age%20Filter.png" alt="Figure 50. Add Age Filter" /><figcaption aria-hidden="true">Figure 50. Add Age Filter</figcaption>
 </figure>
 <ul>
 <li>Click on the <strong>diverging stacked bar chart</strong> where we added the age filter.</li>
@@ -2691,7 +3017,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Reorganise the order of the filters.</li>
 </ul>
 <figure>
-<img src="images/4.4.%20Add%20Animations.png" alt="" /><figcaption>Figure 51. Add Animations</figcaption>
+<img src="images/4.4.%20Add%20Animations.png" alt="Figure 51. Add Animations" /><figcaption aria-hidden="true">Figure 51. Add Animations</figcaption>
 </figure>
 <p>For a final touch, since this visualisation is interactive, we can add animation so the users can see the changes of rank between countries when they change a parameter or a filter.</p>
 <ul>
@@ -2699,7 +3025,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>Turn animations <strong>On</strong> and set the <strong>Duration</strong>. I used a <strong>Custom</strong> value of 0.75.</li>
 </ul>
 <figure>
-<img src="images/3.%20Final%20Look%20for%20COVID-19%20Vaccine%20Survey%20DataViz%20Makeover.png" alt="" /><figcaption>Figure 51. Final Dashboard</figcaption>
+<img src="images/3.%20Final%20Look%20for%20COVID-19%20Vaccine%20Survey%20DataViz%20Makeover.png" alt="Figure 51. Final Dashboard" /><figcaption aria-hidden="true">Figure 51. Final Dashboard</figcaption>
 </figure>
 <p><strong>Congratulations, we are done!</strong></p>
 <h1 id="major-observations">5. Major Observations</h1>
@@ -2707,36 +3033,36 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 id="a.-people-are-more-willing-to-be-vaccinated-a-year-from-now-than-this-week-due-to-worries-for-covid-vaccine-potential-side-effects">a. People are more willing to be vaccinated a year from now than this week due to worries for COVID vaccine potential side effects</h3>
 <p>We can clearly see the <strong>dominance of positive sentiment in the the willingness to be vaccinated a year from now</strong> (Figure 52), but the same thing does not apply to the willingness to be vaccinated this week (Figure 53).</p>
 <figure>
-<img src="images/5.%20A%20year%20from%20now%20-%20Agree%20and%20Strongly%20Agree.png" alt="" /><figcaption>Figure 52. Proportion of People Willing To Be Vaccinated a Year from Now</figcaption>
+<img src="images/5.%20A%20year%20from%20now%20-%20Agree%20and%20Strongly%20Agree.png" alt="Figure 52. Proportion of People Willing To Be Vaccinated a Year from Now" /><figcaption aria-hidden="true">Figure 52. Proportion of People Willing To Be Vaccinated a Year from Now</figcaption>
 </figure>
 <figure>
-<img src="images/5.%20This%20Week%20-%20Agree%20and%20Strongly%20Agree.png" alt="" /><figcaption>Figure 53. Proportion of People Willing To Be Vaccinated This Week</figcaption>
+<img src="images/5.%20This%20Week%20-%20Agree%20and%20Strongly%20Agree.png" alt="Figure 53. Proportion of People Willing To Be Vaccinated This Week" /><figcaption aria-hidden="true">Figure 53. Proportion of People Willing To Be Vaccinated This Week</figcaption>
 </figure>
 <p>This can be due to the worries of potential side effects for the COVID vaccine. Naturally, giving more time would allow the researchers to examine the side effects for COVID vaccine more carefully. The <strong>top 3 countries with the highest total proportion that agree to be vaccinated this week</strong> (Figure 54) is the <strong>same as the top 3 countries that are not worried about COVID vaccine side-effects</strong> (Figure 55).</p>
 <figure>
-<img src="images/5.%20This%20Week%20-%20Top%203%20Agree%20and%20Strongly%20Agree.png" alt="" /><figcaption>Figure 54. Top 3 countries with Highest Proportion That Agrees to be Vaccinated This Week</figcaption>
+<img src="images/5.%20This%20Week%20-%20Top%203%20Agree%20and%20Strongly%20Agree.png" alt="Figure 54. Top 3 countries with Highest Proportion That Agrees to be Vaccinated This Week" /><figcaption aria-hidden="true">Figure 54. Top 3 countries with Highest Proportion That Agrees to be Vaccinated This Week</figcaption>
 </figure>
 <figure>
-<img src="images/5.%20Potential%20Side%20Effect%20-%20Disagree%20and%20Strongly%20Disagree.png" alt="" /><figcaption>Figure 55. Top 3 Countries with Highest Proportion That Are Not Worried About COVID Vaccine Potential Side Effects</figcaption>
+<img src="images/5.%20Potential%20Side%20Effect%20-%20Disagree%20and%20Strongly%20Disagree.png" alt="Figure 55. Top 3 Countries with Highest Proportion That Are Not Worried About COVID Vaccine Potential Side Effects" /><figcaption aria-hidden="true">Figure 55. Top 3 Countries with Highest Proportion That Are Not Worried About COVID Vaccine Potential Side Effects</figcaption>
 </figure>
 <h3 id="b.-older-people-are-more-worried-about-getting-covid-19-and-more-willing-to-be-vaccinated-this-week">b. Older people are more worried about getting COVID-19 and more willing to be vaccinated this week</h3>
 <p>Similarly, by observing the division of sentiment regarding <strong>willingness to be vaccinated this week</strong> in the older people and the younger generation, we can see that the <strong>dominance for positive sentiment is higher in the older people</strong> (Figure 56) <strong>compared to the younger ones</strong> (Figure 57).</p>
 <figure>
-<img src="images/5.%20This%20Week%20-%20Old.png" alt="" /><figcaption>Figure 56. Proportion of Older People Willing to be Vaccinated This Week</figcaption>
+<img src="images/5.%20This%20Week%20-%20Old.png" alt="Figure 56. Proportion of Older People Willing to be Vaccinated This Week" /><figcaption aria-hidden="true">Figure 56. Proportion of Older People Willing to be Vaccinated This Week</figcaption>
 </figure>
 <figure>
-<img src="images/5.%20This%20Week%20-%20Young.png" alt="" /><figcaption>Figure 57. Proportion of Younger People Willing to be Vaccinated This Week</figcaption>
+<img src="images/5.%20This%20Week%20-%20Young.png" alt="Figure 57. Proportion of Younger People Willing to be Vaccinated This Week" /><figcaption aria-hidden="true">Figure 57. Proportion of Younger People Willing to be Vaccinated This Week</figcaption>
 </figure>
 <p>Although not as prominent, the <strong>proportion of people who are not worried about getting COVID-19 is also higher in the younger generation</strong> (Figure 58) <strong>than the older ones</strong> (Figure 59).</p>
 <figure>
-<img src="images/5.%20Not%20Worried%20-%20Young.png" alt="" /><figcaption>Figure 58. Proportion of Younger People Not Worried About Getting COVID-19</figcaption>
+<img src="images/5.%20Not%20Worried%20-%20Young.png" alt="Figure 58. Proportion of Younger People Not Worried About Getting COVID-19" /><figcaption aria-hidden="true">Figure 58. Proportion of Younger People Not Worried About Getting COVID-19</figcaption>
 </figure>
 <figure>
-<img src="images/5.%20Not%20Worried%20-%20Old.png" alt="" /><figcaption>Figure 59. Proportion of Older People Not Worried About Getting COVID-19</figcaption>
+<img src="images/5.%20Not%20Worried%20-%20Old.png" alt="Figure 59. Proportion of Older People Not Worried About Getting COVID-19" /><figcaption aria-hidden="true">Figure 59. Proportion of Older People Not Worried About Getting COVID-19</figcaption>
 </figure>
 <h3 id="c.-countries-with-highest-proportion-that-worries-about-getting-covid-19-are-also-worried-about-the-side-effect-of-vaccine">c. Countries with Highest Proportion that Worries about Getting COVID-19 Are Also Worried about the Side Effect of Vaccine</h3>
 <figure>
-<img src="images/5.%20Worried%20getting%20COVID%20-%20Top%203.png" alt="" /><figcaption>Figure 60. Top 3 Countries with Highest Proportion That Worries about Getting COVID-19</figcaption>
+<img src="images/5.%20Worried%20getting%20COVID%20-%20Top%203.png" alt="Figure 60. Top 3 Countries with Highest Proportion That Worries about Getting COVID-19" /><figcaption aria-hidden="true">Figure 60. Top 3 Countries with Highest Proportion That Worries about Getting COVID-19</figcaption>
 </figure>
 <p>The <strong>significant difference between Japan, Spain, and South Korea to the other countries</strong> in terms of proportion that agrees to being <strong>worried of getting COVID-19</strong> is interesting to observe. There is a very large gap to the next ranking country, Singapore, and even the <strong>99% confidence interval do not overlap</strong> with any of the other countries.</p>
 <p>Another survey item is phrased in a similar way, and the same 3 countries are in the group that shows a significantly higher worry than the other countries. <img src="images/5.%20Worried%20Side%20Effect%20-%20Top%205.png" alt="Figure 61. Top 5 Countries with Highest Proportion That Worries about the Potential Side Effects of COVID-19 Vaccine" /></p>
@@ -2744,36 +3070,36 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>It is possible that this observation is due to a higher anxiety level in the countries in general. Therefore, the people may be worried about everything, whether it is getting COVID-19, the side effect of COVID-19 vaccine, or whether they can get promotion, get married, remembered to feed their fish, and whether they have locked the door and turn off the stove.</p>
 <p>This must be further investigated, so the common factor between these countries can be determined.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div id="refs" class="references" role="doc-bibliography">
-<div id="ref-charumilind_craven_lamb_sabow_wilson_2021">
-<p>Charumilind, Sarun, Matt Craven, Jessica Lamb, Adam Sabow, and Matt Wilson. 2021. “When Will the Covid-19 Pandemic End?” <em>McKinsey &amp;Amp; Company</em>. McKinsey &amp;amp; Company. <a href="https://www.mckinsey.com/industries/healthcare-systems-and-services/our-insights/when-will-the-covid-19-pandemic-end">https://www.mckinsey.com/industries/healthcare-systems-and-services/our-insights/when-will-the-covid-19-pandemic-end</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-charumilind_craven_lamb_sabow_wilson_2021" class="csl-entry" role="doc-biblioentry">
+Charumilind, Sarun, Matt Craven, Jessica Lamb, Adam Sabow, and Matt Wilson. 2021. <span>“When Will the COVID-19 Pandemic End?”</span> <em>McKinsey &amp;Amp; Company</em>. McKinsey &amp;amp; Company. <a href="https://www.mckinsey.com/industries/healthcare-systems-and-services/our-insights/when-will-the-covid-19-pandemic-end">https://www.mckinsey.com/industries/healthcare-systems-and-services/our-insights/when-will-the-covid-19-pandemic-end</a>.
 </div>
-<div id="ref-jones_sarah_2020">
-<p>Jones, and P Sarah. 2020. “Imperial College London Yougov Covid Data Hub.” <em>GitHub</em>. Imperial College London Big Data Analytical Unit and YouGov Plc. 2020. <a href="https://github.com/YouGov-Data/covid-19-tracker">https://github.com/YouGov-Data/covid-19-tracker</a>.</p>
+<div id="ref-jones_sarah_2020" class="csl-entry" role="doc-biblioentry">
+Jones, and P Sarah. 2020. <span>“Imperial College London YouGov Covid Data Hub.”</span> <em>GitHub</em>. Imperial College London Big Data Analytical Unit; YouGov Plc. 2020. <a href="https://github.com/YouGov-Data/covid-19-tracker">https://github.com/YouGov-Data/covid-19-tracker</a>.
 </div>
-<div id="ref-pirrone_2020">
-<p>Pirrone, Alana. 2020. “Seven Different Ways to Display Likert Scale Data.” <em>Medium</em>. <a href="https://medium.com/nightingale/seven-different-ways-to-display-likert-scale-data-d0c1c9a9ad59">https://medium.com/nightingale/seven-different-ways-to-display-likert-scale-data-d0c1c9a9ad59</a>.</p>
+<div id="ref-pirrone_2020" class="csl-entry" role="doc-biblioentry">
+Pirrone, Alana. 2020. <span>“Seven Different Ways to Display Likert Scale Data.”</span> <em>Medium</em>. <a href="https://medium.com/nightingale/seven-different-ways-to-display-likert-scale-data-d0c1c9a9ad59">https://medium.com/nightingale/seven-different-ways-to-display-likert-scale-data-d0c1c9a9ad59</a>.
 </div>
-<div id="ref-shaffer">
-<p>Shaffer, Jeffrey. n.d. “5 Tips on Designing Colorblind-Friendly Visualizations.” <em>Tableau</em>. <a href="https://www.tableau.com/about/blog/2016/4/examining-data-viz-rules-dont-use-red-green-together-53463">https://www.tableau.com/about/blog/2016/4/examining-data-viz-rules-dont-use-red-green-together-53463</a>.</p>
+<div id="ref-shaffer" class="csl-entry" role="doc-biblioentry">
+Shaffer, Jeffrey. n.d. <span>“5 Tips on Designing Colorblind-Friendly Visualizations.”</span> <em>Tableau</em>. <a href="https://www.tableau.com/about/blog/2016/4/examining-data-viz-rules-dont-use-red-green-together-53463">https://www.tableau.com/about/blog/2016/4/examining-data-viz-rules-dont-use-red-green-together-53463</a>.
 </div>
-<div id="ref-Stone2006ChoosingCF">
-<p>Stone, M. 2006. “Choosing Colors for Data Visualization.” <em>Perceptual Edge</em>. <a href="http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf">http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf</a>.</p>
+<div id="ref-Stone2006ChoosingCF" class="csl-entry" role="doc-biblioentry">
+Stone, M. 2006. <span>“Choosing Colors for Data Visualization.”</span> <em>Perceptual Edge</em>. <a href="http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf">http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf</a>.
 </div>
-<div id="ref-tableaukb">
-<p>Tableau. n.d. “Sorting by Field Is Unavailable for Data Blended Measures: Tableau Software.” <em>Sorting by Field Is Unavailable for Data Blended Measures | Tableau Software</em>. Tableau. <a href="https://kb.tableau.com/articles/issue/sorting-by-field-unavailable-for-data-blended-measures">https://kb.tableau.com/articles/issue/sorting-by-field-unavailable-for-data-blended-measures</a>.</p>
+<div id="ref-tableaukb" class="csl-entry" role="doc-biblioentry">
+Tableau. n.d. <span>“Sorting by Field Is Unavailable for Data Blended Measures: Tableau Software.”</span> <em>Sorting by Field Is Unavailable for Data Blended Measures | Tableau Software</em>. Tableau. <a href="https://kb.tableau.com/articles/issue/sorting-by-field-unavailable-for-data-blended-measures">https://kb.tableau.com/articles/issue/sorting-by-field-unavailable-for-data-blended-measures</a>.
 </div>
-<div id="ref-torres_2016">
-<p>Torres, Nicole. 2016. “Why It’s so Hard for Us to Visualize Uncertainty.” <em>Harvard Business Review</em>. <a href="https://hbr.org/2016/11/why-its-so-hard-for-us-to-visualize-uncertainty">https://hbr.org/2016/11/why-its-so-hard-for-us-to-visualize-uncertainty</a>.</p>
+<div id="ref-torres_2016" class="csl-entry" role="doc-biblioentry">
+Torres, Nicole. 2016. <span>“Why It’s so Hard for Us to Visualize Uncertainty.”</span> <em>Harvard Business Review</em>. <a href="https://hbr.org/2016/11/why-its-so-hard-for-us-to-visualize-uncertainty">https://hbr.org/2016/11/why-its-so-hard-for-us-to-visualize-uncertainty</a>.
 </div>
-<div id="ref-wexler_2018">
-<p>Wexler, Steve. 2018. “Showing Uncertainty in Survey Results.” <em>Data Revelations</em>. <a href="https://www.datarevelations.com/resources/showing-uncertainty/">https://www.datarevelations.com/resources/showing-uncertainty/</a>.</p>
+<div id="ref-wexler_2018" class="csl-entry" role="doc-biblioentry">
+Wexler, Steve. 2018. <span>“Showing Uncertainty in Survey Results.”</span> <em>Data Revelations</em>. <a href="https://www.datarevelations.com/resources/showing-uncertainty/">https://www.datarevelations.com/resources/showing-uncertainty/</a>.
 </div>
-<div id="ref-wexler_2020">
-<p>———. 2020. “Rethinking the Divergent Stacked Bar Chart - Placing the Stronger Views in the Center.” <em>Data Revelations</em>. <a href="https://www.datarevelations.com/resources/rethinkingdivergent/">https://www.datarevelations.com/resources/rethinkingdivergent/</a>.</p>
+<div id="ref-wexler_2020" class="csl-entry" role="doc-biblioentry">
+———. 2020. <span>“Rethinking the Divergent Stacked Bar Chart - Placing the Stronger Views in the Center.”</span> <em>Data Revelations</em>. <a href="https://www.datarevelations.com/resources/rethinkingdivergent/">https://www.datarevelations.com/resources/rethinkingdivergent/</a>.
 </div>
-<div id="ref-yi_2019">
-<p>Yi, Michael. 2019. “How to Choose the Colors for Your Data Visualizations.” <em>Medium</em>. <a href="https://medium.com/nightingale/how-to-choose-the-colors-for-your-data-visualizations-50b2557fa335">https://medium.com/nightingale/how-to-choose-the-colors-for-your-data-visualizations-50b2557fa335</a>.</p>
+<div id="ref-yi_2019" class="csl-entry" role="doc-biblioentry">
+Yi, Michael. 2019. <span>“How to Choose the Colors for Your Data Visualizations.”</span> <em>Medium</em>. <a href="https://medium.com/nightingale/how-to-choose-the-colors-for-your-data-visualizations-50b2557fa335">https://medium.com/nightingale/how-to-choose-the-colors-for-your-data-visualizations-50b2557fa335</a>.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->

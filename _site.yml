@@ -24,3 +24,4 @@ collections:
       disqus: 
         shortname: gabriellapauline
       share: [twitter, linkedin]
+theme: theme.css

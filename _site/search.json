@@ -5,28 +5,28 @@
       "title": "About Me",
       "author": [],
       "contents": "\r\n\r\nHi!\r\nI’m Gabriella, a data analyst and a data scientist in training based in Singapore. I am currently pursuing Master of IT in Business degree from Singapore Management University while doing internship in UOB Asset Management. Coding aside, I enjoy eating and baking. For me, data is a treasure chest that gives you a hope of making the world a little bit better, one insight at a time.\r\nI hope you have a good day, God bless you!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-28T19:14:47+08:00"
+      "last_modified": "2021-02-28T20:26:50+08:00"
     },
     {
       "path": "dataviz.html",
       "title": "DataViz Makeover",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-28T19:12:04+08:00"
+      "last_modified": "2021-02-28T20:35:39+08:00"
     },
     {
       "path": "index.html",
       "title": "Gabriella Pauline",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-28T19:12:04+08:00"
+      "last_modified": "2021-02-28T20:38:50+08:00"
     },
     {
       "path": "projects.html",
       "title": "Projects",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-28T18:22:05+08:00"
+      "last_modified": "2021-02-28T20:37:02+08:00"
     }
   ],
   "collections": ["posts/posts.json", "projects/projects.json"]
