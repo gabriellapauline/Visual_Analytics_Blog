@@ -9,12 +9,18 @@ navbar:
       href: index.html
     - text: "DataViz Makeover"
       href: dataviz.html
+    - text: "Projects"
+      href: projects.html
     - text: "About"
       href: about.html
 base_url: https://gabriellapauline.netlify.app/
 output: distill::distill_article
 collections:
    posts:
+      disqus: 
+        shortname: gabriellapauline
+      share: [twitter, linkedin]
+   projects:
       disqus: 
         shortname: gabriellapauline
       share: [twitter, linkedin]
