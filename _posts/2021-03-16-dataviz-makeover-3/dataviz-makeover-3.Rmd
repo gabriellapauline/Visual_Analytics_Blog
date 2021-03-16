@@ -14,7 +14,7 @@ output:
     self_contained: false
     toc: true
     toc_depth: 2
-bibliography: biblio.bib
+bibliography: Dataviz3.bib
 draft: TRUE
 ---
 
@@ -23,3 +23,10 @@ draft: TRUE
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+# 1. Introduction 
+
+In 1 February 2021, the military force in Myanmar launched a coup and arrested the civilian leaders, leaving the country in a dire state. The protests over the coup is one of the largest in Myanmar history, and the military have utilised water cannon, rubber bullets and live ammunition in the effort to stop the protesters [@cuddy_2021_myanmar]. 
+
+The country has long been led by a military junta, but a hope for democracy came when the military junta unexpectedly dissolved and appoints civilian ruler, President Then Sein. In 2015, Myanmar held an election, with Aung San Suu Kyi emerging as its de facto leader [@maizland_2021_myanmars]. Ms Suu Kyi is an ignitor for democracy in Myanmar, earning a Nobel Peace Prize while she was under house arrest in 1991 [@cuddy_2021_myanmar]. However, she lost much of her international support after her defence of the military who abuses Muslim Rohingya Minority, and led hundreds of thousands of them fleeing to Bangladesh in 2017 [@bbcnews_2021_aung]. 
+
+Using the [Armed Conflict Location & Event Data Project](https://acleddata.com/) (ACLED) - a disaggregated data collection, analysis & crisis mapping platform that aims to bring clarity to crisis - we are going to examine the armed conflicts that occur in Myanmar during the course of 2015 to 2020.
