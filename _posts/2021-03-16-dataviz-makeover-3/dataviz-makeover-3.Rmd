@@ -1,0 +1,25 @@
+---
+title: "DataViz Makeover 3 - Armed Conflict Location and Event Data"
+description: |
+  Visualisation makeover for geospatial data
+preview: 
+author:
+  - name: Gabriella Pauline Djojosaputro
+    url: https://www.linkedin.com/in/gabriellapauline/
+    affiliation: School of Information Systems, Singapore Management University
+    affiliation_url: https://smu.edu.sg
+date: 03-16-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_depth: 2
+bibliography: biblio.bib
+draft: TRUE
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+

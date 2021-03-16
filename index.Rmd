@@ -1,5 +1,23 @@
 ---
 title: "Gabriella Pauline"
-site: distill::distill_website
-listing: posts
+description: |
+
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# About
+As a data scientist in training, being an analytical person who has the ability to understand things from multiple perspectives helps me to discover insights and find different ways to optimize the models.
+
+I am especially passionate about using my analytical skills and knowledge in financial crime investigations, such as fraud or money-laundering detection. With my passion, skills, as well as integrity and honesty as my core value, I believe I would be a valuable asset to your team.
+
+# Education
+**SINGAPORE MANAGEMENT UNIVERSITY**	Aug 2020 - Dec 2021
+*Master of IT in Business (Analytics Track)*
+•	SMU PG ASEAN Scholar [cGPA: 4.00/4]
+
+**MURDOCH UNIVERSITY – Singapore** Sep 2018 - Jul 2020
+*Bachelor of Science in Cyber Security & Forensics and Business Information System*
+•	Vice Chancellor’s Commendation for Academic Excellence [GPA: 3.93 / 4] 
