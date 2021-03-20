@@ -90,7 +90,7 @@ The critiques are given in terms of **clarity**,  **aesthetics**, and **interact
 
 # 3. Alternative Graphical Representation
 
-The proposed design is shown in Figure 7.
+Although the original visualisation contains multiple countrieds in Southeast Asia, I chose to focus on Myanmar because of the recent political situation in Myanmar. The proposed design is shown in Figure 7.
 
 ![Figure 7. Alternative Graphical Representation](./images/3. Alternative Graphical Representation.jpeg)
 Due to the problem of the overlapping points (Clarity #1), I have decided to use another way to represent the spatial data. Initially, I thought of using a proportional symbol map with lower opacity to better represent the data, as the overlapping points will contribute to the size of the symbol. However, this method requires aggregation, and there is a problem in the mapping of the geographical data. There were hundreds of unrecognized location from the Admin 3 attribute (The third largest sub-national administrative region in which
@@ -137,7 +137,7 @@ Other than addressing the issues in the original visualisation, there are some a
 I will assume you have some basic knowledge of Tableau, so I will not describe into very deep details for the routine Tableau operations such as importing data. Refer to my [first dataviz makeover post](https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/) if you need more details.
 
 ## 4.0 Set Up 
-* Download the data from [Armed Conflict Location & Event Data Project](https://acleddata.com/) using the Data Export Tool for Southeast Asia
+* Download the data from [Armed Conflict Location & Event Data Project](https://acleddata.com/) using the Data Export Tool for Southeast Asia. WE can use the filters to get only the data we are interested in, such as Myanmar.
 * Download the Myanmar map polygon data from [ArcGISHub](https://hub.arcgis.com/). Get the [national boundary](https://hub.arcgis.com/datasets/MIMU::myanmar-national-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458) for the density map and the [state and region boundary](https://hub.arcgis.com/datasets/MIMU::myanmar-state-and-region-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458) to highlight the state with the highest number of events or fatalities. 
 * Create a new Tableau workbook
 
@@ -153,7 +153,7 @@ I will assume you have some basic knowledge of Tableau, so I will not describe i
 ![](./images/4.0. Connect Data to National Boundary.png)
 
 * Repeat adding the state and region boundary file, and define the relationship with the ACLED data. Admin 1 from ACLED should be equivalent to ST from the state and region boundary file.
-* Just to make it easier to read, rename the connection by double-clicking on the connection name. Also rename ST to State so it will be easier to understand.
+* Just to make it easier to read, rename the connection by double-clicking on the connection name. Also rename ST to State so it will be easier to understand. Optional: Rename the tables to a more descriptive name such as National Boundary, ACLED, and State and Region Boundary.
 
 ![](./images/4.0 Rename Connection and Field.png)
 
@@ -190,15 +190,16 @@ I added a value called "All" and removed "Strategic Development". As strategic d
 
 ### Create custom icons
 
-* Drop the Event Type Value to Rows shelf to make it be displayed in multiple rows and Label Marks Card to actually label the icons.
+* Create a new worksheet
+* Drop the Event Type Value to Rows shelf to make it be displayed in multiple rows and Label on the Marks Card to actually label the icons.
 * Change the Marks Type to Shape
-* Drop the Event Type Value to Shape Marks Card
+* Drop the Event Type Value to Shape on the Marks Card
 
 Your screen should look like the screenshot below.
 
 ![](./images/4.1. Drop Event Type Value.png)
 
-* Double-click on the Shape Marks Card to open the Edit Shape window
+* Double-click on the Shape on the Marks Card to open the Edit Shape window
 
 ![](./images/4.1. Change Shape.png)
 
@@ -213,13 +214,13 @@ Now We just have to do some adjustments to make it look nicer.
 
 ![](./images/4.1. Fit Height.png)
 
-* Double-click on the Label Marks Card and change the alignment to bottom-center.
+* Double-click on the Label on the Marks Card and change the alignment to bottom-center.
 
 ![](./images/4.1. Align Label.png)
 
 * Unshow the header by right-clicking on the Event Type Value pill in the Rows Shelf > Uncheck Show Header. We do not need it anymore because we already have the label.
 
-* Double Click on the Size Marks Card and adjust the size to make the icon bigger
+* Double Click on the Size on the Marks Card and adjust the size to make the icon bigger
 
 * Remove the lines on the top and bottom of the icons. From the drop-down menu, click Format > Borders then change the Pane Row Divider to None in the panel.
 
@@ -229,4 +230,93 @@ We have done the first element of the visualisation. Your screen should look lik
 The linking for the filter will be done later at the dashboard.
 
 ![](./images/4.1. Icons.png)
+
+## 4.2 Density Maps
+
+For the density maps, we will need to create another parameter and several calculated fields.
+
+### Parameter
+Repeat the steps to create parameter shown in section 4.1 for a parameter called Select Measure. The values in the Excel file are "Fatalities" and "Number of Events".
+
+The properties of the parameter is shown below. 
+
+![](./images/4.2. Select Measure.png)
+
+### Calculated Fields
+To create calculated fields, click the grey triangle beside the search bar like if you are going to create a parameter > Create Calculated Field... Make sure that the ACLED Data Source is selected.
+
+The calculated fields to be created are as the following:
+
+1. Number of Records
+```
+1
+```
+
+1. Filtered Event ID
+```
+if [Select Event Type] == "All"
+  then [Event Id Cnty]
+elseif [Select Event Type] == [Event Type]
+  then [Event Id Cnty]
+end
+```
+
+### Create Density Map
+We need a dual axis to create the density map if we want to remove all background maps. We will only use the National Boundary as the background map.
+
+* From the Data Pane, under ACLED data, drop Longitude to Columns shelf and the Latitude to Rows shelf, 2 times.
+
+Your screen should look like the screenshot below.
+
+![](./images/4.2. Longitude Latitude.png)
+
+* Change the marks type of the first AVG(Latitude) Marks Card to Map
+* Add Geometry of National Boundary to Detail on the Marks Card
+
+![](./images/4.2. Select Marks type.png)
+
+* Change the Marks type of the second AVG(Latitude) Marks Card to Density
+* Add Filtered Event ID as the level of detail
+
+![](./images/4.2. Density Map v1.png)
+
+* Right click on the second AVG(Latitude) pill on the Rows Shelf > Dual Axis
+
+![](./images/4.2. Dual Axis.png)
+
+
+### Create Trellis Map
+To create trellis map, we are going to add an additional field in the Columns shelf Tableau can automatically create the chart for us.
+
+* Drop Year to the Columns Shelf, in front of AVG(Longitude)
+* Right-click on the Year pill on the Columns shelf from Continuos to Discrete.
+
+![](images/4.2. Trellis Year.png)
+
+* Add Year filter to only show the data between 2015 and 2020
+
+![](./images/4.2. Year Filter.png)
+
+
+
+### Edit Tooltip
+We want to make the tooltip more informative, so we need to add the fields to the Tooltip on the Marks Card first. 
+
+* Select the Marks Card for density map (the second AVG(Latitude) marks)
+* Add the fields of interest (Notes, Location, and State) to the Tooltip
+* Double-click on the Tooltip icon to edit the text being shown. '<>' indicates that it is a variable.
+
+![](./images/4.2. Edit Tooltips.png)
+
+### Adjust Formatting 
+* Remove the background map by clicking Map in the drop-down menu > Map Layers... > Slide Washout to 100%
+* We can adjust the colour of the map, colour and size of the density marks using the Marks Card.
+  * I used Density Orange-Light Colour with 75% intensity and 100% opacity for the density
+  * Black for the background map
+* Repeat steps to remove the header so the year will not be shown
+
+The final look for my density map is shown below.
+
+![](./images/4.2. Density Map v2.png)
+
 
