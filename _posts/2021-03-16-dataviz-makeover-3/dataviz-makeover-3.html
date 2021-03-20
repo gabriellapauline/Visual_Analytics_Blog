@@ -123,7 +123,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/4.0. Connect to Spatial File.png"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/4.0 Rename Connection and Field.png","images/4.0 Rename Field.png","images/4.0. Add new data.png","images/4.0. Connect Data to National Boundary.png","images/4.0. Connect to Spatial File.png","images/4.1. Add Data Source.png","images/4.1. Add Shapes to Rep.png","images/4.1. Align Label.png","images/4.1. Change Shape.png","images/4.1. Create Parameter from Data Pane.png","images/4.1. Create Parameter.png","images/4.1. Drop Event Type Value.png","images/4.1. Dummy Event Type File.png","images/4.1. Fit Height.png","images/4.1. Icons.png","images/4.1. Remove Line.png","images/Screenshot_1.png","images/Screenshot_2.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1503,6 +1503,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#interactivity-1">3.3 Interactivity</a></li>
 <li><a href="#additional-features">3.4 Additional Features</a></li>
 </ul></li>
+<li><a href="#step-by-step-description">4. Step-by-Step Description</a>
+<ul>
+<li><a href="#set-up">4.0 Set Up</a></li>
+<li><a href="#create-customised-filters">4.1 Create customised filters</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
@@ -1606,6 +1611,87 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>To provide a high-level aggregate of the data, the state with the highest number of selected measure is highlighted (6). It will be done in the state level due to the unrecognized values in lower level. Showing the data in form of a map helps the user if they do not know the areas of Myanmar well.</li>
 <li>Comparing the aggregate values by state would also help the user to see the actual number of events (7), that will complement the density map.</li>
 </ol>
+<h1 id="step-by-step-description">4. Step-by-Step Description</h1>
+<p>I will assume you have some basic knowledge of Tableau, so I will not describe into very deep details for the routine Tableau operations such as importing data. Refer to my <a href="https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/">first dataviz makeover post</a> if you need more details.</p>
+<h2 id="set-up">4.0 Set Up</h2>
+<ul>
+<li>Download the data from <a href="https://acleddata.com/">Armed Conflict Location &amp; Event Data Project</a> using the Data Export Tool for Southeast Asia</li>
+<li>Download the Myanmar map polygon data from <a href="https://hub.arcgis.com/">ArcGISHub</a>. Get the <a href="https://hub.arcgis.com/datasets/MIMU::myanmar-national-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458">national boundary</a> for the density map and the <a href="https://hub.arcgis.com/datasets/MIMU::myanmar-state-and-region-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458">state and region boundary</a> to highlight the state with the highest number of events or fatalities.</li>
+<li>Create a new Tableau workbook</li>
+</ul>
+<h3 id="join-data-from-multiple-sources-together">Join data from multiple sources together</h3>
+<ul>
+<li>Connect to Data &gt; Spatial File &gt; Select the National Boundary data for Myanmar</li>
+<li>Add new data &gt; Select the ACLED data</li>
+</ul>
+<p><img src="images/4.0.%20Add%20new%20data.png" /></p>
+<ul>
+<li>Drag the File to the workspace to define a relationship, then select the fields to be matched. The Name field from the national boundary is equivalent to country in the ACLED data.</li>
+</ul>
+<p><img src="images/4.0.%20Connect%20Data%20to%20National%20Boundary.png" /></p>
+<ul>
+<li>Repeat adding the state and region boundary file, and define the relationship with the ACLED data. Admin 1 from ACLED should be equivalent to ST from the state and region boundary file.</li>
+<li>Just to make it easier to read, rename the connection by double-clicking on the connection name. Also rename ST to State so it will be easier to understand. <img src="images/4.0%20Rename%20Connection%20and%20Field.png" /></li>
+</ul>
+<h2 id="create-customised-filters">4.1 Create customised filters</h2>
+<p>We can use parameters to simulate a custom filter. I have decided to use icons as the buttons, so first we need to download the icons first. I got my icons from <a href="https://thenounproject.com/">The Noun Project</a>.</p>
+<ul>
+<li>Put the icon jpeg files in a new folder inside My Tableau Repository/Shapes folder, usually in Documents but it might be different.</li>
+</ul>
+<p><img src="images/4.1.%20Add%20Shapes%20to%20Rep.png" /></p>
+<p>We also need to create an Excel file containing all the values for the icons.</p>
+<p><img src="images/4.1.%20Dummy%20Event%20Type%20File.png" /></p>
+<p>I added a value called “All” and removed “Strategic Development.” As strategic development is a non-armed event, I want to leave it out.</p>
+<ul>
+<li>Go to Data Source Tab and add a new connection</li>
+</ul>
+<p><img src=".images/4.1.%20Add%20Data%20Source.png" /></p>
+<h3 id="create-parameter">Create Parameter</h3>
+<ul>
+<li><p>From the data pane, click on the grey triangle beside the search box &gt; Create Parameter… <img src="images/4.1.%20Create%20Parameter%20from%20Data%20Pane.png" /></p></li>
+<li><p>A dialog box will appear for us to enter the details of the parameters</p>
+<ul>
+<li>Enter parameter name</li>
+<li>Change data type to String</li>
+<li>Change allowable values to List</li>
+<li>To reduce some manual work, click Add values from &gt; your newly created excel file &gt; Event Type Value. This will auto-populate the parameter values with the values of Event Type Value in the spreadsheet that we have just created.</li>
+</ul></li>
+</ul>
+<p><img src="images/4.1.%20Create%20Parameter.png" /></p>
+<h3 id="create-custom-icons">Create custom icons</h3>
+<ul>
+<li>Drop the Event Type Value to Rows shelf to make it be displayed in multiple rows and Label Marks Card to actually label the icons.</li>
+<li>Change the Marks Type to Shape</li>
+<li>Drop the Event Type Value to Shape Marks Card</li>
+</ul>
+<p>Your screen should look like the screenshot below.</p>
+<p><img src="images/4.1.%20Drop%20Event%20Type%20Value.png" /></p>
+<ul>
+<li>Double-click on the Shape Marks Card to open the Edit Shape window</li>
+</ul>
+<p><img src="images/4.1.%20Change%20Shape.png" /></p>
+<p>Your new custom icons should appear under Shape Palette. If it doesn’t, try Reload Shapes or close the workbook and open again.</p>
+<ul>
+<li>Click on the data item then click on the icon to assign the icon to a particular data item</li>
+<li>Click Apply &gt; OK</li>
+</ul>
+<p>Now We just have to do some adjustments to make it look nicer.</p>
+<ul>
+<li>Change the display from Standard to Fit Height</li>
+</ul>
+<p><img src="images/4.1.%20Fit%20Height.png" /></p>
+<ul>
+<li>Double-click on the Label Marks Card and change the alignment to bottom-center.</li>
+</ul>
+<p><img src="images/4.1.%20Align%20Label.png" /></p>
+<ul>
+<li><p>Unshow the header by right-clicking on the Event Type Value pill in the Rows Shelf &gt; Uncheck Show Header. We do not need it anymore because we already have the label.</p></li>
+<li><p>Double Click on the Size Marks Card and adjust the size to make the icon bigger</p></li>
+<li><p>Remove the lines on the top and bottom of the icons. From the drop-down menu, click Format &gt; Borders then change the Pane Row Divider to None in the panel.</p></li>
+</ul>
+<p><img src="images/4.1.%20Remove%20Line.png" /></p>
+<p>We have done the first element of the visualisation. Your screen should look like the screenshot below.</p>
+<p><img src="images/4.1.%20Icons.png" /></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-cuddy_2021_myanmar" class="csl-entry" role="doc-biblioentry">

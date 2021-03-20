@@ -132,3 +132,101 @@ Other than addressing the issues in the original visualisation, there are some a
   1. The codebook reveals that the data also stores the number of fatalities, which may also be of interest. Therefore, a parameter to toggle between displaying the values based on the number of events or fatalities is provided (5).
   2. To provide a high-level aggregate of the data, the state with the highest number of selected measure is highlighted (6). It will be done in the state level due to the unrecognized values in lower level. Showing the data in form of a map helps the user if they do not know the areas of Myanmar well.
   3. Comparing the aggregate values by state would also help the user to see the actual number of events (7), that will complement the density map. 
+
+# 4. Step-by-Step Description 
+I will assume you have some basic knowledge of Tableau, so I will not describe into very deep details for the routine Tableau operations such as importing data. Refer to my [first dataviz makeover post](https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/) if you need more details.
+
+## 4.0 Set Up 
+* Download the data from [Armed Conflict Location & Event Data Project](https://acleddata.com/) using the Data Export Tool for Southeast Asia
+* Download the Myanmar map polygon data from [ArcGISHub](https://hub.arcgis.com/). Get the [national boundary](https://hub.arcgis.com/datasets/MIMU::myanmar-national-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458) for the density map and the [state and region boundary](https://hub.arcgis.com/datasets/MIMU::myanmar-state-and-region-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458) to highlight the state with the highest number of events or fatalities. 
+* Create a new Tableau workbook
+
+### Join data from multiple sources together
+
+* Connect to Data > Spatial File > Select the National Boundary data for Myanmar
+* Add new data > Select the ACLED data 
+
+![](./images/4.0. Add new data.png)
+
+* Drag the File to the workspace to define a relationship, then select the fields to be matched. The Name field from the national boundary is equivalent to country in the ACLED data.
+
+![](./images/4.0. Connect Data to National Boundary.png)
+
+* Repeat adding the state and region boundary file, and define the relationship with the ACLED data. Admin 1 from ACLED should be equivalent to ST from the state and region boundary file.
+* Just to make it easier to read, rename the connection by double-clicking on the connection name. Also rename ST to State so it will be easier to understand.
+
+![](./images/4.0 Rename Connection and Field.png)
+
+## 4.1 Create customised filters
+We can use parameters to simulate a custom filter. I have decided to use icons as the buttons, so first we need to download the icons first. I got my icons from [The Noun Project](https://thenounproject.com/). 
+
+* Put the icon jpeg files in a new folder inside My Tableau Repository/Shapes folder, usually in Documents but it might be different.
+
+![](./images/4.1. Add Shapes to Rep.png)
+
+We also need to create an Excel file containing all the values for the icons.
+
+![](./images/4.1. Dummy Event Type File.png)
+
+I added a value called "All" and removed "Strategic Development". As strategic development is a non-armed event, I want to leave it out.
+
+* Go to Data Source Tab and add a new connection 
+
+![](.images/4.1. Add Data Source.png)
+
+
+### Create Parameter
+
+* From the data pane, click on the grey triangle beside the search box > Create Parameter... 
+![](./images/4.1. Create Parameter from Data Pane.png)
+
+* A dialog box will appear for us to enter the details of the parameters
+  * Enter parameter name
+  * Change data type to String
+  * Change allowable values to List
+  * To reduce some manual work, click Add values from > your newly created excel file > Event Type Value. This will auto-populate the parameter values with the values of Event Type Value in the spreadsheet that we have just created.
+  
+![](./images/4.1. Create Parameter.png)
+
+### Create custom icons
+
+* Drop the Event Type Value to Rows shelf to make it be displayed in multiple rows and Label Marks Card to actually label the icons.
+* Change the Marks Type to Shape
+* Drop the Event Type Value to Shape Marks Card
+
+Your screen should look like the screenshot below.
+
+![](./images/4.1. Drop Event Type Value.png)
+
+* Double-click on the Shape Marks Card to open the Edit Shape window
+
+![](./images/4.1. Change Shape.png)
+
+Your new custom icons should appear under Shape Palette. If it doesn't, try Reload Shapes or close the workbook and open again.
+
+* Click on the data item then click on the icon to assign the icon to a particular data item
+* Click Apply > OK
+
+Now We just have to do some adjustments to make it look nicer.
+
+* Change the display from Standard to Fit Height 
+
+![](./images/4.1. Fit Height.png)
+
+* Double-click on the Label Marks Card and change the alignment to bottom-center.
+
+![](./images/4.1. Align Label.png)
+
+* Unshow the header by right-clicking on the Event Type Value pill in the Rows Shelf > Uncheck Show Header. We do not need it anymore because we already have the label.
+
+* Double Click on the Size Marks Card and adjust the size to make the icon bigger
+
+* Remove the lines on the top and bottom of the icons. From the drop-down menu, click Format > Borders then change the Pane Row Divider to None in the panel.
+
+![](./images/4.1. Remove Line.png)
+
+We have done the first element of the visualisation. Your screen should look like the screenshot below.
+The linking for the filter will be done later at the dashboard.
+
+![](./images/4.1. Icons.png)
+
