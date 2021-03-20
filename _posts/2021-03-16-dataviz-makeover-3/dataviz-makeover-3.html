@@ -111,7 +111,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   <meta name="citation_reference" content="citation_title=Myanmar coup: What is happening and why?;citation_publication_date=2021;citation_publisher=BBC News; BBC News;citation_author=Alice Cuddy"/>
   <meta name="citation_reference" content="citation_title=Myanmarâ€™s troubled history: Coups, military rule, and ethnic conflict;citation_publication_date=2021;citation_publisher=Council on Foreign Relations;citation_author=Lindsay Maizland"/>
-  <meta name="citation_reference" content="citation_title=Aung san suu kyi: Myanmar democracy icon who fell from grace;citation_publication_date=2021;citation_publisher=BBC News; BBC News;citation_author=Aung san suu kyi: Myanmar democracy icon who fell from grace"/>
+  <meta name="citation_reference" content="citation_title=Aung san suu kyi: Myanmar democracy icon who fell from grace;citation_publication_date=2021;citation_publisher=BBC News; BBC News;citation_author=BBC News"/>
+  <meta name="citation_reference" content="citation_title=Dot density maps;citation_publication_date=2020;citation_publisher=Axis Maps"/>
+  <meta name="citation_reference" content="citation_title=Legends;citation_publication_date=2021;citation_publisher=Carbon Design System; IBM"/>
+  <meta name="citation_reference" content="citation_title=Choosing colors for data visualization;citation_publication_date=2006;citation_author=M. Stone"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
@@ -120,7 +123,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/4.0. Connect to Spatial File.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1487,23 +1490,141 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a>
+<ul>
+<li><a href="#clarity">2.1 Clarity</a></li>
+<li><a href="#aesthetics">2.2 Aesthetics</a></li>
+<li><a href="#interactivity">2.3 Interactivity</a></li>
+</ul></li>
+<li><a href="#alternative-graphical-representation">3. Alternative Graphical Representation</a>
+<ul>
+<li><a href="#clarity-1">3.1 Clarity</a></li>
+<li><a href="#aesthetics-1">3.2 Aesthetics</a></li>
+<li><a href="#interactivity-1">3.3 Interactivity</a></li>
+<li><a href="#additional-features">3.4 Additional Features</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
 <h1 id="introduction">1. Introduction</h1>
 <p>In 1 February 2021, the military force in Myanmar launched a coup and arrested the civilian leaders, leaving the country in a dire state. The protests over the coup is one of the largest in Myanmar history, and the military have utilised water cannon, rubber bullets and live ammunition in the effort to stop the protesters <span class="citation" data-cites="cuddy_2021_myanmar">(<a href="#ref-cuddy_2021_myanmar" role="doc-biblioref">Cuddy 2021</a>)</span>.</p>
-<p>The country has long been led by a military junta, but a hope for democracy came when the military junta unexpectedly dissolved and appoints civilian ruler, President Then Sein. In 2015, Myanmar held an election, with Aung San Suu Kyi emerging as its de facto leader <span class="citation" data-cites="maizland_2021_myanmars">(<a href="#ref-maizland_2021_myanmars" role="doc-biblioref">Maizland 2021</a>)</span>. Ms Suu Kyi is an ignitor for democracy in Myanmar, earning a Nobel Peace Prize while she was under house arrest in 1991 <span class="citation" data-cites="cuddy_2021_myanmar">(<a href="#ref-cuddy_2021_myanmar" role="doc-biblioref">Cuddy 2021</a>)</span>. However, she lost much of her international support after her defence of the military who abuses Muslim Rohingya Minority, and led hundreds of thousands of them fleeing to Bangladesh in 2017 <span class="citation" data-cites="bbcnews_2021_aung">(<a href="#ref-bbcnews_2021_aung" role="doc-biblioref">BBC News 2021</a>)</span>.</p>
+<p>The country has long been led by a military junta, but a hope for democracy came when the military junta unexpectedly dissolved and appoints civilian ruler, President Then Sein. In 2015, Myanmar held an election, with Aung San Suu Kyi emerging as its de facto leader <span class="citation" data-cites="maizland_2021_myanmars">(<a href="#ref-maizland_2021_myanmars" role="doc-biblioref">Maizland 2021</a>)</span>. Ms Suu Kyi is an ignitor for democracy in Myanmar, earning a Nobel Peace Prize while she was under house arrest in 1991 <span class="citation" data-cites="cuddy_2021_myanmar">(<a href="#ref-cuddy_2021_myanmar" role="doc-biblioref">Cuddy 2021</a>)</span>. However, she lost much of her international support after her defence of the military who abuses Muslim Rohingya Minority, and led hundreds of thousands of them fleeing to Bangladesh in 2017 <span class="citation" data-cites="bbcnews_2021_aung">(<a href="#ref-bbcnews_2021_aung" role="doc-biblioref">News 2021</a>)</span>.</p>
 <p>Using the <a href="https://acleddata.com/">Armed Conflict Location &amp; Event Data Project</a> (ACLED) - a disaggregated data collection, analysis &amp; crisis mapping platform that aims to bring clarity to crisis - we are going to examine the armed conflicts that occur in Myanmar during the course of 2015 to 2020.</p>
+<h1 id="original-visualisation-evaluation">2. Original Visualisation Evaluation</h1>
+<p>The original visualisation is the <a href="https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis">South East Asia Armed Conflict Analysis</a> that is hosted in Tableau Public. It reveals the spatio-temporal patterns of armed conflict in selcted South East Asian countries between 2015 and 2020 by using a one-to-one dot-density map where each dot represent an actual event <span class="citation" data-cites="a2020_dot">(<a href="#ref-a2020_dot" role="doc-biblioref"><span>“Dot Density Maps”</span> 2020</a>)</span>, with different colours used for each type of events.</p>
+<figure>
+<img src="images/2.%20Original%20Visualisation.png" alt="Figure 1. Original Visualisation" /><figcaption aria-hidden="true">Figure 1. Original Visualisation</figcaption>
+</figure>
+<p>The critiques are given in terms of <strong>clarity</strong>, <strong>aesthetics</strong>, and <strong>interactivity</strong>.</p>
+<h2 id="clarity">2.1 Clarity</h2>
+<h3 id="to-keep">To keep:</h3>
+<ol type="1">
+<li>The data is shown using <strong>map to show spatial patterns</strong>.</li>
+</ol>
+<h3 id="to-improve">To improve:</h3>
+<ol type="1">
+<li>Because the visualisation uses <strong>opaque circles, When the points overlap, we cannot see what is behind the top layer</strong>. This might obscure the density of data, or give the wrong impression that the value is lower some event types just because it is covered. If we only look at Figure 2, it does not seem that there are a lot of violence against civilian in the southern part of Philipines, but Figure 3 shows otherwise. We need to use lower opacity, show the event type one by one, or use other types that can show the values in the viz, such as proportional symbol map, choropleth, or heatmap.</li>
+</ol>
+<figure>
+<img src="images/2.%20Philippines%20All%20Event%20Type.png" alt="Figure 2. Philippines All Event Types" /><figcaption aria-hidden="true">Figure 2. Philippines All Event Types</figcaption>
+</figure>
+<figure>
+<img src="images/2.%20Philippines%20Violence%20against%20Civilian.png" alt="Figure 3. Philippines Only Violence Against Civilian" /><figcaption aria-hidden="true">Figure 3. Philippines Only Violence Against Civilian</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>There is <strong>no way to see the distribution of events by year, even though a time series line chart exists</strong>.</p></li>
+<li><p>The line chart that shows <strong>the time series of events is hard to compare because they are stacked vertically</strong>. Additionally, the <strong>axes are not standardized</strong>, so it does not have a fixed point of reference to compare the values.</p></li>
+<li><p>The time series is not very accurate because if an event type does not occur in a particular year, the <strong>record is shown as null rather than zero</strong>. This <strong>breaks the line into several parts</strong> instead of showing a decrease in value.</p></li>
+</ol>
+<figure>
+<img src="images/2.%20Broken%20Time%20Series.png" alt="Figure 4. Null Values in Time Series" /><figcaption aria-hidden="true">Figure 4. Null Values in Time Series</figcaption>
+</figure>
+<ol start="5" type="1">
+<li>Placing the legend of the colors on the right most of the dashboard introduces an unnecessary mental clutter because the <strong>users need to look back and forth between the map and the legend</strong>, as well as having to memorize what does each color represents. The best practice is to remove legend if possible, and label the data directly <span class="citation" data-cites="a2021_legends">(<a href="#ref-a2021_legends" role="doc-biblioref"><span>“Legends”</span> 2021</a>)</span>.</li>
+<li>The title is quite informative, but there is <strong>no useful lead-in</strong>.</li>
+<li>The <strong>y-axis for the line chart is shown as “Count of Sheet 1”</strong> which can cause confusion. A more descriptive label should be used instead.</li>
+<li>The <strong>legends for the colours are truncated</strong>.</li>
+</ol>
+<h2 id="aesthetics">2.2 Aesthetics</h2>
+<h3 id="to-keep-1">To keep:</h3>
+<ol type="1">
+<li>The use of <strong>fonts is consistent and easy to read</strong>.</li>
+<li><strong>Terrain is not shown in the background map</strong>, so it looks cleaner and highlights the data being presented, which is the armed conflict locations.</li>
+<li>The <strong>colour of less important data are less prominent than the important ones</strong>, for example the axis ticks use grey colour.</li>
+</ol>
+<h3 id="to-improve-1">To improve:</h3>
+<ol type="1">
+<li>Even when we filter to display only one country, only the data points are not shown but the <strong>background map for the other countries are still shown</strong>. This is rather distracting, and would be better if we only show the country of interest.</li>
+</ol>
+<p><img src="images/2.%20Other%20Countries%20Still%20Shown.png" alt="Figure 5. Other Countries Still Shown in the Background" /> 2. There are <strong>a lot of different colours being used to represent the different types of events</strong>.The choice of colours is too reliant on hue variation instead of value or chroma, hence increasing the visual clutter <span class="citation" data-cites="Stone2006ChoosingCF">(<a href="#ref-Stone2006ChoosingCF" role="doc-biblioref">Stone 2006</a>)</span>. It is better to limit the colour palette to 2 or 3 hues and use variation of colour intensity to make the visualisation more aesthetically pleasing and functional.</p>
+<h2 id="interactivity">2.3 Interactivity</h2>
+<h3 id="to-keep-2">To keep:</h3>
+<ol type="1">
+<li><strong>Dynamic title </strong> is used that will change according to the selected filter.</li>
+<li>The <strong>event type is used as a highlighter that connects to all visualisation on the dashboard</strong>. Both the line chart and the point pattern map will highlight the selected event type.</li>
+</ol>
+<h3 id="to-improve-2">To improve:</h3>
+<ol type="1">
+<li>The <strong>information shown in the tooltip is not informative</strong>. The users are unlikely to be interested with the Event ID, latitude, and longitude. The name of the location, the date or description of event might be more relevant.</li>
+</ol>
+<figure>
+<img src="images/2.%20Original%20Visualisation%20Tooltip.png" alt="Figure 6. Original Visualisation Tooltip" /><figcaption aria-hidden="true">Figure 6. Original Visualisation Tooltip</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>The <strong>transition between choosing different country filter is a little bit choppy</strong>. We can use animation to make it more smooth.</li>
+</ol>
+<h1 id="alternative-graphical-representation">3. Alternative Graphical Representation</h1>
+<p>The proposed design is shown in Figure 7.</p>
+<p><img src="images/3.%20Alternative%20Graphical%20Representation.jpeg" alt="Figure 7. Alternative Graphical Representation" /> Due to the problem of the overlapping points (Clarity #1), I have decided to use another way to represent the spatial data. Initially, I thought of using a proportional symbol map with lower opacity to better represent the data, as the overlapping points will contribute to the size of the symbol. However, this method requires aggregation, and there is a problem in the mapping of the geographical data. There were hundreds of unrecognized location from the Admin 3 attribute (The third largest sub-national administrative region in which the event took place <span class="citation" data-cites="armed_conflict_location_and_events_data_project_acled_2019_armed">(<a href="#ref-armed_conflict_location_and_events_data_project_acled_2019_armed" role="doc-biblioref"><strong>armed_conflict_location_and_events_data_project_acled_2019_armed?</strong></a>)</span>). Aggregating on the higher level would not solve the issue. Even though the number of unrecognized location would be manageable to resolve manually, but the map will be less meaningful because it is too aggregated. Therefore, as shown in number 2 in Figure 7, I have decided to create density maps to represent the data instead.</p>
+<p>This alternative resolves the issues shown in section 2 as the following. Numerical references in the section below are tied to the numbered items in the proposed alternative visualisation in Figure 7.</p>
+<h2 id="clarity-1">3.1 Clarity</h2>
+<ol type="1">
+<li><p>Using density maps to show the geospatial patterns of the armed conflict events can take advantage of the overlapping points (2) . However since we cannot use varying colours for the density maps, a filter for the event types (1) is used instead.nes Only Violence Against Civilian](./images/2. Philippines Violence against Civilian.png)</p></li>
+<li><p>The visualisation will use a trellis for both the density map (2) and the bar chart (3). This allows the user to see the distribution of events in the geographical location as well as by event type by year.</p></li>
+<li><p>The bar chart is broken down by year in the trellis (3). This would make is easier for the user to compare the values between event types, even though it might be difficult to compare different years. However, by standardizing the axes for the values, the user can still compare the height of the bars in different years when the difference is big.</p></li>
+<li><p>Line chart is not used.</p></li>
+<li><p>Using a filter instead of using different colours for each even type removes the need to put a colour legend.</p></li>
+<li><p>Description is provided (4).</p></li>
+<li><p>Use more descriptive axis labels (not shown in Figure 7).</p></li>
+<li><p>Adjust the size to make sure they are not truncated (not shown in Figure 7).</p></li>
+</ol>
+<h2 id="aesthetics-1">3.2 Aesthetics</h2>
+<ol type="1">
+<li><p>Do not use the default map background from Tableau but use the shp file for Myanmar to provide the map background (2).</p></li>
+<li><p>The different event types are no longer differentiated by colours because it is used as a filter (1,2). The bar charts will also use the same colour for the bars. A colour palette of black and red will be used for this visualisation.</p></li>
+</ol>
+<h2 id="interactivity-1">3.3 Interactivity</h2>
+<h3 id="to-improve-3">To improve:</h3>
+<ol type="1">
+<li><p>Show the name of the location, the date or description of event in the tooltip (not shown in Figure 7).</p></li>
+<li><p>Use animation (not shown in Figure 7).</p></li>
+</ol>
+<h2 id="additional-features">3.4 Additional Features</h2>
+<p>Other than addressing the issues in the original visualisation, there are some additional features added to the dashboard.</p>
+<ol type="1">
+<li>The codebook reveals that the data also stores the number of fatalities, which may also be of interest. Therefore, a parameter to toggle between displaying the values based on the number of events or fatalities is provided (5).</li>
+<li>To provide a high-level aggregate of the data, the state with the highest number of selected measure is highlighted (6). It will be done in the state level due to the unrecognized values in lower level. Showing the data in form of a map helps the user if they do not know the areas of Myanmar well.</li>
+<li>Comparing the aggregate values by state would also help the user to see the actual number of events (7), that will complement the density map.</li>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-bbcnews_2021_aung" class="csl-entry" role="doc-biblioentry">
-BBC News. 2021. <span>“Aung San Suu Kyi: Myanmar Democracy Icon Who Fell from Grace.”</span> BBC News; BBC News. <a href="https://www.bbc.com/news/world-asia-pacific-11685977">https://www.bbc.com/news/world-asia-pacific-11685977</a>.
-</div>
 <div id="ref-cuddy_2021_myanmar" class="csl-entry" role="doc-biblioentry">
 Cuddy, Alice. 2021. <span>“Myanmar Coup: What Is Happening and Why?”</span> BBC News; BBC News. <a href="https://www.bbc.com/news/world-asia-55902070">https://www.bbc.com/news/world-asia-55902070</a>.
 </div>
+<div id="ref-a2020_dot" class="csl-entry" role="doc-biblioentry">
+<span>“Dot Density Maps.”</span> 2020. Axis Maps. <a href="http://www.axismaps.com.s3-website-us-east-1.amazonaws.com/guide/univariate/dot-density/">http://www.axismaps.com.s3-website-us-east-1.amazonaws.com/guide/univariate/dot-density/</a>.
+</div>
+<div id="ref-a2021_legends" class="csl-entry" role="doc-biblioentry">
+<span>“Legends.”</span> 2021. Carbon Design System; IBM. <a href="https://www.carbondesignsystem.com/data-visualization/legends/">https://www.carbondesignsystem.com/data-visualization/legends/</a>.
+</div>
 <div id="ref-maizland_2021_myanmars" class="csl-entry" role="doc-biblioentry">
 Maizland, Lindsay. 2021. <span>“Myanmar’s Troubled History: Coups, Military Rule, and Ethnic Conflict.”</span> Council on Foreign Relations. <a href="https://www.cfr.org/backgrounder/myanmar-history-coup-military-rule-ethnic-conflict-rohingya">https://www.cfr.org/backgrounder/myanmar-history-coup-military-rule-ethnic-conflict-rohingya</a>.
+</div>
+<div id="ref-bbcnews_2021_aung" class="csl-entry" role="doc-biblioentry">
+News, BBC. 2021. <span>“Aung San Suu Kyi: Myanmar Democracy Icon Who Fell from Grace.”</span> BBC News; BBC News. <a href="https://www.bbc.com/news/world-asia-pacific-11685977">https://www.bbc.com/news/world-asia-pacific-11685977</a>.
+</div>
+<div id="ref-Stone2006ChoosingCF" class="csl-entry" role="doc-biblioentry">
+Stone, M. 2006. <span>“Choosing Colors for Data Visualization.”</span> <em>Perceptual Edge</em>. <a href="http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf">http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf</a>.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->
