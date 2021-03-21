@@ -123,7 +123,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/4.0 Rename Connection and Field.png","images/4.0 Rename Field.png","images/4.0. Add Filter.png","images/4.0. Add new data.png","images/4.0. Connect Data to National Boundary.png","images/4.0. Connect to Spatial File.png","images/4.0. Only Keep Myanmar.png","images/4.1. Add Data Source.png","images/4.1. Add Shapes to Rep.png","images/4.1. Align Label.png","images/4.1. Change Shape.png","images/4.1. Create Parameter from Data Pane.png","images/4.1. Create Parameter.png","images/4.1. Drop Event Type Value.png","images/4.1. Dummy Event Type File.png","images/4.1. Fit Height.png","images/4.1. Icons.png","images/4.1. Remove Line.png","images/4.2. Create Calculated Field.png","images/4.2. Density Map v1.png","images/4.2. Density Map v2.png","images/4.2. Dual Axis.png","images/4.2. Edit Tooltips.png","images/4.2. Longitude Latitude.png","images/4.2. Select Marks type.png","images/4.2. Select Measure.png","images/4.2. Trellis Year.png","images/4.2. Turn off Pan and Zoom.png","images/4.2. Year Filter.png"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/4.0 Rename Connection and Field.png","images/4.0 Rename Field.png","images/4.0. Add Filter.png","images/4.0. Add new data.png","images/4.0. Connect Data to National Boundary.png","images/4.0. Connect to Spatial File.png","images/4.0. Only Keep Myanmar.png","images/4.1. Add Data Source.png","images/4.1. Add Shapes to Rep.png","images/4.1. Align Label.png","images/4.1. Change Shape.png","images/4.1. Create Parameter from Data Pane.png","images/4.1. Create Parameter.png","images/4.1. Drop Event Type Value.png","images/4.1. Dummy Event Type File.png","images/4.1. Fit Height.png","images/4.1. Icons.png","images/4.1. Remove Line.png","images/4.2. Create Calculated Field.png","images/4.2. Density Map v1.png","images/4.2. Density Map v2.png","images/4.2. Dual Axis.png","images/4.2. Edit Tooltips.png","images/4.2. Longitude Latitude.png","images/4.2. Select Marks type.png","images/4.2. Select Measure.png","images/4.2. Trellis Year.png","images/4.2. Turn off Pan and Zoom.png","images/4.2. Year Filter.png","images/4.3. Bar Charts of Event Type.png","images/4.3. Final Trellis Bar Chart.png","images/4.3. Reduce Font Size.png","images/4.3. Remove Axis Label.png","images/4.3. Trellis Bar Chart.png","images/4.4. Final Highest State.png","images/4.4. Highest State v1.png","images/4.4. Tooltip.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1508,6 +1508,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#set-up">4.0 Set Up</a></li>
 <li><a href="#create-customised-filters">4.1 Create customised filters</a></li>
 <li><a href="#density-maps">4.2 Density Maps</a></li>
+<li><a href="#trellis-bar-charts">4.3 Trellis Bar Charts</a></li>
+<li><a href="#top-state-highlight-map">4.4 Top State Highlight Map</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1637,10 +1639,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><img src="images/4.0%20Rename%20Connection%20and%20Field.png" /></p>
 <h3 id="filter-data-source">Filter Data Source</h3>
 <p>The dataset that I have contains multiple countries in Southeast Asia, but since we are focusing on Myanmar, we can filter out the rest of the countries.</p>
-<p><img src="images/4.0.%20Add%20Filter.png" /></p>
 <ul>
 <li>Click Add button below “Filters”</li>
 <li>Click Add in the dialog window</li>
+</ul>
+<p><img src="images/4.0.%20Add%20Filter.png" /></p>
+<ul>
 <li>Select the field to be filtered (Country)</li>
 <li>Only check the box for Myanmar</li>
 </ul>
@@ -1658,7 +1662,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li>Go to Data Source Tab and add a new connection</li>
 </ul>
-<p><img src=".images/4.1.%20Add%20Data%20Source.png" /></p>
+<p><img src="images/4.1.%20Add%20Data%20Source.png" /></p>
 <h3 id="create-parameter">Create Parameter</h3>
 <ul>
 <li><p>From the data pane, click on the grey triangle beside the search box &gt; Create Parameter… <img src="images/4.1.%20Create%20Parameter%20from%20Data%20Pane.png" /></p></li>
@@ -1716,10 +1720,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>To create calculated fields, click the grey triangle beside the search bar like if you are going to create a parameter &gt; Create Calculated Field… Make sure that the ACLED Data Source is selected.</p>
 <p>The calculated fields to be created are as the following:</p>
 <ol type="1">
-<li>Number of Records</li>
-</ol>
-<pre><code>1</code></pre>
-<ol type="1">
 <li>Filtered Event ID</li>
 </ol>
 <pre><code>if [Select Event Type] == &quot;All&quot;
@@ -1756,7 +1756,7 @@ end</code></pre>
 </ul>
 <p><img src="images/4.2.%20Trellis%20Year.png" /></p>
 <ul>
-<li>Add Year filter to only show the data between 2015 and 2020</li>
+<li>Add Year filter to only show the data between 2015 and 2020. We can do this in Data Source tab to make the filter works globally in the workbook.</li>
 </ul>
 <p><img src="images/4.2.%20Year%20Filter.png" /></p>
 <h3 id="edit-tooltip">Edit Tooltip</h3>
@@ -1772,13 +1772,14 @@ end</code></pre>
 </ul>
 <h3 id="adjust-formatting">Adjust Formatting</h3>
 <ul>
+<li>We can rename the Sheet for easier referencing, the title will not be displayed in the dashboard.</li>
 <li>Remove the background map by clicking Map in the drop-down menu &gt; Map Layers… &gt; Slide Washout to 100%</li>
 <li>We can adjust the colour of the map, colour and size of the density marks using the Marks Card.
 <ul>
 <li>I used Density Orange-Light Colour with 75% intensity and 100% opacity for the density</li>
 <li>Black for the background map</li>
 </ul></li>
-<li>Repeat steps to remove the header so the year will not be shown</li>
+<li>Repeat steps to remove the header so the year will not be shown. We will use another sheet to give the Year label later.</li>
 <li>Remove map interactive functions such as pan and zoom. Since we only have Myanmar map, this function is not necessary.
 <ul>
 <li>From Map in the menu drop-down, select Map Options…</li>
@@ -1787,7 +1788,129 @@ end</code></pre>
 </ul>
 <p>The final look for my density map is shown below.</p>
 <p><img src="images/4.2.%20Density%20Map%20v2.png" /></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="trellis-bar-charts">4.3 Trellis Bar Charts</h2>
+<p>We will have a breakdown of the event type under each cell of density map. We will need to create several parameters and calculated fields first.</p>
+<h3 id="parameter-1">Parameter</h3>
+<ul>
+<li>Repeat the steps to create a parameter
+<ul>
+<li>Create an Excel file for the possible values (“Fatalities” and “Number of Events”) with “Measure” as the Field name.</li>
+<li>Add new data source</li>
+<li>Open a new worksheet and from the Data pane select Create Parameter…</li>
+</ul></li>
+</ul>
+<p>The properties of the parameter should look as the following. <img src="images/4.2.%20Select%20Measure.png" /></p>
+<h3 id="calculated-fields-1">Calculated Fields</h3>
+<p>We need more calculated fields to enable the interactive functions to select the measure to be displayed, whether it is the number of events or the number of fatalities. The name of the calculated fields and the formulas are listed below.</p>
+<ol type="1">
+<li>Number of Records</li>
+</ol>
+<pre><code>1</code></pre>
+<ol type="1">
+<li>Selected Measure</li>
+</ol>
+<pre><code>CASE [Select Measure]
+when &quot;Number of Events&quot; then [Number of Records]
+when &quot;Fatalities&quot; then [Fatalities]
+END</code></pre>
+<h3 id="create-bar-chart-for-selected-parameter">Create Bar Chart for Selected Parameter</h3>
+<ul>
+<li>Drop Selected Measure to Columns shelf and Event Type to Rows Shelf. Sum aggregation will be chosen by default for the Selected Measure. This will count the total of the Selected Measure calculated field for each Event Type.</li>
+</ul>
+<p>Your screen should look like the screenshot below.</p>
+<p><img src="images/4.3.%20Bar%20Charts%20of%20Event%20Type.png" /></p>
+<ul>
+<li>Repeat steps to make it a trellis display
+<ul>
+<li>Add Year to the Columns shelf</li>
+<li>Convert Year to Discrete</li>
+</ul></li>
+</ul>
+<p><img src="images/4.3.%20Trellis%20Bar%20Chart.png" /></p>
+<h3 id="adjust-formatting-1">Adjust Formatting</h3>
+<p>Rather than repeating all the y-axis label for each cell, we will create a dynamic text to show what measure is being displayed later. * Double-click on the “Selected Measure” axis label * Delete the Title and leave it empty</p>
+<p><img src="images/4.3.%20Remove%20Axis%20Label.png" /></p>
+<ul>
+<li>Repeat steps to remove the header so the year will not be shown.</li>
+<li>Change the colour of the bar chart to black from Color on the Marks Card.</li>
+<li>Ensure the Event Type is not truncated
+<ul>
+<li>Right click on the Event Type row labels &gt; Format…</li>
+<li>Change Default Font to size 8</li>
+<li>Hover over the right side of the red-coloured box shown below until a double-sided arrow appears and drag to the right to make the column for event type wider.</li>
+</ul></li>
+</ul>
+<p><img src="images/4.3.%20Reduce%20Font%20Size.png" /></p>
+<p>The trellis bar chart should look like the screenshot below.</p>
+<p><img src="images/4.3.%20Final%20Trellis%20Bar%20Chart.png" /></p>
+<h2 id="top-state-highlight-map">4.4 Top State Highlight Map</h2>
+<p>For this visualisation, we will use the State and Boundary as the Background map and highlight the state with the highest sum of measure using a red colour. The steps to highlight the max value is inpired by Rahul <span class="citation" data-cites="rahul_2017_tableau">(<a href="#ref-rahul_2017_tableau" role="doc-biblioref"><strong>rahul_2017_tableau?</strong></a>)</span> and Tableau Knowledge Base<span class="citation" data-cites="tableau_2017_finding">(<a href="#ref-tableau_2017_finding" role="doc-biblioref"><strong>tableau_2017_finding?</strong></a>)</span>. As with the previous visualisations, we need to create a calculated field first.</p>
+<h3 id="calculated-fields-2">Calculated Fields</h3>
+<p>We will make use of the fixed function which disaggregates the calculation and use a fixed level of detail <span class="citation" data-cites="tableau_2020_fixed">(<a href="#ref-tableau_2020_fixed" role="doc-biblioref"><strong>tableau_2020_fixed?</strong></a>)</span>. Without using fixed function, we will get an error saying an aggregate field cannot be further aggregated.</p>
+<ol type="1">
+<li>Selected Event Type</li>
+</ol>
+<pre><code>if [Select Event Type] == &quot;All&quot;
+then [Selected Measure]
+elseif [Select Event Type] == [Event Type]
+then [Selected Measure]
+else 0
+end</code></pre>
+<ol type="1">
+<li>Max Measure</li>
+</ol>
+<pre><code>Max({fixed [State]: sum([Selected Event Type])})</code></pre>
+<ol type="1">
+<li>isHighestState</li>
+</ol>
+<pre><code>if {fixed [State]: sum([Selected Event Type])} == {fixed:[Max Measure]}
+then &quot;Yes&quot;
+else &quot;No&quot;
+end
+</code></pre>
+<h3 id="map-with-highest-state-highlight">Map with Highest State Highlight</h3>
+<ul>
+<li>Drop the Geometry from State and Region Boundary to the workspace</li>
+<li>Drop isHighestState to Color on the Marks Card</li>
+</ul>
+<p>Your screen should look like the screnshot below.</p>
+<p><img src="images/4.4.%20Highest%20State%20v1.png" /></p>
+<h3 id="edit-tooltip-1">Edit Tooltip</h3>
+<p>We are going to create two more calculated fields just for the tooltip. We will return a value for the highest state but return NULL for the rest. This is to prevent the tooltip from showing if the user hovers over the other states.</p>
+<ul>
+<li>Create the following calculated fields</li>
+</ul>
+<ol type="1">
+<li>Highest State Name</li>
+</ol>
+<pre><code>if [isHighestState] == &quot;Yes&quot;
+then [State]
+else NULL
+END</code></pre>
+<ol type="1">
+<li>Highest State Measure Label</li>
+</ol>
+<pre><code>if [isHighestState] == &quot;Yes&quot;
+then [Select Measure] + &quot; of &quot; + [Select Event Type] + &quot; :      &quot;
+else NULL
+END</code></pre>
+<ol type="1">
+<li>Measure of Highest State</li>
+</ol>
+<pre><code>if [isHighestState] == &quot;Yes&quot;
+then {fixed: [Max Measure]}
+else NULL
+END</code></pre>
+<ul>
+<li>Drop the three calculated fields to Tooltip on the Marks Card</li>
+<li>Edit the Tooltip to only show the calculated fields. We also adjust the font size and other properties.</li>
+</ul>
+<p><img src="images/4.4.%20Tooltip.png" /></p>
+<h3 id="adjust-formatting-2">Adjust Formatting</h3>
+<p><em>As with the density map, remove the background map and remove interactive map features. </em> Map &gt; Map Layers… &gt; Washout = 100% * Map &gt; Map Options… &gt; Uncheck all * Change the colour of the map * Double-click on Color on the Marks Card * Increase Opacity to 100% * Click Edit Colors… &gt; Change “No” to black and “Yes” to red</p>
+<p>After the formatting, your screen should look similar to the screenshot below.</p>
+<p><img src="images/4.4.%20Final%20Highest%20State.png" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-cuddy_2021_myanmar" class="csl-entry" role="doc-biblioentry">
 Cuddy, Alice. 2021. <span>“Myanmar Coup: What Is Happening and Why?”</span> BBC News; BBC News. <a href="https://www.bbc.com/news/world-asia-55902070">https://www.bbc.com/news/world-asia-55902070</a>.

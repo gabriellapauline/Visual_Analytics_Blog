@@ -160,10 +160,11 @@ I will assume you have some basic knowledge of Tableau, so I will not describe i
 ### Filter Data Source
 The dataset that I have contains multiple countries in Southeast Asia, but since we are focusing on Myanmar, we can filter out the rest of the countries.
 
-![](./images/4.0. Add Filter.png)
-
 * Click Add button below "Filters"
 * Click Add in the dialog window
+
+![](./images/4.0. Add Filter.png)
+
 * Select the field to be filtered (Country)
 * Only check the box for Myanmar
 
@@ -186,7 +187,7 @@ I added a value called "All" on top of the existing event types.
 
 * Go to Data Source Tab and add a new connection 
 
-![](.images/4.1. Add Data Source.png)
+![](./images/4.1. Add Data Source.png)
 
 
 ### Create Parameter
@@ -261,11 +262,6 @@ To create calculated fields, click the grey triangle beside the search bar like 
 
 The calculated fields to be created are as the following:
 
-1. Number of Records
-```
-1
-```
-
 1. Filtered Event ID
 ```
 if [Select Event Type] == "All"
@@ -307,7 +303,7 @@ To create trellis map, we are going to add an additional field in the Columns sh
 
 ![](images/4.2. Trellis Year.png)
 
-* Add Year filter to only show the data between 2015 and 2020
+* Add Year filter to only show the data between 2015 and 2020. We can do this in Data Source tab to make the filter works globally in the workbook.
 
 ![](./images/4.2. Year Filter.png)
 
@@ -325,11 +321,12 @@ We want to make the tooltip more informative, so we need to add the fields to th
 * Edit the Tooltip for the Background Map in the first AVG(Latitude) marks card to remove everything. We don't want to see a tooltip when the user hovers over the background map.
 
 ### Adjust Formatting 
+* We can rename the Sheet for easier referencing, the title will not be displayed in the dashboard.
 * Remove the background map by clicking Map in the drop-down menu > Map Layers... > Slide Washout to 100%
 * We can adjust the colour of the map, colour and size of the density marks using the Marks Card.
   * I used Density Orange-Light Colour with 75% intensity and 100% opacity for the density
   * Black for the background map
-* Repeat steps to remove the header so the year will not be shown
+* Repeat steps to remove the header so the year will not be shown. We will use another sheet to give the Year label later.
 * Remove map interactive functions such as pan and zoom. Since we only have Myanmar map, this function is not necessary.
   * From Map in the menu drop-down, select Map Options... 
   
@@ -338,5 +335,156 @@ We want to make the tooltip more informative, so we need to add the fields to th
 The final look for my density map is shown below.
 
 ![](./images/4.2. Density Map v2.png)
+
+## 4.3 Trellis Bar Charts
+We will have a breakdown of the event type under each cell of density map. We will need to create several parameters and calculated fields first.
+
+### Parameter
+
+* Repeat the steps to create a parameter
+  * Create an Excel file for the possible values ("Fatalities" and "Number of Events") with "Measure" as the Field name.
+  * Add new data source
+  * Open a new worksheet and from the Data pane select Create Parameter...
+  
+The properties of the parameter should look as the following.
+![](./images/4.2. Select Measure.png)
+
+### Calculated Fields
+We need more calculated fields to enable the interactive functions to select the measure to be displayed, whether it is the number of events or the number of fatalities. The name of the calculated fields and the formulas are listed below.
+
+1. Number of Records
+```
+1
+```
+1. Selected Measure
+```
+CASE [Select Measure]
+when "Number of Events" then [Number of Records]
+when "Fatalities" then [Fatalities]
+END
+```
+### Create Bar Chart for Selected Parameter
+
+* Drop Selected Measure to Columns shelf and Event Type to Rows Shelf. Sum aggregation will be chosen by default for the Selected Measure. This will count the total of the Selected Measure calculated field for each Event Type.
+
+Your screen should look like the screenshot below.
+
+![](./images/4.3. Bar Charts of Event Type.png)
+
+* Repeat steps to make it a trellis display
+  * Add Year to the Columns shelf
+  * Convert Year to Discrete
+
+![](./images/4.3. Trellis Bar Chart.png)
+
+### Adjust Formatting
+
+Rather than repeating all the y-axis label for each cell, we will create a dynamic text to show what measure is being displayed later. 
+* Double-click on the "Selected Measure" axis label
+* Delete the Title and leave it empty
+
+![](./images/4.3. Remove Axis Label.png)
+
+* Repeat steps to remove the header so the year will not be shown.
+* Change the colour of the bar chart to black from Color on the Marks Card.
+* Ensure the Event Type is not truncated
+  * Right click on the Event Type row labels > Format...
+  * Change Default Font to size 8
+  * Hover over the right side of the red-coloured box shown below until a double-sided arrow appears and drag to the right to make the column for event type wider.
+  
+![](./images/4.3. Reduce Font Size.png)
+
+The trellis bar chart should look like the screenshot below.
+
+![](./images/4.3. Final Trellis Bar Chart.png)
+
+## 4.4 Top State Highlight Map
+
+For this visualisation, we will use the State and Boundary as the Background map and highlight the state with the highest sum of measure using a red colour. The steps to highlight the max value is inpired by Rahul [-@rahul_2017_tableau] and Tableau Knowledge Base[-@tableau_2017_finding]. As with the previous visualisations, we need to create a calculated field first.
+
+### Calculated Fields
+We will make use of the fixed function which disaggregates the calculation and use a fixed level of detail [@tableau_2020_fixed]. Without using fixed function, we will get an error saying an aggregate field cannot be further aggregated.
+
+1. Selected Event Type
+```
+if [Select Event Type] == "All"
+then [Selected Measure]
+elseif [Select Event Type] == [Event Type]
+then [Selected Measure]
+else 0
+end
+```
+
+1. Max Measure
+```
+Max({fixed [State]: sum([Selected Event Type])})
+```
+
+1. isHighestState
+```
+if {fixed [State]: sum([Selected Event Type])} == {fixed:[Max Measure]}
+then "Yes"
+else "No"
+end
+
+```
+
+### Map with Highest State Highlight
+
+* Drop the Geometry from State and Region Boundary to the workspace
+* Drop isHighestState to Color on the Marks Card
+
+Your screen should look like the screnshot below.
+
+![](./images/4.4. Highest State v1.png)
+
+### Edit Tooltip
+We are going to create two more calculated fields just for the tooltip. We will return a value for the highest state but return NULL for the rest. This is to prevent the tooltip from showing if the user hovers over the other states.
+
+* Create the following calculated fields
+
+1. Highest State Name
+```
+if [isHighestState] == "Yes"
+then [State]
+else NULL
+END
+```
+1. Highest State Measure Label
+```
+if [isHighestState] == "Yes"
+then [Select Measure] + " of " + [Select Event Type] + " :      "
+else NULL
+END
+```
+
+1. Measure of Highest State
+```
+if [isHighestState] == "Yes"
+then {fixed: [Max Measure]}
+else NULL
+END
+```
+
+* Drop the three calculated fields to Tooltip on the Marks Card
+* Edit the Tooltip to only show the calculated fields. We also adjust the font size and other properties.
+
+![](./images/4.4. Tooltip.png)
+
+### Adjust Formatting
+
+*As with the density map, remove the background map and remove interactive map features.
+  * Map > Map Layers... > Washout = 100%
+  * Map > Map Options... > Uncheck all
+* Change the colour of the map
+  * Double-click on Color on the Marks Card
+  * Increase Opacity to 100%
+  * Click Edit Colors... > Change "No" to black and "Yes" to red
+  
+After the formatting, your screen should look similar to the screenshot below.
+
+![](./images/4.4. Final Highest State.png)
+  
+
 
 
