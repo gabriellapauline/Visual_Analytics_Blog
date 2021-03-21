@@ -157,6 +157,20 @@ I will assume you have some basic knowledge of Tableau, so I will not describe i
 
 ![](./images/4.0 Rename Connection and Field.png)
 
+### Filter Data Source
+The dataset that I have contains multiple countries in Southeast Asia, but since we are focusing on Myanmar, we can filter out the rest of the countries.
+
+![](./images/4.0. Add Filter.png)
+
+* Click Add button below "Filters"
+* Click Add in the dialog window
+* Select the field to be filtered (Country)
+* Only check the box for Myanmar
+
+![](./images/4.0. Only Keep Myanmar.png)
+
+I also want to remove "Strategic Development". As strategic development is a non-armed event. Repeat the steps, but this time we add filter for Event Type and exclude Strategic Development.
+
 ## 4.1 Create customised filters
 We can use parameters to simulate a custom filter. I have decided to use icons as the buttons, so first we need to download the icons first. I got my icons from [The Noun Project](https://thenounproject.com/). 
 
@@ -168,7 +182,7 @@ We also need to create an Excel file containing all the values for the icons.
 
 ![](./images/4.1. Dummy Event Type File.png)
 
-I added a value called "All" and removed "Strategic Development". As strategic development is a non-armed event, I want to leave it out.
+I added a value called "All" on top of the existing event types.
 
 * Go to Data Source Tab and add a new connection 
 
@@ -308,12 +322,18 @@ We want to make the tooltip more informative, so we need to add the fields to th
 
 ![](./images/4.2. Edit Tooltips.png)
 
+* Edit the Tooltip for the Background Map in the first AVG(Latitude) marks card to remove everything. We don't want to see a tooltip when the user hovers over the background map.
+
 ### Adjust Formatting 
 * Remove the background map by clicking Map in the drop-down menu > Map Layers... > Slide Washout to 100%
 * We can adjust the colour of the map, colour and size of the density marks using the Marks Card.
   * I used Density Orange-Light Colour with 75% intensity and 100% opacity for the density
   * Black for the background map
 * Repeat steps to remove the header so the year will not be shown
+* Remove map interactive functions such as pan and zoom. Since we only have Myanmar map, this function is not necessary.
+  * From Map in the menu drop-down, select Map Options... 
+  
+  ![](./images/4.2. Turn off Pan and Zoom.png)
 
 The final look for my density map is shown below.
 

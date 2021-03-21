@@ -123,7 +123,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/4.0 Rename Connection and Field.png","images/4.0 Rename Field.png","images/4.0. Add new data.png","images/4.0. Connect Data to National Boundary.png","images/4.0. Connect to Spatial File.png","images/4.1. Add Data Source.png","images/4.1. Add Shapes to Rep.png","images/4.1. Align Label.png","images/4.1. Change Shape.png","images/4.1. Create Parameter from Data Pane.png","images/4.1. Create Parameter.png","images/4.1. Drop Event Type Value.png","images/4.1. Dummy Event Type File.png","images/4.1. Fit Height.png","images/4.1. Icons.png","images/4.1. Remove Line.png","images/4.2. Create Calculated Field.png","images/4.2. Density Map v1.png","images/4.2. Density Map v2.png","images/4.2. Dual Axis.png","images/4.2. Edit Tooltips.png","images/4.2. Longitude Latitude.png","images/4.2. Select Marks type.png","images/4.2. Select Measure.png","images/4.2. Trellis Year.png","images/4.2. Year Filter.png"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/4.0 Rename Connection and Field.png","images/4.0 Rename Field.png","images/4.0. Add Filter.png","images/4.0. Add new data.png","images/4.0. Connect Data to National Boundary.png","images/4.0. Connect to Spatial File.png","images/4.0. Only Keep Myanmar.png","images/4.1. Add Data Source.png","images/4.1. Add Shapes to Rep.png","images/4.1. Align Label.png","images/4.1. Change Shape.png","images/4.1. Create Parameter from Data Pane.png","images/4.1. Create Parameter.png","images/4.1. Drop Event Type Value.png","images/4.1. Dummy Event Type File.png","images/4.1. Fit Height.png","images/4.1. Icons.png","images/4.1. Remove Line.png","images/4.2. Create Calculated Field.png","images/4.2. Density Map v1.png","images/4.2. Density Map v2.png","images/4.2. Dual Axis.png","images/4.2. Edit Tooltips.png","images/4.2. Longitude Latitude.png","images/4.2. Select Marks type.png","images/4.2. Select Measure.png","images/4.2. Trellis Year.png","images/4.2. Turn off Pan and Zoom.png","images/4.2. Year Filter.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1635,6 +1635,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Just to make it easier to read, rename the connection by double-clicking on the connection name. Also rename ST to State so it will be easier to understand. Optional: Rename the tables to a more descriptive name such as National Boundary, ACLED, and State and Region Boundary.</li>
 </ul>
 <p><img src="images/4.0%20Rename%20Connection%20and%20Field.png" /></p>
+<h3 id="filter-data-source">Filter Data Source</h3>
+<p>The dataset that I have contains multiple countries in Southeast Asia, but since we are focusing on Myanmar, we can filter out the rest of the countries.</p>
+<p><img src="images/4.0.%20Add%20Filter.png" /></p>
+<ul>
+<li>Click Add button below “Filters”</li>
+<li>Click Add in the dialog window</li>
+<li>Select the field to be filtered (Country)</li>
+<li>Only check the box for Myanmar</li>
+</ul>
+<p><img src="images/4.0.%20Only%20Keep%20Myanmar.png" /></p>
+<p>I also want to remove “Strategic Development.” As strategic development is a non-armed event. Repeat the steps, but this time we add filter for Event Type and exclude Strategic Development.</p>
 <h2 id="create-customised-filters">4.1 Create customised filters</h2>
 <p>We can use parameters to simulate a custom filter. I have decided to use icons as the buttons, so first we need to download the icons first. I got my icons from <a href="https://thenounproject.com/">The Noun Project</a>.</p>
 <ul>
@@ -1643,7 +1654,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><img src="images/4.1.%20Add%20Shapes%20to%20Rep.png" /></p>
 <p>We also need to create an Excel file containing all the values for the icons.</p>
 <p><img src="images/4.1.%20Dummy%20Event%20Type%20File.png" /></p>
-<p>I added a value called “All” and removed “Strategic Development.” As strategic development is a non-armed event, I want to leave it out.</p>
+<p>I added a value called “All” on top of the existing event types.</p>
 <ul>
 <li>Go to Data Source Tab and add a new connection</li>
 </ul>
@@ -1753,9 +1764,12 @@ end</code></pre>
 <ul>
 <li>Select the Marks Card for density map (the second AVG(Latitude) marks)</li>
 <li>Add the fields of interest (Notes, Location, and State) to the Tooltip</li>
-<li>Double-click on the Tooltip icon to edit the text being shown. ‘&lt;&gt;’</li>
+<li>Double-click on the Tooltip icon to edit the text being shown. ‘&lt;&gt;’ indicates that it is a variable.</li>
 </ul>
 <p><img src="images/4.2.%20Edit%20Tooltips.png" /></p>
+<ul>
+<li>Edit the Tooltip for the Background Map in the first AVG(Latitude) marks card to remove everything. We don’t want to see a tooltip when the user hovers over the background map.</li>
+</ul>
 <h3 id="adjust-formatting">Adjust Formatting</h3>
 <ul>
 <li>Remove the background map by clicking Map in the drop-down menu &gt; Map Layers… &gt; Slide Washout to 100%</li>
@@ -1765,6 +1779,11 @@ end</code></pre>
 <li>Black for the background map</li>
 </ul></li>
 <li>Repeat steps to remove the header so the year will not be shown</li>
+<li>Remove map interactive functions such as pan and zoom. Since we only have Myanmar map, this function is not necessary.
+<ul>
+<li>From Map in the menu drop-down, select Map Options…</li>
+</ul>
+<img src="images/4.2.%20Turn%20off%20Pan%20and%20Zoom.png" /></li>
 </ul>
 <p>The final look for my density map is shown below.</p>
 <p><img src="images/4.2.%20Density%20Map%20v2.png" /></p>
