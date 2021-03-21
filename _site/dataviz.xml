@@ -7,14 +7,22 @@
     <description>Analytics Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>DataViz Makeover 3 - Armed Conflict Location and Event Data</title>
+      <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
+      <link>https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3</link>
+      <description>Visualisation makeover for geospatial data</description>
+      <guid>https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3</guid>
+      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>DataViz Makeover 2 - COVID Vaccine Survey</title>
       <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
       <link>https://gabriellapauline.netlify.app/posts/2021-02-12-dataviz-makeover-2</link>
       <description>Visualisation makeover for Likert Scale data and uncertainty.</description>
       <guid>https://gabriellapauline.netlify.app/posts/2021-02-12-dataviz-makeover-2</guid>
-      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
       <media:content url="https://gabriellapauline.netlify.app/posts/2021-02-12-dataviz-makeover-2/./images/3. Final Look for COVID-19 Vaccine Survey DataViz Makeover.png" medium="image" type="image/png" width="1806" height="1015"/>
     </item>
     <item>

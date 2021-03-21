@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+<title>Gabriella Pauline: DataViz Makeover 3 - Armed Conflict Location and Event Data</title>
+
+<meta property="description" itemprop="description" content="Visualisation makeover for geospatial data"/>
+
+<link rel="canonical" href="https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2021-03-16"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-03-16"/>
+<meta name="article:author" content="Gabriella Pauline Djojosaputro"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Gabriella Pauline: DataViz Makeover 3 - Armed Conflict Location and Event Data"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="Visualisation makeover for geospatial data"/>
+<meta property="og:url" content="https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Gabriella Pauline"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Gabriella Pauline: DataViz Makeover 3 - Armed Conflict Location and Event Data"/>
+<meta property="twitter:description" content="Visualisation makeover for geospatial data"/>
+<meta property="twitter:url" content="https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/"/>
+
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="Gabriella Pauline: DataViz Makeover 3 - Armed Conflict Location and Event Data"/>
+<meta name="citation_fulltext_html_url" content="https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/"/>
+<meta name="citation_online_date" content="2021/03/16"/>
+<meta name="citation_publication_date" content="2021/03/16"/>
+<meta name="citation_author" content="Gabriella Pauline Djojosaputro"/>
+<meta name="citation_author_institution" content="School of Information Systems, Singapore Management University"/>
+<!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Myanmar coup: What is happening and why?;citation_publication_date=2021;citation_publisher=BBC News; BBC News;citation_author=Alice Cuddy"/>
+  <meta name="citation_reference" content="citation_title=Myanmarâ€™s troubled history: Coups, military rule, and ethnic conflict;citation_publication_date=2021;citation_publisher=Council on Foreign Relations;citation_author=Lindsay Maizland"/>
+  <meta name="citation_reference" content="citation_title=Aung san suu kyi: Myanmar democracy icon who fell from grace;citation_publication_date=2021;citation_publisher=BBC News; BBC News;citation_author=BBC News"/>
+  <meta name="citation_reference" content="citation_title=Dot density maps;citation_publication_date=2020;citation_publisher=Axis Maps"/>
+  <meta name="citation_reference" content="citation_title=Legends;citation_publication_date=2021;citation_publisher=Carbon Design System; IBM"/>
+  <meta name="citation_reference" content="citation_title=Choosing colors for data visualization;citation_publication_date=2006;citation_author=M. Stone"/>
+  <meta name="citation_reference" content="citation_title=Armed conflict location &amp; event data project (ACLED) codebook;citation_publication_date=2019;citation_publisher=ACLED;citation_author=Armed Conflict Location Event Data Project (ACLED)"/>
+  <meta name="citation_reference" content="citation_title=Finding the dimension member with the highest measure value | tableau software;citation_publication_date=2017;citation_publisher=Tableau Knowledge Base; Tableau;citation_author= Tableau"/>
+  <meta name="citation_reference" content="citation_title=Tableau tips : Highlighting max and min in the chart â€“ data vizzes;citation_publication_date=2017;citation_publisher=Data Vizzes;citation_author= Rahul"/>
+  <meta name="citation_reference" content="citation_title=FIXED level of detail expressions;citation_publication_date=2020;citation_publisher=help.tableau.com;citation_author= Tableau"/>
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output","bibliography","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 3 - Armed Conflict Location and Event Data"]},{"type":"character","attributes":{},"value":["Visualisation makeover for geospatial data"]},{"type":"NULL"},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Gabriella Pauline Djojosaputro"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/gabriellapauline/"]},{"type":"character","attributes":{},"value":["School of Information Systems, Singapore Management University"]},{"type":"character","attributes":{},"value":["https://smu.edu.sg"]}]}]},{"type":"character","attributes":{},"value":["03-16-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["Dataviz3.bib"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/"]},{"type":"character","attributes":{},"value":["https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["biblio.bib","dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.6/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","Dataviz3.bib","images/2. Broken Time Series.png","images/2. Original Visualisation Tooltip.png","images/2. Original Visualisation.png","images/2. Other Countries Still Shown.png","images/2. Philippines All Event Type.png","images/2. Philippines Violence against Civilian.png","images/3. Alternative Graphical Representation.jpeg","images/3. Final Dashboard.png","images/4.0 Rename Connection and Field.png","images/4.0 Rename Field.png","images/4.0. Add Filter.png","images/4.0. Add new data.png","images/4.0. Connect Data to National Boundary.png","images/4.0. Connect to Spatial File.png","images/4.0. Only Keep Myanmar.png","images/4.1. Add Data Source.png","images/4.1. Add Shapes to Rep.png","images/4.1. Align Label.png","images/4.1. Change Shape.png","images/4.1. Create Parameter from Data Pane.png","images/4.1. Create Parameter.png","images/4.1. Drop Event Type Value.png","images/4.1. Dummy Event Type File.png","images/4.1. Fit Height.png","images/4.1. Icons.png","images/4.1. Remove Line.png","images/4.2. Create Calculated Field.png","images/4.2. Density Map v1.png","images/4.2. Density Map v2.png","images/4.2. Dual Axis.png","images/4.2. Edit Tooltips.png","images/4.2. Longitude Latitude.png","images/4.2. Select Marks type.png","images/4.2. Select Measure.png","images/4.2. Trellis Year.png","images/4.2. Turn off Pan and Zoom.png","images/4.2. Year Filter.png","images/4.3. Bar Charts of Event Type.png","images/4.3. Final Trellis Bar Chart.png","images/4.3. Reduce Font Size.png","images/4.3. Remove Axis Label.png","images/4.3. Tooltip.png","images/4.3. Trellis Bar Chart.png","images/4.4. Final Highest State.png","images/4.4. Highest State v1.png","images/4.4. Remove Border.png","images/4.4. Show Parameter.png","images/4.4. Tooltip.png","images/4.5. Filter Top 10.png","images/4.5. Final Top States.png","images/4.5. Sort Descending.png","images/4.5. Tooltip.png","images/4.5. Top 10 States.png","images/4.5. Top States Bar Chart.png","images/4.6. Final Year Label.png","images/4.6. Formatted Year.png","images/4.6. Year Label.png","images/4.7. Add column border.png","images/4.7. Change Colour.png","images/4.7. Fatalities v1.png","images/4.7. Final Fatalities Button.png","images/4.7. Number of Events.png","images/4.8 Add Parameter Aciton.png","images/4.8 Dashboard Layout.png","images/4.8 Year Highlighter.png","images/4.8. Create Dashboard Action.png","images/4.8. Dashboard Size.png","images/4.8. Dashboard Title.png","images/4.8. Fatalities Select Measure.png","images/4.8. Marked Layout.png","images/4.8. Number of Events Select Measure.png","images/4.8. On Display.png","images/4.8. State Highlighter.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css2?family=Amiri');
+@import url('https://fonts.googleapis.com/css2?family=Bitter');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Roboto:wght@300&display=swap');
+
+/*
+--dark-blue-gray: #68668fff;
+--maximum-blue-green: #6cc3bdff;
+--light-coral: #f67e7dff;
+--melon: #ffc1a8ff;
+--bisque: #ffe5c4ff;
+*/
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    "Lora", serif;
+  --mono-font:       "DM Mono", monospace;
+  --body-font:       "Roboto", sans-serif;
+  --navbar-font:     "Lora", serif; /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --body-justify-content: center
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        16px;
+  --hover-color:      white;
+  --bkgd-color:       #68668f;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.6/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"DataViz Makeover 3 - Armed Conflict Location and Event Data","description":"Visualisation makeover for geospatial data","authors":[{"author":"Gabriella Pauline Djojosaputro","authorURL":"https://www.linkedin.com/in/gabriellapauline/","affiliation":"School of Information Systems, Singapore Management University","affiliationURL":"https://smu.edu.sg","orcidID":""}],"publishedDate":"2021-03-16T00:00:00.000+08:00","citationText":"Djojosaputro, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Gabriella Pauline</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../dataviz.html">DataViz Makeover</a>
+<a href="../../projects.html">Projects</a>
+<a href="../../about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>DataViz Makeover 3 - Armed Conflict Location and Event Data</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Visualisation makeover for geospatial data</p></p>
+</div>
+
+<div class="d-byline">
+  Gabriella Pauline Djojosaputro <a href="https://www.linkedin.com/in/gabriellapauline/" class="uri">https://www.linkedin.com/in/gabriellapauline/</a> (School of Information Systems, Singapore Management University)<a href="https://smu.edu.sg" class="uri">https://smu.edu.sg</a>
+  
+<br/>03-16-2021
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#original-visualisation-evaluation">2. Original Visualisation Evaluation</a>
+<ul>
+<li><a href="#clarity">2.1 Clarity</a></li>
+<li><a href="#aesthetics">2.2 Aesthetics</a></li>
+<li><a href="#interactivity">2.3 Interactivity</a></li>
+</ul></li>
+<li><a href="#alternative-graphical-representation">3. Alternative Graphical Representation</a>
+<ul>
+<li><a href="#clarity-1">3.1 Clarity</a></li>
+<li><a href="#aesthetics-1">3.2 Aesthetics</a></li>
+<li><a href="#interactivity-1">3.3 Interactivity</a></li>
+<li><a href="#additional-features">3.4 Additional Features</a></li>
+</ul></li>
+<li><a href="#step-by-step-description">4. Step-by-Step Description</a>
+<ul>
+<li><a href="#set-up">4.0 Set Up</a></li>
+<li><a href="#create-customised-filters">4.1 Create customised filters</a></li>
+<li><a href="#density-maps">4.2 Density Maps</a></li>
+<li><a href="#trellis-bar-charts">4.3 Trellis Bar Charts</a></li>
+<li><a href="#top-state-highlight-map">4.4 Top State Highlight Map</a></li>
+<li><a href="#top-states-bar-chart">4.5 Top States Bar Chart</a></li>
+<li><a href="#year-label">4.6. Year Label</a></li>
+<li><a href="#measure-parameter-buttons">4.7 Measure Parameter Buttons</a></li>
+<li><a href="#dashboard">4.8 Dashboard</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="introduction">1. Introduction</h1>
+<p>In 1 February 2021, the military force in Myanmar launched a coup and arrested the civilian leaders, leaving the country in a dire state. The protests over the coup is one of the largest in Myanmar history, and the military have utilised water cannon, rubber bullets and live ammunition in the effort to stop the protesters <span class="citation" data-cites="cuddy_2021_myanmar">(<a href="#ref-cuddy_2021_myanmar" role="doc-biblioref">Cuddy 2021</a>)</span>.</p>
+<p>The country has long been led by a military junta, but a hope for democracy came when the military junta unexpectedly dissolved and appoints civilian ruler, President Then Sein. In 2015, Myanmar held an election, with Aung San Suu Kyi emerging as its de facto leader <span class="citation" data-cites="maizland_2021_myanmars">(<a href="#ref-maizland_2021_myanmars" role="doc-biblioref">Maizland 2021</a>)</span>. Ms Suu Kyi is an ignitor for democracy in Myanmar, earning a Nobel Peace Prize while she was under house arrest in 1991 <span class="citation" data-cites="cuddy_2021_myanmar">(<a href="#ref-cuddy_2021_myanmar" role="doc-biblioref">Cuddy 2021</a>)</span>. However, she lost much of her international support after her defence of the military who abuses Muslim Rohingya Minority, and led hundreds of thousands of them fleeing to Bangladesh in 2017 <span class="citation" data-cites="bbcnews_2021_aung">(<a href="#ref-bbcnews_2021_aung" role="doc-biblioref">News 2021</a>)</span>.</p>
+<p>Using the <a href="https://acleddata.com/">Armed Conflict Location &amp; Event Data Project</a> (ACLED) - a disaggregated data collection, analysis &amp; crisis mapping platform that aims to bring clarity to crisis - we are going to examine the armed conflicts that occur in Myanmar during the course of 2015 to 2020.</p>
+<h1 id="original-visualisation-evaluation">2. Original Visualisation Evaluation</h1>
+<p>The original visualisation is the <a href="https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis">South East Asia Armed Conflict Analysis</a> that is hosted in Tableau Public. It reveals the spatio-temporal patterns of armed conflict in selcted South East Asian countries between 2015 and 2020 by using a one-to-one dot-density map where each dot represent an actual event <span class="citation" data-cites="a2020_dot">(<a href="#ref-a2020_dot" role="doc-biblioref"><span>“Dot Density Maps”</span> 2020</a>)</span>, with different colours used for each type of events.</p>
+<figure>
+<img src="images/2.%20Original%20Visualisation.png" alt="Figure 1. Original Visualisation" /><figcaption aria-hidden="true">Figure 1. Original Visualisation</figcaption>
+</figure>
+<p>The critiques are given in terms of <strong>clarity</strong>, <strong>aesthetics</strong>, and <strong>interactivity</strong>.</p>
+<h2 id="clarity">2.1 Clarity</h2>
+<h3 id="to-keep">To keep:</h3>
+<ol type="1">
+<li>The data is shown using <strong>map to show spatial patterns</strong>.</li>
+</ol>
+<h3 id="to-improve">To improve:</h3>
+<ol type="1">
+<li>Because the visualisation uses <strong>opaque circles, When the points overlap, we cannot see what is behind the top layer</strong>. This might obscure the density of data, or give the wrong impression that the value is lower some event types just because it is covered. If we only look at Figure 2, it does not seem that there are a lot of violence against civilian in the southern part of Philipines, but Figure 3 shows otherwise. We need to use lower opacity, show the event type one by one, or use other types that can show the values in the viz, such as proportional symbol map, choropleth, or heatmap.</li>
+</ol>
+<figure>
+<img src="images/2.%20Philippines%20All%20Event%20Type.png" alt="Figure 2. Philippines All Event Types" /><figcaption aria-hidden="true">Figure 2. Philippines All Event Types</figcaption>
+</figure>
+<figure>
+<img src="images/2.%20Philippines%20Violence%20against%20Civilian.png" alt="Figure 3. Philippines Only Violence Against Civilian" /><figcaption aria-hidden="true">Figure 3. Philippines Only Violence Against Civilian</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>There is <strong>no way to see the distribution of events by year, even though a time series line chart exists</strong>.</p></li>
+<li><p>The line chart that shows <strong>the time series of events is hard to compare because they are stacked vertically</strong>. Additionally, the <strong>axes are not standardized</strong>, so it does not have a fixed point of reference to compare the values.</p></li>
+<li><p>The time series is not very accurate because if an event type does not occur in a particular year, the <strong>record is shown as null rather than zero</strong>. This <strong>breaks the line into several parts</strong> instead of showing a decrease in value.</p></li>
+</ol>
+<figure>
+<img src="images/2.%20Broken%20Time%20Series.png" alt="Figure 4. Null Values in Time Series" /><figcaption aria-hidden="true">Figure 4. Null Values in Time Series</figcaption>
+</figure>
+<ol start="5" type="1">
+<li>Placing the legend of the colors on the right most of the dashboard introduces an unnecessary mental clutter because the <strong>users need to look back and forth between the map and the legend</strong>, as well as having to memorize what does each color represents. The best practice is to remove legend if possible, and label the data directly <span class="citation" data-cites="a2021_legends">(<a href="#ref-a2021_legends" role="doc-biblioref"><span>“Legends”</span> 2021</a>)</span>.</li>
+<li>The title is quite informative, but there is <strong>no useful lead-in</strong>.</li>
+<li>The <strong>y-axis for the line chart is shown as “Count of Sheet 1”</strong> which can cause confusion. A more descriptive label should be used instead.</li>
+<li>The <strong>legends for the colours are truncated</strong>.</li>
+</ol>
+<h2 id="aesthetics">2.2 Aesthetics</h2>
+<h3 id="to-keep-1">To keep:</h3>
+<ol type="1">
+<li>The use of <strong>fonts is consistent and easy to read</strong>.</li>
+<li><strong>Terrain is not shown in the background map</strong>, so it looks cleaner and highlights the data being presented, which is the armed conflict locations.</li>
+<li>The <strong>colour of less important data are less prominent than the important ones</strong>, for example the axis ticks use grey colour.</li>
+</ol>
+<h3 id="to-improve-1">To improve:</h3>
+<ol type="1">
+<li>Even when we filter to display only one country, only the data points are not shown but the <strong>background map for the other countries are still shown</strong>. This is rather distracting, and would be better if we only show the country of interest.</li>
+</ol>
+<p><img src="images/2.%20Other%20Countries%20Still%20Shown.png" alt="Figure 5. Other Countries Still Shown in the Background" /> 2. There are <strong>a lot of different colours being used to represent the different types of events</strong>.The choice of colours is too reliant on hue variation instead of value or chroma, hence increasing the visual clutter <span class="citation" data-cites="Stone2006ChoosingCF">(<a href="#ref-Stone2006ChoosingCF" role="doc-biblioref">Stone 2006</a>)</span>. It is better to limit the colour palette to 2 or 3 hues and use variation of colour intensity to make the visualisation more aesthetically pleasing and functional.</p>
+<h2 id="interactivity">2.3 Interactivity</h2>
+<h3 id="to-keep-2">To keep:</h3>
+<ol type="1">
+<li><strong>Dynamic title </strong> is used that will change according to the selected filter.</li>
+<li>The <strong>event type is used as a highlighter that connects to all visualisation on the dashboard</strong>. Both the line chart and the point pattern map will highlight the selected event type.</li>
+</ol>
+<h3 id="to-improve-2">To improve:</h3>
+<ol type="1">
+<li>The <strong>information shown in the tooltip is not informative</strong>. The users are unlikely to be interested with the Event ID, latitude, and longitude. The name of the location, the date or description of event might be more relevant.</li>
+</ol>
+<figure>
+<img src="images/2.%20Original%20Visualisation%20Tooltip.png" alt="Figure 6. Original Visualisation Tooltip" /><figcaption aria-hidden="true">Figure 6. Original Visualisation Tooltip</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>The <strong>transition between choosing different country filter is a little bit choppy</strong>. We can use animation to make it more smooth.</li>
+</ol>
+<h1 id="alternative-graphical-representation">3. Alternative Graphical Representation</h1>
+<p>Although the original visualisation contains multiple countrieds in Southeast Asia, I chose to focus on Myanmar because of the recent political situation in Myanmar. The proposed design is shown in Figure 7.</p>
+<p><img src="images/3.%20Alternative%20Graphical%20Representation.jpeg" alt="Figure 7. Alternative Graphical Representation" /> Due to the problem of the overlapping points (Clarity #1), I have decided to use another way to represent the spatial data. Initially, I thought of using a proportional symbol map with lower opacity to better represent the data, as the overlapping points will contribute to the size of the symbol. However, this method requires aggregation, and there is a problem in the mapping of the geographical data. There were hundreds of unrecognized location from the Admin 3 attribute (The third largest sub-national administrative region in which the event took place <span class="citation" data-cites="armedconflictlocationeventdataprojectacled_2019_armed">(<a href="#ref-armedconflictlocationeventdataprojectacled_2019_armed" role="doc-biblioref">Event Data Project (ACLED) 2019</a>)</span>). Aggregating on the higher level would not solve the issue. Even though the number of unrecognized location would be manageable to resolve manually, but the map will be less meaningful because it is too aggregated. Therefore, as shown in number 2 in Figure 7, I have decided to create density maps to represent the data instead.</p>
+<p>This alternative resolves the issues shown in section 2 as the following. Numerical references in the section below are tied to the numbered items in the proposed alternative visualisation in Figure 7.</p>
+<h2 id="clarity-1">3.1 Clarity</h2>
+<ol type="1">
+<li><p>Using density maps to show the geospatial patterns of the armed conflict events can take advantage of the overlapping points (2) . However since we cannot use varying colours for the density maps, a filter for the event types (1) is used instead.nes Only Violence Against Civilian](./images/2. Philippines Violence against Civilian.png)</p></li>
+<li><p>The visualisation will use a trellis for both the density map (2) and the bar chart (3). This allows the user to see the distribution of events in the geographical location as well as by event type by year.</p></li>
+<li><p>The bar chart is broken down by year in the trellis (3). This would make is easier for the user to compare the values between event types, even though it might be difficult to compare different years. However, by standardizing the axes for the values, the user can still compare the height of the bars in different years when the difference is big.</p></li>
+<li><p>Line chart is not used.</p></li>
+<li><p>Using a filter instead of using different colours for each even type removes the need to put a colour legend.</p></li>
+<li><p>Description is provided (4).</p></li>
+<li><p>Use more descriptive axis labels (not shown in Figure 7).</p></li>
+<li><p>Adjust the size to make sure they are not truncated (not shown in Figure 7).</p></li>
+</ol>
+<h2 id="aesthetics-1">3.2 Aesthetics</h2>
+<ol type="1">
+<li><p>Do not use the default map background from Tableau but use the shp file for Myanmar to provide the map background (2).</p></li>
+<li><p>The different event types are no longer differentiated by colours because it is used as a filter (1,2). The bar charts will also use the same colour for the bars. A colour palette of black and red will be used for this visualisation.</p></li>
+</ol>
+<h2 id="interactivity-1">3.3 Interactivity</h2>
+<h3 id="to-improve-3">To improve:</h3>
+<ol type="1">
+<li><p>Show the name of the location, the date or description of event in the tooltip (not shown in Figure 7).</p></li>
+<li><p>Use animation (not shown in Figure 7).</p></li>
+</ol>
+<h2 id="additional-features">3.4 Additional Features</h2>
+<p>Other than addressing the issues in the original visualisation, there are some additional features added to the dashboard.</p>
+<ol type="1">
+<li>The codebook reveals that the data also stores the number of fatalities, which may also be of interest. Therefore, a parameter to toggle between displaying the values based on the number of events or fatalities is provided (5).</li>
+<li>To provide a high-level aggregate of the data, the state with the highest number of selected measure is highlighted (6). It will be done in the state level due to the unrecognized values in lower level. Showing the data in form of a map helps the user if they do not know the areas of Myanmar well.</li>
+<li>Comparing the aggregate values by state would also help the user to see the actual number of events (7), that will complement the density map.</li>
+</ol>
+<h1 id="step-by-step-description">4. Step-by-Step Description</h1>
+<p>I will assume you have some basic knowledge of Tableau, so I will not describe into very deep details for the routine Tableau operations such as importing data. Refer to my <a href="https://gabriellapauline.netlify.app/posts/2021-01-29-dataviz-makeover-1/">first dataviz makeover post</a> if you need more details.</p>
+<h2 id="set-up">4.0 Set Up</h2>
+<ul>
+<li>Download the data from <a href="https://acleddata.com/">Armed Conflict Location &amp; Event Data Project</a> using the Data Export Tool for Southeast Asia. WE can use the filters to get only the data we are interested in, such as Myanmar.</li>
+<li>Download the Myanmar map polygon data from <a href="https://hub.arcgis.com/">ArcGISHub</a>. Get the <a href="https://hub.arcgis.com/datasets/MIMU::myanmar-national-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458">national boundary</a> for the density map and the <a href="https://hub.arcgis.com/datasets/MIMU::myanmar-state-and-region-boundary?geometry=63.295%2C11.983%2C130.048%2C26.458">state and region boundary</a> to highlight the state with the highest number of events or fatalities.</li>
+<li>Create a new Tableau workbook</li>
+</ul>
+<h3 id="join-data-from-multiple-sources-together">Join data from multiple sources together</h3>
+<ul>
+<li>Connect to Data &gt; Spatial File &gt; Select the National Boundary data for Myanmar</li>
+<li>Add new data &gt; Select the ACLED data</li>
+</ul>
+<p><img src="images/4.0.%20Add%20new%20data.png" /></p>
+<ul>
+<li>Drag the File to the workspace to define a relationship, then select the fields to be matched. The Name field from the national boundary is equivalent to country in the ACLED data.</li>
+</ul>
+<p><img src="images/4.0.%20Connect%20Data%20to%20National%20Boundary.png" /></p>
+<ul>
+<li>Repeat adding the state and region boundary file, and define the relationship with the ACLED data. Admin 1 from ACLED should be equivalent to ST from the state and region boundary file.</li>
+<li>Just to make it easier to read, rename the connection by double-clicking on the connection name. Also rename ST to State so it will be easier to understand. Optional: Rename the tables to a more descriptive name such as National Boundary, ACLED, and State and Region Boundary.</li>
+</ul>
+<p><img src="images/4.0%20Rename%20Connection%20and%20Field.png" /></p>
+<h3 id="filter-data-source">Filter Data Source</h3>
+<p>The dataset that I have contains multiple countries in Southeast Asia, but since we are focusing on Myanmar, we can filter out the rest of the countries.</p>
+<ul>
+<li>Click Add button below “Filters”</li>
+<li>Click Add in the dialog window</li>
+</ul>
+<p><img src="images/4.0.%20Add%20Filter.png" /></p>
+<ul>
+<li>Select the field to be filtered (Country)</li>
+<li>Only check the box for Myanmar</li>
+</ul>
+<p><img src="images/4.0.%20Only%20Keep%20Myanmar.png" /></p>
+<p>I also want to remove “Strategic Development.” As strategic development is a non-armed event. Repeat the steps, but this time we add filter for Event Type and exclude Strategic Development.</p>
+<h2 id="create-customised-filters">4.1 Create customised filters</h2>
+<p>We can use parameters to simulate a custom filter. I have decided to use icons as the buttons, so first we need to download the icons first. I got my icons from <a href="https://thenounproject.com/">The Noun Project</a>.</p>
+<ul>
+<li>Put the icon jpeg files in a new folder inside My Tableau Repository/Shapes folder, usually in Documents but it might be different.</li>
+</ul>
+<p><img src="images/4.1.%20Add%20Shapes%20to%20Rep.png" /></p>
+<p>We also need to create an Excel file containing all the values for the icons.</p>
+<p><img src="images/4.1.%20Dummy%20Event%20Type%20File.png" /></p>
+<p>I added a value called “All” on top of the existing event types.</p>
+<ul>
+<li>Go to Data Source Tab and add a new connection</li>
+</ul>
+<p><img src="images/4.1.%20Add%20Data%20Source.png" /></p>
+<h3 id="create-parameter">Create Parameter</h3>
+<ul>
+<li><p>From the data pane, click on the grey triangle beside the search box &gt; Create Parameter… <img src="images/4.1.%20Create%20Parameter%20from%20Data%20Pane.png" /></p></li>
+<li><p>A dialog box will appear for us to enter the details of the parameters</p>
+<ul>
+<li>Enter parameter name</li>
+<li>Change data type to String</li>
+<li>Change allowable values to List</li>
+<li>To reduce some manual work, click Add values from &gt; your newly created excel file &gt; Event Type Value. This will auto-populate the parameter values with the values of Event Type Value in the spreadsheet that we have just created.</li>
+</ul></li>
+</ul>
+<p><img src="images/4.1.%20Create%20Parameter.png" /></p>
+<h3 id="create-custom-icons">Create custom icons</h3>
+<ul>
+<li>Create a new worksheet</li>
+<li>Drop the Event Type Value to Rows shelf to make it be displayed in multiple rows and Label on the Marks Card to actually label the icons.</li>
+<li>Change the Marks Type to Shape</li>
+<li>Drop the Event Type Value to Shape on the Marks Card</li>
+</ul>
+<p>Your screen should look like the screenshot below.</p>
+<p><img src="images/4.1.%20Drop%20Event%20Type%20Value.png" /></p>
+<ul>
+<li>Double-click on the Shape on the Marks Card to open the Edit Shape window</li>
+</ul>
+<p><img src="images/4.1.%20Change%20Shape.png" /></p>
+<p>Your new custom icons should appear under Shape Palette. If it doesn’t, try Reload Shapes or close the workbook and open again.</p>
+<ul>
+<li>Click on the data item then click on the icon to assign the icon to a particular data item</li>
+<li>Click Apply &gt; OK</li>
+</ul>
+<p>Now We just have to do some adjustments to make it look nicer.</p>
+<ul>
+<li>Change the display from Standard to Fit Height</li>
+</ul>
+<p><img src="images/4.1.%20Fit%20Height.png" /></p>
+<ul>
+<li>Double-click on the Label on the Marks Card and change the alignment to bottom-center.</li>
+</ul>
+<p><img src="images/4.1.%20Align%20Label.png" /></p>
+<ul>
+<li><p>Unshow the header by right-clicking on the Event Type Value pill in the Rows Shelf &gt; Uncheck Show Header. We do not need it anymore because we already have the label.</p></li>
+<li><p>Double Click on the Size on the Marks Card and adjust the size to make the icon bigger</p></li>
+<li><p>Remove the lines on the top and bottom of the icons. From the drop-down menu, click Format &gt; Borders then change the Pane Row Divider to None in the panel.</p></li>
+</ul>
+<p><img src="images/4.1.%20Remove%20Line.png" /></p>
+<p>We have done the first element of the visualisation. Your screen should look like the screenshot below. The linking for the filter will be done later at the dashboard.</p>
+<p><img src="images/4.1.%20Icons.png" /></p>
+<h2 id="density-maps">4.2 Density Maps</h2>
+<p>For the density maps, we will need to create another parameter and several calculated fields.</p>
+<h3 id="parameter">Parameter</h3>
+<p>Repeat the steps to create parameter shown in section 4.1 for a parameter called Select Measure. The values in the Excel file are “Fatalities” and “Number of Events.”</p>
+<p>The properties of the parameter is shown below.</p>
+<p><img src="images/4.2.%20Select%20Measure.png" /></p>
+<h3 id="calculated-fields">Calculated Fields</h3>
+<p>To create calculated fields, click the grey triangle beside the search bar like if you are going to create a parameter &gt; Create Calculated Field… Make sure that the ACLED Data Source is selected.</p>
+<p>The calculated fields to be created are as the following:</p>
+<ol type="1">
+<li>Filtered Event ID</li>
+</ol>
+<pre><code>if [Select Event Type] == &quot;All&quot;
+  then [Event Id Cnty]
+elseif [Select Event Type] == [Event Type]
+  then [Event Id Cnty]
+end</code></pre>
+<h3 id="create-density-map">Create Density Map</h3>
+<p>We need a dual axis to create the density map if we want to remove all background maps. We will only use the National Boundary as the background map.</p>
+<ul>
+<li>From the Data Pane, under ACLED data, drop Longitude to Columns shelf and the Latitude to Rows shelf, 2 times.</li>
+</ul>
+<p>Your screen should look like the screenshot below.</p>
+<p><img src="images/4.2.%20Longitude%20Latitude.png" /></p>
+<ul>
+<li>Change the marks type of the first AVG(Latitude) Marks Card to Map</li>
+<li>Add Geometry of National Boundary to Detail on the Marks Card</li>
+</ul>
+<p><img src="images/4.2.%20Select%20Marks%20type.png" /></p>
+<ul>
+<li>Change the Marks type of the second AVG(Latitude) Marks Card to Density</li>
+<li>Add Filtered Event ID as the level of detail</li>
+</ul>
+<p><img src="images/4.2.%20Density%20Map%20v1.png" /></p>
+<ul>
+<li>Right click on the second AVG(Latitude) pill on the Rows Shelf &gt; Dual Axis</li>
+</ul>
+<p><img src="images/4.2.%20Dual%20Axis.png" /></p>
+<h3 id="create-trellis-map">Create Trellis Map</h3>
+<p>To create trellis map, we are going to add an additional field in the Columns shelf Tableau can automatically create the chart for us.</p>
+<ul>
+<li>Drop Year to the Columns Shelf, in front of AVG(Longitude)</li>
+<li>Right-click on the Year pill on the Columns shelf from Continuos to Discrete.</li>
+</ul>
+<p><img src="images/4.2.%20Trellis%20Year.png" /></p>
+<ul>
+<li>Add Year filter to only show the data between 2015 and 2020. We can do this in Data Source tab to make the filter works globally in the workbook.</li>
+</ul>
+<p><img src="images/4.2.%20Year%20Filter.png" /></p>
+<h3 id="edit-tooltip">Edit Tooltip</h3>
+<p>We want to make the tooltip more informative, so we need to add the fields to the Tooltip on the Marks Card first.</p>
+<ul>
+<li>Select the Marks Card for density map (the second AVG(Latitude) marks)</li>
+<li>Add the fields of interest (Notes, Location, and State) to the Tooltip</li>
+<li>Double-click on the Tooltip icon to edit the text being shown. ‘&lt;&gt;’ indicates that it is a variable.</li>
+</ul>
+<p><img src="images/4.2.%20Edit%20Tooltips.png" /></p>
+<ul>
+<li>Edit the Tooltip for the Background Map in the first AVG(Latitude) marks card to remove everything. We don’t want to see a tooltip when the user hovers over the background map.</li>
+</ul>
+<h3 id="adjust-formatting">Adjust Formatting</h3>
+<ul>
+<li>We can rename the Sheet for easier referencing, the title will not be displayed in the dashboard.</li>
+<li>Remove the background map by clicking Map in the drop-down menu &gt; Map Layers… &gt; Slide Washout to 100%</li>
+<li>We can adjust the colour of the map, colour and size of the density marks using the Marks Card.
+<ul>
+<li>I used Density Orange-Light Colour with 75% intensity and 100% opacity for the density</li>
+<li>Black for the background map</li>
+</ul></li>
+<li>Repeat steps to remove the header so the year will not be shown. We will use another sheet to give the Year label later.</li>
+<li>Remove map interactive functions such as pan and zoom. Since we only have Myanmar map, this function is not necessary.
+<ul>
+<li>From Map in the menu drop-down, select Map Options…</li>
+</ul>
+<img src="images/4.2.%20Turn%20off%20Pan%20and%20Zoom.png" /></li>
+</ul>
+<p>The final look for my density map is shown below.</p>
+<p><img src="images/4.2.%20Density%20Map%20v2.png" /></p>
+<h2 id="trellis-bar-charts">4.3 Trellis Bar Charts</h2>
+<p>We will have a breakdown of the event type under each cell of density map. We will need to create several parameters and calculated fields first.</p>
+<h3 id="parameter-1">Parameter</h3>
+<ul>
+<li>Repeat the steps to create a parameter
+<ul>
+<li>Create an Excel file for the possible values (“Fatalities” and “Number of Events”) with “Measure” as the Field name.</li>
+<li>Add new data source</li>
+<li>Open a new worksheet and from the Data pane select Create Parameter…</li>
+</ul></li>
+</ul>
+<p>The properties of the parameter should look as the following. <img src="images/4.2.%20Select%20Measure.png" /></p>
+<h3 id="calculated-fields-1">Calculated Fields</h3>
+<p>We need more calculated fields to enable the interactive functions to select the measure to be displayed, whether it is the number of events or the number of fatalities. The name of the calculated fields and the formulas are listed below.</p>
+<ol type="1">
+<li>Number of Records</li>
+</ol>
+<pre><code>1</code></pre>
+<ol type="1">
+<li>Selected Measure</li>
+</ol>
+<pre><code>CASE [Select Measure]
+when &quot;Number of Events&quot; then [Number of Records]
+when &quot;Fatalities&quot; then [Fatalities]
+END</code></pre>
+<h3 id="create-bar-chart-for-selected-parameter">Create Bar Chart for Selected Parameter</h3>
+<ul>
+<li>Drop Selected Measure to Columns shelf and Event Type to Rows Shelf. Sum aggregation will be chosen by default for the Selected Measure. This will count the total of the Selected Measure calculated field for each Event Type.</li>
+</ul>
+<p>Your screen should look like the screenshot below.</p>
+<p><img src="images/4.3.%20Bar%20Charts%20of%20Event%20Type.png" /></p>
+<ul>
+<li>Repeat steps to make it a trellis display
+<ul>
+<li>Add Year to the Columns shelf</li>
+<li>Convert Year to Discrete</li>
+</ul></li>
+</ul>
+<p><img src="images/4.3.%20Trellis%20Bar%20Chart.png" /></p>
+<h3 id="edit-tooltip-1">Edit Tooltip</h3>
+<ul>
+<li>Repeat the steps to edit the tooltip, and change the “Selected Measure” to Parameters.Select Measure, as shown in the screenshot below.</li>
+</ul>
+<p><img src="images/4.3.%20Tooltip.png" /></p>
+<h3 id="adjust-formatting-1">Adjust Formatting</h3>
+<p>Rather than repeating all the y-axis label for each cell, we will create a dynamic text to show what measure is being displayed later. * Double-click on the “Selected Measure” axis label * Delete the Title and leave it empty</p>
+<p><img src="images/4.3.%20Remove%20Axis%20Label.png" /></p>
+<ul>
+<li>Repeat steps to remove the header so the year will not be shown.</li>
+<li>Change the colour of the bar chart to black from Color on the Marks Card.</li>
+<li>Ensure the Event Type is not truncated
+<ul>
+<li>Right click on the Event Type row labels &gt; Format…</li>
+<li>Change Default Font to size 8</li>
+<li>Hover over the right side of the red-coloured box shown below until a double-sided arrow appears and drag to the right to make the column for event type wider.</li>
+</ul></li>
+</ul>
+<p><img src="images/4.3.%20Reduce%20Font%20Size.png" /></p>
+<p>The trellis bar chart should look like the screenshot below.</p>
+<p><img src="images/4.3.%20Final%20Trellis%20Bar%20Chart.png" /></p>
+<h2 id="top-state-highlight-map">4.4 Top State Highlight Map</h2>
+<p>For this visualisation, we will use the State and Boundary as the Background map and highlight the state with the highest sum of measure using a red colour. The steps to highlight the max value is inpired by Rahul <span class="citation" data-cites="rahul_2017_tableau">(<a href="#ref-rahul_2017_tableau" role="doc-biblioref">2017</a>)</span> and Tableau Knowledge Base<span class="citation" data-cites="tableau_2017_finding">(<a href="#ref-tableau_2017_finding" role="doc-biblioref">2017</a>)</span>. As with the previous visualisations, we need to create a calculated field first.</p>
+<h3 id="calculated-fields-2">Calculated Fields</h3>
+<p>We will make use of the fixed function which disaggregates the calculation and use a fixed level of detail <span class="citation" data-cites="tableau_2020_fixed">(<a href="#ref-tableau_2020_fixed" role="doc-biblioref">Tableau 2020</a>)</span>. Without using fixed function, we will get an error saying an aggregate field cannot be further aggregated.</p>
+<ol type="1">
+<li>Selected Event Type</li>
+</ol>
+<pre><code>if [Select Event Type] == &quot;All&quot;
+then [Selected Measure]
+elseif [Select Event Type] == [Event Type]
+then [Selected Measure]
+else 0
+end</code></pre>
+<ol type="1">
+<li>Max Measure</li>
+</ol>
+<pre><code>Max({fixed [State]: sum([Selected Event Type])})</code></pre>
+<ol type="1">
+<li>isHighestState</li>
+</ol>
+<pre><code>if {fixed [State]: sum([Selected Event Type])} == {fixed:[Max Measure]}
+then &quot;Yes&quot;
+else &quot;No&quot;
+end
+</code></pre>
+<h3 id="map-with-highest-state-highlight">Map with Highest State Highlight</h3>
+<ul>
+<li>Drop the Geometry from State and Region Boundary to the workspace</li>
+<li>Drop isHighestState to Color on the Marks Card</li>
+</ul>
+<p>Your screen should look like the screnshot below.</p>
+<p><img src="images/4.4.%20Highest%20State%20v1.png" /></p>
+<h3 id="edit-tooltip-2">Edit Tooltip</h3>
+<p>We are going to create two more calculated fields just for the tooltip. We will return a value for the highest state but return NULL for the rest. This is to prevent the tooltip from showing if the user hovers over the other states.</p>
+<ul>
+<li>Create the following calculated fields</li>
+</ul>
+<ol type="1">
+<li>Highest State Name</li>
+</ol>
+<pre><code>if [isHighestState] == &quot;Yes&quot;
+then [State]
+else NULL
+END</code></pre>
+<ol type="1">
+<li>Highest State Measure Label</li>
+</ol>
+<pre><code>if [isHighestState] == &quot;Yes&quot;
+then [Select Measure] + &quot; of &quot; + [Select Event Type] + &quot; :      &quot;
+else NULL
+END</code></pre>
+<ol type="1">
+<li>Measure of Highest State</li>
+</ol>
+<pre><code>if [isHighestState] == &quot;Yes&quot;
+then {fixed: [Max Measure]}
+else NULL
+END</code></pre>
+<ul>
+<li>Drop the three calculated fields to Tooltip on the Marks Card</li>
+<li>Edit the Tooltip to only show the calculated fields. We also adjust the font size and other properties.</li>
+</ul>
+<p><img src="images/4.4.%20Tooltip.png" /></p>
+<h3 id="adjust-formatting-2">Adjust Formatting</h3>
+<p><em>As with the density map, remove the background map and remove interactive map features. </em> Map &gt; Map Layers… &gt; Washout = 100% * Map &gt; Map Options… &gt; Uncheck all * Change the colour of the map * Double-click on Color on the Marks Card * Increase Opacity to 100% * Click Edit Colors… &gt; Change “No” to black and “Yes” to red * Remove border by clicking Format menu &gt; Borders &gt; Rows &gt; change Pane Row Divider to None * Repeat for columns</p>
+<p><img src="images/4.4.%20Remove%20Border.png" /></p>
+<p>After the formatting, your screen should look similar to the screenshot below.</p>
+<p><img src="images/4.4.%20Final%20Highest%20State.png" /></p>
+<p>If the state that is being highlighted is different, it might be due to the different parameters being selected. The parameters that were selected on this screenshot is Fatalities of Protest event type. If we want to change it, we can right-click on the parameters on the Data Pane &gt; Show Parameter.</p>
+<h2 id="top-states-bar-chart">4.5 Top States Bar Chart</h2>
+<p>Next, we are going to use the existing calculated fields to create a bar chart that displays the top 10 states in descending order by the values selected in the parameter.</p>
+<ul>
+<li>Drop Selected Event Type to the Columns shelf, State to the Rows shelf, and isHighestState to Color on the Marks Card</li>
+</ul>
+<p><img src="images/4.5.%20Top%20States%20Bar%20Chart.png" /></p>
+<ul>
+<li>Right-click on the State Row Header &gt; Sort Descending</li>
+</ul>
+<p><img src="images/4.5.%20Sort%20Descending.png" /></p>
+<ul>
+<li>To add the filter, do the following steps:
+<ul>
+<li>Right-click on the State Row Header &gt; Sort Descending</li>
+<li>Select Top &gt; By Formula</li>
+<li>Enter the following formula:</li>
+</ul>
+<pre><code>  SUM([Selected Event Type])</code></pre></li>
+</ul>
+<p><img src="images/4.5.%20Filter%20Top%2010.png" /></p>
+<p>Your screen should only show 10 states now.</p>
+<p><img src="images/4.5.%20Top%2010%20States.png" /></p>
+<h3 id="edit-tooltip-3">Edit Tooltip</h3>
+<ul>
+<li>Double-click on Tooltip on the Marks Card</li>
+<li>Remove the isHighestState from the Tooltip and change the “Selected Event Type” Label to a dynamic value from the Parameters.Select Measure and Parameters.Select Event Type</li>
+</ul>
+<p><img src="images/4.5.%20Tooltip.png" /></p>
+<h3 id="adjust-formatting-3">Adjust Formatting</h3>
+<ul>
+<li>Remove the x-axis label by double-clicking on the label &gt; Delete Title &gt; Close dialog box</li>
+</ul>
+<p>The final look for top states bar chart is shown below.</p>
+<p><img src="images/4.5.%20Final%20Top%20States.png" /></p>
+<h2 id="year-label">4.6. Year Label</h2>
+<p>We are going to create a year label to replace the labels in the density maps and the trellis bar charts that we have removed.</p>
+<ul>
+<li>Create a new sheet</li>
+<li>Add Year to the Columns shelf and Text on the Marks Card</li>
+<li>Convert the Year from Continuous to Discrete</li>
+</ul>
+<p>Your screen should look like the screenshot below.</p>
+<p><img src="images/4.6.%20Year%20Label.png" /></p>
+<ul>
+<li>Adjust the format of the text to make it bolder and larger by double-clicking on Text on the Marks Card</li>
+</ul>
+<p><img src="images/4.6.%20Formatted%20Year.png" /></p>
+<ul>
+<li>Remove the Year header by right-clicking on the Year pill on the Columns shelf &gt; Uncheck Show Header</li>
+<li>Remove the lines by clicking on the Format from the menu drop-down &gt; Borders &gt; Change Row Pane Divider to None</li>
+</ul>
+<p>The formatted year label is shown in the screenshot below.</p>
+<p><img src="images/4.6.%20Final%20Year%20Label.png" /></p>
+<h2 id="measure-parameter-buttons">4.7 Measure Parameter Buttons</h2>
+<p>For the measure parameter buttons, we need to create each button separately in different sheets so we can move the buttons freely.</p>
+<ul>
+<li>Create New Sheet called Fatalities</li>
+<li>Add Measure from the Measure Data Source that we created in the Excel file to the Columns shelf, Text on Marks Card, and Filters</li>
+<li>Only keep “Fatalities”</li>
+</ul>
+<p>Your screen should look like the screenshot below.</p>
+<p><img src="images/4.7.%20Fatalities%20v1.png" /></p>
+<ul>
+<li>Adjust the formatting to make it look like a button
+<ul>
+<li>Repeat the steps to remove header</li>
+<li>Repeat the steps the text format make it bigger and bolder</li>
+<li>Add the column border by clicking Format from the menu drop-down &gt; Borders &gt; Column &gt; Change Pane Column Divider to the first line under “None”</li>
+</ul></li>
+</ul>
+<p><img src="images/4.7.%20Add%20column%20border.png" /></p>
+<ul>
+<li>Change the background colour by clicking the bucket icon in the Format pane &gt; Sheet &gt; Change Pane colour to red</li>
+</ul>
+<p><img src="images/4.7.%20Change%20Colour.png" /></p>
+<ul>
+<li>Change the colour of the text to make it more readable, such as white colour</li>
+</ul>
+<p>The final look of the button sheet looks like the screenshot below.</p>
+<p><img src="images/4.7.%20Final%20Fatalities%20Button.png" /></p>
+<p>Repeat the steps to create another button for Number of Events.</p>
+<p><img src="images/4.7.%20Number%20of%20Events.png" /></p>
+<h2 id="dashboard">4.8 Dashboard</h2>
+<p>We will now combine all the different components into one dashboard.</p>
+<ul>
+<li>Create a new dashboard and adjust the size. We will use PowerPoint (1600 x 900) in this example.</li>
+<li>Arrange the Sheets and Objects so it will look like the screenshot below.The legend of which element is on the dashboard is shown in the left side.
+<ul>
+<li>Drag the elements to the dashboard from the outermost layer to the innermost layer. Please note that some dummy texts and some adjustments are done to make the layout fit.</li>
+</ul></li>
+</ul>
+<p><img src="images/4.8.%20Marked%20Layout.png" /></p>
+<p>There is also a text object at the bottom, but it is truncated due to the screen size.</p>
+<ul>
+<li>To resize the layout, we can click the Fit drop down above the dashboard and change from standard to fit height or fit width. If it does not work, we can hover to the right corner of the sheet to resize the width or to the bottom of the sheet to resize the height.</li>
+<li>I have removed the title on the top states bar chart by changing the colour to white so it will stay aligned with the map on its left side.</li>
+<li>The On Display text object is a dynamic text that shows the selected filter. Use the following formula to display the value.</li>
+</ul>
+<p><img src="images/4.8.%20On%20Display.png" /></p>
+<h3 id="use-sheets-as-custom-filter">Use Sheets as Custom Filter</h3>
+<p>We have 3 sheets in the dashboard that is meant to be used as a filter: Icons, Fatalities, and Number of Events. We can change the value of parameters according to actions performed on these sheet.</p>
+<ul>
+<li>Click Dashboard from the menu drop-down &gt; Actions…</li>
+</ul>
+<p><img src="images/4.8.%20Create%20Dashboard%20Action.png" /></p>
+<ul>
+<li>Click Add Action &gt; Change Parameter…</li>
+<li>Use the following properties for the parameter</li>
+</ul>
+<p><img src="images/4.8%20Add%20Parameter%20Aciton.png" /></p>
+<ul>
+<li>Add a name for the parameter action</li>
+<li>Source Sheet means the the parameter change will be performed when the user performs an action on the source sheet. Set the Source sheet to Icons.</li>
+<li>Target is the parameter that we are going to change. We will use the icons to change the Select Event Type parameter to the Event Type Value of the icon that is clicked.</li>
+<li>We want to have “All” as the default, so set back the parameter to “All” when selection is cleared.</li>
+</ul>
+<p>We can try to click the different icons and observe how the density maps and the top states visualisation changes according to the selection. Note that the trellis bar chart will not change because it always has all event types by default.</p>
+<p>Repeat adding parameter action for the Fatalities with the following propoerties.</p>
+<p><img src="images/4.8.%20Fatalities%20Select%20Measure.png" /></p>
+<p>Repeat again for Number of Events, keeping all the properties for Fatalities Select Measure action except changing the source sheets to Number of Events only.</p>
+<h3 id="add-highlighter">Add Highlighter</h3>
+<p>We will use the year as a highlighter, but we will use hover action instead of select. * Click Dashboard menu &gt; Actions… &gt; Add Action &gt; Highlight … * Set the Action as hover and source sheet as Year. * Only keep Bar Charts of Event Type and Density Map as the target sheet.</p>
+<p><img src="images/4.8%20Year%20Highlighter.png" /></p>
+<ul>
+<li>Repeat the steps to add another highlighter for state with the following configuration</li>
+</ul>
+<p><img src="images/4.8.%20State%20Highlighter.png" /></p>
+<ul>
+<li>Edit the Title to be dynamically changing based on the selected parameters.
+<ul>
+<li>Double-click on the Title. Enter the following</li>
+</ul></li>
+</ul>
+<p><img src="images/4.8.%20Dashboard%20Title.png" /></p>
+<p>Congratulations! We have completed our dashboard.</p>
+<p><img src="images/3.%20Final%20Dashboard.png" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-cuddy_2021_myanmar" class="csl-entry" role="doc-biblioentry">
+Cuddy, Alice. 2021. <span>“Myanmar Coup: What Is Happening and Why?”</span> BBC News; BBC News. <a href="https://www.bbc.com/news/world-asia-55902070">https://www.bbc.com/news/world-asia-55902070</a>.
+</div>
+<div id="ref-a2020_dot" class="csl-entry" role="doc-biblioentry">
+<span>“Dot Density Maps.”</span> 2020. Axis Maps. <a href="http://www.axismaps.com.s3-website-us-east-1.amazonaws.com/guide/univariate/dot-density/">http://www.axismaps.com.s3-website-us-east-1.amazonaws.com/guide/univariate/dot-density/</a>.
+</div>
+<div id="ref-armedconflictlocationeventdataprojectacled_2019_armed" class="csl-entry" role="doc-biblioentry">
+Event Data Project (ACLED), Armed Conflict Location &amp;. 2019. <span>“Armed Conflict Location &amp; Event Data Project (ACLED) Codebook.”</span> ACLED. <a href="https://acleddata.com/download/2827/">https://acleddata.com/download/2827/</a>.
+</div>
+<div id="ref-a2021_legends" class="csl-entry" role="doc-biblioentry">
+<span>“Legends.”</span> 2021. Carbon Design System; IBM. <a href="https://www.carbondesignsystem.com/data-visualization/legends/">https://www.carbondesignsystem.com/data-visualization/legends/</a>.
+</div>
+<div id="ref-maizland_2021_myanmars" class="csl-entry" role="doc-biblioentry">
+Maizland, Lindsay. 2021. <span>“Myanmar’s Troubled History: Coups, Military Rule, and Ethnic Conflict.”</span> Council on Foreign Relations. <a href="https://www.cfr.org/backgrounder/myanmar-history-coup-military-rule-ethnic-conflict-rohingya">https://www.cfr.org/backgrounder/myanmar-history-coup-military-rule-ethnic-conflict-rohingya</a>.
+</div>
+<div id="ref-bbcnews_2021_aung" class="csl-entry" role="doc-biblioentry">
+News, BBC. 2021. <span>“Aung San Suu Kyi: Myanmar Democracy Icon Who Fell from Grace.”</span> BBC News; BBC News. <a href="https://www.bbc.com/news/world-asia-pacific-11685977">https://www.bbc.com/news/world-asia-pacific-11685977</a>.
+</div>
+<div id="ref-rahul_2017_tableau" class="csl-entry" role="doc-biblioentry">
+Rahul. 2017. <span>“Tableau Tips : Highlighting Max and Min in the Chart – Data Vizzes.”</span> Data Vizzes. <a href="https://www.vizzingdata.com/tableau-tips-highlighting-max-and-min-in-the-chart/">https://www.vizzingdata.com/tableau-tips-highlighting-max-and-min-in-the-chart/</a>.
+</div>
+<div id="ref-Stone2006ChoosingCF" class="csl-entry" role="doc-biblioentry">
+Stone, M. 2006. <span>“Choosing Colors for Data Visualization.”</span> <em>Perceptual Edge</em>. <a href="http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf">http://www.perceptualedge.com/articles/b-eye/choosing_colors.pdf</a>.
+</div>
+<div id="ref-tableau_2017_finding" class="csl-entry" role="doc-biblioentry">
+Tableau. 2017. <span>“Finding the Dimension Member with the Highest Measure Value | Tableau Software.”</span> Tableau Knowledge Base; Tableau. <a href="https://kb.tableau.com/articles/howto/finding-the-dimension-member-with-the-highest-measure-value">https://kb.tableau.com/articles/howto/finding-the-dimension-member-with-the-highest-measure-value</a>.
+</div>
+<div id="ref-tableau_2020_fixed" class="csl-entry" role="doc-biblioentry">
+———. 2020. <span>“FIXED Level of Detail Expressions.”</span> help.tableau.com. <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod_fixed.htm">https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod_fixed.htm</a>.
+</div>
+</div>
+<!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="disqus-comments">
+      <i class="fas fa-comments"></i>
+      &nbsp;
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2021-03-16-dataviz-makeover-3/">Comment on this article</span>
+    </span>
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=DataViz%20Makeover%203%20-%20Armed%20Conflict%20Location%20and%20Event%20Data&amp;url=https%3A%2F%2Fgabriellapauline.netlify.app%2Fposts%2F2021-03-16-dataviz-makeover-3%2F">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgabriellapauline.netlify.app%2Fposts%2F2021-03-16-dataviz-makeover-3%2F&amp;title=DataViz%20Makeover%203%20-%20Armed%20Conflict%20Location%20and%20Event%20Data">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </span>
+  </p>
+  <script id="dsq-count-scr" src="https://gabriellapauline.disqus.com/count.js" async></script>
+  <div id="disqus_thread" class="hidden"></div>
+  <script type="text/javascript" cookie-consent="functionality">
+var disqus_config = function () {
+  this.page.url = 'https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/';
+  this.page.identifier = 'posts/2021-03-16-dataviz-makeover-3/';
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://gabriellapauline.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+</div>
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="references">References</h3>
+  <div id="references-listing"></div>
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Djojosaputro (2021, March 16). Gabriella Pauline: DataViz Makeover 3 - Armed Conflict Location and Event Data. Retrieved from https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{djojosaputro2021dataviz,
+  author = {Djojosaputro, Gabriella Pauline},
+  title = {Gabriella Pauline: DataViz Makeover 3 - Armed Conflict Location and Event Data},
+  url = {https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/},
+  year = {2021}
+}</pre>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

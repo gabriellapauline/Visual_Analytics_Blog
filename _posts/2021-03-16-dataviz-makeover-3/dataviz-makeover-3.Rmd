@@ -15,13 +15,9 @@ output:
     toc: true
     toc_depth: 2
 bibliography: Dataviz3.bib
-draft: TRUE
 
 
 ---
-nocite: |
-@battersby_2017_10
-...
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -98,7 +94,7 @@ Although the original visualisation contains multiple countrieds in Southeast As
 
 ![Figure 7. Alternative Graphical Representation](./images/3. Alternative Graphical Representation.jpeg)
 Due to the problem of the overlapping points (Clarity #1), I have decided to use another way to represent the spatial data. Initially, I thought of using a proportional symbol map with lower opacity to better represent the data, as the overlapping points will contribute to the size of the symbol. However, this method requires aggregation, and there is a problem in the mapping of the geographical data. There were hundreds of unrecognized location from the Admin 3 attribute (The third largest sub-national administrative region in which
-the event took place [@armed_conflict_location_and_events_data_project_acled_2019_armed]). Aggregating on the higher level would not solve the issue. Even though the number of unrecognized location would be manageable to resolve manually, but the map will be less meaningful because it is too aggregated. Therefore, as shown in number 2 in Figure 7, I have decided to create density maps to represent the data instead.
+the event took place [@armedconflictlocationeventdataprojectacled_2019_armed]). Aggregating on the higher level would not solve the issue. Even though the number of unrecognized location would be manageable to resolve manually, but the map will be less meaningful because it is too aggregated. Therefore, as shown in number 2 in Figure 7, I have decided to create density maps to represent the data instead.
 
 This alternative resolves the issues shown in section 2 as the following. Numerical references in the section below are tied to the numbered items in the proposed alternative visualisation in Figure 7.
 
