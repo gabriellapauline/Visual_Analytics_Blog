@@ -481,10 +481,45 @@ END
   * Increase Opacity to 100%
   * Click Edit Colors... > Change "No" to black and "Yes" to red
   
-After the formatting, your screen should look similar to the screenshot below.
+After the formatting, your screen should look similar to the screenshot below. 
 
 ![](./images/4.4. Final Highest State.png)
   
+The parameters that were selected on this screenshot is Fatalities of Protest event type. If we want to change it, we can right-click on the parameters on the Data Pane > Show Parameter.
+
+![](./images/4.4. Show Parameter.png)
+
+## 4.5 Top States Bar Chart
+Next, we are going to use the existing calculated fields to create a bar chart that displays the top 10 states in descending order by the values selected in the parameter.
+
+* Drop Selected Event Type to the Columns shelf, State to the Rows shelf, and isHighestState to Color on the Marks Card
+
+![](./images/4.5. Top States Bar Chart.png)
+
+* Right-click on the State Row Header > Sort Descending
+
+![](./images/4.5. Sort Descending.png)
+
+* To add the filter, do the following steps:
+  * Right-click on the State Row Header > Sort Descending
+  * Select Top > By Formula
+  * Enter the following formula:
+```
+    SUM([Selected Event Type])
+```
+  
+![](./images/4.5. Filter Top 10.png)
+
+Your screen should only show 10 states now.
+
+![](./images/4.5. Top 10 States.png)
+
+### Adjust Formatting
+* Remove the x-axis label by double-clicking on the label > Delete Title > Close dialog box
+
+The final look for top states bar chart is shown below.
+
+![](./images/4.5. Final Top States.png)
 
 
 
