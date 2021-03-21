@@ -2,7 +2,7 @@
 title: "DataViz Makeover 3 - Armed Conflict Location and Event Data"
 description: |
   Visualisation makeover for geospatial data
-preview: 
+preview: ./images/3. Final Dashboard.png
 author:
   - name: Gabriella Pauline Djojosaputro
     url: https://www.linkedin.com/in/gabriellapauline/
@@ -15,8 +15,6 @@ output:
     toc: true
     toc_depth: 2
 bibliography: Dataviz3.bib
-
-
 ---
 
 ```{r setup, include=FALSE}
@@ -652,3 +650,40 @@ Congratulations! We have completed our dashboard.
 
 ![](./images/3. Final Dashboard.png)
 
+# 5. Major Observations
+
+## a. Armed Conflict Events are concentrated on the northeastern and western part of Myanmar
+This is consistent to the [Rohingya](https://www.bbc.com/news/world-asia-41566561) and [Shan State Army - North](https://www.hrw.org/news/2019/09/07/myanmar-civilians-caught-shan-state-fighting) conflicts that we may have seen in the news.
+
+![](./images/5.a Number of Events.png)
+
+The total number of events are highest in Shan, with more concentration on the western part of Myanmar on 2019 and 2020.
+
+## b. Protests can happen anywhere in the country, but Yangon accounts for the highest number of protests
+
+![](./images/5.b. Protests.png)
+
+Even though [Yangon is no longer the capital city of Myanmar since 2005](https://www.washingtonpost.com/world/2021/02/06/myanmars-military-built-new-capital-haven-power-other-countries-have-tried-that-too/), people still protests the most in Yangon. Some [analysts believed](https://www.theguardian.com/cities/2015/mar/19/burmas-capital-naypyidaw-post-apocalypse-suburbia-highways-wifi) that the move of capital city is motivated by the desire to shield the military from people's protests, as Yangon is highly populated. If this analysis is true, the strategy seems to be working. 
+
+## c. The violence against civilians in Rakhine is the lowest in 2018
+
+![](./images/5.c 2018 has lowest violence.png)
+
+After the vast publication of Rohingya crisis in 2017, the density of violence against civilians decreases in 2018 before picking up again in 2019. This shows that media publication and protests actually helps to deter people from performing injustice, although it might be only temporary. This shows ignorance is very dangerous.
+
+## d. A conflict is rarely a one-off event, it may take years to resolve
+
+For battles, explosions, and violence against civilians, we can see that the hotspots never disappears suddenly. It will continue to exist the subsequent years, although it may fade gradually. Riot is an exception because the number is too low, so the points in the map are individual location of a riot event. This shows that the process of conflict resolution must be pursued consistently and patiently, even when the progress seem to be close to none.
+
+![](./images/5.d battle.png)
+
+![](./images/5.d explosion.png)
+
+![](./images/5.d violence.png)
+
+## e. Battles account for the highest number of fatalities and number of events
+Battle has the highest number of events and the highest number of fatalities. Violence has the second highest number of fatalities, even though the number of events ranks 4th. This is due to the spike of fatalities caused by violence against civilians in 2017. Battles is very costly, and therefore we should strive to maintain peace. 
+
+![](./images/5.e battle number of events.png)
+
+![](./images/5.e battle fatalities.png)
