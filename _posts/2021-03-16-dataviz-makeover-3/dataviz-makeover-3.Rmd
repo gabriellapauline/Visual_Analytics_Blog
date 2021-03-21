@@ -16,8 +16,12 @@ output:
     toc_depth: 2
 bibliography: Dataviz3.bib
 draft: TRUE
----
 
+
+---
+nocite: |
+@battersby_2017_10
+...
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -377,6 +381,11 @@ Your screen should look like the screenshot below.
 
 ![](./images/4.3. Trellis Bar Chart.png)
 
+### Edit Tooltip
+* Repeat the steps to edit the tooltip, and change the "Selected Measure" to Parameters.Select Measure, as shown in the screenshot below.
+
+![](./images/4.3. Tooltip.png)
+
 ### Adjust Formatting
 
 Rather than repeating all the y-axis label for each cell, we will create a dynamic text to show what measure is being displayed later. 
@@ -480,14 +489,16 @@ END
   * Double-click on Color on the Marks Card
   * Increase Opacity to 100%
   * Click Edit Colors... > Change "No" to black and "Yes" to red
+  * Remove border by clicking Format menu > Borders > Rows > change Pane Row Divider to None
+  * Repeat for columns
+  
+![](./images/4.4. Remove Border.png)
   
 After the formatting, your screen should look similar to the screenshot below. 
 
 ![](./images/4.4. Final Highest State.png)
   
-The parameters that were selected on this screenshot is Fatalities of Protest event type. If we want to change it, we can right-click on the parameters on the Data Pane > Show Parameter.
-
-![](./images/4.4. Show Parameter.png)
+If the state that is being highlighted is different, it might be due to the different parameters being selected. The parameters that were selected on this screenshot is Fatalities of Protest event type. If we want to change it, we can right-click on the parameters on the Data Pane > Show Parameter.
 
 ## 4.5 Top States Bar Chart
 Next, we are going to use the existing calculated fields to create a bar chart that displays the top 10 states in descending order by the values selected in the parameter.
@@ -513,6 +524,12 @@ Next, we are going to use the existing calculated fields to create a bar chart t
 Your screen should only show 10 states now.
 
 ![](./images/4.5. Top 10 States.png)
+
+### Edit Tooltip
+* Double-click on Tooltip on the Marks Card
+* Remove the isHighestState from the Tooltip and change the "Selected Event Type" Label to a dynamic value from the Parameters.Select Measure and Parameters.Select Event Type
+
+![](./images/4.5. Tooltip.png)
 
 ### Adjust Formatting
 * Remove the x-axis label by double-clicking on the label > Delete Title > Close dialog box
@@ -576,7 +593,66 @@ Repeat the steps to create another button for Number of Events.
 
 ![](./images/4.7. Number of Events.png)
 
+## 4.8 Dashboard
+We will now combine all the different components into one dashboard.
 
+* Create a new dashboard and adjust the size. We will use PowerPoint (1600 x 900) in this example.
+* Arrange the Sheets and Objects so it will look like the screenshot below.The legend of which element is on the dashboard is shown in the left side. 
+  * Drag the elements to the dashboard from the outermost layer to the innermost layer. Please note that some dummy texts and some adjustments are done to make the layout fit.
 
+![](./images/4.8. Marked Layout.png)
 
+There is also a text object at the bottom, but it is truncated due to the screen size.
+
+  * To resize the layout, we can click the Fit drop down above the dashboard and change from standard to fit height or fit width. If it does not work, we can hover to the right corner of the sheet to resize the width or to the bottom of the sheet to resize the height.
+  * I have removed the title on the top states bar chart by changing the colour to white so it will stay aligned with the map on its left side.
+  * The On Display text object is a dynamic text that shows the selected filter. Use the following formula to display the value.
+  
+![](./images/4.8. On Display.png)
+  
+### Use Sheets as Custom Filter
+We have 3 sheets in the dashboard that is meant to be used as a filter: Icons, Fatalities, and Number of Events. We can change the value of parameters according to actions performed on these sheet. 
+
+* Click Dashboard from the menu drop-down > Actions... 
+
+![](./images/4.8. Create Dashboard Action.png)
+
+* Click Add Action > Change Parameter... 
+* Use the following properties for the parameter
+
+![](./images/4.8 Add Parameter Aciton.png)
+
+  * Add a name for the parameter action 
+  * Source Sheet means the the parameter change will be performed when the user performs an action on the source sheet. Set the Source sheet to Icons.
+  * Target is the parameter that we are going to change. We will use the icons to change the Select Event Type parameter to the Event Type Value of the icon that is clicked.
+  * We want to have "All" as the default, so set back the parameter to "All" when selection is cleared.
+  
+We can try to click the different icons and observe how the density maps and the top states visualisation changes according to the selection. Note that the trellis bar chart will not change because it always has all event types by default.
+
+Repeat adding parameter action for the Fatalities with the following propoerties.
+
+![](./images/4.8. Fatalities Select Measure.png)
+
+Repeat again for Number of Events, keeping all the properties for Fatalities Select Measure action except changing the source sheets to Number of Events only.
+
+### Add Highlighter
+We will use the year as a highlighter, but we will use hover action instead of select.
+* Click Dashboard menu > Actions... > Add Action > Highlight ... 
+* Set the Action as hover and source sheet as Year.
+* Only keep Bar Charts of Event Type and Density Map as the target sheet.
+
+![](./images/4.8 Year Highlighter.png)
+
+* Repeat the steps to add another highlighter for state with the following configuration
+
+![](./images/4.8. State Highlighter.png)
+
+* Edit the Title to be dynamically changing based on the selected parameters.
+  * Double-click on the Title. Enter the following
+  
+![](./images/4.8. Dashboard Title.png)
+
+Congratulations! We have completed our dashboard.
+
+![](./images/3. Final Dashboard.png)
 
