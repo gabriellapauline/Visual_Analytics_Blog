@@ -521,5 +521,62 @@ The final look for top states bar chart is shown below.
 
 ![](./images/4.5. Final Top States.png)
 
+## 4.6. Year Label
+
+We are going to create a year label to replace the labels in the density maps and the trellis bar charts that we have removed.
+
+* Create a new sheet
+* Add Year to the Columns shelf and Text on the Marks Card
+* Convert the Year from Continuous to Discrete
+
+Your screen should look like the screenshot below.
+
+![](./images/4.6. Year Label.png)
+
+* Adjust the format of the text to make it bolder and larger by double-clicking on Text on the Marks Card
+
+![](./images/4.6. Formatted Year.png)
+
+* Remove the Year header by right-clicking on the Year pill on the Columns shelf > Uncheck Show Header
+* Remove the lines by clicking on the Format from the menu drop-down > Borders > Change Row Pane Divider to None
+
+The formatted year label is shown in the screenshot below.
+
+![](./images/4.6. Final Year Label.png)
+
+## 4.7 Measure Parameter Buttons
+For the measure parameter buttons, we need to create each button separately in different sheets so we can move the buttons freely.
+
+* Create New Sheet called Fatalities
+* Add Measure from the Measure Data Source that we created in the Excel file to the Columns shelf, Text on Marks Card, and Filters
+* Only keep "Fatalities"
+
+Your screen should look like the screenshot below.
+
+![](./images/4.7. Fatalities v1.png)
+
+* Adjust the formatting to make it look like a button
+  * Repeat the steps to remove header
+  * Repeat the steps the text format make it bigger and bolder
+  * Add the column border by clicking Format from the menu drop-down > Borders > Column > Change Pane Column Divider to the first line under "None"
+  
+![](./images/4.7. Add column border.png)
+
+  * Change the background colour by clicking the bucket icon in the Format pane > Sheet > Change Pane colour to red
+  
+![](./images/4.7. Change Colour.png)
+
+  * Change the colour of the text to make it more readable, such as white colour
+  
+The final look of the button sheet looks like the screenshot below.
+
+![](./images/4.7. Final Fatalities Button.png)
+
+Repeat the steps to create another button for Number of Events.
+
+![](./images/4.7. Number of Events.png)
+
+
+
 
 
