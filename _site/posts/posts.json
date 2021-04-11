@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-04-11-assignment-london-crime-geo-referenced-time-series-clustering/",
+    "title": "Assignment - London Crime Geo-referenced Time Series Clustering",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Gabriella Pauline Djojosaputro",
+        "url": "https://www.linkedin.com/in/gabriellapauline/"
+      }
+    ],
+    "date": "2021-04-11",
+    "categories": [],
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-04-11T20:18:06+08:00",
+    "input_file": "assignment-london-crime-geo-referenced-time-series-clustering.utf8.md"
+  },
+  {
     "path": "posts/2021-03-16-dataviz-makeover-3/",
     "title": "DataViz Makeover 3 - Armed Conflict Location and Event Data",
     "description": "Visualisation makeover for geospatial data",

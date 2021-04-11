@@ -7,14 +7,22 @@
     <description>Analytics Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Assignment - London Crime Geo-referenced Time Series Clustering</title>
+      <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
+      <link>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-london-crime-geo-referenced-time-series-clustering</link>
+      <description>A short description of the post.</description>
+      <guid>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-london-crime-geo-referenced-time-series-clustering</guid>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>DataViz Makeover 3 - Armed Conflict Location and Event Data</title>
       <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
       <link>https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3</link>
       <description>Visualisation makeover for geospatial data</description>
       <guid>https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3</guid>
-      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       <media:content url="https://gabriellapauline.netlify.app/posts/2021-03-16-dataviz-makeover-3/./images/3. Final Dashboard.png" medium="image" type="image/png" width="1602" height="864"/>
     </item>
     <item>

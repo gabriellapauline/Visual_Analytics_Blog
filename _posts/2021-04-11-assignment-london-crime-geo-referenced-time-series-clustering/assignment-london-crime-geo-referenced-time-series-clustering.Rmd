@@ -1,0 +1,27 @@
+---
+title: "Assignment - London Crime Geo-referenced Time Series Clustering"
+description: |
+  A short description of the post.
+author:
+  - name: Gabriella Pauline Djojosaputro
+    url: https://www.linkedin.com/in/gabriellapauline/
+date: 04-11-2021
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    smooth_scroll: true
+    self_contained: false
+bibliography: ISSS606_VA_Assignment2.bib
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
