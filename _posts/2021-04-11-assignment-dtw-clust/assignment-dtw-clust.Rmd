@@ -1,7 +1,8 @@
 ---
 title: "Assignment - London Crime Geo-referenced Time Series Clustering"
 description: |
-  A short description of the post.
+  A dynamic time warping clustering with geo-referenced data on London Crime data.
+preview: ./images/hierarchical_clustering_dashboard.jpeg
 author:
   - name: Gabriella Pauline Djojosaputro
     url: https://www.linkedin.com/in/gabriellapauline/
@@ -160,6 +161,8 @@ glimpse(crime_long)
 
 To explore the data, we can use __timetk__ package that extends __tidyverse__ to deal with time series data. This package also acts as a plotly wrapper to enable interactive time series which is useful to explore the data.
 
+### 3.3.2 Explore raw count of crime recorded
+
 First, we are going to see the time series of lowest level of aggregation in the data, which is by `Minor Category`. We will choose two boroughs arbitrarily just to explore the data. 
 
 ```{r}
@@ -189,9 +192,7 @@ crime_major <- crime_long %>%
   ungroup()
 
 glimpse(crime_major)
-```
 
-```{r}
 crime_major %>%
   filter(Borough==c("Westminster","Barking and Dagenham")) %>%
   plot_time_series(Date,Count,
@@ -207,12 +208,15 @@ crime_major %>%
                    .interactive=TRUE)
   
 ```
+
 An interesting insight revealed by these aggregated time series is that the number of fraud or forgery cases drastically decreased to less than 10 cases per month since 2013. There is also a decreasing trend for theft cases from 2012 in both boroughs, but it increased again since 2017 in Westminster. The slope of change is also much steeper in Westminster. 
 
 However, taking the raw count as it is might be an unfair comparison. In a borough with larger population, the recorded crime cases will also be naturally higher. Therefore, we will normalize the crime count by population in each borough.
 
-### Normalize crime count by population
+### 3.3.2 Normalize crime count by population
+
 First, we need to read the data and join it to the crime time series data. Don't forget to convert the Year column as a date field.
+
 ```{r}
 pop <- read_csv('./data/aspatial/housing-density-borough.csv')
 
@@ -220,6 +224,7 @@ pop$Year <- ymd(paste0(pop$Year,"-01-01"))
 
 glimpse(pop)
 ```
+
 The population data is a yearly data, but we need a monthly data because we will divide the count of crime by the population in the borough (in millions). We will join the population data with a monthly date series and do linear interpolation. Note that we need to get the date from the start of the year and add another year to the last date so we can have a complete linear interpolated values. __lubridate__ also provides other functions to wrangle time data, such as to replace elements of the date and get a relative date using ```%m+%``` function.
 
 ```{r}
@@ -272,6 +277,7 @@ The data points are nicely interpolated, but there is a break in the line for Lo
 ```{r}
 unique(crime_major$Borough)
 ```
+
 Since we don't have the data for London borough in the crime data, we can ignore the inconsistent naming, this column will be dropped later.
 
 Now we are going to join the monthly population with crime major so we can normalize the rate. But let's check if the naming for borough is consistent between the crime data and population data.
@@ -294,7 +300,9 @@ crime_rate <- left_join(crime_major,monthly_pop,
 
 glimpse(crime_rate)
 ```
+
 Let's compare the crime rate through the years for borough with the highest and lowest population.  
+
 ```{r}
 #Borough with highest population
 crime_rate[crime_rate$Population==max(crime_rate$Population),]
@@ -304,6 +312,7 @@ crime_rate[crime_rate$Population==min(crime_rate$Population),]
 ```
 
 We can plot it in time series to allow easier comparison.
+
 ```{r}
 crime_rate %>%
   filter(Borough==c("Barnet","Kensington and Chelsea")) %>%
@@ -319,7 +328,9 @@ crime_rate %>%
                    .legend_show = FALSE,
                    .interactive=TRUE)
 ```
+
 At first glance, it seems that Barnet has a higher crime rate in general, except for Theft and Handling category which is roughly the same. Now let's compare with the time series using the rate, normalized by population.
+
 ```{r}
 crime_rate %>%
   filter(Borough==c("Barnet","Kensington and Chelsea")) %>%
@@ -339,26 +350,9 @@ crime_rate %>%
 
 After normalising the data using the population, apparently the crime rate for Criminal Damage, Robbery, and Fraud or Forgery is similar in the two boroughs. However, Kensington and Chelsea has a significantly higher rate of Theft and Handling compared to Barnet.
 
-## 3.4. Data Distribution
-
-We want to see whether the data resembles normal distribution 
-```{r}
-
-crime_major_hist <- ggplot(crime_major)+
-  geom_histogram(aes(Count))+
-  facet_wrap(~`Major Category`,scales="free")
-
-crime_rate_hist <- ggplot(crime_rate)+
-  geom_histogram(aes(Crime_Rate))+
-  facet_wrap(~`Major Category`,scales="free")
-
-grid.arrange(crime_major_hist,crime_rate_hist)
-```
-
-
 ## 3.4. Geospatial Data Exploration
-We can use a map to see the distribution of crime records in different boroughs. 
-To do so, we need the geospatial data that contains the polygon for each borough. The data is also obtained from London Datastore [-@londondatastore_2021_statistical]. Using ```st_read()``` function, the file will be read as a simple feature format.
+
+We can use a map to see the distribution of crime records in different boroughs. To do so, we need the geospatial data that contains the polygon for each borough. The data is also obtained from London Datastore [-@londondatastore_2021_statistical]. Using ```st_read()``` function, the file will be read as a simple feature format.
 
 ```{r}
 mp_borough <- st_read('./data/geospatial/statistical-gis-boundaries-london/ESRI',
@@ -368,6 +362,7 @@ glimpse(mp_borough)
 ```
 
 To draw the map, we will take average of recorded crime for each of the major crime category. Then, we will join the crime data with the geospatial data using ```left_join()``` function. As the previous example, don't forget to check that there is no discrepancy in the keys to join the data tables. A faster way to check is by using ```setdiff()``` function which is based on set operations. However, we do not know which dataframe does the lonely borough belongs to.
+
 ```{r}
 #Check difference in borough names
 setdiff(mp_borough$NAME, crime_major$Borough)
@@ -386,9 +381,11 @@ crime_map <- left_join(mp_borough, avg_crime,
 
 glimpse(crime_map)
 ```
+
 __tmap__ provides a way to visualise the data with a grammar of graphics syntax. Transitioning from ggplot2 to tmap is rather intuitive. We will create a choropleth map using ```tm_fill()``` function and examine whether there are any differences in the choropleth if we are using raw count and normalised crime rate by population.
 
 ```{r}
+#Map of raw crime count
 crime_count_map <- crime_map %>%
   filter(`Major Category`=="Theft and Handling") %>%
   tm_shape() + 
@@ -398,6 +395,7 @@ crime_count_map <- crime_map %>%
           palette="Reds") +
   tm_layout(legend.outside = TRUE)
 
+#Map of crime/population in millions
 crime_rate_map <- crime_map %>%
   filter(`Major Category`=="Theft and Handling") %>%
   tm_shape() + 
@@ -407,6 +405,8 @@ crime_rate_map <- crime_map %>%
           palette="Reds") +
   tm_layout(legend.outside = TRUE)
 
+
+#Map of average population
 population_map <- crime_map %>%
   filter(`Major Category`=="Theft and Handling") %>%
   tm_shape() + 
@@ -416,6 +416,7 @@ population_map <- crime_map %>%
           palette="Reds") +
   tm_layout(legend.outside = TRUE)
 
+#Arrange the three maps
 tmap_arrange(crime_count_map, crime_rate_map, population_map)
 
 ```
@@ -424,20 +425,8 @@ The missing value in the middle correspond to the City of London area that does 
 
 The intensity of colour changes when we are using crime rate rather than count, because the population of the borough that is used as the denominator might be different.
 
-<!-- However, we can see that the range of the crime count is still highly skewed. The top quantil for average crime rate has 3,281 to 11,356 crime recorded/1 million population. We can further smooth the data by normalizing with the neighbour rate [@medina_2019_chapter]. -->
-
-<!-- ```{r} -->
-<!-- crime_map_sp <- as(crime_map, "Spatial") -->
-<!-- neighbour <- poly2nb(crime_map_sp, row.names=crime_map_sp$GSS_Code) -->
-
-<!-- length(crime_map$AvgCount) -->
-
-<!-- length(neighbour) -->
-<!-- eb2 <- EBlocal(crime_map$AvgCount, crime_map$AvgPopulation, neighbour) -->
-<!-- crime_map$AvgSmoothRate <- eb2$est * 100000 -->
-<!-- ``` -->
-
 __tmap__ also provides a wrapper for __leaflet__ that enables interactive widget for the map. We can use ```tmap_mode("view")``` to interactively explore the data
+
 ```{r}
 crime_rate_map + 
   tmap_mode("view")
@@ -476,17 +465,15 @@ cluster_hierarchical <- tsclust(crime_rate_wide,
 plot(cluster_hierarchical)
 ```
 
-We will now examine the arguments that can be passed to the function to improve the results of the clustering. 
+We will now examine the arguments that can be passed to the function to improve the results of the clustering. The available arguments are shown in Figure 6.
 
-dtw_lb, lbk will not be used because it need special argument window.size.
-
-There are more arguments that can be used to control the preprocessing, distance, and centroid functions, but they are too granular and each function may require different arguments. Therefore, we will only use these arguments in the Shiny app. 
+![Figure 6. dtwclust arguments](./images/dtwclust_arguments.png)
 
 ## 4.1. Partitional & Fuzzy Dynamic Time Warping Clustering
 
-To get the number of desired clusters, we will show the silhoutte plot for various number of clusters, which can be computed using ```cvi()``` function in __dtwclust__. This package also has a function called ```compare_clusterings()``` which can automatically select the best performing parameters and returns the best configurations, however we want to give the users freedom in choosing the 
+To get the number of desired clusters, we will show the silhoutte plot for various number of clusters, which can be computed using ```cvi()``` function in __dtwclust__. This package also has a function called ```compare_clusterings()``` which can automatically select the best performing parameters and returns the best configurations, however we want to give the users freedom in choosing the number of cluster they want to make, so we will not use the ```compare_clusterings()``` function. 
 
-Fuzzy clustering is a type of partitional clustering allows overlapping partition, so each member will have a probability of belonging to each cluster [@sardaespinosa_2019_timeseries]. This method can be included in the Shiny app if there is a way to dynamically change the select box options, as it can only accept "fcm" and "fcmdd" as its centroid argument..
+Fuzzy clustering is a type of partitional clustering allows overlapping partition, so each member will have a probability of belonging to each cluster [@sardaespinosa_2019_timeseries]. This method can be included in the Shiny app if there is a way to dynamically change the select box options, as it can only accept "fcm" and "fcmdd" as its centroid argument.
 
 ```{r}
 #Testing different arguments
@@ -548,8 +535,8 @@ Next, we can wrap this visualisation with plotly to allow the users to hover ove
 ggplotly(silhouette_plot)
 ```
 
-
 ### 4.1.2. Time Series by Partitional Cluster
+
 We will use __timetk__ package to make the default plot becomes interactive. First, we need to get the assignment of the cluster.
 
 ```{r}
@@ -578,11 +565,13 @@ crime_rate_cluster %>%
                    .interactive=TRUE)
                    
 ```
+
 This package allows us to dynamically select, zoom, and hover to the data points for more information. This is more useful compared to the default static plot, but the disadvantage is that we will lose the centroid information.
 
 This divides the region into 2 clusters. The first cluster have a decreasing trend from 2012 that reversed in 2016. Although the magnitude of the boroughs in cluster 1 varies, the general trend remains the same. For the second cluster, the trend seems to be flat, but there is some seasonality to the data. The time series has mountains and valleys that repeats in a yearly basis.
 
 ### 4.1.3. Map by Partitional Cluster
+
 ```{r}
 crime_cluster_map <- left_join(mp_borough,cluster_assignment_partitional,
             by=c("NAME"="Borough"))
@@ -607,11 +596,13 @@ Members of cluster 2 are dispersed in various part of London, but they appear to
 ## 4.2. Hierarchical Dynamic Time Warping Clustering
 
 ### 4.2.1. Dendrogram Plot
+
 For hierarchical clustering, we will show the dendrogram instead of a silhouette plot to allow the users to select the optimum number of clusters. Dendrogram allows the users to see the similarity between different boroughs as well as the distance between different clusters. 
 
 There are several packages available that can handle dendrogram data, we will review __dendextend__ and __ggdendro__ packages to pick which one will be used in the Shiny app. 
 
 #### dendextend
+
 __dendextend__ provides various functions to work with dendrogram data, and this function is __tidyverse__-friendly, so we can using pipe (```%>%```) operations. By default, we can use ```plot()``` function from __base__ to create the dendrogram.
 
 To alter the visualisation of dendrogram, we use ```set()``` function with three arguments:
@@ -622,7 +613,7 @@ To alter the visualisation of dendrogram, we use ```set()``` function with three
 
 The available arguments are shown in the following picture: 
 
-![Figure 3. dendextend set() arguments [@a2020_beautiful]](./images/dendextend_arguments.png)
+![Figure 7. dendextend set() arguments [@a2020_beautiful]](./images/dendextend_arguments.png)
 
 Hierarchical clustering does not need the argument centroid, but even if we provide them it will still run properly. It will just give a warning that the argument is ignored. 
 
@@ -670,8 +661,6 @@ For __ggdendro__ package, we need to convert the data into a suitable format fir
 ```{r}
 ggdendro_data <- dendro_data(as.dendrogram(cluster_hierarchical))
 
-
-ggdendro_data$labels
 ggdendrogram(ggdendro_data,
              rotate=TRUE)
 ```
@@ -702,7 +691,6 @@ ggdendro_data$segments$line <- ifelse(ggdendro_data$segments$yend  > cut.height,
 ggdendro_data$segments$cluster <- c(-1, diff(ggdendro_data$segments$line))
 change <- which(ggdendro_data$segments$cluster == 1)
 
-change
 for (i in 1:cut) ggdendro_data$segments$cluster[change[i]] = i + 1
 ggdendro_data$segments$cluster <-  ifelse(ggdendro_data$segments$line == 1, 1, 
              ifelse(ggdendro_data$segments$cluster == 0, NA, ggdendro_data$segments$cluster))
@@ -820,11 +808,11 @@ The proposed interactive visualisation is a dashboard that contains the map of t
 
 If the users choose a hierarchical clusering method, then the following will be shown. 
 
-![Figure Dashboard for Hierarchical Clustering Method](./images/hierarchical_clustering_dashboard.jpeg)
+![Figure 8. Dashboard for Hierarchical Clustering Method](./images/hierarchical_clustering_dashboard.jpeg)
 
 While for a partitional clustering, the dendrogram will be replaced by a silhouette plot as shown below.
 
-![Figure Dashboard for Hierarchical Clustering Method](./images/partitional_clustering_dashboard.jpeg)
+![Figure 9. Dashboard for Partitional Clustering Method](./images/partitional_clustering_dashboard.jpeg)
 
 The values that the user can change for the clustering are shown in the following table.
 

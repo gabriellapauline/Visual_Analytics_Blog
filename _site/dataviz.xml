@@ -21,10 +21,10 @@
       <title>Assignment - London Crime Geo-referenced Time Series Clustering</title>
       <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
       <link>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-dtw-clust</link>
-      <description>A short description of the post.</description>
+      <description>A dynamic time warping clustering with geo-referenced data on London Crime data.</description>
       <guid>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-dtw-clust</guid>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-dtw-clust/assignment-dtw-clust_files/figure-html5/unnamed-chunk-17-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-dtw-clust/./images/hierarchical_clustering_dashboard.jpeg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>DataViz Makeover 3 - Armed Conflict Location and Event Data</title>
