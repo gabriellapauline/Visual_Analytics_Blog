@@ -50,32 +50,65 @@ Dynamic time warping (DTW) uses dynamic programming find the optimum data points
 
 __dtwclust__ package that is used in this project is created by  Alexis Sarda-Espinosa and is available at [CRAN](https://cran.r-project.org/web/packages/dtwclust/). 
 
-## 2.3. Visual Analytics for spatiotemporal clustering
- 
-
-
-
-## 2.4. Gap in current practices of spatiotemporal clustering
+## 2.3. Visual Analytics for Spatiotemporal Clustering
 
 As the results of machine learning depends on the hyperparameter in the setup, a lot of effort and time goes into iteratively trying and evaluating the results of using different parameters [@li_hypertuner]. Traditionally, the users would need to go through an iterative process of clustering. This involves preparing the data, performing transformation to the data, performing clustering analysis with an arbitrary parameters, evaluating whether the results make sense, and iteratively going back to the data preparation or analysis steps to try other approaches in hope that it would yield a better results. This process is time consuming and takes up a lot of resources. By incorporating visual analytics, we can provide a faster feedback so the users would be able to better evaluate the results and choose the optimum parameters easily [@ali_2019_clustering; @li_hypertuner]. 
 
-Visual analytics, especially when interactive exploration is supported, is beneficial because it facilitates the collaboration between machine capabilities and human capabilities to explore, analyse, understand, and gain insights from data [@ali_2019_clustering]. Waehner [@waehner_2016_visual] further adds that visual analytics allows the users to perform analytics, data wrangling, and data discovery without any coding involved, thus democratising data analytics.
+Visual analytics, especially when interactive exploration is supported, is beneficial because it facilitates the collaboration between machine capabilities and human capabilities to explore, analyse, understand, and gain insights from data [@ali_2019_clustering]. Waehner [-@waehner_2016_using] further adds that visual analytics allows the users to perform analytics, data wrangling, and data discovery without any coding involved, thus democratising data analytics.
 
 Following this trend, Ali et al. [-@ali_2019_clustering] also found that there is an increasing trend of usage of line plots, geographic maps, heat maps, histograms, and graphs for time series data. There are also several examples of interactive visual analytics available, the examples are reviewed below.
 
-### 2.4.1. dtwclust Sample Shiny App
+### 2.3.1. dtwclust Sample Shiny App
 
 __dtwclust__ package provides a sample shiny app that can be accessed using ```interactive_clustering()```. This app is also publicly hosted in [Shinyapps.io website](https://asardaes.shinyapps.io/dtwclust-tsclust-interactive/). 
 
 ![Figure 2. dtwclust Sample Shiny App](./images/dtwclust_sample_shiny_app.png)
 
-## 2.3. R Packages
+This app provides a way to get the time series by cluster visualisation easily in a faceted plot, after taking the arguments from the user. However, it does not provide a way to evaluate the clusters formed visually other than using the time series plot itself. The metrics are provided in a text, and we can only compute the clustering metrics only for the specified number of clusters in the plot. If we want to see the number of optimum cluster, we need to check different number and manually compare whether the value for the evaluation metrics increase or decrease. Besides, because this package is more focused on time series clustering, there is no map shown in the Shiny app.
 
-The packages that we are going to use in this analysis are: 
+### 2.3.2. SpatialEpiApp Spatiotemporal Clustering for Disease
 
-### a. sf
-### b. timetk
-### c. tmap
+SpatialEpiApp is a Shiny web to visualise spatial and spatiotemporal clustering for disease data [@moraga_2017_spatialepiapp]. However the app is more towards event clustering rather than a time series clustering, as it aims to find a cluster of disease from certain location and point in time. As the dtwclust sample Shiny app, it is also available in the [Shinyapps.io website](https://paulamoraga.shinyapps.io/spatialepiapp/). The app consists of several interesting tabs for visual analytics:
+
+1. Interactive tab
+
+Shows the data, and results in the form of a map and a time series plot. 
+
+![Figure 3. SpatialEpiApp Interactive Tab [@moraga_2017_spatialepiapp]](./images/spatialepiapp.png)
+
+2. Maps tab
+
+Shows the maps and temporal trend plots. 
+
+![Figure 4. SpatialEpiApp Maps Tab [@moraga_2017_spatialepiapp]](./images/spatialepiapp_maps.png)
+
+3. Clusters tab
+
+Shows the map and the time period of the clusters found.
+
+![Figure 5. SpatialEpiApp Clusters tab [@moraga_2017_spatialepiapp]](./images/spatialepiapp_clusters.png)
+
+The good thing about the three visualisation is that we can see both the spatial and temporal patterns in the data because it provides both map and the trend in the form of a parallel coordinate. However, it has less parameters to change and it still does not provide a convenient way to find the optimum number of clusters.
+
+## 2.4. R Packages
+
+The packages that we are going to use in this analysis are in the table below.
+
+Package | Description
+--------|------------
+dendextend | Functions to adjust the visualisation of a dendrogram object.
+dtwclust | Clustering using DTW algorithm.
+egg | Extensions for ggplot2 objects, that helps customisation.
+ggdendro | Functions to extract the data from a
+RColorBrewer | Provides colour palettes.
+ggthemes | Adds extra themes, geoms, and sclaes for ggplot2.
+lubridate | Functions to deal with date-time data.
+plotly | Create interactive version of ggplot2 graphs using plotly.js library.
+sf | A way to encode spatial vector data in a simple features format.
+tidyverse | A set of packages that deals with tidy data format for data science.
+timetk | Toolkit for working with time series in R.
+tmap | Flexible visualisation package for geographical maps.
+zoo | Z's ordered observations to deal with irregular time series pattern.
 
 # 3. Exploratory Data Analysis
 
@@ -84,7 +117,7 @@ The packages that we are going to use in this analysis are:
 We need to set up the environment and load all required packages first. The code chunk below will install the packages if not yet installed, and load them to the environment.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-packages = c("tidyverse","timetk", "lubridate","zoo","sf", "tmap","spdep","dtwclust", "dplyr","plotly", "ggthemes","dendextend","ggdendro", "RColorBrewer",  "DT","egg")
+packages = c("tidyverse","timetk", "egg", "lubridate","zoo","sf", "tmap","dtwclust","plotly", "ggthemes","dendextend","ggdendro", "RColorBrewer")
 for (p in packages){
   if (!require(p,character.only = T)){
     install.packages(p)
