@@ -475,16 +475,7 @@ cluster_hierarchical <- tsclust(crime_rate_wide,
 plot(cluster_hierarchical)
 ```
 
-We will now examine the arguments that can be passed to the function to improve the results of the clustering. Some of the arguments that we can expose to the useres are:
-
-Arguments | Description
----------|-----------
-series | Data in a form of list of series, numeric matrix, or a data frame where each observation is in a a row and the columns shows the time period. Can allow the users to choose the geographical aggregation level or the crime aggregation level.
-type | Type of clustering method to use. ["partitional", "hierarchical", "tadpole", "fuzzy"]
-k | Number of clusters
-preproc | function to pre-process the data, deafult is zscore() if centroid = "shape".
-distance | used with partitional, hierarchical, and fuzzy clustering. ["dtw", "dtw2", "dtw_basic", "dtw_lb", "lbk", "sbd", "gak", "sdtw"]
-centroid | a string or function to calculate centroid. Fuzzy clustering uses standard fuzzy c-means centroid by default. ["mean", "median", "shape", "dba", "sdtw_cent", "pam", "fcm", "fcmdd"]
+We will now examine the arguments that can be passed to the function to improve the results of the clustering. 
 
 dtw_lb, lbk will not be used because it need special argument window.size.
 
@@ -822,3 +813,41 @@ Boroughs in cluster 2 for hierarchical method are located in the Northwestern ar
 
 This method will not be used because it requires arguments that are very different from the other methods. We need to specify the cutoff distance, as well as using different distance measures that requires window size arguments.
 
+# 5. Proposed Interactive Visualisation
+
+The proposed interactive visualisation is a dashboard that contains the map of the clusters, time series by cluster, as well as a plot to help justify the model, such as dendrogram or a silhouette plot. 
+
+If the users choose a hierarchical clusering method, then the following will be shown. 
+
+![Figure Dashboard for Hierarchical Clustering Method](./images/hierarchical_clustering_dashboard.jpeg)
+
+While for a partitional clustering, the dendrogram will be replaced by a silhouette plot as shown below.
+
+![Figure Dashboard for Hierarchical Clustering Method](./images/partitional_clustering_dashboard.jpeg)
+
+The values that the user can change for the clustering are shown in the following table.
+
+Arguments | Description
+---------|-----------
+series | Data in a form of list of series, numeric matrix, or a data frame where each observation is in a a row and the columns shows the time period. Can allow the users to choose the geospatial aggregation level (borough or ward), temporal aggreagation level (monthly or yearly), crime aggregation level (major or minor category, and which category), and crime data (raw count or normalized by population).
+type | Type of clustering method to use. ["partitional", "hierarchical", "fuzzy"]
+k | Number of clusters
+preproc | function to pre-process the data, default is zscore() if centroid = "shape". ["No preprocessing", "zscore"]
+distance | distance measure to see the dissimilarity between two time series. ["dtw", "dtw2", "dtw_basic", "dtw_lb", "lbk", "sbd", "gak", "sdtw"]
+centroid | a string or function to calculate centroid. Fuzzy clustering uses standard fuzzy c-means centroid by default. ["mean", "median", "shape", "dba", "sdtw_cent", "pam", "fcm", "fcmdd"]
+
+## 5.1. Advantages of Incorporating Interactive Visual Analytics
+
+This section summarises the advantages of incorporating interactive visual analytics from the literature review and provides an example specific to the proposed Shiny app. 
+
+__1. Easier to find optimum cluster__:
+
+As there are many possible permutations of arguments we can pass to the algorithm to find a cluster, finding an optimum cluster can be quite a hassle. The interactive visual analytics helps the user to evaluate the results easily, as well as to quickly change the arguments that they want using only several clicks of mouse. For example, the user can try to do preprocessing using z-score and quickly evaluate whether the results is better or worse. If the results is worse, the user can try tuning other arguments without having to try the z-score again. 
+
+__2. Ad hoc drill-down of information__:
+
+When the user finds an interesting insight they want to drill down further, the user can hover over the data points and get more information as needed. For example, the user can hover over the map and get the name of the borough that they are interested in, without having to clutter the map with all the name of the boroughs. The user can also see the dates and values that correspond to an observation in the time series, making it easier to spot seasonal pattern. 
+
+__3. Democratising Data Analytics__:
+
+Only clicks are needed to get the results of the analytics, so everyone can use the application. The arguments will be exposed to the user in form of web interface that uses point-and-click, so everyone can use the application. This empowers the users to be self-sufficient in gaining insights from the data, without requiring the users to have coding skills.
