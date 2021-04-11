@@ -146,6 +146,7 @@ crime_long <- crime %>%
 
 glimpse(crime_long)
 ```
+
 Notice that the year is still in a string format. We can use ```ymd()``` function in __lubridate__ package to convert year-month-date formatted string or numbers into date. However, since our data only have the year and month, we need to use ```paste0()``` function to append "01" at the end so the format can be recognised.
 
 ```{r}
