@@ -7,14 +7,23 @@
     <description>Analytics Blog
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Assignment - London Crime Geo-referenced Time Series Clustering</title>
       <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
       <link>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-london-crime-geo-referenced-time-series-clustering</link>
       <description>A short description of the post.</description>
       <guid>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-london-crime-geo-referenced-time-series-clustering</guid>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Assignment - London Crime Geo-referenced Time Series Clustering</title>
+      <dc:creator>Gabriella Pauline Djojosaputro</dc:creator>
+      <link>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-dtwclust</link>
+      <description>A short description of the post.</description>
+      <guid>https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-dtwclust</guid>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://gabriellapauline.netlify.app/posts/2021-04-11-assignment-dtwclust/assignment-dtwclust_files/figure-html5/unnamed-chunk-17-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>DataViz Makeover 3 - Armed Conflict Location and Event Data</title>
